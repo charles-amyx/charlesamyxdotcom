@@ -46,24 +46,16 @@ module.exports = {
       }
     },
     {
-      use: 'gridsome-plugin-pwa',
+      use: "gridsome-plugin-service-worker",
       options: {
-          title: 'Charles-Amyx',
-          startUrl: '/',
-          display: 'standalone',
-          statusBarStyle: 'default',
-          manifestPath: 'manifest.json',
-          disableServiceWorker: false,
-          serviceWorkerPath: 'service-worker.js',
-          cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
-          shortName: 'Gridsome',
-          themeColor: '#666600',
-          backgroundColor: '#ffffff',
-          icon: 'src/favicon.png', // must be provided
-          msTileImage: '',
-          msTileColor: '#666600'
-      }
-  }
+        networkFirst: {
+          routes: [
+            "/",
+            /\.(js|css|png)$/, // means "every JS, CSS, and PNG images"
+          ],
+        },
+      },
+    },
   ],
   templates: {
     Blog: [{
