@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Charles E. Amyx, III',
 
   plugins: [
     {
@@ -48,18 +48,18 @@ module.exports = {
     {
       use: 'gridsome-plugin-pwa',
       options: {
-          title: 'Gridsome',
+          title: 'Charles-Amyx',
           startUrl: '/',
           display: 'standalone',
           statusBarStyle: 'default',
           manifestPath: 'manifest.json',
-          disableServiceWorker: true,
+          disableServiceWorker: false,
           serviceWorkerPath: 'service-worker.js',
           cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
           shortName: 'Gridsome',
           themeColor: '#666600',
           backgroundColor: '#ffffff',
-          icon: '', // must be provided
+          icon: 'src/favicon.png', // must be provided
           msTileImage: '',
           msTileColor: '#666600'
       }
