@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'Charles E. Amyx, III',
+  siteName: 'C. E. Amyx, III',
 
   plugins: [
     {
