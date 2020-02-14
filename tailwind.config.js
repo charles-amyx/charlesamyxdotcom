@@ -3,6 +3,9 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    fontFamily: {
+      serif: [" freight-display-pro", "serif"]
+    },
     colors: {
       transparent: 'transparent',
 
@@ -76,7 +79,7 @@ module.exports = {
         900: '#234e52',
       },
       blue: {
-        100: '#ebf8ff',
+        100: '#284052',
         200: '#bee3f8',
         300: '#90cdf4',
         400: '#63b3ed',

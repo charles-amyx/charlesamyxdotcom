@@ -6,16 +6,19 @@ import DefaultLayout from '~/layouts/Default.vue'
 
 //import '~/resources/js/main.js'
 
-import '~/resources/scss/main.scss'
-
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://use.typekit.net/oiy1nqq.css'
+  })
   // Add attributes to HTML tag
   head.htmlAttrs = { lang: 'en', class: 'min-h-full antialiased' }
 
   // Add attributes to BODY tag
-  head.bodyAttrs = { class: 'text-purple-900 leading-normal text-lg' }
-
+  head.bodyAttrs = { class: 'text-white bg-blue-100 leading-normal text-lg font-serif' }
 
 }
+import '~/resources/scss/main.scss'

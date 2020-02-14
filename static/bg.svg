@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1405px" height="953px" viewBox="0 0 1405 953" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Path + Path Copy + Path Copy 2 + Path Copy 4 + Path Copy 3 Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1680" height="963.057325"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
+        <g id="Desktop-HD" transform="translate(-35.000000, -71.000000)">
+            <g id="Path-+-Path-Copy-+-Path-Copy-2-+-Path-Copy-4-+-Path-Copy-3-Mask" transform="translate(33.000000, 71.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <polyline id="Path" stroke="#3D576A" stroke-width="53.5031847" stroke-linecap="round" mask="url(#mask-2)" points="26.7515924 963.057325 433.375796 64.2038217 840 963.057325"></polyline>
+                <polyline id="Path-Copy" stroke="#3D576A" stroke-width="53.5031847" stroke-linecap="round" mask="url(#mask-2)" points="219.363057 963.057325 625.987261 64.2038217 1032.61146 963.057325"></polyline>
+                <polyline id="Path-Copy-2" stroke="#FBFBFA" stroke-width="53.5031847" stroke-linecap="round" mask="url(#mask-2)" points="433.375796 963.057325 840 64.2038217 1246.6242 963.057325"></polyline>
+                <polyline id="Path-Copy-4" stroke="#3D576A" stroke-width="53.5031847" stroke-linecap="round" mask="url(#mask-2)" points="625.987261 963.057325 1032.61146 64.2038217 1439.23567 963.057325"></polyline>
+                <polyline id="Path-Copy-3" stroke="#DFE0E4" stroke-width="53.5031847" opacity="0.43078032" stroke-linecap="round" mask="url(#mask-2)" points="840 963.057325 1246.6242 64.2038217 1653.24841 963.057325"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

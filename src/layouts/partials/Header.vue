@@ -1,27 +1,27 @@
 <template>
   <header
     id="header"
-    class="header bg-purple-900 flex flex-col md:flex-row md:justify-between items-center p-4 md:p-6"
+    class="flex flex-col items-center p-4 mx-auto inner header md:flex-row md:justify-between md:p-6"
     role="banner"
   >
     <g-link
-      class="company-logo-link block text-white font-bold text-2xl md:text-3xl hover:text-pink-500"
+      class="block text-2xl text-white company-logo-link md:text-3xl hover:text-pink-500"
       to="/"
       aria-label="Back to home"
     >{{ $static.metadata.siteName }}</g-link>
 
-    <nav id="nav" class="nav hidden md:flex">
-      <ul class="menu flex flex-col md:flex-row items-center list-reset text-base">
+    <nav id="nav" class="hidden nav md:flex">
+      <ul class="flex flex-col items-center text-base menu md:flex-row list-reset">
         <li
-          class="level-1 mb-4 md:mr-4 md:mb-0"
+          class="mb-4 level-1 md:mr-4 md:mb-0"
           v-for="element in $static.metadata.menu"
           :key="element.name"
         >
           <g-link
             :to="element.link"
-            class="link font-bold text-white hover:text-pink-500"
+            class="font-bold text-white link hover:text-pink-500"
             active-class="is-active-link"
-            exact-active-class="active text-pink-500"
+            exact-active-class="text-pink-500 active"
           >{{ element.name }}</g-link>
         </li>
       </ul>
