@@ -4,7 +4,7 @@
       <h1 class="page-title">An award-winning digital art director</h1>
       <div class="content">
         <p>
-          At the University of Michigan. 
+          Curerntly at the University of Michigan. 
         </p>
       </div>
     </section>
