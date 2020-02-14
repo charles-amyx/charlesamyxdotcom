@@ -1,10 +1,10 @@
 <template>
   <Layout>
     <section id="container-centre" class="flex-1 column centre">
-      <h1 class="page-title">An award-winning digital art director</h1>
+      <h1 class="page-title">Digital art director, painter, photographer</h1>
       <div class="content">
         <p>
-          Curerntly at the University of Michigan. 
+          Currently at the University of Michigan. 
         </p>
       </div>
     </section>
