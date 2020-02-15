@@ -2,15 +2,14 @@
   <Layout>
     <section id="container-centre" class="flex-1 column centre">
       <h1 class="page-title">Hello there</h1>
-      <div class="content">
+      <div class="text-gray-800 content">
         <form
           class="form"
           name="contact"
           method="post"
           v-on:submit.prevent="handleSubmit"
-          action="/success/"
+          netlify-honeypot="bot-field"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="contact" />
           <p hidden>
@@ -29,6 +28,7 @@
               autocomplete="name"
               required
               aria-required="true"
+              v-model="formData.name"
             />
           </div>
           <div class="row required">
@@ -43,15 +43,16 @@
               autocomplete="email"
               required
               aria-required="true"
+              v-model="formData.email"
             />
           </div>
           <div class="row">
             <label for="message">Message</label>
-            <textarea class="textarea" id="message" name="message"></textarea>
+            <textarea class="textarea" id="message" name="message" v-model="formData.message"></textarea>
           </div>&nbsp;
           <div class="row">
             <button
-              class="inline-block px-4 py-2 font-bold text-black bg-orange-200 rounded hover:text-gray-300 hover:bg-gray-600 transition"
+              class="inline-block px-4 py-2 font-bold text-black transition bg-orange-200 rounded hover:text-gray-300 hover:bg-gray-600"
               type="submit"
             >Send message!</button>
           </div>
@@ -65,6 +66,32 @@
 export default {
   metaInfo: {
     title: "Contact"
+  },
+  data() {
+    return {
+      formData: {}
+    };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+    },
+    handleSubmit(e) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: this.encode({
+          "form-name": e.target.getAttribute("name"),
+          ...this.formData
+        })
+      })
+        .then(() => this.$router.push("/success"))
+        .catch(error => alert(error));
+    }
   }
 };
 </script>
