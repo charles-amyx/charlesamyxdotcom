@@ -2,23 +2,20 @@
   <div>
     <a class="visually-hidden" href="#main">Skip to content</a>
 
-    <div id="wrapper" class="wrapper pb-16 md:pb-0 flex flex-col relative min-h-screen">
+    <div id="wrapper" class="relative flex flex-col min-h-screen pb-16 wrapper md:pb-0">
+      <HeaderPartial />
 
-      <HeaderPartial/>
-
-
-      <main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20">
-        <slot/>
-      </main>
-
-      <FooterPartial/>
-        
+      <transition name="fade" appear>
+        <main id="main" class="flex flex-col flex-1 py-10 main inner lg:py-20">
+          <slot />
+        </main>
+      </transition>
+      <FooterPartial />
     </div>
 
     <ClientOnly>
-    <ResponsiveNav/>
+      <ResponsiveNav />
     </ClientOnly>
-    
   </div>
 </template>
 
@@ -31,9 +28,9 @@ query {
 </static-query>
 
 <script>
-import HeaderPartial from '~/layouts/partials/Header.vue'
-import FooterPartial from '~/layouts/partials/Footer.vue'
-import ResponsiveNav from '~/layouts/partials/ResponsiveNav.vue'
+import HeaderPartial from "~/layouts/partials/Header.vue";
+import FooterPartial from "~/layouts/partials/Footer.vue";
+import ResponsiveNav from "~/layouts/partials/ResponsiveNav.vue";
 
 export default {
   components: {
@@ -41,5 +38,15 @@ export default {
     FooterPartial,
     ResponsiveNav
   }
-}
+};
 </script>
+
+<style>
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+</style>

@@ -20,6 +20,7 @@
     "sass-loader": "^8.0.0"
   },
   "devDependencies": {
+    "gridsome-plugin-manifest": "^0.3.4",
     "gridsome-plugin-service-worker": "^0.1.4",
     "gridsome-plugin-tailwindcss": "^2.2.30"
   }

@@ -56,6 +56,17 @@ module.exports = {
         },
       },
     },
+    {
+      use: "gridsome-plugin-manifest",
+      options: {
+        background_color: "#000000",
+        icon_path: "./src/assets/img/icon.png",
+        name: "Charles E. Amyx, III",
+        short_name: "CEAmyxIII",
+        theme_color: "#284052",
+        lang: "en",
+      },
+    },
   ],
   templates: {
     Blog: [{
@@ -74,6 +85,6 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias.set('@modules', '@/resources/js/modules');
     config.resolve.alias.set('@utilities', '@/resources/js/utilities');
-    
+
   }
 }

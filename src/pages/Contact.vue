@@ -1,10 +1,24 @@
 <template>
   <Layout>
-    <section id="container-centre" class="column centre flex-1">
-      <h1 class="page-title">Contact Us</h1>
+    <section id="container-centre" class="flex-1 column centre">
+      <h1 class="page-title">Hello there</h1>
       <div class="content">
-        <p>Tell us how great we are in the form below.</p>
-        <form class="form">
+        <form
+          class="form"
+          name="contact"
+          method="post"
+          v-on:submit.prevent="handleSubmit"
+          action="/success/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label>
+              Don’t fill this out:
+              <input name="bot-field" />
+            </label>
+          </p>
           <div class="row required">
             <label for="name">Name</label>
             <input
@@ -31,25 +45,13 @@
               aria-required="true"
             />
           </div>
-          <div class="row required">
-            <label for="phone">Phone</label>
-            <input
-              class="input"
-              id="phone"
-              type="text"
-              name="phone"
-              autocomplete="tel"
-              required
-              aria-required="true"
-            />
-          </div>
           <div class="row">
             <label for="message">Message</label>
             <textarea class="textarea" id="message" name="message"></textarea>
           </div>&nbsp;
           <div class="row">
             <button
-              class="inline-block rounded py-4 px-6 text-white font-bold bg-pink-500 hover:bg-pink-600"
+              class="inline-block px-4 py-2 font-bold text-black bg-orange-200 rounded hover:text-gray-300 hover:bg-gray-600 transition"
               type="submit"
             >Send message!</button>
           </div>
