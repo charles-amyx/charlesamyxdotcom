@@ -9,7 +9,11 @@ import DefaultLayout from '~/layouts/Default.vue'
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-
+  head.link.push({
+    rel: 'preload',
+    href: 'https://use.typekit.net/oiy1nqq.css',
+    as: 'style'
+  })
   head.link.push({
     rel: 'stylesheet',
     href: 'https://use.typekit.net/oiy1nqq.css'

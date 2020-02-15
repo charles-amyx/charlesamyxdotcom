@@ -3,9 +3,7 @@
     <section id="container-centre" class="flex-1 column centre">
       <h1 class="text-gray-500 page-title">Digital art director, painter, photographer</h1>
       <div class="content">
-        <p class="text-xl tracking-wide text-gray-500">
-          Currently at the University of Michigan. 
-        </p>
+        <p class="text-xl tracking-wide text-gray-500">Currently at the University of Michigan.</p>
       </div>
     </section>
   </Layout>
@@ -14,7 +12,14 @@
 <script>
 export default {
   metaInfo: {
-    title: "Home"
+    title: "Home",
+    meta: [
+      { name: "author", content: "Charles E. Amyx, III" },
+      {
+        name: "description",
+        content: "C.E. Amyx, III a digital art director in Ann Arbor, MI"
+      }
+    ]
   }
 };
 </script>

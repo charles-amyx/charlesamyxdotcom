@@ -14,7 +14,20 @@
 <script>
 export default {
   metaInfo: {
-    title: "About"
+    title: "About",
+    meta: [
+      { name: "author", content: "Charles E. Amyx, III" },
+      {
+        name: "description",
+        meta: [
+          { name: "author", content: "Charles E. Amyx, III" },
+          {
+            name: "description",
+            content: "C.E. Amyx, III a digital art director in Ann Arbor, MI"
+          }
+        ]
+      }
+    ]
   }
 };
 </script>
