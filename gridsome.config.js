@@ -75,14 +75,14 @@ module.exports = {
         lang: "en",
       },
     },
-    {
-      use: '@gridsome/plugin-critical',
-      options: {
-        paths: ['/'],
-        width: 1300,
-        height: 900
-      }
-    },
+    // {
+    //   use: '@gridsome/plugin-critical',
+    //   options: {
+    //     paths: ['/'],
+    //     width: 1300,
+    //     height: 900
+    //   }
+    // },
     {
       use: '@gridsome/plugin-google-analytics',
       options: {
