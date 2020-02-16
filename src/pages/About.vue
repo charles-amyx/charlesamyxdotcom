@@ -4,7 +4,10 @@
       <h1 class="page-title">About</h1>
       <div class="content">
         <div class="w-full">
-          <g-image src="~/assets/archer.jpg" alt="an english setter with his head cocked to one side" />
+          <g-image
+            src="~/assets/archer.jpg"
+            alt="an english setter with his head cocked to one side"
+          />
         </div>
       </div>
     </section>
@@ -23,7 +26,8 @@ export default {
           { name: "author", content: "Charles E. Amyx, III" },
           {
             name: "description",
-            content: "C.E. Amyx, III a digital art director in Ann Arbor, MI"
+            content:
+              "All about Charles E. Amyx, III, a digital art director in Ann Arbor, MI"
           }
         ]
       }

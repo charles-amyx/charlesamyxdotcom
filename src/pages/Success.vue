@@ -14,7 +14,14 @@
 <script>
 export default {
   metaInfo: {
-    title: "Success"
+    title: "Success",
+    meta: [
+      { name: "author", content: "Charles E. Amyx, III" },
+      {
+        name: "description",
+        content: "Successfully submitted a request to reach out."
+      }
+    ]
   }
 };
 </script>

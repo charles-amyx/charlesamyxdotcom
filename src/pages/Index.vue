@@ -17,7 +17,7 @@ export default {
       { name: "author", content: "Charles E. Amyx, III" },
       {
         name: "description",
-        content: "C.E. Amyx, III a digital art director in Ann Arbor, MI"
+        content: "The portfolio for Charles E. Amyx, III, a digital art director in Ann Arbor, MI"
       }
     ]
   }
