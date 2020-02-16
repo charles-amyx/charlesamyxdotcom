@@ -23,7 +23,7 @@
 
     <button
       id="mobile-nav-toggle"
-      class="fixed bottom-0 z-50 flex items-center justify-center block w-full h-16 font-bold text-white bg-black border-none mobile-nav-toggle focus:outline-none md:hidden"
+      class="fixed bottom-0 z-50 flex items-center justify-center block w-full h-16 font-bold text-white border-none mobile-nav-toggle focus:outline-none md:hidden"
       :class="toggleNav ? 'menu-toggle-active': ''"
       aria-expanded="false"
       aria-controls="mobile-nav"

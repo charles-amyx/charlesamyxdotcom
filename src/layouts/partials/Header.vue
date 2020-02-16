@@ -1,7 +1,7 @@
 <template>
   <header
     id="header"
-    class="flex flex-col px-6 pt-6 pb-4 mx-auto inner header md:flex-row md:justify-between md:px-6 md:pt-10 md:pb-6"
+    class="z-10 flex flex-col px-6 pt-6 pb-4 mx-auto inner header md:flex-row md:justify-between md:px-6 md:pt-10 md:pb-6"
     role="banner"
   >
     <g-link
