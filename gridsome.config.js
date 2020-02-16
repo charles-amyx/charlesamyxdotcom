@@ -1,6 +1,14 @@
+const tailwind = require('tailwindcss')
+const purgecss = require('@fullhuman/postcss-purgecss')
+
+const postcssPlugins = [
+  tailwind(),
+]
+
+if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
+
 module.exports = {
   siteName: 'C. E. Amyx, III',
-
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
@@ -68,6 +76,13 @@ module.exports = {
       },
     },
   ],
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: postcssPlugins,
+      },
+    },
+  },
   templates: {
     Blog: [{
       path: '/blog/:title',
@@ -82,9 +97,4 @@ module.exports = {
       component: './src/templates/Tag.vue'
     }]
   },
-  chainWebpack: config => {
-    config.resolve.alias.set('@modules', '@/resources/js/modules');
-    config.resolve.alias.set('@utilities', '@/resources/js/utilities');
-
-  }
 }
