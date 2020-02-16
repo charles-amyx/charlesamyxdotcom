@@ -83,6 +83,15 @@ module.exports = {
         height: 900
       }
     },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-8525758-2',
+        debug: {
+          sendHitTask: process.env.NODE_ENV === 'production'
+        }
+      }
+    },
   ],
   css: {
     loaderOptions: {
@@ -106,3 +115,4 @@ module.exports = {
     }]
   },
 }
+ 
