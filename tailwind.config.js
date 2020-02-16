@@ -4,13 +4,13 @@ module.exports = {
   separator: ':',
   theme: {
     fontFamily: {
-      serif: [" freight-display-pro", "serif"]
+      sans: ["Work Sans", "serif"]
     },
     colors: {
       transparent: 'transparent',
 
       black: '#000',
-      white: '#fff',
+      white: '#fafafa',
 
       gray: {
         100: '#f7fafc',

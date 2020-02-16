@@ -2,20 +2,20 @@
   <div>
     <nav
       id="mobile-nav"
-      class="fixed top-0 left-0 z-50 w-full h-screen pt-12 overflow-y-auto bg-black mobile-nav md:hidden"
+      class="fixed top-0 left-0 z-50 w-full h-screen pt-12 overflow-y-auto mobile-nav md:hidden"
       :class="toggleNav ? 'menu-visible': ''"
     >
       <ul>
         <li
           class="mb-4 level-1 md:mr-4 md:mb-0"
-          v-for="element in $static.metadata.menu"
+          v-for="element in $static.metadata.mobileMenu"
           :key="element.name"
         >
           <g-link
             :to="element.link"
             class="block px-5 py-2 text-3xl text-white link hover:text-pink-500"
-            active-class="is-active-link"
-            exact-active-class="text-pink-500 active"
+            active-class="is-active-link-mb"
+            exact-active-class="text-red-500 active"
           >{{ element.name }}</g-link>
         </li>
       </ul>
@@ -32,9 +32,9 @@
       <span class="mr-2 font-medium mobile-nav-label">Menu</span>
 
       <span class="mobile-nav-icon" aria-hidden="true">
-        <span class="block w-6 mb-1 bg-white mobile-nav-icon-line transition"></span>
-        <span class="block w-6 mb-1 bg-white mobile-nav-icon-line transition"></span>
-        <span class="block w-6 bg-white mobile-nav-icon-line transition"></span>
+        <span class="block w-6 mb-1 transition bg-white mobile-nav-icon-line"></span>
+        <span class="block w-6 mb-1 transition bg-white mobile-nav-icon-line"></span>
+        <span class="block w-6 transition bg-white mobile-nav-icon-line"></span>
       </span>
     </button>
   </div>
@@ -43,7 +43,7 @@
 <static-query>
 query {
   metadata {
-    menu {
+    mobileMenu {
       name
       link
     }
