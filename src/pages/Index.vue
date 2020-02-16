@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="flex-1">
-      <h1 class="tracking-tight text-gray-400 page-title">Digital art director, painter, photographer</h1>
+      <h1 class="tracking-tight text-gray-400 page-title">designer, painter, photographer</h1>
       <div class="content">
         <p class="text-lg tracking-wide text-gray-400">Currently at the University of Michigan.</p>
       </div>
