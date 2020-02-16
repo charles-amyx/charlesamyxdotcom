@@ -50,7 +50,7 @@
             <label for="message">Message</label>
             <textarea class="textarea" id="message" name="message" v-model="formData.message"></textarea>
           </div>&nbsp;
-          <div class="row">
+          <div class="">
             <button
               class="inline-block px-4 py-2 font-bold text-black transition bg-orange-200 rounded hover:text-gray-300 hover:bg-gray-600"
               type="submit"
