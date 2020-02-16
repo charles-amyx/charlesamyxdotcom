@@ -1,10 +1,10 @@
 <template>
   <Layout>
-    <section id="container-centre" class="flex-1 column centre">
+    <section class="flex-1">
       <h1 class="page-title">About</h1>
       <div class="content">
-        <div class="w-full md:w-1/2">
-          <g-image src="/ar.png" alt="an english setter with his head cocked to one side" />
+        <div class="w-full">
+          <g-image src="~/assets/archer.jpg" alt="an english setter with his head cocked to one side" />
         </div>
       </div>
     </section>

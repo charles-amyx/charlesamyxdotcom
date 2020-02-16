@@ -1,7 +1,7 @@
 <template>
   <div>
     <a class="visually-hidden" href="#main">Skip to content</a>
-
+    <div class="absolute top-0 bottom-0 left-0 right-0 border-8 border-dark-indigo"></div>   
     <div id="wrapper" class="relative flex flex-col min-h-screen pb-16 wrapper md:pb-0">
       <HeaderPartial />
 

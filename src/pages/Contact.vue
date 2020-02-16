@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <section id="container-centre" class="flex-1 column centre">
-      <h1 class="page-title">Hello there</h1>
+    <section class="flex-1">
+      <h1 class="tracking-tight page-title">Hello there</h1>
       <div class="text-gray-800 content">
         <form
           class="form"
