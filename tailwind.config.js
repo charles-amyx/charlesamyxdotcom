@@ -122,6 +122,9 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
-    }
+    },
+    variants: {
+      textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    },
   }
 }

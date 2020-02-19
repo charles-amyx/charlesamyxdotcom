@@ -38,14 +38,10 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Blog',
-        path: './content/blog/**/*.md',
+        typeName: 'Design',
+        path: './content/design/**/*.md',
         refs: {
           author: 'Author',
-          tags: {
-            typeName: 'Tag',
-            create: true
-          },
           category: {
             typeName: 'Category',
             create: true
@@ -93,17 +89,13 @@ module.exports = {
     },
   },
   templates: {
-    Blog: [{
-      path: '/blog/:title',
-      component: './src/templates/BlogEntry.vue'
+    Design: [{
+      path: '/design/:title',
+      component: './src/templates/Entry.vue'
     }],
     Category: [{
       path: '/category/:title',
       component: './src/templates/Category.vue'
-    }],
-    Tag: [{
-      path: '/tag/:title',
-      component: './src/templates/Tag.vue'
     }]
   },
 }
