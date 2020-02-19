@@ -2,9 +2,22 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '~/layouts/Default.vue'
-
+// import { Workbox } from "workbox-window";
 
 //import '~/resources/js/main.js'
+
+// if ("serviceWorker" in navigator) {
+//   const wb = new Workbox("/service-worker.js");
+//   const swRefresh = document.getElementById("swRefresh");
+
+//   wb.addEventListener("installed", event => {
+//     if (event.isUpdate) {
+//       swRefresh.classList.remove("hidden");
+//     }
+//   });
+
+//   wb.register();
+// }
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component

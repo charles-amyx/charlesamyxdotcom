@@ -15,6 +15,10 @@
     <ClientOnly>
       <ResponsiveNav />
     </ClientOnly>
+    <div class="fixed bottom-0 right-0 z-50 hidden px-6 py-4 mb-4 mr-4 text-xs text-center rounded-sm shadow-2xl bg-soft-white" id="swRefresh">
+    <div class="mb-4 text-xs">New content is available!</div>
+    <button class="px-4 py-2 mx-auto text-xs font-bold text-white uppercase bg-black rounded-lg" onClick="window.location.reload();">Reload</button>
+</div>
   </div>
 </template>
 
