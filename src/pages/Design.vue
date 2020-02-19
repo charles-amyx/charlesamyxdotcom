@@ -10,7 +10,7 @@
             :key="entry.node.id"
           >
             <article
-              class="flex-1 h-full overflow-hidden bg-white rounded-sm shadow-lg article-card"
+              class="flex-1 h-full overflow-hidden transition bg-white rounded-sm shadow-lg group hover:shadow-2xl article-card"
             >
               <g-link
                 class="relative block overflow-hidden featured-image-link"
