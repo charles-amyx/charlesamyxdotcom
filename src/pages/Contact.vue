@@ -2,7 +2,7 @@
   <Layout>
     <section class="flex-1">
       <h1 class="tracking-tight page-title">Hello there</h1>
-      <div class="text-gray-800 content">
+      <div class="w-full text-gray-800 md:w-2/4 content">
         <form
           class="form"
           name="contact"
@@ -21,7 +21,7 @@
           <div class="row required">
             <label for="name">Name</label>
             <input
-              class="input"
+              class="transition input"
               id="name"
               type="text"
               name="name"
@@ -34,7 +34,7 @@
           <div class="row required">
             <label for="email">Email</label>
             <input
-              class="input"
+              class="transition input"
               id="email"
               type="text"
               name="email"
@@ -48,7 +48,7 @@
           </div>
           <div class="row">
             <label for="message">Message</label>
-            <textarea class="textarea" id="message" name="message" v-model="formData.message"></textarea>
+            <textarea class="transition textarea" id="message" name="message" v-model="formData.message"></textarea>
           </div>&nbsp;
           <div class>
             <button
