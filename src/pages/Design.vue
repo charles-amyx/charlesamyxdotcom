@@ -9,7 +9,9 @@
             v-for="entry in $page.allDesign.edges"
             :key="entry.node.id"
           >
-            <article class="flex-1 h-full overflow-hidden bg-white rounded-sm shadow-lg article-card">
+            <article
+              class="flex-1 h-full overflow-hidden bg-white rounded-sm shadow-lg article-card"
+            >
               <g-link
                 class="relative block overflow-hidden featured-image-link"
                 :to="entry.node.path"
@@ -44,7 +46,15 @@
 <script>
 export default {
   metaInfo: {
-    title: "Design"
+    title: "Design",
+
+    meta: [
+      { name: "author", content: "Charles E. Amyx, III" },
+      {
+        name: "description",
+        content: "Some sampling of design work from CE Amyx, III"
+      }
+    ]
   }
 };
 </script>

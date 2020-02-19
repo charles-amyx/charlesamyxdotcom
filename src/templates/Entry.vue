@@ -20,7 +20,10 @@
 
         <div v-html="$page.design.content"></div>
         <div>
-          <g-link class="block text-gray-400 transition hover:text-red-500" to="/design">Back to Design</g-link>
+          <g-link
+            class="block text-gray-400 transition hover:text-red-500"
+            to="/design"
+          >Back to Design</g-link>
         </div>
       </div>
     </section>
@@ -45,7 +48,14 @@
 export default {
   metaInfo() {
     return {
-      title: this.$page.design.title
+      title: this.$page.design.title,
+      meta: [
+        { name: "author", content: "Charles E. Amyx, III" },
+        {
+          name: "description",
+          content: this.$page.design.excerpt
+        }
+      ]
     };
   }
 };
