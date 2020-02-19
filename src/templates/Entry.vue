@@ -21,7 +21,7 @@
         <div v-html="$page.design.content"></div>
         <div>
           <g-link
-            class="block text-gray-400 transition hover:text-red-500"
+            class="block text-gray-400 transition hover:text-indigo-400"
             to="/design"
           >Back to Design</g-link>
         </div>

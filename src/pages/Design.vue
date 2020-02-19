@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="flex-1">
-      <h1 class="mb-16 text-3xl page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl">Designer</h1>
+      <h1 class="mb-16 text-3xl page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl">Design</h1>
       <div class="px-2">
         <div class="flex flex-wrap items-stretch -mx-2 posts">
           <div
@@ -27,7 +27,7 @@
               <div class="p-8">
                 <h2 class="mb-6 text-2xl">
                   <g-link
-                    class="block text-purple-900 hover:text-red-500"
+                    class="block text-purple-900 hover:text-indigo-400"
                     :to="entry.node.path"
                   >{{ entry.node.title }}</g-link>
                 </h2>
