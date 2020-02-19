@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="flex-1">
-      <h1 class="page-title">About</h1>
+      <h1 class="mb-16 text-3xl page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl">About</h1>
       <div class="content">
         <div class="w-full">
           <g-image
@@ -9,7 +9,7 @@
             src="~/assets/archer.jpg"
             alt="an english setter with his head cocked to one side"
           />
-          <p>It can't be<br>&mdash;in flux<br> &nbsp;&nbsp;&nbsp;happening then <span class="block -ml-5">and there</span><span class="block ml-40">or</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;can it</p>
+          <p class="w-full mx-auto md:w-2/12">It can't be<br>&mdash;in flux<br> &nbsp;&nbsp;&nbsp;happening then <span class="block -ml-5">and there</span><span class="block ml-40">or</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;can it</p>
         </div>
       </div>
     </section>
