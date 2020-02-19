@@ -1,8 +1,8 @@
 <template>
   <Layout>
-    <section class="flex-1">
+    <section class="flex-1 w-full mx-auto md:w-2/4">
       <h1 class="tracking-tight page-title">Hello there</h1>
-      <div class="w-full text-gray-800 md:w-2/4 content">
+      <div class="w-full text-gray-800 content">
         <form
           class="form"
           name="contact"
