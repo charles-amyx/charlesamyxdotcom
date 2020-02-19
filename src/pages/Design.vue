@@ -31,7 +31,7 @@
                     :to="entry.node.path"
                   >{{ entry.node.title }}</g-link>
                 </h2>
-                <div class="mb-4 text-sm text-gray-600 md:flex">
+                <div class="mb-4 text-sm text-gray-700 md:flex">
                   <p class="hidden md:block">{{ entry.node.excerpt }}</p>
                 </div>
               </div>

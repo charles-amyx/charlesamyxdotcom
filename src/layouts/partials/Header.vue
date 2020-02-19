@@ -5,7 +5,7 @@
     role="banner"
   >
     <g-link
-      class="block text-base font-semibold tracking-widest text-gray-500 uppercase company-logo-link md:text-base hover:text-white"
+      class="block text-base font-semibold tracking-widest text-gray-500 uppercase md:text-base hover:text-white"
       to="/"
       aria-label="Back to home"
     >{{ $static.metadata.siteName }}</g-link>

@@ -1,7 +1,7 @@
 
 <template>
   <Layout>
-    <section id="container-centre" class="flex-1 column centre">
+    <section class="flex-1 column">
       <div class="mb-12 post-header md:mb-20">
         <h1
           class="text-3xl page-title md:text-center md:text-5xl lg:text-6xl"
