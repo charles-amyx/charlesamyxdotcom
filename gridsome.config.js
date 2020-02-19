@@ -81,6 +81,11 @@ module.exports = {
       }
     },
   ],
+  transformers: {
+    remark: {
+      externalLinksTarget: false
+    }
+  },
   css: {
     loaderOptions: {
       postcss: {
