@@ -15,24 +15,23 @@ export default function(Vue, { router, head, isClient }) {
   head.bodyAttrs = {
     class: "text-white bg-blue-100 leading-normal text-lg font-sans"
   };
+  // Add meta to HEAD tag
+
+  router.beforeEach((to, _from, next) => {
+    // Use the Vue router to create the og:url tag because we want this tag to point to the current URL
+    head.meta.push({
+      key: "og:url", // gives us the option to override at the page level
+      name: "og:url",
+      content: process.env.GRIDSOME_BASE_PATH + to.path
+    });
+
+    head.meta.push({
+      key: "og:image", // gives us the option to override at the page level
+      name: "og:image",
+      content: process.env.GRIDSOME_BASE_PATH + to.path + "og-image.jpg"
+    });
+    next();
+  });
 }
-
-// Add meta to HEAD tag
-
-router.beforeEach((to, _from, next) => {
-  // Use the Vue router to create the og:url tag because we want this tag to point to the current URL
-  head.meta.push({
-    key: "og:url", // gives us the option to override at the page level
-    name: "og:url",
-    content: process.env.GRIDSOME_BASE_PATH + to.path
-  });
-
-  head.meta.push({
-    key: "og:image", // gives us the option to override at the page level
-    name: "og:image",
-    content: process.env.GRIDSOME_BASE_PATH + to.path + "og-image.jpg"
-  });
-  next();
-});
 
 import "~/resources/scss/main.scss";
