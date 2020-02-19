@@ -34,6 +34,7 @@
       title
       path
       image(width:1200)
+      image_caption
       excerpt
       content
     }

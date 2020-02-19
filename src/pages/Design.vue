@@ -60,6 +60,7 @@ export default {
           path
           excerpt
           image(width:780)
+          image_caption
         }
       }
     }
