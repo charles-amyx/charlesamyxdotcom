@@ -32,7 +32,12 @@ export default {
         key: 'og:url',
         name: 'og:url',
         content: 'https://charlesamyx.com',
-      }
+      },
+      {
+        key: 'canonical',
+        name: 'canonical',
+        content: 'https://charlesamyx.com',
+      },
     ]
   }
 };
