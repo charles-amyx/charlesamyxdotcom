@@ -5,7 +5,8 @@ import DefaultLayout from "~/layouts/Default.vue";
 
 //import '~/resources/js/main.js'
 
-export default function(Vue, { router, head, isClient }) {
+export default function(Vue, { router, head, }) {
+  const baseUrl = process.env.URL || process.env.GRIDSOME_BASE_PATH
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
   // Add attributes to HTML tag
@@ -20,16 +21,35 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     key: "og:image", // gives us the option to override at the page level
     name: "og:image",
-    content: `${process.env.GRIDSOME_BASE_PATH}/og-image.jpg`,
+    content: baseUrl + '/og-image.jpg'
   });
+  head.meta.push({
+    name: 'twitter:image',
+    content: baseUrl + '/og-image.jpg'
+  })
+  head.meta.push({
+    name: 'twitter:card',
+    content: 'summary_large_image'
+  })
+  head.meta.push({
+    key: 'og:type',
+    name: 'og:type',
+    content: 'website'
+  })
 
   router.beforeEach((to, _from, next) => {
+    const pageUrl = baseUrl + to.path
     // Use the Vue router to create the og:url tag because we want this tag to point to the current URL
     head.meta.push({
       key: "og:url", // gives us the option to override at the page level
       name: "og:url",
-      content: process.env.GRIDSOME_BASE_PATH + to.path,
+      content: pageUrl,
     });
+    head.meta.push({
+      key: 'canonical',
+      name: 'canonical',
+      content: pageUrl,
+    })
     next();
   });
 }
