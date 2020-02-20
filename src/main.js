@@ -20,7 +20,7 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     key: "og:image", // gives us the option to override at the page level
     name: "og:image",
-    content: `${process.env.GRIDSOME_BASE_PATH}og-image.jpg`,
+    content: `${process.env.GRIDSOME_BASE_PATH}/og-image.jpg`,
   });
 
   router.beforeEach((to, _from, next) => {
