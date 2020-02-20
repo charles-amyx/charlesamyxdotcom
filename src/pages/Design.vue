@@ -1,7 +1,8 @@
 <template>
   <Layout>
     <section class="flex-1">
-      <h1 class="mb-16 text-3xl page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl">Design</h1>
+      <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Design</h1>
+      <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Some recent projects.</p>
       <div class="px-2">
         <div class="flex flex-wrap items-stretch -mx-2 posts">
           <div
