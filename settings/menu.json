@@ -1,6 +1,14 @@
 {
   "menu": [
     {
+      "name": "Design",
+      "link": "design"
+    },
+    {
+      "name": "Paint",
+      "link": "paint"
+    },
+    {
       "name": "About",
       "link": "about"
     }

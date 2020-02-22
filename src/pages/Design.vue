@@ -62,9 +62,7 @@ export default {
 
 <page-query>
   query {
-    
     allDesign(sortBy: "title", order: ASC) {
-      
       edges {
         node {
           title

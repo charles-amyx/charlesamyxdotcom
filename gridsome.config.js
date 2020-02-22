@@ -31,17 +31,22 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Author',
-        path: './content/author/*.md'
+        typeName: 'Design',
+        path: './content/design/**/*.md',
+        refs: {
+          category: {
+            typeName: 'Category',
+            create: true
+          }
+        }
       }
     },
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Design',
-        path: './content/design/**/*.md',
+        typeName: 'Paint',
+        path: './paint/**/*.md',
         refs: {
-          author: 'Author',
           category: {
             typeName: 'Category',
             create: true
@@ -77,6 +82,41 @@ module.exports = {
         id: 'UA-8525758-2',
         debug: {
           sendHitTask: process.env.NODE_ENV === 'production'
+        }
+      }
+    },
+    {
+      use: 'gridsome-plugin-robots-txt',
+      options: {
+        host: 'https://charlesamyx.com',
+        sitemap: 'https://charlesamyx.com/sitemap.xml',
+        policy: [
+          {
+            userAgent: "Googlebot",
+            allow: "/",
+            disallow: "/search",
+            crawlDelay: 2
+          },
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: "/search",
+            crawlDelay: 10,
+            cleanParam: "ref /articles/"
+          }
+        ]
+      }
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000, // default
+        exclude: ['/exclude-me'],
+        config: {
+          '/about': {
+            changefreq: 'monthly',
+            priority: 0.7
+          }
         }
       }
     },

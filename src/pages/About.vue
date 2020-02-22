@@ -5,7 +5,7 @@
       <div class="content">
         <div class="w-full">
           <g-image
-            class="pb-8 blend-overlay"
+            class="pb-8"
             src="~/assets/about.jpg"
             alt="an abstract painting"
           />
