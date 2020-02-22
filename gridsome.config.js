@@ -86,28 +86,6 @@ module.exports = {
       }
     },
     {
-      use: 'gridsome-plugin-robots-txt',
-      options: {
-        host: 'https://charlesamyx.com',
-        sitemap: 'https://charlesamyx.com/sitemap.xml',
-        policy: [
-          {
-            userAgent: "Googlebot",
-            allow: "/",
-            disallow: "/search",
-            crawlDelay: 2
-          },
-          {
-            userAgent: "*",
-            allow: "/",
-            disallow: "/search",
-            crawlDelay: 10,
-            cleanParam: "ref /articles/"
-          }
-        ]
-      }
-    },
-    {
       use: '@gridsome/plugin-sitemap',
       options: {
         cacheTime: 600000, // default
