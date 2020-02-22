@@ -5,11 +5,55 @@
       <div class="content">
         <div class="w-full">
           <g-image
-          class="pb-8"
-            src="~/assets/archer.jpg"
+            class="pb-8 blend-overlay"
+            src="~/assets/about.jpg"
             alt="an english setter with his head cocked to one side"
           />
-          <p class="w-full mx-auto md:w-2/12">It can't be<br>&mdash;in flux<br> &nbsp;&nbsp;&nbsp;happening then <span class="block -ml-5">and there</span><span class="block ml-40">or</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;can it</p>
+          <div class="w-full mx-auto leading-relaxed md:w-7/12">
+            <p>I am currently the Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. I have a keen interest about inclusive, accessible, and compassionate design.</p>
+            <h2 class="text-4xl">Experience</h2>
+
+            <div class="mb-16">
+              <div class="text-sm font-light tracking-widest">04/2018 - 03/2018</div>
+              <div class="font-extrabold tracking-wide">University of Michigan | Michigan Creative</div>
+              <div class="mb-6 font-medium">Senior Web Designer</div>
+              <p
+                class="text-base"
+              >Primary designer for all web projects. Additionally, I build many of the sites I've designed. My role includes mentoring and guiding junior designers, advocating for accessibility, practicing kind and inclusive design, and communicating best practices for the web to all of our campus partners.</p>
+            </div>
+
+            <div class="mb-16">
+              <div class="text-sm font-light tracking-widest">02/2015 - 04/2018</div>
+              <div
+                class="font-extrabold tracking-wide"
+              >University of Michigan | College of Engineering</div>
+              <div class="mb-6 font-medium">Digital Design Lead</div>
+              <p
+                class="text-base"
+              >Participated in and executed the College of Engineering brand refresh, designed and built the front end for a new News Center, events site, and five department themes, designed and retrofitted engin.umich.edu to be responsive, design and built fully responsive emails for the college and six departments.</p>
+            </div>
+
+            <div class="mb-16">
+              <div class="text-sm font-light tracking-widest">01/2006 - 02/2015</div>
+              <div class="font-extrabold tracking-wide">Bonnier Corporation</div>
+              <div class="mb-6 font-medium">Digital Art Director</div>
+              <p
+                class="text-base"
+              >Responsible for Bonnier Motocycle Group digital properties, Photography group (popphoto.com and americanphotomag.com), redesigned and worked with front end developers for UX/UI tweaks and enhancements. Lead designer for the Outdoor Group’s long form editorial features.</p>
+            </div>
+
+            <h2 class="text-4xl">Expertise</h2>
+            <div class="mb-16">
+              <p
+                class="text-base"
+              >Aside from traditional print and digital design, I am front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with CSS preprocessors, I find myself using vanilla CSS and a utility-first CSS philosophy.</p>
+              <p class="text-base">
+                This site is using a static site generator called 
+                <a href="https://gridsome.org/">Gridsome (VueJS)</a> and
+                <a href="https://tailwindcss.com/">TailwindCSS</a> for its styling.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

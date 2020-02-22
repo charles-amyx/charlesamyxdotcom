@@ -4,7 +4,8 @@ module.exports = {
   separator: ':',
   theme: {
     fontFamily: {
-      sans: ["Work Sans", "serif"]
+      sans: ["Work Sans", "sans-serif"],
+      serif: ["Eczar", "serif"]
     },
     colors: {
       transparent: 'transparent',

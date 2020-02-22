@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="flex-1">
-      <h1 class="tracking-tight text-gray-300 page-title"><a
+      <h1 class="text-gray-300 page-title"><a
             class="pb-1 text-gray-400 transition border-b border-transparent hover:text-indigo-400 focus:text-indigo-400 hover:border-indigo-400"
             href="/design"
           >designer</a>, <a class="text-gray-500 cursor-not-allowed hover:text-red-400">painter</a>, <a class="text-gray-500 cursor-not-allowed hover:text-red-400">photographer</a></h1>

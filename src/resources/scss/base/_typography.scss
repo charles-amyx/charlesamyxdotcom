@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply leading-tight mt-0 mb-6;
+  @apply font-serif leading-snug tracking-normal mt-0 mb-6;
 }
 
 .page-title {
@@ -16,7 +16,7 @@ h6 {
     @apply mb-8;
 
     &:first-child {
-      @apply border-b border-gray-500 pb-10 mb-10 leading-snug;
+      @apply border-b border-gray-500 pb-10 mb-10;
     }
   }
 }
