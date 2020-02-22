@@ -10,7 +10,7 @@
             alt="an abstract painting"
           />
           <div class="w-full mx-auto leading-relaxed md:w-7/12">
-            <p>I am currently the Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. I have a keen interest about inclusive, accessible, and compassionate design.</p>
+            <p>I am currently the Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. I have a keen interest around inclusive, accessible, and compassionate web design.</p>
             <h2 class="text-2xl md:text-4xl">Experience</h2>
 
             <div class="mb-16">
