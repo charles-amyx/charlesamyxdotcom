@@ -7,11 +7,11 @@
           <g-image
             class="pb-8 blend-overlay"
             src="~/assets/about.jpg"
-            alt="an english setter with his head cocked to one side"
+            alt="an abstract painting"
           />
           <div class="w-full mx-auto leading-relaxed md:w-7/12">
             <p>I am currently the Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. I have a keen interest about inclusive, accessible, and compassionate design.</p>
-            <h2 class="text-4xl">Experience</h2>
+            <h2 class="text-2xl md:text-4xl">Experience</h2>
 
             <div class="mb-16">
               <div class="text-sm font-light tracking-widest">04/2018 - 03/2018</div>
@@ -42,13 +42,13 @@
               >Responsible for Bonnier Motocycle Group digital properties, Photography group (popphoto.com and americanphotomag.com), redesigned and worked with front end developers for UX/UI tweaks and enhancements. Lead designer for the Outdoor Group’s long form editorial features.</p>
             </div>
 
-            <h2 class="text-4xl">Expertise</h2>
+            <h2 class="text-2xl md:text-4xl">Expertise</h2>
             <div class="mb-16">
               <p
                 class="text-base"
-              >Aside from traditional print and digital design, I am front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with CSS preprocessors, I find myself using vanilla CSS and a utility-first CSS philosophy.</p>
+              >Aside from traditional print and digital design, I am front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with CSS preprocessors, lately I find myself using vanilla CSS and a utility-first CSS philosophy. My use of javascript is mainly presentation and when I write it, it's of the vanilla variety.</p>
               <p class="text-base">
-                This site is using a static site generator called 
+                This site is built with a static site generator called 
                 <a href="https://gridsome.org/">Gridsome (VueJS)</a> and
                 <a href="https://tailwindcss.com/">TailwindCSS</a> for its styling.
               </p>
