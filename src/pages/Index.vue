@@ -3,18 +3,15 @@
     <section class="flex-1">
       <div class="font-serif text-gray-300 page-title">
         <a
-          class="inline text-gray-400 transition hover:text-indigo-400 focus:text-indigo-400"
-          v-scroll-reveal="{ delay: 100, distance: '12px', opacity: 0, origin: 'bottom' }"
+          class="inline-block text-gray-400 transition hover:text-indigo-400 alpha focus:text-indigo-400"
           href="/design"
         >designer</a>,
         <a
-          class="inline text-gray-400 transition hover:text-indigo-400 focus:text-indigo-400"
+          class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
           href="/paint"
-          v-scroll-reveal="{ delay: 200, distance: '12px', opacity: 0, origin: 'bottom' }"
         >painter</a>,
         <a
-          class="text-gray-500 cursor-not-allowed hover:text-red-400"
-          v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
+          class="inline-block text-gray-500 cursor-not-allowed alpha hover:text-red-400"
         >photographer</a>
       </div>
       <div class="content">
@@ -30,6 +27,8 @@
 </template>
 
 <script>
+import gsap from "gsap";
+import { TimelineMax } from "gsap";
 export default {
   metaInfo: {
     title: "Home",
@@ -51,6 +50,15 @@ export default {
         content: "https://charlesamyx.com"
       }
     ]
+  },
+  mounted() {
+    var abba = document.querySelectorAll(".alpha");
+    var tl = new TimelineMax({}),
+      start = .2, // allow to offset the start time
+      duration = 0.2
+    if (abba) {
+      tl.fromTo(abba, { y: -60, opacity: 0 }, {duration,  ease: "sine.out", y: 0, opacity: 1 });
+    }
   }
 };
 </script>

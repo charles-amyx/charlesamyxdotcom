@@ -50,6 +50,13 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Photo',
+        path: './content/photo/**/*.md'
+      }
+    },
+    {
       use: "gridsome-plugin-service-worker",
       options: {
         networkFirst: {
