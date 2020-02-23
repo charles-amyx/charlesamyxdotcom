@@ -5,7 +5,7 @@
       <div class="content">
         <div class="w-full">
           <g-image
-            class="pb-8"
+            class="hidden pb-8 blend-overlay md:block"
             src="~/assets/about.jpg"
             alt="an abstract painting"
           />
@@ -39,14 +39,14 @@
               <div class="mb-6 font-medium">Digital Art Director</div>
               <p
                 class="text-base"
-              >Responsible for Bonnier Motocycle Group digital properties, Photography group (popphoto.com and americanphotomag.com), redesigned and worked with front end developers for UX/UI tweaks and enhancements. Lead designer for the Outdoor Group’s long form editorial features.</p>
+              >Responsible for Bonnier Motocycle Group digital properties, Photography group, redesigned and worked with front end developers for UX/UI tweaks and enhancements. Lead designer for the Outdoor Group’s long form editorial features.</p>
             </div>
 
             <h2 class="text-2xl md:text-4xl">Expertise</h2>
             <div class="mb-16">
               <p
                 class="text-base"
-              >Along with traditional print and digital design, I am front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with SASS, I find myself lately using PostCSS and a utility-first CSS philosophy. My use of javascript is mainly presentational and when I do write it, it's of the vanilla variety.</p>
+              >Along with traditional print and digital design, I am a front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with SASS, I find myself lately using PostCSS and a utility-first CSS philosophy. My use of javascript is mainly presentational and when I do write it, it's of the vanilla variety.</p>
               <p class="text-base">
                 This site is built with a static site generator called 
                 <a href="https://gridsome.org/">Gridsome (VueJS)</a> and uses

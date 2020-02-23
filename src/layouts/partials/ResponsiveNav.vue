@@ -23,7 +23,7 @@
 
     <button
       id="mobile-nav-toggle"
-      class="fixed bottom-0 z-50 flex items-center justify-center block w-full h-16 font-bold text-white border-none mobile-nav-toggle focus:outline-none md:hidden"
+      class="fixed top-0 right-0 z-50 flex items-center justify-end block w-auto h-16 pt-2 pr-6 font-bold text-red-200 border-none mobile-nav-toggle focus:outline-none md:hidden"
       :class="toggleNav ? 'menu-toggle-active': ''"
       aria-expanded="false"
       aria-controls="mobile-nav"
@@ -32,9 +32,9 @@
       <span class="mr-2 font-medium mobile-nav-label">Menu</span>
 
       <span class="mobile-nav-icon" aria-hidden="true">
-        <span class="block w-6 mb-1 transition bg-white mobile-nav-icon-line"></span>
-        <span class="block w-6 mb-1 transition bg-white mobile-nav-icon-line"></span>
-        <span class="block w-6 transition bg-white mobile-nav-icon-line"></span>
+        <span class="block w-6 mb-1 transition bg-red-600 mobile-nav-icon-line"></span>
+        <span class="block w-6 mb-1 transition bg-red-500 mobile-nav-icon-line"></span>
+        <span class="block w-6 transition bg-red-400 mobile-nav-icon-line"></span>
       </span>
     </button>
   </div>
