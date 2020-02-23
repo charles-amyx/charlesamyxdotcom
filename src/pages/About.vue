@@ -13,7 +13,8 @@
             <p>I am currently the Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. I have a keen interest around inclusive, accessible, and compassionate web design.</p>
             <h2 class="text-2xl md:text-4xl">Experience</h2>
 
-            <div class="mb-16">
+            <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
+>
               <div class="text-sm font-light tracking-widest">04/2018 - 03/2018</div>
               <div class="font-extrabold tracking-wide">University of Michigan | Michigan Creative</div>
               <div class="mb-6 font-medium">Senior Web Designer</div>
@@ -22,7 +23,7 @@
               >Primary designer for all web projects. Additionally, I build many of the sites I've designed. My role includes mentoring and guiding junior designers, advocating for accessibility, practicing kind and inclusive design, and communicating best practices for the web to all of our campus partners.</p>
             </div>
 
-            <div class="mb-16">
+            <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">
               <div class="text-sm font-light tracking-widest">02/2015 - 04/2018</div>
               <div
                 class="font-extrabold tracking-wide"
@@ -33,7 +34,7 @@
               >Participated in and executed the College of Engineering brand refresh, designed and built the front end for a new News Center, events site, and five department themes, designed and retrofitted engin.umich.edu to be responsive, design and built fully responsive emails for the college and six departments.</p>
             </div>
 
-            <div class="mb-16">
+            <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">
               <div class="text-sm font-light tracking-widest">01/2006 - 02/2015</div>
               <div class="font-extrabold tracking-wide">Bonnier Corporation</div>
               <div class="mb-6 font-medium">Digital Art Director</div>
@@ -43,7 +44,7 @@
             </div>
 
             <h2 class="text-2xl md:text-4xl">Expertise</h2>
-            <div class="mb-16">
+            <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">
               <p
                 class="text-base"
               >Along with traditional print and digital design, I am a front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with SASS, I find myself lately using PostCSS and a utility-first CSS philosophy. My use of javascript is mainly presentational and when I do write it, it's of the vanilla variety.</p>

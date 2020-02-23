@@ -9,6 +9,7 @@
             class="w-full px-3 my-3 overflow-hidden md:w-1/3"
             v-for="entry in $page.allPaint.edges"
             :key="entry.node.id"
+            v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
           >
             <article
               class="rounded-sm shadow-lg group"

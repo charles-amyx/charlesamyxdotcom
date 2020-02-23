@@ -2,18 +2,18 @@
   <div>
     <nav
       id="mobile-nav"
-      class="fixed top-0 left-0 z-50 w-full h-screen pt-12 overflow-y-auto mobile-nav md:hidden"
+      class="fixed top-0 left-0 z-50 flex flex-col justify-center w-full h-screen overflow-y-auto mobile-nav md:hidden"
       :class="toggleNav ? 'menu-visible': ''"
     >
-      <ul>
+      <ul class="text-center">
         <li
-          class="mb-4 level-1 md:mr-4 md:mb-0"
+          class="mb-6 level-1 md:mr-4 md:mb-0"
           v-for="element in $static.metadata.mobileMenu"
           :key="element.name"
         >
           <g-link
             :to="element.link"
-            class="block px-5 py-2 text-3xl text-white link hover:text-pink-500"
+            class="block py-2 text-3xl text-white link hover:text-pink-500"
             active-class="is-active-link-mb"
             exact-active-class="text-red-500 active"
           >{{ element.name }}</g-link>

@@ -9,6 +9,7 @@
             class="w-full px-2 mb-8 md:w-1/3"
             v-for="entry in $page.allDesign.edges"
             :key="entry.node.id"
+            v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
           >
             <article
               class="flex-1 h-full overflow-hidden transition bg-white rounded-sm shadow-lg group hover:shadow-2xl article-card"

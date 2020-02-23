@@ -2,13 +2,14 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from "~/layouts/Default.vue";
-
+import VueScrollReveal from 'gridsome-scroll-reveal';
 //import '~/resources/js/main.js'
 
 export default function(Vue, { router, head, }) {
   const baseUrl = process.env.URL || process.env.GRIDSOME_BASE_PATH
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
+  Vue.use(VueScrollReveal);
   // Add attributes to HTML tag
   head.htmlAttrs = { lang: "en", class: "min-h-full antialiased" };
 

@@ -4,13 +4,18 @@
       <div class="font-serif text-gray-300 page-title">
         <a
           class="inline text-gray-400 transition hover:text-indigo-400 focus:text-indigo-400"
+          v-scroll-reveal="{ delay: 100, distance: '12px', opacity: 0, origin: 'bottom' }"
           href="/design"
         >designer</a>,
         <a
           class="inline text-gray-400 transition hover:text-indigo-400 focus:text-indigo-400"
           href="/paint"
+          v-scroll-reveal="{ delay: 200, distance: '12px', opacity: 0, origin: 'bottom' }"
         >painter</a>,
-        <a class="text-gray-500 cursor-not-allowed hover:text-red-400">photographer</a>
+        <a
+          class="text-gray-500 cursor-not-allowed hover:text-red-400"
+          v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
+        >photographer</a>
       </div>
       <div class="content">
         <p class="text-lg tracking-wide">
