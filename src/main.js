@@ -3,8 +3,6 @@
 
 import DefaultLayout from "~/layouts/Default.vue";
 import VueScrollReveal from 'gridsome-scroll-reveal';
-import gsap from "gsap";
-import { TimelineMax } from 'gsap'
 //import '~/resources/js/main.js'
 
 export default function(Vue, { router, head, }) {
