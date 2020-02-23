@@ -52,6 +52,7 @@ module.exports = {
       use: "gridsome-plugin-service-worker",
       options: {
         networkFirst: {
+          cacheName: "cea-v1",
           routes: [
             "/",
             /\.(js|css|png)$/, // means "every JS, CSS, and PNG images"
@@ -63,11 +64,13 @@ module.exports = {
       use: "gridsome-plugin-manifest",
       options: {
         background_color: "#000000",
+        display: "standalone",
         icon_path: "./src/assets/img/icon.png",
         name: "Charles E. Amyx, III",
         short_name: "CEAmyxIII",
         theme_color: "#284052",
         lang: "en",
+        start_url: "/"
       },
     },
     {
