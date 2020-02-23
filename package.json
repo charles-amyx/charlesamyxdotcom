@@ -15,6 +15,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
     "gridsome": "^0.7.13",
+    "gridsome-plugin-robots-txt": "^1.0.2",
     "gridsome-scroll-reveal": "^1.0.11",
     "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
     "postcss-import": "^12.0.1",
