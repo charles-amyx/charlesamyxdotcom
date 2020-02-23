@@ -9,6 +9,7 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 
 module.exports = {
   siteName: 'C. E. Amyx, III',
+  siteUrl: 'https://charlesamyx.com',
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
