@@ -11,4 +11,4 @@ image_caption: Dearborn's refreshing refresh
 
 ![Some components for Dearborn](./images/dearborn-components.jpg)
 
-[Site](https://umdearborn.edu/)
+[Visit site](https://umdearborn.edu/)

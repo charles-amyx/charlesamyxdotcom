@@ -13,7 +13,7 @@
         >
           <g-link
             :to="element.link"
-            class="block py-2 text-3xl text-white link hover:text-pink-500"
+            class="block py-2 text-4xl font-light tracking-wider text-white uppercase link hover:text-pink-500"
             active-class="is-active-link-mb"
             exact-active-class="text-red-500 active"
           >{{ element.name }}</g-link>
@@ -23,7 +23,7 @@
 
     <button
       id="mobile-nav-toggle"
-      class="fixed top-0 right-0 z-50 flex items-center justify-end block w-auto h-16 pt-2 pr-6 font-bold text-red-200 border-none mobile-nav-toggle focus:outline-none md:hidden"
+      class="fixed top-0 right-0 z-50 flex items-center justify-end block w-auto h-16 pt-2 pr-6 font-bold border-none mobile-nav-toggle focus:outline-none md:hidden"
       :class="toggleNav ? 'menu-toggle-active': ''"
       aria-expanded="false"
       aria-controls="mobile-nav"
@@ -32,9 +32,9 @@
       <span class="mr-2 font-medium mobile-nav-label">Menu</span>
 
       <span class="mobile-nav-icon" aria-hidden="true">
-        <span class="block w-6 mb-1 transition bg-red-600 mobile-nav-icon-line"></span>
-        <span class="block w-6 mb-1 transition bg-red-500 mobile-nav-icon-line"></span>
-        <span class="block w-6 transition bg-red-400 mobile-nav-icon-line"></span>
+        <span class="block w-6 mb-1 transition mobile-nav-icon-line"></span>
+        <span class="block w-6 mb-1 transition mobile-nav-icon-line"></span>
+        <span class="block w-6 transition mobile-nav-icon-line"></span>
       </span>
     </button>
   </div>
@@ -64,7 +64,24 @@ export default {
   methods: {
     toggle() {
       this.toggleNav = !this.toggleNav;
-    }
-  }
+      document.body.classList.toggle("menu-open");
+    },
+    handleSCroll (event) {
+        let header = document.querySelector(".mobile-nav-toggle");
+        if (window.scrollY > 200 && !header.className.includes('menu-toggle-change')) {
+        header.classList.add('menu-toggle-change'); 
+        } else if (window.scrollY < 200) {
+          header.classList.remove('menu-toggle-change');
+        }
+      }
+    },
+    created () {
+      window.addEventListener('scroll', this.handleSCroll);
+
+    },
+    destroyed () {
+      window.removeEventListener('scroll', this.handleSCroll);
+    } 
+  
 };
 </script>

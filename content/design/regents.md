@@ -11,4 +11,4 @@ image_caption: A new home U-M's Regents.
 
 ![Some components for Dearborn](./images/regents-list.jpg)
 
-[Site](https://regents.umich.edu/)
+[Visit site](https://regents.umich.edu/)

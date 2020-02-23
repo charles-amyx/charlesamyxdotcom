@@ -11,4 +11,4 @@ image_caption: A new home for one of U-M's publishing arm.
 
 ![Some components for Dearborn](./images/publishing-article.jpg)
 
-[Site](https://publishing.umich.edu/)
+[Visit site](https://publishing.umich.edu/)

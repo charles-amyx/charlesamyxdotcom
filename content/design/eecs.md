@@ -11,4 +11,4 @@ image_caption: EECS has many many subsites
 
 ![EECS division page](./images/eecs-division.jpg)
 
-[Site](https://eecs.engin.umich.edu/)
+[Visit site](https://eecs.engin.umich.edu/)

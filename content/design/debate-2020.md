@@ -11,4 +11,4 @@ image_caption: This may be the fastest turnaround on a site I've ever done. I de
 
 ![Some components for Dearborn](./images/debate2020-about.jpg)
 
-[Site](https://debate2020.umich.edu/)
+[Visit site](https://debate2020.umich.edu/)

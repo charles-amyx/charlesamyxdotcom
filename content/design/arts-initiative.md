@@ -11,4 +11,4 @@ image_caption: A new initiative
 
 ![Get involved page of the arts initiative](./images/arts-get-involved.jpg)
 
-[Site](https://artsinitiative.umich.edu/)
+[Visit site](https://artsinitiative.umich.edu/)
