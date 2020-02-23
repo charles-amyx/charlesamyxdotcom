@@ -45,13 +45,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Paint',
-        path: './paint/**/*.md',
-        refs: {
-          category: {
-            typeName: 'Category',
-            create: true
-          }
-        }
+        path: './content/paint/**/*.md'
       }
     },
     {
@@ -82,19 +76,6 @@ module.exports = {
         id: 'UA-8525758-2',
         debug: {
           sendHitTask: process.env.NODE_ENV === 'production'
-        }
-      }
-    },
-    {
-      use: '@gridsome/plugin-sitemap',
-      options: {
-        cacheTime: 600000, // default
-        exclude: ['/exclude-me'],
-        config: {
-          '/about': {
-            changefreq: 'monthly',
-            priority: 0.7
-          }
         }
       }
     },

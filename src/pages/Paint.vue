@@ -11,7 +11,7 @@
             :key="entry.node.id"
           >
             <article
-              class="rounded-sm shadow-lg group hover:shadow-2xl article-card"
+              class="rounded-sm shadow-lg group"
             >
                 <figure>
                   <g-image
@@ -37,7 +37,7 @@ export default {
       { name: "author", content: "Charles E. Amyx, III" },
       {
         name: "description",
-        content: "Some sampling of design work from CE Amyx, III"
+        content: "Some sampling of artwork from CE Amyx, III"
       }
     ]
   }
@@ -49,6 +49,10 @@ export default {
     allPaint(sortBy: "title", order: ASC) {
       edges {
         node {
+          title
+          path
+          id
+          excerpt
           image(width:780)
           image_caption
         }

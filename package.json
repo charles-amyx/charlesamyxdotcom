@@ -14,7 +14,7 @@
     "@gridsome/plugin-sitemap": "^0.2.3",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
-    "gridsome": "^0.7.12",
+    "gridsome": "^0.7.13",
     "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
@@ -25,6 +25,6 @@
   "devDependencies": {
     "gridsome-plugin-manifest": "^0.3.4",
     "gridsome-plugin-service-worker": "^0.1.4",
-    "gridsome-plugin-tailwindcss": "^2.2.30"
+    "gridsome-plugin-tailwindcss": "^2.2.36"
   }
 }

@@ -67,6 +67,7 @@ export default {
         node {
           title
           path
+          id
           excerpt
           image(width:780)
           image_caption

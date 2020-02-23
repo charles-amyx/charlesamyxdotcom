@@ -46,10 +46,10 @@
             <div class="mb-16">
               <p
                 class="text-base"
-              >Aside from traditional print and digital design, I am front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with CSS preprocessors, lately I find myself using vanilla CSS and a utility-first CSS philosophy. My use of javascript is mainly presentation and when I write it, it's of the vanilla variety.</p>
+              >Along with traditional print and digital design, I am front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with SASS, I find myself lately using PostCSS and a utility-first CSS philosophy. My use of javascript is mainly presentational and when I do write it, it's of the vanilla variety.</p>
               <p class="text-base">
                 This site is built with a static site generator called 
-                <a href="https://gridsome.org/">Gridsome (VueJS)</a> and
+                <a href="https://gridsome.org/">Gridsome (VueJS)</a> and uses
                 <a href="https://tailwindcss.com/">TailwindCSS</a> for its styling.
               </p>
             </div>
