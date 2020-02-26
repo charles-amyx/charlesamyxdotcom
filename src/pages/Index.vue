@@ -11,7 +11,7 @@
           href="/paint"
         >painter</a>,
         <a
-          class="inline-block text-gray-500 cursor-not-allowed alpha hover:text-red-400"
+          class="inline-block text-gray-600 cursor-not-allowed alpha hover:text-red-400"
         >photographer</a>
       </div>
       <div class="content">
@@ -27,8 +27,6 @@
 </template>
 
 <script>
-// import gsap from "gsap";
-// import { TimelineMax } from "gsap";
 export default {
   metaInfo: {
     title: "Home",
@@ -50,15 +48,5 @@ export default {
         content: "https://charlesamyx.com"
       }
     ]
-  },
-  // mounted() {
-  //   var abba = document.querySelectorAll(".alpha");
-  //   var tl = new TimelineMax({}),
-  //     start = .2, // allow to offset the start time
-  //     duration = 0.2
-  //   if (abba) {
-  //     tl.fromTo(abba, { y: -60, opacity: 0 }, {duration,  ease: "sine.out", y: 0, opacity: 1 });
-  //   }
-  // }
-};
+  }}
 </script>

@@ -61,16 +61,4 @@ $transition-length: 0.5s;
       transform: translate3d(0, 0, 0);
     }
   }
-
-  .item {
-    transition: opacity 0.5s ease, transform $transition-length $transition-easing;
-    transform: translate3d(-50%, 0, 0);
-    transition-delay: $transition-length;
-
-    @for $i from 0 through 100 {
-      &:nth-child(#{$i}) {
-        transition-delay: $transition-length * $i / 8 + 0.5;
-      }
-    }
-  }
 }
