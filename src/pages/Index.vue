@@ -48,5 +48,6 @@ export default {
         content: "https://charlesamyx.com"
       }
     ]
-  }}
+  }
+};
 </script>

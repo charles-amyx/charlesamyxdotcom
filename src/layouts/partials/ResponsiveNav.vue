@@ -66,22 +66,23 @@ export default {
       this.toggleNav = !this.toggleNav;
       document.body.classList.toggle("menu-open");
     },
-    handleSCroll (event) {
-        let header = document.querySelector(".mobile-nav-toggle");
-        if (window.scrollY > 200 && !header.className.includes('menu-toggle-change')) {
-        header.classList.add('menu-toggle-change'); 
-        } else if (window.scrollY < 200) {
-          header.classList.remove('menu-toggle-change');
-        }
+    handleSCroll(event) {
+      let header = document.querySelector(".mobile-nav-toggle");
+      if (
+        window.scrollY > 200 &&
+        !header.className.includes("menu-toggle-change")
+      ) {
+        header.classList.add("menu-toggle-change");
+      } else if (window.scrollY < 200) {
+        header.classList.remove("menu-toggle-change");
       }
-    },
-    created () {
-      window.addEventListener('scroll', this.handleSCroll);
-
-    },
-    destroyed () {
-      window.removeEventListener('scroll', this.handleSCroll);
-    } 
-  
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleSCroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleSCroll);
+  }
 };
 </script>
