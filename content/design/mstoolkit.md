@@ -8,7 +8,7 @@ image_caption: A portal for patients and caregivers of MS.
 ---
 ## Project duration
 
-April 2018 - November 2028
+April 2018 - November 2018
 
 ## Role
 
