@@ -6,6 +6,13 @@ created: 2020-02-18
 image: ./images/debate.png
 image_caption: This may be the fastest turnaround on a site I've ever done. I designed and built the site in three days.
 ---
+## Project duration
+
+October 11 - 14 2019
+
+## Role
+
+Designer and developer.
 
 ![Home page of UM Dearborn](./images/debate2020-home.jpg)
 

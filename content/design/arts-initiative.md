@@ -6,6 +6,13 @@ created: 2020-02-18
 image: ./images/arts.png
 image_caption: A new initiative
 ---
+## Project duration
+
+December 2019 - January 2020
+
+## Role
+
+Designer with fit & finish for the front end of the site.
 
 ![Home page of the arts initiative](./images/arts-home.jpg)
 

@@ -6,9 +6,16 @@ created: 2020-02-19
 image: ./images/publishing.png
 image_caption: A new home for one of U-M's publishing arm.
 ---
+## Project duration
 
-![Home page of UM Dearborn](./images/publishing-home.jpg)
+July 2019 - October 2019
 
-![Some components for Dearborn](./images/publishing-article.jpg)
+## Role
+
+Designer.
+
+![Home page of UM Publishing](./images/publishing-home.jpg)
+
+![Some components for Publishing](./images/publishing-article.jpg)
 
 [Visit site](https://publishing.umich.edu/)
