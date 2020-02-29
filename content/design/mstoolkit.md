@@ -16,7 +16,7 @@ Designer, front end, and WordPress development.
 
 ## Details
 
-One of the most fulfilling projects our team has worked on. A rare instance where a site was tested with a focus comprised of individuals with MS. The site was a resounding success, validating our focus on outstanding accessibility. 
+One of the most fulfilling projects I've worked on. A rare instance where a site was tested with a focus comprised of individuals with MS. The site was a resounding success, validating our focus on outstanding accessibility. I also redesigned and produced all of the printable worksheets and readings.
 
 This was the first time I've used Lottie, a library that renders After Effects animations for the web. It was a delight creating cute, yet respectful, animations.
 
