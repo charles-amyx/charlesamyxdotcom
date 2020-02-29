@@ -4,9 +4,9 @@
       <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Design</h1>
       <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Some recent projects.</p>
       <div class="px-2">
-        <div class="flex flex-wrap items-stretch -mx-2 posts">
+        <div class="flex flex-wrap items-stretch -mx-3 posts">
           <div
-            class="w-full px-2 mb-8 md:w-1/3"
+            class="w-full px-3 mb-6 md:w-1/3"
             v-for="entry in $page.allDesign.edges"
             :key="entry.node.id"
             v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
