@@ -123,6 +123,10 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
+    }, extend: {
+      maxHeight: {
+        '360': '360px',
+      }
     },
     variants: {
       textColor: ['responsive', 'hover', 'focus', 'group-hover'],
