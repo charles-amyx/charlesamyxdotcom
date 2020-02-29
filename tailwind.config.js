@@ -125,7 +125,7 @@ module.exports = {
       },
     }, extend: {
       maxHeight: {
-        '360': '360px',
+        '340': '340px',
       }
     },
     variants: {
