@@ -16,8 +16,8 @@
             <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
 >
               <div class="text-sm font-light tracking-widest">04/2018 - 03/2018</div>
-              <div class="font-extrabold tracking-wide">University of Michigan | Michigan Creative</div>
-              <div class="mb-6 font-medium">Senior Web Designer</div>
+              <div class="text-xl font-bold tracking-wide">University of Michigan | Michigan Creative</div>
+              <div class="mb-6">Senior Web Designer</div>
               <p
                 class="text-base"
               >Primary designer for all web projects. Additionally, I build many of the sites I've designed. My role includes mentoring and guiding junior designers, advocating for accessibility, practicing kind and inclusive design, and communicating best practices for the web to all of our campus partners.</p>
@@ -25,10 +25,8 @@
 
             <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">
               <div class="text-sm font-light tracking-widest">02/2015 - 04/2018</div>
-              <div
-                class="font-extrabold tracking-wide"
-              >University of Michigan | College of Engineering</div>
-              <div class="mb-6 font-medium">Digital Design Lead</div>
+              <div class="text-xl font-bold tracking-wide">University of Michigan | College of Engineering</div>
+              <div class="mb-6">Digital Design Lead</div>
               <p
                 class="text-base"
               >Participated in and executed the College of Engineering brand refresh, designed and built the front end for a new News Center, events site, and five department themes, designed and retrofitted engin.umich.edu to be responsive, design and built fully responsive emails for the college and six departments.</p>
@@ -36,8 +34,8 @@
 
             <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">
               <div class="text-sm font-light tracking-widest">01/2006 - 02/2015</div>
-              <div class="font-extrabold tracking-wide">Bonnier Corporation</div>
-              <div class="mb-6 font-medium">Digital Art Director</div>
+              <div class="text-xl font-bold tracking-wide">Bonnier Corporation</div>
+              <div class="mb-6">Digital Art Director</div>
               <p
                 class="text-base"
               >Responsible for Bonnier Motocycle Group digital properties, Photography group, redesigned and worked with front end developers for UX/UI tweaks and enhancements. Lead designer for the Outdoor Group’s long form editorial features.</p>
@@ -47,7 +45,7 @@
             <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">
               <p
                 class="text-base"
-              >Along with traditional print and digital design, I am a front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with SASS, I find myself lately using PostCSS and a utility-first CSS philosophy. My use of javascript is mainly presentational and when I do write it, it's of the vanilla variety.</p>
+              >Along with traditional print and digital design, I am a front end developer with experience using VueJS, React, and a number of static site generators such as Hugo and 11ty. I strive to write accessible and semantic HTML and CSS. While I have extensive experience with SASS, I find myself lately using PostCSS and a utility-first CSS philosophy. My use of javascript is mainly presentational and&mdash;when I do write it&mdash;it's of the vanilla variety.</p>
               <p class="text-base">
                 This site is built with a static site generator called 
                 <a href="https://gridsome.org/">Gridsome (VueJS)</a> and uses

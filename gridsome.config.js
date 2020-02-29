@@ -129,14 +129,13 @@ module.exports = {
         }
       }
     },
-    // {
-    //   use: '@gridsome/plugin-critical',
-    //   options: {
-    //     paths: ['/'],
-    //     width: 1300,
-    //     height: 900
-    //   }
-    // },
+    {
+      use: '~/src/plugins/gridsome-source-instagram',
+      options: {
+        username: 'archer_the_setter', 
+        typeName: 'Photo'
+      }
+    },
   ],
   transformers: {
     remark: {
