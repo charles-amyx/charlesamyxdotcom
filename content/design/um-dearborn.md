@@ -1,5 +1,5 @@
 ---
-title: UM Dearborn
+title: UM-Dearborn
 category: Design
 excerpt: Not a redesign, a refresh.
 created: 2019-02-18
