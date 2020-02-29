@@ -5,7 +5,11 @@
       <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">My dog's instagram for now.</p>
       <div v-if="$page.posts.edges" class="px-2">
         <div class="flex flex-wrap items-stretch -mx-3 posts">
-          <div class="h-full px-3 mb-6 overflow-hidden w-100 md:w-1/3 max-h-340" v-for="edge in $page.posts.edges" :key="edge.node.id">
+          <div
+            class="h-full px-3 mb-6 overflow-hidden w-100 md:w-1/3 max-h-340"
+            v-for="edge in $page.posts.edges"
+            :key="edge.node.id"
+          >
             <g-image
               v-if="edge.node.display_url"
               :src="edge.node.display_url"
@@ -14,6 +18,22 @@
             />
           </div>
         </div>
+      </div>
+      <div v-masonry transition-duration="0.3s" item-selector=".item">
+        <div v-masonry-tile class="item" v-for="i in 50">
+          <!-- item -->
+          <div class="max-w-sm m-4 overflow-hidden bg-white rounded shadow-lg">
+            <img
+              class="w-full"
+              :src="'https://picsum.photos/300/300?random=' + i"
+              alt="Sunset in the mountains"
+            />
+          </div>
+          <!-- END item -->
+        </div>
+      </div>
+      <div v-for="n in 20">
+        <img v-bind:src="`./images/${n}.jpg`" />
       </div>
     </section>
   </Layout>

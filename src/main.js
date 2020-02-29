@@ -3,6 +3,10 @@
 
 import DefaultLayout from "~/layouts/Default.vue";
 import VueScrollReveal from 'gridsome-scroll-reveal';
+import Vue from 'vue'
+
+// import ES6 style
+import {VueMasonryPlugin} from 'vue-masonry';
 //import '~/resources/js/main.js'
 
 export default function(Vue, { router, head, }) {
@@ -10,6 +14,7 @@ export default function(Vue, { router, head, }) {
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
   Vue.use(VueScrollReveal);
+  Vue.use(VueMasonryPlugin)
   // Add attributes to HTML tag
   head.htmlAttrs = { lang: "en", class: "min-h-full antialiased" };
 
