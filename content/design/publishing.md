@@ -2,7 +2,7 @@
 title: Publishing
 category: Design
 excerpt: A new home for one of U-M's publishing arm.
-created: 2020-02-19
+created: 2019-06-19
 image: ./images/publishing.png
 image_caption: A new home for one of U-M's publishing arm.
 ---

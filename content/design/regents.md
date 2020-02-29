@@ -2,7 +2,7 @@
 title: The Regents of the University of Michigan
 category: Design
 excerpt: 
-created: 2020-02-19
+created: 2019-05-19
 image: ./images/regents.png
 image_caption: A new home U-M's Regents.
 ---
@@ -12,7 +12,7 @@ May 2019 - November 2019
 
 ## Role
 
-Designer and developer. The site was built using Hugo.
+Designer and developer. The site was built using Hugo and TailwindCSS.
 
 ![Home page of Regents](./images/regents-home.jpg)
 

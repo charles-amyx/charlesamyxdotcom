@@ -237,3 +237,8 @@ body.menu-open {
 .blend-overlay {
   mix-blend-mode: overlay;
 }
+.content.post {
+  h2 {
+    @apply mb-1 text-3xl;
+  }
+}

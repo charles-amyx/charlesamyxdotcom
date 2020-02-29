@@ -2,7 +2,7 @@
 title: UM Dearborn
 category: Design
 excerpt: Not a redesign, a refresh.
-created: 2020-02-18
+created: 2019-02-18
 image: ./images/dearborn.png
 image_caption: Dearborn's refreshing refresh
 ---
@@ -14,7 +14,7 @@ February 2019 - November 2019
 
 ## Role
 
-Designer and developer (styleguide and HTML/CSS/JS prototypes of components).
+Designer and developer of the styleguide (HTML/CSS/JS prototypes of components). Styleguide was built with VuePress, my first time using VueJS.
 
 ![Home page of UM Dearborn](./images/dearborn-home.jpg)
 

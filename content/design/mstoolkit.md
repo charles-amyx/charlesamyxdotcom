@@ -2,7 +2,7 @@
 title: My MSToolkit
 category: Design
 excerpt: A portal for patients and caregivers of MS.
-created: 2020-02-28
+created: 2018-11-11
 image: ./images/mstoolkit.png
 image_caption: A portal for patients and caregivers of MS.
 ---
@@ -14,7 +14,11 @@ April 2018 - November 2018
 
 Designer, front end, and WordPress development.
 
-Probably one of the most fulfilling projects I've worked on. The site was tested with a focus comprised of individuals with MS. The site was a resounding success which validated some of the above and beyond accessibilty we focused on. It was also a lot of fun working on the animated icons. This site was the first time I've used Lottie, a library that renders After Effects animations for the web.
+## Details
+
+One of the most fulfilling projects our team has worked on. A rare instance where a site was tested with a focus comprised of individuals with MS. The site was a resounding success, validating our focus on outstanding accessibility. 
+
+This was the first time I've used Lottie, a library that renders After Effects animations for the web. It was a delight creating cute, yet respectful, animations.
 
 ![Home page of my ms toolkit](./images/ms-home.jpg)
 
