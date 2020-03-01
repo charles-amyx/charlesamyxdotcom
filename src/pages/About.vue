@@ -51,6 +51,7 @@
                 <a href="https://gridsome.org/">Gridsome (VueJS)</a> and uses
                 <a href="https://tailwindcss.com/">TailwindCSS</a> for its styling.
               </p>
+              <p class="text-base">It is also a redesign in progress, an approach inspired by Frank Chimero. I like tinkering.</p>
             </div>
           </div>
         </div>
