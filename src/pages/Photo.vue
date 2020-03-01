@@ -6,7 +6,7 @@
       <div v-masonry transition-duration="0.3s" item-selector=".item" :fit-width="true">
         <div v-masonry-tile class="item" v-for="(item,i) in items" :key="i">
           <div class="m-3 overflow-hidden bg-white rounded shadow-lg max-w-22">
-            <img class="w-full" :src="item.src" />
+            <g-image :class="w-full" :src="item.src" />
           </div>
         </div>
       </div>
