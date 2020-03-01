@@ -13,6 +13,10 @@
       "link": "paint"
     },
     {
+      "name": "Photo",
+      "link": "photo"
+    },
+    {
       "name": "About",
       "link": "about"
     },

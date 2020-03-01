@@ -129,13 +129,6 @@ module.exports = {
         }
       }
     },
-    {
-      use: '~/src/plugins/gridsome-source-instagram',
-      options: {
-        username: 'archer_the_setter', 
-        typeName: 'Photo'
-      }
-    },
   ],
   transformers: {
     remark: {

@@ -11,7 +11,8 @@
           href="/paint"
         >painter</a>,
         <a
-          class="inline-block text-gray-600 cursor-not-allowed alpha hover:text-red-400"
+          class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
+          href="/photo"
         >photographer</a>
       </div>
       <div class="content">

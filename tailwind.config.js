@@ -126,6 +126,9 @@ module.exports = {
     }, extend: {
       maxHeight: {
         '340': '340px',
+      },
+      maxWidth: {
+        '22': '21rem',
       }
     },
     variants: {
