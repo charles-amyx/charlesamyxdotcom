@@ -2,31 +2,22 @@
   <Layout>
     <section class="flex-1">
       <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Photography</h1>
-      <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Light bends</p>
-      <div v-masonry transition-duration="0.3s" item-selector=".item" :fit-width="true">
-        <div v-masonry-tile class="item" v-for="(item,i) in items" :key="i">
-          <div class="m-3 overflow-hidden bg-white rounded shadow-lg max-w-22">
-            <g-image :class="w-full" :src="item.src" />
+      <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Light bends.</p>
+      <ClientOnly>
+        <div v-masonry transition-duration="0.3s" item-selector=".item" :fit-width="true">
+          <div v-masonry-tile class="item" v-for="(item,i) in items" :key="i">
+            <div class="m-3 overflow-hidden bg-white rounded shadow-lg max-w-22">
+              <g-image class="w-full" :src="item.src" />
+            </div>
           </div>
         </div>
-      </div>
+      </ClientOnly>
     </section>
   </Layout>
 </template>
 
-<page-query>
-
-</page-query>
-
 <script>
-// function importAll(r) {
-//   let images = {};
-//   r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-//   return images;
-// }
-
-// const images = importAll(require.context('./images/', true, /\.(jpg)$/));
-
+import Vue from "vue";
 export default {
   metaInfo: {
     title: "Photo",
@@ -37,6 +28,13 @@ export default {
         content: "Some sampling of photography work from CE Amyx, III"
       }
     ]
+  },
+  beforeMount() {
+    const VueMasonryPlugin = require("vue-masonry").VueMasonryPlugin;
+    Vue.use(VueMasonryPlugin);
+    if (typeof this.$redrawVueMasonry === "function") {
+      this.$redrawVueMasonry();
+    }
   },
   data: function() {
     return {
