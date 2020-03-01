@@ -15,15 +15,7 @@
 </template>
 
 <page-query>
-	query Photos{
-		posts: allPhoto{
-			edges {
-				node {
-					display_url
-				}
-			}
-		}
-}
+
 </page-query>
 
 <script>
