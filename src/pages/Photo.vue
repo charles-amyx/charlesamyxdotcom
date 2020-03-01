@@ -32,9 +32,9 @@
           <!-- END item -->
         </div>
       </div>
-      <div v-for="n in 20">
-        <img v-bind:src="`./images/${n}.jpg`" />
-      </div>
+      <!-- <div v-for="n in 20">
+        <g-image :src="`/images/${n}.jpg`" />
+      </div> -->
     </section>
   </Layout>
 </template>
