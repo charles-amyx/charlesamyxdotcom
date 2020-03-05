@@ -68,14 +68,7 @@ export default {
       { name: "author", content: "Charles E. Amyx, III" },
       {
         name: "description",
-        meta: [
-          { name: "author", content: "Charles E. Amyx, III" },
-          {
-            name: "description",
-            content:
-              "All about Charles E. Amyx, III, a digital art director in Ann Arbor, MI"
-          }
-        ]
+        content: "All about Charles E. Amyx, III, a digital art director in Ann Arbor, MI"
       }
     ]
   }
