@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="flex-1">
-      <div class="font-serif text-gray-300 page-title">
+      <div class="font-serif leading-tight text-gray-300 page-title">
         <a
           class="inline-block text-gray-400 transition hover:text-indigo-400 alpha focus:text-indigo-400"
           href="/design"
