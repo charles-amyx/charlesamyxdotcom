@@ -14,6 +14,10 @@ October 11 - 14 2019
 
 Designer and developer. Site is built on Hugo with TailwindCSS.
 
+## Background
+
+Again, this may have been the fastest turnaround on a site I've ever done. I designed and built the site in three days.
+
 ![Home page of UM Dearborn](./images/debate2020-home.jpg)
 
 ![Some components for Dearborn](./images/debate2020-about.jpg)

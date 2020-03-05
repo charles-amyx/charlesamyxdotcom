@@ -12,7 +12,11 @@ May 2018 - February 2019
 
 ## Role
 
-Designer.
+Designer and development of some of their custom Gutenberg blocks (using React) for their WordPress theme.
+
+## Background
+
+A storied institution within the College of Engineering sorely neeeded a new presence. Additonally, they need a theme they could port to their numerous sub-sites.
 
 ![Home page of EECS](./images/eecs-home.jpg)
 

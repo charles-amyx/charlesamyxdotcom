@@ -14,7 +14,7 @@ May 2016 - August 2017
 
 Designer, front end, and WordPress development.
 
-## Details
+## Background
 
 During my three-year tenure at the College of Engineering, I designed and built this and a number of other high profile sites all at the same time.
 

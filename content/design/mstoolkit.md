@@ -14,7 +14,7 @@ April 2018 - November 2018
 
 Designer, front end, and WordPress development.
 
-## Details
+## Background
 
 One of the most fulfilling projects I've worked on. A rare instance where a site was tested with a focus comprised of individuals with MS. The site was a resounding success, validating our focus on outstanding accessibility. I also redesigned and produced all of the printable worksheets and readings.
 

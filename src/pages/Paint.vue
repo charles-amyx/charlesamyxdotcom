@@ -62,3 +62,17 @@ export default {
   }
 </page-query>
 
+<script>
+export default {
+   metaInfo: {
+    title: "Paint",
+    meta: [
+      { name: "author", content: "Charles E. Amyx, III" },
+      {
+        name: "description",
+        content: "These represent how I currently feel about everything."
+      }
+    ]
+  },
+}
+</script>
