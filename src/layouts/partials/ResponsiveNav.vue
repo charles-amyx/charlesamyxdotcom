@@ -7,13 +7,13 @@
     >
       <ul class="text-center">
         <li
-          class="mb-6 level-1 md:mr-4 md:mb-0"
+          class="mb-4 level-1 md:mr-4 md:mb-0"
           v-for="element in $static.metadata.mobileMenu"
           :key="element.name"
         >
           <g-link
             :to="element.link"
-            class="block py-2 text-4xl font-light tracking-wider text-white uppercase link hover:text-pink-500"
+            class="block py-1 text-4xl font-light tracking-wider text-white uppercase link hover:text-pink-500"
             active-class="is-active-link-mb"
             exact-active-class="text-red-500 active"
           >{{ element.name }}</g-link>
