@@ -7,6 +7,9 @@ import Vue from 'vue'
 //import '~/resources/js/main.js'
 
 export default function(Vue, { router, head, isClient }) {
+  // Remove "generator" meta tag
+  const gIndex = head.meta.findIndex(e => e.name === 'generator')
+  if (gIndex !== -1) head.meta.splice(gIndex, 1)
   const baseUrl = process.env.URL || process.env.GRIDSOME_BASE_PATH
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
