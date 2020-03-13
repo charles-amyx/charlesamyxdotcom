@@ -11,7 +11,7 @@
           />
           <div class="w-full mx-auto leading-relaxed md:w-7/12">
             <p>I am currently the Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. I have a keen interest around inclusive, accessible, and compassionate web design.</p>
-            <h2 class="text-2xl md:text-4xl">Experience</h2>
+            <h2 class="text-2xl md:text-4xl" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">Experience</h2>
 
             <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
 >
@@ -41,7 +41,7 @@
               >Responsible for Bonnier Motocycle Group digital properties, Photography group, redesigned and worked with front end developers for UX/UI tweaks and enhancements. Lead designer for the Outdoor Group’s long form editorial features.</p>
             </div>
 
-            <h2 class="text-2xl md:text-4xl">Expertise</h2>
+            <h2 class="text-2xl md:text-4xl" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">Expertise</h2>
             <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">
               <p
                 class="text-base"
