@@ -45,7 +45,7 @@
             <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }">
               <p
                 class="text-base"
-              >Along with traditional print and digital design, I am a front end developer with experience using VueJS, React, a number of static site generators such as Hugo and 11ty, and JAM Stack in general.  I strive to write accessible and semantic HTML and CSS. While I have extensive experience with SASS, I find myself lately using PostCSS and a utility-first CSS philosophy. My use of javascript is mainly presentational and&mdash;when I do write it&mdash;it's of the vanilla variety.</p>
+              >Along with traditional print and digital design, I am a front end developer with experience using VueJS, React, a number of static site generators such as Hugo and 11ty, and Jamstack in general.  I strive to write accessible and semantic HTML and CSS. While I have extensive experience with SASS, I find myself lately using PostCSS and a utility-first CSS philosophy. My use of javascript is mainly presentational and&mdash;when I do write it&mdash;it's of the vanilla variety.</p>
               <p class="text-base">
                 This site is built with a static site generator called 
                 <a href="https://gridsome.org/">Gridsome (VueJS)</a> and uses
