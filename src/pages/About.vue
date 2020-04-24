@@ -15,7 +15,7 @@
 
             <div class="mb-16" v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
 >
-              <div class="text-sm font-light tracking-widest">04/2018 - 03/2018</div>
+              <div class="text-sm font-light tracking-widest">04/2018 - PRESENT</div>
               <div class="text-xl font-bold tracking-wide">University of Michigan | Michigan Creative</div>
               <div class="mb-6">Senior Web Designer</div>
               <p
