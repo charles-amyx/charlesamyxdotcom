@@ -2,10 +2,11 @@
 title: Arts Initiative
 category: Design
 excerpt: A new presidential initiative needed a singular place to help its vision coalesce.
-created: 2020-02-18
+created: 2020-01-19
 image: ./images/arts.png
 image_caption: A new initiative
 ---
+
 ## Project duration
 
 December 2019 - January 2020
