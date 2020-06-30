@@ -12,7 +12,11 @@
                         alt="an abstract painting"
                     />
                     <div class="w-full mx-auto leading-relaxed md:w-7/12">
-                        <p>I am currently the Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. I have a keen interest around inclusive, accessible, and compassionate web design.</p>
+                        <p>
+                            I am currently the Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. I have a keen interest around inclusive, accessible, and compassionate web design.
+                            <br />
+                            <br />I'm a proud Filipino, escrimador, and fly fisherman.
+                        </p>
                         <h2
                             class="text-2xl md:text-4xl"
                             v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
