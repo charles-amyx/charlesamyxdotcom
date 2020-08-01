@@ -1,26 +1,26 @@
 ---
-title: SEAS
+title: Undergraduate Admissions
 category: Design
-excerpt: The redesigned School for Environment and Sustainability.
-created: 2020-05-30
-image: ./images/seas.png
-image_caption: The School for Environment and Sustainability
+excerpt: The redesigned and overhauled Undergraduate Admissions site for U-M.
+created: 2020-08-01
+image: ./images/oua.png
+image_caption: The OUA
 ---
 
 ## Project duration
 
-April 2019 - May 2020
+October 2019 - July 2020
 
 ## Role
 
-Designer and contributed to the fit & finish for the front end of the site.
+Designer.
 
 ## Background
 
-A complete redesign of U-M's School for Environment and Sustainability. Initial phases included interviews with faculty and students. Many iterations to get this just right. Our whole team is very proud of this project!
+A complete redesign of U-M's Undergraduate Admissions site. There was so much work and effort before I picked it up. The design process for this went so smoothly that it feels minuscule in comparison to everyone elses' work. Another site we're very proud of.
 
-![Home page of SEAS](./images/seas-home.jpg)
+![Home page of OUA](./images/oua-home.jpg)
 
-![An example of a main landing page](./images/seas-landing.jpg)
+![An example of a main landing page](./images/oua-landing.jpg)
 
-[Visit site](https://seas.umich.edu/)
+[Visit site](https://admissions.umich.edu/)
