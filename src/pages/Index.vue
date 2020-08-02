@@ -4,15 +4,15 @@
       <div class="font-serif leading-tight text-gray-300 page-title">
         <a
           class="inline-block text-gray-400 transition hover:text-indigo-400 alpha focus:text-indigo-400"
-          href="/design"
+          href="/design/"
         >designer</a>,
         <a
           class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
-          href="/paint"
+          href="/paint/"
         >painter</a>,
         <a
           class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
-          href="/photo"
+          href="/photo/"
         >photographer</a>
       </div>
       <div class="content">
