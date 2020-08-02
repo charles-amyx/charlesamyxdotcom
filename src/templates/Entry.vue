@@ -22,7 +22,7 @@
         <div>
           <g-link
             class="block text-gray-400 transition hover:text-indigo-400"
-            to="/design"
+            to="/design/"
           >Back to Design</g-link>
         </div>
       </div>
