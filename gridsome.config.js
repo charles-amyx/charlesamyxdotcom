@@ -55,6 +55,13 @@ module.exports = {
       },
     },
     {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Blog",
+        path: "./content/blog/**/*.md",
+      },
+    },
+    {
       use: "gridsome-plugin-service-worker",
       options: {
         networkFirst: {
@@ -141,6 +148,12 @@ module.exports = {
     },
   },
   templates: {
+    Blog: [
+      {
+        path: "/blog/:title",
+        component: "./src/templates/Blog.vue",
+      },
+    ],
     Design: [
       {
         path: "/design/:title",
