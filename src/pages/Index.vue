@@ -2,18 +2,20 @@
     <Layout>
         <section class="flex-1">
             <div class="font-serif leading-tight text-gray-300 page-title">
-                <g-link
-                    class="inline-block text-gray-400 transition hover:text-indigo-400 alpha focus:text-indigo-400"
-                    to="/design/"
-                >designer</g-link>,
-                <g-link
-                    class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
-                    to="/paint/"
-                >painter</g-link>,
-                <g-link
-                    class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
-                    to="/photo/"
-                >photographer</g-link>
+                <h1>
+                    <g-link
+                        class="inline-block text-gray-400 transition hover:text-indigo-400 alpha focus:text-indigo-400"
+                        to="/design/"
+                    >designer</g-link>,
+                    <g-link
+                        class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
+                        to="/paint/"
+                    >painter</g-link>,
+                    <g-link
+                        class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
+                        to="/photo/"
+                    >photographer</g-link>
+                </h1>
             </div>
             <div class="content">
                 <p class="text-lg tracking-wide">

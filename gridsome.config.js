@@ -97,7 +97,7 @@ module.exports = {
       use: "gridsome-plugin-robots-txt",
       options: {
         host: "https://charlesamyx.com",
-        sitemap: "https://charlesamyx/sitemap.xml",
+        sitemap: "https://charlesamyx.com/sitemap.xml",
         policy: [
           {
             userAgent: "Googlebot",
