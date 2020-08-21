@@ -13,11 +13,7 @@
                     >
                         <article class="rounded-sm shadow-lg group">
                             <figure>
-                                <g-image
-                                    class="block loaded"
-                                    :alt="entry.node.image_caption"
-                                    :src="entry.node.image"
-                                />
+                                <g-image :alt="entry.node.image_caption" :src="entry.node.image" />
                             </figure>
                         </article>
                     </div>

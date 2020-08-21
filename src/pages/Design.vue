@@ -1,48 +1,47 @@
 <template>
-  <Layout>
-    <section class="flex-1">
-      <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Design</h1>
-      <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Some recent projects.</p>
-      <div class="px-2">
-        <div class="flex flex-wrap items-stretch -mx-3 posts">
-          <div
-            class="w-full px-3 mb-6 md:w-1/3"
-            v-for="entry in $page.allDesign.edges"
-            :key="entry.node.id"
-            v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
-          >
-            <article
-              class="flex-1 h-full overflow-hidden transition bg-white rounded-sm shadow-lg group hover:shadow-2xl article-card"
-            >
-              <g-link
-                class="relative block overflow-hidden featured-image-link"
-                :to="entry.node.path"
-              >
-                <figure>
-                  <g-image
-                    class="block loaded"
-                    :alt="entry.node.image_caption"
-                    :src="entry.node.image"
-                  />
-                </figure>
-              </g-link>
-              <div class="p-8">
-                <h2 class="mb-6 text-2xl">
-                  <g-link
-                    class="block text-purple-900 hover:text-indigo-400"
-                    :to="entry.node.path"
-                  >{{ entry.node.title }}</g-link>
-                </h2>
-                <div class="mb-4 text-sm text-gray-700 md:flex">
-                  <p class="hidden md:block">{{ entry.node.excerpt }}</p>
+    <Layout>
+        <section class="flex-1">
+            <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Design</h1>
+            <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Some recent projects.</p>
+            <div class="px-2">
+                <div class="flex flex-wrap items-stretch -mx-3 posts">
+                    <div
+                        class="w-full px-3 mb-6 md:w-1/3"
+                        v-for="entry in $page.allDesign.edges"
+                        :key="entry.node.id"
+                        v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
+                    >
+                        <article
+                            class="flex-1 h-full overflow-hidden transition bg-white rounded-sm shadow-lg group hover:shadow-2xl article-card"
+                        >
+                            <g-link
+                                class="relative block overflow-hidden featured-image-link"
+                                :to="entry.node.path"
+                            >
+                                <figure>
+                                    <g-image
+                                        :alt="entry.node.image_caption"
+                                        :src="entry.node.image"
+                                    />
+                                </figure>
+                            </g-link>
+                            <div class="p-8">
+                                <h2 class="mb-6 text-2xl">
+                                    <g-link
+                                        class="block text-purple-900 hover:text-indigo-400"
+                                        :to="entry.node.path"
+                                    >{{ entry.node.title }}</g-link>
+                                </h2>
+                                <div class="mb-4 text-sm text-gray-700 md:flex">
+                                    <p class="hidden md:block">{{ entry.node.excerpt }}</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-  </Layout>
+            </div>
+        </section>
+    </Layout>
 </template>
 
 <script>
