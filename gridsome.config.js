@@ -78,7 +78,7 @@ module.exports = {
         statusBarStyle: "default",
         themeColor: "#284052",
         backgroundColor: "#000000",
-        icon: "/assets/img/icon.png",
+        icon: "./src/assets/img/icon.png",
         shortName: "CEAmyxIII", // Optional
         description:
           "The portfolio for Charles E. Amyx, III, a digital art director, designer, photographer, and painter in Ann Arbor, MI.", // Optional
