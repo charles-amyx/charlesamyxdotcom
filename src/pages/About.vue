@@ -84,7 +84,7 @@
                                 class="text-base"
                             >It is also a redesign in progress, an approach inspired by Frank Chimero. I very much like tinkering.</p>
                             <p class="text-base">
-                                <strong>Known issues:</strong> the photo page is powered by a masonry plugin for Vue. It's not consistently great. Planning on simplifying with a CSS grid layout instead.
+                                <strong>Known issues:</strong> minor layout issues on the photos page. And lazy loading isn't firing properly as I'm grabbing the images as a kind of module so I guess Gridsome doesn't like that. It definitely does not like that.
                             </p>
                         </div>
                     </div>
