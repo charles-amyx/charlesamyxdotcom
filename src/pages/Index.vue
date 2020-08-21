@@ -36,7 +36,7 @@ export default {
       {
         name: "description",
         content:
-          "The portfolio for Charles E. Amyx, III, a digital art director in Ann Arbor, MI"
+          "The portfolio for Charles E. Amyx, III, a digital art director, designer, photographer, and painter in Ann Arbor, MI."
       },
       {
         key: "og:url",

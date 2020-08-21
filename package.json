@@ -15,6 +15,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
     "gridsome": "^0.7.14",
+    "gridsome-plugin-pwa": "0.0.18",
     "gridsome-plugin-robots-txt": "^1.0.2",
     "gridsome-scroll-reveal": "^1.0.11",
     "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
@@ -25,8 +26,6 @@
     "sass-loader": "^8.0.0"
   },
   "devDependencies": {
-    "gridsome-plugin-manifest": "^0.3.4",
-    "gridsome-plugin-service-worker": "^0.1.4",
     "gridsome-plugin-tailwindcss": "^2.2.48",
     "vue-masonry-css": "^1.0.3"
   }

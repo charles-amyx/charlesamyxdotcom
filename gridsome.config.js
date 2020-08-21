@@ -6,7 +6,7 @@ const postcssPlugins = [tailwind()];
 if (process.env.NODE_ENV === "production") postcssPlugins.push(purgecss());
 
 module.exports = {
-  siteName: "C. E. Amyx, III",
+  siteName: "Charles E. Amyx, III",
   siteUrl: "https://charlesamyx.com",
   plugins: [
     {
@@ -62,28 +62,26 @@ module.exports = {
       },
     },
     {
-      use: "gridsome-plugin-service-worker",
+      use: "gridsome-plugin-pwa",
       options: {
-        networkFirst: {
-          cacheName: "cea-v1",
-          routes: [
-            "/",
-            /\.(js|css|png)$/, // means "every JS, CSS, and PNG images"
-          ],
-        },
-      },
-    },
-    {
-      use: "gridsome-plugin-manifest",
-      options: {
-        background_color: "#000000",
+        // Service Worker Options
+        disableServiceWorker: false,
+        serviceWorkerPath: "service-worker.js",
+        cachedFileTypes: "js,json,css,html,png,jpg,jpeg,svg,gif",
+        disableTemplatedUrls: false, // Optional
+
+        // Manifest Options (https://developer.mozilla.org/en-US/docs/Web/Manifest)
+        manifestPath: "manifest.json",
+        title: "Charles E. Amyx, III",
+        startUrl: "/",
         display: "standalone",
-        icon_path: "./src/assets/img/icon.png",
-        name: "Charles E. Amyx, III",
-        short_name: "CEAmyxIII",
-        theme_color: "#284052",
-        lang: "en",
-        start_url: "/",
+        statusBarStyle: "default",
+        themeColor: "#284052",
+        backgroundColor: "#000000",
+        icon: "/assets/img/icon.png",
+        shortName: "CEAmyxIII", // Optional
+        description:
+          "The portfolio for Charles E. Amyx, III, a digital art director, designer, photographer, and painter in Ann Arbor, MI.", // Optional
       },
     },
     {
@@ -132,6 +130,14 @@ module.exports = {
             priority: 0.7,
           },
         },
+      },
+    },
+    {
+      use: "@gridsome/plugin-critical",
+      options: {
+        paths: ["/"],
+        width: 1300,
+        height: 900,
       },
     },
   ],
