@@ -26,9 +26,19 @@ export default function(Vue, { router, head }) {
   // Add meta to HEAD tag
 
   head.meta.push({
-    key: "og:image", // gives us the option to override at the page level
-    name: "og:image",
-    content: baseUrl + "/og-image.jpg",
+    name: "twitter:title",
+    content: "Charles E. Amyx, III",
+  });
+
+  head.meta.push({
+    name: "twitter:description",
+    content:
+      "The portfolio for Charles E. Amyx, III, a digital art director, designer, photographer, and painter in Ann Arbor, MI.",
+  });
+
+  head.meta.push({
+    name: "twitter:site",
+    content: baseUrl,
   });
 
   head.meta.push({
@@ -39,6 +49,23 @@ export default function(Vue, { router, head }) {
   head.meta.push({
     name: "twitter:card",
     content: "summary_large_image",
+  });
+
+  head.meta.push({
+    name: "og:title",
+    content: "Charles E. Amyx, III",
+  });
+
+  head.meta.push({
+    name: "og:description",
+    content:
+      "The portfolio for Charles E. Amyx, III, a digital art director, designer, photographer, and painter in Ann Arbor, MI.",
+  });
+
+  head.meta.push({
+    key: "og:image", // gives us the option to override at the page level
+    name: "og:image",
+    content: baseUrl + "/og-image.jpg",
   });
 
   head.meta.push({
