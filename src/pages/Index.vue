@@ -8,11 +8,11 @@
                         to="/design/"
                     >designer</g-link>,
                     <g-link
-                        class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
+                        class="inline-block text-gray-400 transition alpha hover:text-indigo-500 focus:text-indigo-500"
                         to="/paint/"
                     >painter</g-link>,
                     <g-link
-                        class="inline-block text-gray-400 transition alpha hover:text-indigo-400 focus:text-indigo-400"
+                        class="inline-block text-gray-400 transition alpha hover:text-indigo-600 focus:text-indigo-600"
                         to="/photo/"
                     >photographer</g-link>
                 </h1>

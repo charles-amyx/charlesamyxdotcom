@@ -2,17 +2,18 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from "~/layouts/Default.vue";
-import VueScrollReveal from 'gridsome-scroll-reveal';
-import Vue from 'vue'
-//import '~/resources/js/main.js'
+import VueScrollReveal from "gridsome-scroll-reveal";
 
-export default function(Vue, { router, head, isClient }) {
+export default function(Vue, { router, head }) {
   // Remove "generator" meta tag
-  const gIndex = head.meta.findIndex(e => e.name === 'generator')
-  if (gIndex !== -1) head.meta.splice(gIndex, 1)
-  const baseUrl = process.env.URL || process.env.GRIDSOME_BASE_PATH
-  // Set default layout as a global component
+  const gIndex = head.meta.findIndex((e) => e.name === "generator");
+
+  if (gIndex !== -1) head.meta.splice(gIndex, 1);
+
+  const baseUrl = process.env.URL || process.env.GRIDSOME_BASE_PATH;
+
   Vue.component("Layout", DefaultLayout);
+
   Vue.use(VueScrollReveal);
 
   // Add attributes to HTML tag
@@ -20,31 +21,34 @@ export default function(Vue, { router, head, isClient }) {
 
   // Add attributes to BODY tag
   head.bodyAttrs = {
-    class: "text-white bg-blue-100 leading-normal text-lg font-sans"
+    class: "text-white bg-blue-100 leading-normal text-lg font-sans",
   };
   // Add meta to HEAD tag
 
   head.meta.push({
     key: "og:image", // gives us the option to override at the page level
     name: "og:image",
-    content: baseUrl + '/og-image.jpg'
+    content: baseUrl + "/og-image.jpg",
   });
+
   head.meta.push({
-    name: 'twitter:image',
-    content: baseUrl + '/og-image.jpg'
-  })
+    name: "twitter:image",
+    content: baseUrl + "/og-image.jpg",
+  });
+
   head.meta.push({
-    name: 'twitter:card',
-    content: 'summary_large_image'
-  })
+    name: "twitter:card",
+    content: "summary_large_image",
+  });
+
   head.meta.push({
-    key: 'og:type',
-    name: 'og:type',
-    content: 'website'
-  })
+    key: "og:type",
+    name: "og:type",
+    content: "website",
+  });
 
   router.beforeEach((to, _from, next) => {
-    const pageUrl = baseUrl + to.path
+    const pageUrl = baseUrl + to.path;
     // Use the Vue router to create the og:url tag because we want this tag to point to the current URL
     head.meta.push({
       key: "og:url", // gives us the option to override at the page level
@@ -52,10 +56,10 @@ export default function(Vue, { router, head, isClient }) {
       content: pageUrl,
     });
     head.meta.push({
-      key: 'canonical',
-      name: 'canonical',
+      key: "canonical",
+      name: "canonical",
       content: pageUrl,
-    })
+    });
     next();
   });
 }

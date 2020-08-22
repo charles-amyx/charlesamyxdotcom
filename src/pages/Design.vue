@@ -53,7 +53,7 @@ export default {
       { name: "author", content: "Charles E. Amyx, III" },
       {
         name: "description",
-        content: "Some sampling of design work from CE Amyx, III"
+        content: "Some sampling of design work mostly from U-M"
       }
     ]
   }

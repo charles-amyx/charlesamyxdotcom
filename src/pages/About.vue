@@ -15,7 +15,7 @@
                         <p>
                             A Senior Web Designer at Michigan Creative, a division of the Office of the Vice President for Communications at the University of Michigan. Keen interest around inclusive, accessible, and compassionate web design.
                             <br />
-                            <br />Proud Filipino, escrimador, and fly fisherman.
+                            <br />Proud Filipino, escrimador, and fly fisherman. Oh, and I played in a number of bands in Florida no one's ever heard of.
                         </p>
                         <h2
                             class="text-2xl md:text-4xl"
@@ -103,7 +103,7 @@ export default {
             {
                 name: "description",
                 content:
-                    "All about Charles E. Amyx, III, a digital art director in Ann Arbor, MI"
+                    "All about Charles E. Amyx, III, a digital art director, designer, painter, and photographer in Ann Arbor, MI"
             }
         ]
     }
