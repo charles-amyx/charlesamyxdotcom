@@ -7,7 +7,7 @@
             <div class="content">
                 <div class="w-full">
                     <g-image
-                        class="hidden pb-8 blend-overlay md:block"
+                        class="hidden pb-8 opacity-75 md:block"
                         src="~/assets/about.jpg"
                         alt="an abstract painting"
                     />
