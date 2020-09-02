@@ -6,8 +6,6 @@ module.exports = {
       use: "gridsome-plugin-tailwindcss",
       options: {
         tailwindConfig: "./tailwind.config.js",
-        purgeConfig: {},
-        presetEnvConfig: {},
         shouldImport: true,
         shouldTimeTravel: true,
       },
