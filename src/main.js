@@ -74,6 +74,12 @@ export default function(Vue, { router, head }) {
     content: "website",
   });
 
+  head.meta.push({
+    key: "google-site-verification",
+    name: "google-site-verification",
+    content: "5h7uTmOQxIiLaWKEyYtjvjgFOO8HJGnqucP3AlVj7JU",
+  });
+
   router.beforeEach((to, _from, next) => {
     const pageUrl = baseUrl + to.path;
     // Use the Vue router to create the og:url tag because we want this tag to point to the current URL
