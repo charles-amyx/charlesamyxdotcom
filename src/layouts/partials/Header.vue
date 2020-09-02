@@ -5,7 +5,7 @@
         role="banner"
     >
         <g-link
-            class="block text-base font-semibold tracking-widest text-gray-500 uppercase md:text-base hover:text-white"
+            class="block text-base font-semibold tracking-widest text-gray-400 uppercase md:text-base hover:text-white"
             to="/"
             aria-label="Back to home"
         >{{ $static.metadata.siteName }}</g-link>
@@ -19,7 +19,7 @@
                 >
                     <g-link
                         :to="element.link"
-                        class="pb-1 font-semibold tracking-widest text-gray-500 uppercase transition border-transparent link hover:text-white"
+                        class="pb-1 font-semibold tracking-widest text-gray-400 uppercase transition border-transparent link hover:text-white"
                         active-class="is-active-link"
                         exact-active-class="active"
                     >{{ element.name }}</g-link>

@@ -17,11 +17,11 @@ export default function(Vue, { router, head }) {
   Vue.use(VueScrollReveal);
 
   // Add attributes to HTML tag
-  head.htmlAttrs = { lang: "en", class: "min-h-full antialiased" };
+  head.htmlAttrs = { lang: "en", class: "bg-blue-100 min-h-full antialiased" };
 
   // Add attributes to BODY tag
   head.bodyAttrs = {
-    class: "text-white bg-blue-100 leading-normal text-lg font-sans",
+    class: "text-white leading-normal text-lg font-sans",
   };
   // Add meta to HEAD tag
 
