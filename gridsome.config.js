@@ -1,10 +1,3 @@
-const tailwind = require("tailwindcss");
-const purgecss = require("@fullhuman/postcss-purgecss");
-
-const postcssPlugins = [tailwind()];
-
-if (process.env.NODE_ENV === "production") postcssPlugins.push(purgecss());
-
 module.exports = {
   siteName: "Charles E. Amyx, III",
   siteUrl: "https://charlesamyx.com",
@@ -15,10 +8,8 @@ module.exports = {
         tailwindConfig: "./tailwind.config.js",
         purgeConfig: {},
         presetEnvConfig: {},
-        shouldPurge: true,
         shouldImport: true,
         shouldTimeTravel: true,
-        shouldPurgeUnusedKeyframes: true,
       },
     },
     {
@@ -144,13 +135,6 @@ module.exports = {
   transformers: {
     remark: {
       externalLinksTarget: false,
-    },
-  },
-  css: {
-    loaderOptions: {
-      postcss: {
-        plugins: postcssPlugins,
-      },
     },
   },
   templates: {

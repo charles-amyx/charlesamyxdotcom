@@ -1,8 +1,33 @@
 module.exports = {
   prefix: "",
   important: false,
-  purge: false,
+  purge: {
+    content: [
+      "./src/**/*.vue",
+      "./src/**/*.js",
+      "./src/**/*.jsx",
+      "./src/**/*.html",
+      "./src/**/*.pug",
+      "./src/**/*.md",
+    ],
+
+    // These options are passed through directly to PurgeCSS
+    options: {
+      whitelist: [
+        "body",
+        "html",
+        "img",
+        "a",
+        "g-image",
+        "g-image--lazy",
+        "g-image--loaded",
+      ],
+    },
+  },
   separator: ":",
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
   theme: {
     fontFamily: {
       sans: ["Work Sans", "sans-serif"],
