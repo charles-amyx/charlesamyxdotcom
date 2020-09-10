@@ -137,6 +137,7 @@ module.exports = {
   transformers: {
     remark: {
       externalLinksTarget: false,
+      autolinkHeadings: false,
     },
   },
   templates: {
