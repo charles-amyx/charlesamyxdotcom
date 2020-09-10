@@ -1,26 +1,26 @@
 ---
-title: UM-Flint
+title: Undergraduate Admissions
 category: Design
-excerpt: A new design for Flint and its sub-brands.
-created: 2020-09-10
-image: ./images/flint.png
-image_caption: A screenshot of UM-Flint's home page
+excerpt: The redesigned and overhauled Undergraduate Admissions site for U-M.
+created: 2020-08-01
+image: ./images/oua.png
+image_caption: The OUA
 ---
 
 ## Project duration
 
-June 2019 - February 2020
+October 2019 - July 2020
 
 ## Role
 
-Designer and front end for working prototype examples.
+Designer.
 
 ## Background
 
-A complete redesign of UM-Flint's site. Once again, there was so much work and effort before I picked it up. We worked with the client to finely tune every aspect of the design. Once satisfied with the design direction, I built a [working prototype](https://creative-um-flint.netlify.app/) of the site to help guide implementation in Wordpress for Flint's development team. With a design system in place, the client further tweaked their design during implementation.
+A complete redesign of U-M's Undergraduate Admissions site. There was so much work and effort before I picked it up. The design process for this went so smoothly that it feels minuscule in comparison to everyone elses' work. Another site we're very proud of.
 
-![Home page of Flint](./images/flint-home.jpg)
+![Home page of OUA](./images/oua-home.jpg)
 
-![An example of a main landing page](./images/flint-landing.jpg)
+![An example of a main landing page](./images/oua-landing.jpg)
 
-[Visit site](https://www.umflint.edu/)
+[Visit site](https://admissions.umich.edu/)
