@@ -4,6 +4,7 @@
             src="//instant.page/5.1.0"
             type="module"
             integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
+            crossorigin="anonymous"
         ></script>
         <a class="visually-hidden" href="#main">Skip to content</a>
         <div
