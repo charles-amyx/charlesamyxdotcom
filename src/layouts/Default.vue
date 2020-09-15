@@ -1,5 +1,10 @@
 <template>
     <div>
+        <script
+            src="//instant.page/5.1.0"
+            type="module"
+            integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
+        ></script>
         <a class="visually-hidden" href="#main">Skip to content</a>
         <div
             class="fixed top-0 bottom-0 left-0 right-0 z-10 w-full h-full border-8 pointer-events-none border-dark-indigo"
@@ -13,7 +18,6 @@
             </transition>
             <FooterPartial />
         </div>
-
         <ClientOnly>
             <ResponsiveNav />
         </ClientOnly>
@@ -34,11 +38,11 @@ import FooterPartial from "~/layouts/partials/Footer.vue";
 import ResponsiveNav from "~/layouts/partials/ResponsiveNav.vue";
 
 export default {
-  components: {
-    HeaderPartial,
-    FooterPartial,
-    ResponsiveNav
-  }
+    components: {
+        HeaderPartial,
+        FooterPartial,
+        ResponsiveNav,
+    },
 };
 </script>
 
