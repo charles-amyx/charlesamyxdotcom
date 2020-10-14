@@ -1,11 +1,12 @@
 ---
 title: The Regents of the University of Michigan
 category: Design
-excerpt: 
+excerpt: A new site after a decade.
 created: 2019-05-19
 image: ./images/regents.png
 image_caption: A new home U-M's Regents.
 ---
+
 ## Project duration
 
 May 2019 - November 2019
