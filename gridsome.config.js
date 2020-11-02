@@ -46,8 +46,8 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
-        typeName: "Blog",
-        path: "./content/blog/**/*.md",
+        typeName: "Experience",
+        path: "./content/jobs/**/*.md",
       },
     },
     {
@@ -141,12 +141,6 @@ module.exports = {
     },
   },
   templates: {
-    Blog: [
-      {
-        path: "/blog/:title",
-        component: "./src/templates/Blog.vue",
-      },
-    ],
     Design: [
       {
         path: "/design/:title",

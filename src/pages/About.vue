@@ -36,7 +36,6 @@
                         >
                             Experience
                         </h2>
-
                         <div
                             class="mb-16"
                             v-scroll-reveal="{
@@ -45,74 +44,19 @@
                                 opacity: 0,
                                 origin: 'bottom',
                             }"
+                            v-for="entry in $page.allExperience.edges"
+                            :key="entry.node.id"
                         >
                             <div class="text-sm font-light tracking-widest">
-                                04/2018 - PRESENT
+                                {{ entry.node.startDate }} -
+                                {{ entry.node.endDate }}
                             </div>
                             <div class="text-xl font-bold tracking-wide">
-                                University of Michigan | Michigan Creative
+                                {{ entry.node.company }}
                             </div>
-                            <div class="mb-6">Senior Web Designer</div>
+                            <div class="mb-6">{{ entry.node.title }}</div>
                             <p class="text-base">
-                                Primary designer for all web projects.
-                                Additionally, I build many of the sites I've
-                                designed. My role includes mentoring and guiding
-                                junior designers, advocating for accessibility,
-                                practicing kind and inclusive design, and
-                                communicating best practices for the web to all
-                                of our campus partners.
-                            </p>
-                        </div>
-
-                        <div
-                            class="mb-16"
-                            v-scroll-reveal="{
-                                delay: 250,
-                                distance: '12px',
-                                opacity: 0,
-                                origin: 'bottom',
-                            }"
-                        >
-                            <div class="text-sm font-light tracking-widest">
-                                02/2015 - 04/2018
-                            </div>
-                            <div class="text-xl font-bold tracking-wide">
-                                University of Michigan | College of Engineering
-                            </div>
-                            <div class="mb-6">Digital Design Lead</div>
-                            <p class="text-base">
-                                Participated in and executed the College of
-                                Engineering brand refresh, designed and built
-                                the front end for a new News Center, events
-                                site, and five department themes, designed and
-                                retrofitted engin.umich.edu to be responsive,
-                                design and built fully responsive emails for the
-                                college and six departments.
-                            </p>
-                        </div>
-
-                        <div
-                            class="mb-16"
-                            v-scroll-reveal="{
-                                delay: 250,
-                                distance: '12px',
-                                opacity: 0,
-                                origin: 'bottom',
-                            }"
-                        >
-                            <div class="text-sm font-light tracking-widest">
-                                01/2006 - 02/2015
-                            </div>
-                            <div class="text-xl font-bold tracking-wide">
-                                Bonnier Corporation
-                            </div>
-                            <div class="mb-6">Digital Art Director</div>
-                            <p class="text-base">
-                                Responsible for Bonnier Motocycle Group digital
-                                properties, Photography group, redesigned and
-                                worked with front end developers for UX/UI
-                                tweaks and enhancements. Lead designer for the
-                                Outdoor Group’s long form editorial features.
+                                {{ entry.node.description }}
                             </p>
                         </div>
 
@@ -177,6 +121,22 @@
         </section>
     </Layout>
 </template>
+
+<page-query>
+  query {
+    allExperience(sortBy: "created", order: DESC) {
+      edges {
+        node {
+          title
+          company
+          startDate
+          endDate
+          description
+        }
+      }
+    }
+  }
+</page-query>
 
 <script>
 export default {
