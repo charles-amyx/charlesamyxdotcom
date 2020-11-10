@@ -1,7 +1,7 @@
 ---
 title: Pain Guide
 category: Design
-excerpt: The redesigned and overhauled Office of Financial Aid, part of the Admissions design system.
+excerpt: A respectful and compassionate place for patients and those who care for us when we're in pain.
 created: 2020-10-14
 image: ./images/pain.png
 image_caption: PainGuide, as it's branded
