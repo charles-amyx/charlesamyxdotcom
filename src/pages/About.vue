@@ -124,7 +124,7 @@
 
 <page-query>
   query {
-    allExperience(sortBy: "created", order: DESC) {
+    allExperience(sortBy: "position", order: ASC) {
       edges {
         node {
           title
