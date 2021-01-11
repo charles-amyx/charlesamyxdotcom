@@ -1,10 +1,10 @@
 ---
 title: Campus Maize & Blueprint
 category: Design
-excerpt: A plan for the new world.
+excerpt: Helping communicate plans, policies, and information during the pandemic.
 created: 2020-06-30
 image: ./images/blueprint.png
-image_caption: A plan for the new world
+image_caption: Helping communicate plans, policies, and information during the pandemic.
 ---
 
 ## Project duration
