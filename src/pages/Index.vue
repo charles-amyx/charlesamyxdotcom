@@ -21,8 +21,8 @@
                 <p class="text-lg tracking-wide">
                     <a
                         class="pb-1 text-gray-400 transition border-b border-transparent hover:text-indigo-400 focus:text-indigo-400 hover:border-indigo-400"
-                        href="https://creative.umich.edu"
-                    >Currently at the University of Michigan.</a>
+                        href="https://nursing.umich.edu"
+                    >Currently at the University of Michigan School of Nursing.</a>
                 </p>
             </div>
         </section>
