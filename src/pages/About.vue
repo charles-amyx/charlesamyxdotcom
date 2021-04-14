@@ -20,7 +20,7 @@
                             compassionate web design.
                             <br />
                             <br />Proud Filipino, escrimador, and fly fisherman.
-                            Oh, and I played in a number of bands in Florida no
+                            I also played guitar in a number of bands in Florida no
                             one's ever heard of.
                         </p>
                         <h2
