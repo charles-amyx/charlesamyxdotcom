@@ -6,7 +6,7 @@
             <masonry :cols="{default: 4, 768: 3, 640: 1}" :gutter="15">
                 <div class="item" v-for="(item,index) in items" :key="index">
                     <div
-                        class="mb-3 overflow-hidden bg-white rounded shadow-lg"
+                        class="mb-3 overflow-hidden bg-white rounded shadow-lg load-hidden"
                         v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
                     >
                         <figure>

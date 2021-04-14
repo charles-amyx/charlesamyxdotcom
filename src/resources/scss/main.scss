@@ -210,6 +210,11 @@
 @import "base/all";
 @import "components/all";
 
+
+html.sr .load-hidden {
+  visibility: hidden;
+}
+
 body {
   background-attachment: fixed;
   background-image: url("/bg.svg");

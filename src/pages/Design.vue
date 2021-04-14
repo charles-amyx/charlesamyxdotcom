@@ -6,7 +6,7 @@
             <div class="px-2">
                 <div class="flex flex-wrap items-stretch -mx-3 posts">
                     <div
-                        class="w-full px-3 mb-6 md:w-1/3"
+                        class="w-full px-3 mb-6 md:w-1/3 load-hidden"
                         v-for="entry in $page.allDesign.edges"
                         :key="entry.node.id"
                         v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"

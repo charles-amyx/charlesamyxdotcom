@@ -24,7 +24,7 @@
                             one's ever heard of.
                         </p>
                         <h2
-                            class="text-2xl md:text-4xl"
+                            class="text-2xl md:text-4xl load-hidden"
                             v-scroll-reveal="{
                                 delay: 250,
                                 distance: '12px',
@@ -35,7 +35,7 @@
                             Experience
                         </h2>
                         <div
-                            class="mb-16"
+                            class="mb-16 load-hidden"
                             v-scroll-reveal="{
                                 delay: 250,
                                 distance: '12px',
@@ -59,7 +59,7 @@
                         </div>
 
                         <h2
-                            class="text-2xl md:text-4xl"
+                            class="text-2xl md:text-4xl load-hidden"
                             v-scroll-reveal="{
                                 delay: 250,
                                 distance: '12px',
@@ -70,7 +70,7 @@
                             Expertise
                         </h2>
                         <div
-                            class="mb-16"
+                            class="mb-16 load-hidden"
                             v-scroll-reveal="{
                                 delay: 250,
                                 distance: '12px',

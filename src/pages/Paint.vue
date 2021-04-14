@@ -6,7 +6,7 @@
             <div class="px-2">
                 <div class="flex flex-wrap items-start -mx-3">
                     <div
-                        class="w-full px-3 my-3 md:w-1/3"
+                        class="w-full px-3 my-3 md:w-1/3 load-hidden"
                         v-for="entry in $page.allPaint.edges"
                         :key="entry.node.id"
                         v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
