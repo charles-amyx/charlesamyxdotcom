@@ -19,7 +19,7 @@ Designer and WordPress Developer.
 
 This year we've moved the report in its entirety online. An open and airy design presents the year four's achivements in an easy understand format. The tech stack behind the site is Wordpress, Sage, Advanced Custom Fields, Sage ACF directives, Roots, AlpineJS, and TailwindCSS. This was the first time using Roots/Sage and a new method of deploying the site to ITS servers.
 
-![Home page of OUA](./images/dei-home.jpg)
+![Home page of DEI](./images/dei-home.jpg)
 
 ![An example of a main landing page](./images/dei-landing.jpg)
 
