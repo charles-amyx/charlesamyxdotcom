@@ -105,12 +105,18 @@
                             </p>
                             <p class="text-base">
                                 It is also a redesign in progress, an approach
-                                inspired by Frank Chimero. I very much like
+                                inspired by Frank Chimero. And I very much like
                                 tinkering.
                             </p>
                             <p class="text-base">
-                                <strong>Known issues:</strong> mobile menu
-                                flashing on initial load on desktop.
+                                <strong>Known issues:</strong>
+                                <ul class="pl-6 list-disc">
+                                    <li class="pb-4"><strike>The photo page is powered by a masonry plugin for Vue. It's not consistently great. Planning on simplifying with a CSS grid layout instead.</strike></li>
+                                    <li><strike>
+                                    The mobile menu is flashing on initial load on desktop.
+                                </strike></li>
+                                </ul>
+
                             </p>
                         </div>
                     </div>
@@ -138,16 +144,16 @@
 
 <script>
 export default {
-    metaInfo: {
-        title: "About",
-        meta: [
-            { name: "author", content: "Charles E. Amyx, III" },
-            {
-                name: "description",
-                content:
-                    "All about Charles E. Amyx, III, a digital art director, designer, painter, and photographer in Ann Arbor, MI",
-            },
-        ],
-    },
+  metaInfo: {
+    title: "About",
+    meta: [
+      { name: "author", content: "Charles E. Amyx, III" },
+      {
+        name: "description",
+        content:
+          "All about Charles E. Amyx, III, a digital art director, designer, painter, and photographer in Ann Arbor, MI",
+      },
+    ],
+  },
 };
 </script>
