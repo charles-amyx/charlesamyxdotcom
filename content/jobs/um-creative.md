@@ -2,7 +2,7 @@
 title: Senior Web Designer
 company: University of Michigan | Michigan Creative
 startDate: 04/2018
-endDate: PRESENT
+endDate: 01/2021
 description: Primary designer for all web projects.
   Additionally, I build many of the sites I've
   designed. My role includes mentoring and guiding
@@ -10,5 +10,5 @@ description: Primary designer for all web projects.
   practicing kind and inclusive design, and
   communicating best practices for the web to all
   of our campus partners.
-position: 1
+position: 2
 ---

@@ -15,9 +15,7 @@
                     />
                     <div class="w-full mx-auto leading-relaxed md:w-7/12">
                         <p>
-                            A Senior Web Designer at Michigan Creative, a
-                            division of the Office of the Vice President for
-                            Communications at the University of Michigan. Keen
+                            A Senior Web Designer at the University of Michigan School of Nursing. Keen
                             interest around inclusive, accessible, and
                             compassionate web design.
                             <br />
@@ -84,7 +82,7 @@
                                 Along with traditional print and digital design,
                                 I am a front end developer with experience using
                                 VueJS, React, a number of static site generators
-                                such as Hugo and 11ty, and Jamstack in general.
+                                such as Hugo and 11ty, and Jamstack in general. I also work with a build out CMSes using a headless CMS called Netlify CMS. I also build custom Wordpress themes with custom React components for Gutenberg.
                                 I strive to write accessible and semantic HTML
                                 and CSS. While I have extensive experience with
                                 SASS, I find myself lately using PostCSS and a
