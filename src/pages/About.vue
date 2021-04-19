@@ -19,7 +19,7 @@
                             interest around inclusive, accessible, and
                             compassionate web design.
                             <br />
-                            <br />Proud Filipino, escrimador, and fly fisherman.
+                            <br />Proud Filipino American, escrimador, and fly fisherman.
                             I also played guitar in a number of bands in Florida no
                             one's ever heard of.
                         </p>
