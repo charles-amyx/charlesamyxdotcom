@@ -2,7 +2,7 @@
     <Layout>
         <section class="flex-1">
             <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Paint</h1>
-            <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Some fever dreams.</p>
+            <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Some of my favorite fever dreams.</p>
             <div class="px-2">
                 <div class="flex flex-wrap items-start -mx-3">
                     <div
