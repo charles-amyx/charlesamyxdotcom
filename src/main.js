@@ -17,7 +17,7 @@ export default function(Vue, { router, head }) {
   Vue.use(VueScrollReveal);
 
   // Add attributes to HTML tag
-  head.htmlAttrs = { lang: "en", class: "bg-gray-50 min-h-full antialiased" };
+  head.htmlAttrs = { lang: "en", class: "bg-gray-100 min-h-full antialiased" };
 
   // Add attributes to BODY tag
   head.bodyAttrs = {
