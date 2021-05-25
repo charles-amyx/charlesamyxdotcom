@@ -40,6 +40,7 @@ module.exports = {
       white: "#fafafa",
 
       gray: {
+        50: "#F9FAFB",
         100: "#f7fafc",
         200: "#edf2f7",
         300: "#e2e8f0",
@@ -162,6 +163,7 @@ module.exports = {
       textColor: ["responsive", "hover", "focus", "group-hover"],
       boxShadow: ["responsive", "hover", "focus", "active", "group-hover"],
       margin: ["responsive", "hover", "focus"],
+      borderWidth: ['hover', 'focus'],
     },
   },
 };

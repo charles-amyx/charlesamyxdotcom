@@ -1,18 +1,18 @@
 <template>
     <Layout>
         <section class="flex-1">
-            <div class="font-serif leading-tight text-gray-300 page-title">
+            <div class="font-serif font-semibold leading-tight text-black page-title">
                 <h1>
                     <g-link
-                        class="inline-block text-gray-400 transition hover:text-indigo-400 alpha focus:text-indigo-400"
+                        class="inline-block text-gray-800 transition hover:text-indigo-700 alpha focus:text-indigo-700"
                         to="/design/"
                     >designer</g-link>,
                     <g-link
-                        class="inline-block text-gray-400 transition alpha hover:text-indigo-500 focus:text-indigo-500"
+                        class="inline-block text-gray-800 transition hover:text-indigo-700 alpha focus:text-indigo-700"
                         to="/paint/"
                     >painter</g-link>,
                     <g-link
-                        class="inline-block text-gray-400 transition alpha hover:text-indigo-600 focus:text-indigo-600"
+                        class="inline-block text-gray-800 transition hover:text-indigo-700 alpha focus:text-indigo-700"
                         to="/photo/"
                     >photographer</g-link>
                 </h1>
@@ -20,7 +20,7 @@
             <div class="content">
                 <p class="text-lg tracking-wide">
                     <a
-                        class="pb-1 text-gray-400 transition border-b border-transparent hover:text-indigo-400 focus:text-indigo-400 hover:border-indigo-400"
+                        class="pb-1 text-gray-800 transition border-b border-transparent hover:text-gray-700 focus:text-gray-700 hover:border-gray-700"
                         href="https://nursing.umich.edu"
                     >Currently at the University of Michigan School of Nursing.</a>
                 </p>

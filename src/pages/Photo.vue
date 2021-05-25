@@ -2,7 +2,7 @@
     <Layout>
         <section class="flex-1">
             <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Photography</h1>
-            <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Light bends.</p>
+            <p class="mb-16 text-base text-gray-800 lg:mb-24 md:text-center">Light bends.</p>
             <masonry :cols="{default: 4, 768: 3, 640: 1}" :gutter="15">
                 <div class="item" v-for="(item,index) in items" :key="index">
                     <div
