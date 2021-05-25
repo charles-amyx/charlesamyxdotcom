@@ -11,32 +11,30 @@
                         :key="entry.node.id"
                         v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
                     >
-                        <article
-                            class="flex-1 h-full overflow-hidden transition bg-white rounded-sm shadow-lg group hover:shadow-2xl article-card"
-                        >
-                            <g-link
-                                class="relative block overflow-hidden featured-image-link"
+                    <g-link
+                                class="relative block overflow-hidden transition bg-white border border-gray-300 rounded-sm featured-image-link group hover:shadow-2xl"
                                 :to="entry.node.path"
                             >
+                        <article
+                            class="flex-1 h-full overflow-hidden article-card"
+                        >
+                            
                                 <figure>
                                     <g-image
                                         :alt="entry.node.image_caption"
                                         :src="entry.node.image"
                                     />
                                 </figure>
-                            </g-link>
                             <div class="p-8">
                                 <h2 class="mb-6 text-2xl">
-                                    <g-link
-                                        class="block text-purple-900 hover:text-indigo-400"
-                                        :to="entry.node.path"
-                                    >{{ entry.node.title }}</g-link>
+                                    {{ entry.node.title }}
                                 </h2>
                                 <div class="mb-4 text-sm text-gray-700 md:flex">
                                     <p class="hidden md:block">{{ entry.node.excerpt }}</p>
                                 </div>
                             </div>
                         </article>
+                                                    </g-link>
                     </div>
                 </div>
             </div>
