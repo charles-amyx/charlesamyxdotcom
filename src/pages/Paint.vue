@@ -14,7 +14,7 @@
                         <article class="group">
                             <figure>
                                 <g-image
-                                    class="rounded shadow-lg"
+                                    class="rounded-sm"
                                     :alt="entry.node.image_caption"
                                     :src="entry.node.image"
                                 />
