@@ -25,9 +25,6 @@ module.exports = {
     },
   },
   separator: ":",
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
   theme: {
     fontFamily: {
       sans: ["Work Sans", "sans-serif"],
