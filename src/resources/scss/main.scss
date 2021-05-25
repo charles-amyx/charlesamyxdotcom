@@ -215,14 +215,6 @@ html.sr .load-hidden {
   visibility: hidden;
 }
 
-body {
-  background-attachment: fixed;
-  background-image: url("/bg.svg");
-  background-position: bottom right -10rem;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
 body.menu-open {
   overflow: hidden;
 }
