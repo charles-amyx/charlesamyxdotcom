@@ -41,7 +41,7 @@
                 </div>
             </div>
             <h2 class="mb-4 text-4xl">Other projects</h2>
-            <p class="mb-8 text-base text-gray-800">Some other projects of note.</p>
+            <p class="mb-8 text-base text-gray-700">Some other projects of note.</p>
             <ul class="px-8 list-disc">
               <li><a href="https://vets.umich.edu/">U-M Veteran and Military Services.</a> (2020; Drupal site; design only)</li>
               <li><a href="https://nursing.umich.edu/online-msn/">Online Master of Nursing.</a> (2019; Hugo static site; development only)</li>
