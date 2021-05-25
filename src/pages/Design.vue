@@ -2,7 +2,7 @@
     <Layout>
         <section class="flex-1">
             <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Design</h1>
-            <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Some recent projects.</p>
+            <p class="mb-16 text-base text-gray-800 lg:mb-24 md:text-center">Some recent projects.</p>
             <div class="px-2 pb-8">
                 <div class="flex flex-wrap items-stretch -mx-3 posts">
                     <div
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <h2 class="mb-4 text-4xl">Other projects</h2>
-            <p class="mb-8 text-base text-gray-400">Some other projects of note.</p>
+            <p class="mb-8 text-base text-gray-800">Some other projects of note.</p>
             <ul class="px-8 list-disc">
               <li><a href="https://vets.umich.edu/">U-M Veteran and Military Services.</a> (2020; Drupal site; design only)</li>
               <li><a href="https://nursing.umich.edu/online-msn/">Online Master of Nursing.</a> (2019; Hugo static site; development only)</li>

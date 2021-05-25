@@ -10,7 +10,7 @@
                 <figure class="mt-10">
                     <g-image :alt="$page.design.image_caption" :src="$page.design.image" />
                     <figcaption
-                        class="mt-4 text-base italic text-center text-gray-400"
+                        class="mt-4 text-base italic text-center text-gray-700"
                     >{{ $page.design.image_caption }}</figcaption>
                 </figure>
             </div>
@@ -21,7 +21,7 @@
                 <div v-html="$page.design.content"></div>
                 <div>
                     <g-link
-                        class="block text-gray-400 transition hover:text-indigo-400"
+                        class="block text-gray-700 transition hover:text-indigo-400"
                         to="/design/"
                     >Back to Design</g-link>
                 </div>

@@ -1,9 +1,9 @@
 a {
-    @apply no-underline text-gray-500;
+    @apply no-underline text-gray-800;
     transition: 0.25s all ease-out;
 
     &:hover {
-        @apply text-indigo-400;
+        @apply text-indigo-800;
     }
 }
 

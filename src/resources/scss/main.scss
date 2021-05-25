@@ -220,7 +220,7 @@ body.menu-open {
 }
 
 .is-active-link {
-  @apply text-white border-b border-white;
+  @apply text-indigo-800 border-b border-indigo-800;
 }
 .blend-overlay {
   mix-blend-mode: overlay;
