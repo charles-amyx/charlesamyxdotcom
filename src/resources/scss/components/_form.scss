@@ -4,10 +4,10 @@
         @apply mb-6;
 
         label {
-            @apply block mb-1 text-gray-100;
+            @apply block mb-1 text-gray-900;
 
             &:after {
-                @apply text-sm text-gray-300;
+                @apply text-sm text-gray-700;
             }
         }
 
