@@ -20,8 +20,7 @@
                             compassionate web design.
                             <br />
                             <br />Proud Filipino American, eskrimador, and fly fisherman.
-                            I also played guitar in a number of bands in Florida no
-                            one's ever heard of.
+                            I also play music, take photos (digital and lots and lots film cameras), draw stuff, paint stuff, and read a lot. 
                         </p>
                         <h2
                             class="text-2xl md:text-4xl load-hidden"
