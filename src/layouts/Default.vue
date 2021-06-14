@@ -44,8 +44,7 @@ export default {
         FooterPartial,
         ResponsiveNav,
     },
-};
-data() {
+    data() {
    return {
      jsonld:  {
       "@context": "https://schema.org",
@@ -63,16 +62,17 @@ data() {
             "name": "University of Michigan"
         }  
         },  ]
+        }
     }
-   }
- },
- metaInfo() {
-   return {
-      script: [
-        { innerHTML: JSON.stringify(this.jsonld), type: 'application/ld+json' }
-      ]
-}
-}
+    },
+    metaInfo() {
+    return {
+        script: [
+            { innerHTML: JSON.stringify(this.jsonld), type: 'application/ld+json' }
+        ]
+    }
+    }
+};
 </script>
 
 <style>
