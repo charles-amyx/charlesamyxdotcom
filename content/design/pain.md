@@ -19,7 +19,7 @@ Designer and developer (not the symptom and activity monitoring app)
 
 A project similar to myMSToolkit. We were approached by the principle investigators to create a more robust site and a tracking app. I used [Hugo](https://gohugo.io/) and Netlify CMS for the first times and had a blast learning. It was also the first time (and last) that I used [Tachyons](https://tachyons.io/).
 
-![Home page of OFA](./images/pain-home.jpg)
+![Home page of Pain Guide](./images/pain-home.jpg)
 
 ![An example of a main landing page](./images/pain-landing.jpg)
 

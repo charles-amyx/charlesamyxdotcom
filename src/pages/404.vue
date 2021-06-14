@@ -18,7 +18,7 @@
                         <p>
                             <a
                                 href="/"
-                                class="no-underline text-cerulean"
+                                class="text-black no-underline"
                             >Please go to the home page and try once more.</a>
                         </p>
                     </div>

@@ -1,11 +1,11 @@
 <template>
     <header
         id="header"
-        class="z-10 flex flex-col px-6 pt-6 pb-4 mx-auto inner header md:flex-row md:justify-between md:px-6 md:pt-10 md:pb-6"
+        class="z-10 flex flex-col px-6 pt-6 pb-4 mx-auto inner header md:flex-row md:justify-between md:px-6 md:pt-16 md:pb-6"
         role="banner"
     >
         <g-link
-            class="block text-base font-semibold tracking-widest text-gray-400 uppercase md:text-base hover:text-white"
+            class="block text-base font-semibold tracking-widest text-gray-800 uppercase md:text-base hover:text-gray-600 focus:text-gray-600"
             to="/"
             aria-label="Back to home"
         >{{ $static.metadata.siteName }}</g-link>
@@ -19,7 +19,7 @@
                 >
                     <g-link
                         :to="element.link"
-                        class="pb-1 font-semibold tracking-widest text-gray-400 uppercase transition border-transparent link hover:text-white"
+                        class="pb-1 font-semibold tracking-widest text-gray-700 uppercase transition border-b-0 link hover:text-indigo-600 focus:text-indigo-600 hover:border-b hover:border-indigo-800"
                         active-class="is-active-link"
                         exact-active-class="active"
                     >{{ element.name }}</g-link>

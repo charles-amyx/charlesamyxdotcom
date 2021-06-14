@@ -210,12 +210,9 @@
 @import "base/all";
 @import "components/all";
 
-body {
-  background-attachment: fixed;
-  background-image: url("/bg.svg");
-  background-position: bottom right -10rem;
-  background-repeat: no-repeat;
-  background-size: contain;
+
+html.sr .load-hidden {
+  visibility: hidden;
 }
 
 body.menu-open {
@@ -223,7 +220,7 @@ body.menu-open {
 }
 
 .is-active-link {
-  @apply text-white border-b border-white;
+  @apply text-indigo-800 border-b border-indigo-800;
 }
 .blend-overlay {
   mix-blend-mode: overlay;

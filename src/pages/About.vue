@@ -15,18 +15,15 @@
                     />
                     <div class="w-full mx-auto leading-relaxed md:w-7/12">
                         <p>
-                            A Senior Web Designer at Michigan Creative, a
-                            division of the Office of the Vice President for
-                            Communications at the University of Michigan. Keen
+                            A Senior Web Designer at the University of Michigan School of Nursing. Keen
                             interest around inclusive, accessible, and
                             compassionate web design.
                             <br />
-                            <br />Proud Filipino, escrimador, and fly fisherman.
-                            Oh, and I played in a number of bands in Florida no
-                            one's ever heard of.
+                            <br />Proud Filipino American, eskrimador, and fly fisherman.
+                            I also play music, take photos (digital and lots and lots film cameras), draw stuff, paint stuff, and read a lot. 
                         </p>
                         <h2
-                            class="text-2xl md:text-4xl"
+                            class="text-2xl md:text-4xl load-hidden"
                             v-scroll-reveal="{
                                 delay: 250,
                                 distance: '12px',
@@ -37,7 +34,7 @@
                             Experience
                         </h2>
                         <div
-                            class="mb-16"
+                            class="mb-16 load-hidden"
                             v-scroll-reveal="{
                                 delay: 250,
                                 distance: '12px',
@@ -61,7 +58,7 @@
                         </div>
 
                         <h2
-                            class="text-2xl md:text-4xl"
+                            class="text-2xl md:text-4xl load-hidden"
                             v-scroll-reveal="{
                                 delay: 250,
                                 distance: '12px',
@@ -72,7 +69,7 @@
                             Expertise
                         </h2>
                         <div
-                            class="mb-16"
+                            class="mb-16 load-hidden"
                             v-scroll-reveal="{
                                 delay: 250,
                                 distance: '12px',
@@ -83,15 +80,14 @@
                             <p class="text-base">
                                 Along with traditional print and digital design,
                                 I am a front end developer with experience using
-                                VueJS, React, a number of static site generators
-                                such as Hugo and 11ty, and Jamstack in general.
+                                VueJS, React,  a number of static site generators
+                                such as Hugo and 11ty, and Jamstack in general. I also work with a build out CMSes using a headless CMS called Netlify CMS. I also build custom Wordpress themes with custom React components for Gutenberg.
                                 I strive to write accessible and semantic HTML
                                 and CSS. While I have extensive experience with
-                                SASS, I find myself lately using PostCSS and a
+                                SASS, I find myself lately using vanilla css with PostCSS and a
                                 utility-first CSS philosophy. My use of
                                 javascript is mainly presentational
-                                and&mdash;when I do write it&mdash;it's of the
-                                vanilla variety.
+                                but have been doing more with Firebase lately which requires some heavy javascripting to create and interact with objects.
                             </p>
                             <p class="text-base">
                                 This site is built with a static site generator
@@ -107,12 +103,18 @@
                             </p>
                             <p class="text-base">
                                 It is also a redesign in progress, an approach
-                                inspired by Frank Chimero. I very much like
+                                inspired by Frank Chimero. And I very much like
                                 tinkering.
                             </p>
                             <p class="text-base">
-                                <strong>Known issues:</strong> mobile menu
-                                flashing on initial load on desktop.
+                                <strong>Known issues:</strong>
+                                <ul class="pl-6 list-disc">
+                                    <li class="pb-4"><strike>The photo page is powered by a masonry plugin for Vue. It's not consistently great. Planning on simplifying with a CSS grid layout instead.</strike></li>
+                                    <li><strike>
+                                    The mobile menu is flashing on initial load on desktop.
+                                </strike></li>
+                                </ul>
+
                             </p>
                         </div>
                     </div>
@@ -124,7 +126,7 @@
 
 <page-query>
   query {
-    allExperience(sortBy: "created", order: DESC) {
+    allExperience(sortBy: "position", order: ASC) {
       edges {
         node {
           title
@@ -140,16 +142,16 @@
 
 <script>
 export default {
-    metaInfo: {
-        title: "About",
-        meta: [
-            { name: "author", content: "Charles E. Amyx, III" },
-            {
-                name: "description",
-                content:
-                    "All about Charles E. Amyx, III, a digital art director, designer, painter, and photographer in Ann Arbor, MI",
-            },
-        ],
-    },
+  metaInfo: {
+    title: "About",
+    meta: [
+      { name: "author", content: "Charles E. Amyx, III" },
+      {
+        name: "description",
+        content:
+          "All about Charles E. Amyx, III, a digital art director, designer, painter, and photographer in Ann Arbor, MI",
+      },
+    ],
+  },
 };
 </script>

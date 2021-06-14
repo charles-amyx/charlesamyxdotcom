@@ -68,11 +68,19 @@ module.exports = {
         themeColor: "#284052",
         backgroundColor: "#000000",
         icon: "./src/assets/img/icon.png",
-        shortName: "CEAmyxIII", // Optional
-        maskableIcon: true, // Optional
+        shortName: "CEAmyxIII", 
+        maskableIcon: true, 
+        screenshots: [
+          {
+            src: 'src/assets/img/screenshot.png',
+            sizes: '1280x720',
+            type: 'image/png',
+          },
+        ],
         // Apple MacOS Meta Tags
-        appleMaskIcon: "favicon.svg", // Optional
-        appleMaskIconColor: "#284052", // Optional
+        appleMaskIcon: "favicon.svg",
+        appleMaskIconColor: "#284052",
+        msTileColor: '#284052',
         description:
           "The portfolio for Charles E. Amyx, III, a digital art director, designer, photographer, and painter in Ann Arbor, MI.", // Optional
       },

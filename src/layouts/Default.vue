@@ -8,7 +8,7 @@
         ></script>
         <a class="visually-hidden" href="#main">Skip to content</a>
         <div
-            class="fixed top-0 bottom-0 left-0 right-0 z-10 w-full h-full border-8 pointer-events-none border-dark-indigo"
+            class="fixed top-0 bottom-0 left-0 right-0 z-10 w-full h-full border-8 border-gray-400 pointer-events-none"
         ></div>
         <div id="wrapper" class="relative flex flex-col min-h-screen wrapper">
             <HeaderPartial />
@@ -44,6 +44,30 @@ export default {
         FooterPartial,
         ResponsiveNav,
     },
+    data() {
+   return {
+     jsonld:  {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Charles E. Amyx, III",
+        "url": "https://charlesamyx.com",
+        "image": "https://charlesamyx.com/charles_amyx.jpg",
+        "sameAs": "https://www.linkedin.com/in/charbot/",
+        "jobTitle": "Senior Web Designer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "University of Michigan"
+        }  
+        }
+    }
+    },
+    metaInfo() {
+    return {
+        script: [
+            { innerHTML: JSON.stringify(this.jsonld), type: 'application/ld+json' }
+        ]
+    }
+    }
 };
 </script>
 

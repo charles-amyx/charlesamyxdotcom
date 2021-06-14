@@ -2,11 +2,11 @@
     <Layout>
         <section class="flex-1">
             <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Paint</h1>
-            <p class="mb-16 text-base text-gray-400 lg:mb-24 md:text-center">Some fever dreams.</p>
+            <p class="mb-16 text-base text-gray-800 lg:mb-24 md:text-center">Some of my favorite fever dreams.</p>
             <div class="px-2">
                 <div class="flex flex-wrap items-start -mx-3">
                     <div
-                        class="w-full px-3 my-3 md:w-1/3"
+                        class="w-full px-3 my-3 md:w-1/3 load-hidden"
                         v-for="entry in $page.allPaint.edges"
                         :key="entry.node.id"
                         v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
@@ -14,7 +14,7 @@
                         <article class="group">
                             <figure>
                                 <g-image
-                                    class="rounded shadow-lg"
+                                    class="rounded-sm"
                                     :alt="entry.node.image_caption"
                                     :src="entry.node.image"
                                 />
