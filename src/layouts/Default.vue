@@ -45,6 +45,34 @@ export default {
         ResponsiveNav,
     },
 };
+data() {
+   return {
+     jsonld:  {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "mainEntity": [{
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Charles E. Amyx, III",
+        "url": "https://charlesamyx.com",
+        "image": "https://charlesamyx.com/charles_amyx.jpg",
+        "sameAs": "https://www.linkedin.com/in/charbot/",
+        "jobTitle": "Senior Web Designer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "University of Michigan"
+        }  
+        },  ]
+    }
+   }
+ },
+ metaInfo() {
+   return {
+      script: [
+        { innerHTML: JSON.stringify(this.jsonld), type: 'application/ld+json' }
+      ]
+}
+}
 </script>
 
 <style>
