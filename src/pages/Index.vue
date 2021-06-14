@@ -33,9 +33,6 @@
 export default {
   metaInfo: {
     title: "Home",
-    script: [
-      { innerHTML: '{ "@context": "http://schema.org/", "@type": "Person", "name": "Charles E. Amyx, III", "jobTitle": "Art Director", "url": "https://charlesamyx.com" }', type: 'application/ld+json' }
-    ],
     meta: [
       { name: "author", content: "Charles E. Amyx, III" },
       {

@@ -47,9 +47,6 @@ export default {
     data() {
    return {
      jsonld:  {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "mainEntity": [{
         "@context": "https://schema.org/",
         "@type": "Person",
         "name": "Charles E. Amyx, III",
@@ -61,7 +58,6 @@ export default {
             "@type": "Organization",
             "name": "University of Michigan"
         }  
-        },  ]
         }
     }
     },
