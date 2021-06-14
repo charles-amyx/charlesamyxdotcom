@@ -85,11 +85,10 @@
                                 such as Hugo and 11ty, and Jamstack in general. I also work with a build out CMSes using a headless CMS called Netlify CMS. I also build custom Wordpress themes with custom React components for Gutenberg.
                                 I strive to write accessible and semantic HTML
                                 and CSS. While I have extensive experience with
-                                SASS, I find myself lately using PostCSS and a
+                                SASS, I find myself lately using vanilla css with PostCSS and a
                                 utility-first CSS philosophy. My use of
                                 javascript is mainly presentational
-                                and&mdash;when I do write it&mdash;it's of the
-                                vanilla variety.
+                                but have been doing more with Firebase lately which requires some heavy javascripting to create and interact with objects.
                             </p>
                             <p class="text-base">
                                 This site is built with a static site generator
