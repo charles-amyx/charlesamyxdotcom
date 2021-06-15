@@ -12,7 +12,7 @@
                         v-scroll-reveal="{ delay: 250, distance: '12px', opacity: 0, origin: 'bottom' }"
                     >
                     <g-link
-                                class="relative block overflow-hidden transition bg-white border border-gray-300 rounded-sm featured-image-link group hover:shadow-2xl"
+                                class="relative block overflow-hidden transition bg-white border border-gray-300 rounded-sm featured-image-link group hover:shadow-2xl focus:shadow-2xl"
                                 :to="entry.node.path"
                             >
                         <article
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                         </article>
-                                                    </g-link>
+                    </g-link>
                     </div>
                 </div>
             </div>
