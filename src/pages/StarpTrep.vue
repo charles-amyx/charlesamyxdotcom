@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <section class="flex-1 w-full py-10 mx-auto max-w-75 lg:py-24">
-            <div class="flex items-center -mx-6">
+            <div class="items-center -mx-6 md:flex">
                 <div class="w-full px-6">
                     <g-image
                         class="pb-8 opacity-75"
@@ -10,7 +10,7 @@
                     />
                 </div>
                 <div class="w-full px-6 md:w-2/5">
-                    <h1 class="mb-0 text-6xl font-normal leading-none">Yeah...</h1>
+                    <h1 class="mb-0 text-3xl font-normal leading-none md:text-4xl lg:text-6xl">Yeah...</h1>
                     <hr class="mb-12" />
                     <div>
                         <p>
