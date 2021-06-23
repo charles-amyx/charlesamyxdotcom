@@ -2,7 +2,7 @@
     <Layout>
         <section class="flex-1">
             <div class="font-serif font-semibold leading-tight text-black page-title">
-                <h1>
+                <h1 class="text-5xl">
                     <g-link
                         class="inline-block text-gray-800 transition hover:text-indigo-700 alpha focus:text-indigo-700"
                         to="/design/"

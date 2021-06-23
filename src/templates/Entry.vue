@@ -4,7 +4,7 @@
         <section class="flex-1 column">
             <div class="mb-12 post-header md:mb-20">
                 <h1
-                    class="text-3xl page-title md:text-center md:text-5xl lg:text-6xl"
+                    class="mb-8 text-3xl leading-none page-title md:text-center md:text-4xl lg:text-5xl"
                     v-html="$page.design.title"
                 ></h1>
                 <figure class="mt-10">

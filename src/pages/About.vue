@@ -20,7 +20,7 @@
                             compassionate web design.
                             <br />
                             <br />Proud Filipino American, eskrimador, and fly fisherman.
-                            I also play music, take photos (digital and lots and lots film cameras), draw stuff, paint stuff, and read a lot. 
+                            I also play music, take <g-link class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900" to="/photo/">photos</g-link> (digital and lots and lots film cameras), <g-link class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900" to="/starp-trep/">draw</g-link> stuff, <g-link class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-600 hover:border-blue-900" to="/paint/">paint</g-link> stuff, and read a lot. 
                         </p>
                         <h2
                             class="text-2xl md:text-4xl load-hidden"
@@ -92,14 +92,14 @@
                             <p class="text-base">
                                 This site is built with a static site generator
                                 called
-                                <a href="https://gridsome.org/"
+                                <a class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900" href="https://gridsome.org/"
                                     >Gridsome (VueJS)</a
                                 >
                                 and uses
-                                <a href="https://tailwindcss.com/"
+                                <a class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900" href="https://tailwindcss.com/"
                                     >TailwindCSS</a
                                 >
-                                for its styling.
+                            for its styling. It's set in <a class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900" href="https://fonts.google.com/specimen/Work+Sans">Work Sans</a> and <a class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900"  href="https://fonts.google.com/specimen/Eczar">Eczar</a>.
                             </p>
                             <p class="text-base">
                                 It is also a redesign in progress, an approach
