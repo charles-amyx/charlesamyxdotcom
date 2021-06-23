@@ -22,4 +22,4 @@ During my three-year tenure at the College of Engineering, I designed and built 
 
 ![An interior page of University of Michigan College of Engineering](./images/coe-landing-type_02.jpg)
 
-[Visit site](https://engin.umich.edu/)
+[Visit site](https://web.archive.org/web/20210506191527/https://www.engin.umich.edu/) (it's since been updated as of June 2021, hence the wayback link)

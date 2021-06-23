@@ -22,4 +22,4 @@ During my three-year tenure at the College of Engineering, I designed and built 
 
 ![An interior page of University of Michigan College of Engineering News Center](./images/content.png)
 
-[Visit site](https://news.engin.umich.edu/)
+[Visit site](https://web.archive.org/web/20210614165950/https://news.engin.umich.edu/) (it's since been updated as of June 2021, hence the wayback link)
