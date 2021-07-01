@@ -6,9 +6,10 @@
         <form
           class="form"
           name="contact"
-          method="post"
+          method="POST"
+          action="/success/"
           v-on:submit.prevent="handleSubmit"
-          netlify-honeypot="bot-field"
+          data-netlify-honeypot="bot-field"
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact" />
