@@ -13,11 +13,11 @@ March 2019 - October 2020
 
 ## Role
 
-Designer and WordPress Developer.
+Designer and custom WordPress theme developement.
 
 ## Background
 
-This year we've moved the report in its entirety online. An open and airy design presents the year four's achivements in an easy understand format. The tech stack behind the site is Wordpress, Sage, Advanced Custom Fields, Sage ACF directives, Roots, AlpineJS, and TailwindCSS. This was the first time using Roots/Sage and a new method of deploying the site to ITS servers.
+This year we've moved the report in its entirety online. An open and airy design presents the year four's achivements in an easy understand format. The tech stack behind the site is Wordpress, Sage, Advanced Custom Fields, Sage ACF directives, Roots, AlpineJS, and TailwindCSS. This was the first time using Roots/Sage and a new method of deploying the site to ITS servers. I learned that I have so much more to learn. I would 100% use this tech stack again.
 
 ![Home page of DEI](./images/dei-home.jpg)
 
