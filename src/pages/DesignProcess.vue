@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="w-full leading-relaxed">
-      <section class="flex-1 w-full max-w-6xl py-10 mx-auto md:px-16 lg:py-24">
+      <section class="flex-1 w-full max-w-6xl px-6 py-10 mx-auto md:px-16 lg:py-24">
         <h1
           class="mb-0 text-3xl font-normal leading-none md:text-4xl lg:text-6xl"
         >
@@ -17,7 +17,7 @@
       </section>
 
       <section
-        class="flex-1 w-full max-w-6xl py-10 mx-auto md:px-16 content lg:pt-10 lg:pb-24"
+        class="flex-1 w-full max-w-6xl px-6 py-10 mx-auto md:px-16 content lg:pt-10 lg:pb-24"
       >
         <h2 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
           Project Background
@@ -293,7 +293,8 @@
             >desktop</a
           >, gathering feedback from the client and the developers.
         </p>
-        <p>Throughout the process, I'm advocating for the very best accessible and empathic user experience and design. Accessibility and empathy benefit all!</p>
+        <p>Throughout the process, I'm advocating for the very best accessible and empathic user experience and design. Accessibility and empathy benefit all.</p>
+        <p>Please take a look at my other work <g-link class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900" to="/design/">here</g-link>. And thank you!</p>
       </section>
     </div>
   </Layout>
