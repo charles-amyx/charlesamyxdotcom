@@ -1,28 +1,27 @@
 {
-  "mobileMenu": [
-    {
-      "name": "Home",
-      "link": "/"
-    },
-    {
-      "name": "Design",
-      "link": "design/"
-    },
-    {
-      "name": "Paint",
-      "link": "paint/"
-    },
-    {
-      "name": "Photo",
-      "link": "photo/"
-    },
-    {
-      "name": "About",
-      "link": "about/"
-    },
-    {
-      "name": "Contact",
-      "link": "contact/"
-    }
-  ]
+    "mobileMenu": [{
+            "name": "Home",
+            "link": "/"
+        },
+        {
+            "name": "Design",
+            "link": "design"
+        },
+        {
+            "name": "Paint",
+            "link": "paint"
+        },
+        {
+            "name": "Photo",
+            "link": "photo"
+        },
+        {
+            "name": "About",
+            "link": "about"
+        },
+        {
+            "name": "Contact",
+            "link": "contact"
+        }
+    ]
 }

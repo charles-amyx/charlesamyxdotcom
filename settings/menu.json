@@ -1,20 +1,19 @@
 {
-  "menu": [
-    {
-      "name": "Design",
-      "link": "design/"
-    },
-    {
-      "name": "Paint",
-      "link": "paint/"
-    },
-    {
-      "name": "Photo",
-      "link": "photo/"
-    },
-    {
-      "name": "About",
-      "link": "about/"
-    }
-  ]
+    "menu": [{
+            "name": "Design",
+            "link": "design"
+        },
+        {
+            "name": "Paint",
+            "link": "paint"
+        },
+        {
+            "name": "Photo",
+            "link": "photo"
+        },
+        {
+            "name": "About",
+            "link": "about"
+        }
+    ]
 }
