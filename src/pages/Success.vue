@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="flex-1">
+    <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
       <h1 class="page-title">Right on! It's on its way.</h1>
       <div class="content">
         <div class="w-full">

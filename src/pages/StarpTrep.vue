@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <section class="flex-1 w-full py-10 mx-auto max-w-75 lg:py-24">
+        <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
             <div class="items-center -mx-6 md:flex">
                 <div class="w-full px-6">
                     <g-image

@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <section class="flex-1">
+        <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
             <div class="font-serif font-semibold leading-tight text-black page-title">
                 <h1 class="text-5xl">
                     <g-link

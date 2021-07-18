@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="flex-1 w-full md:w-2/4">
+    <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto md:w-2/4">
       <h1 class="tracking-tight page-title">Hello there</h1>
       <div class="w-full text-gray-800 content">
         <form

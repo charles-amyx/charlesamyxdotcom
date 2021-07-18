@@ -13,7 +13,7 @@
         <div id="wrapper" class="relative flex flex-col min-h-screen wrapper">
             <HeaderPartial />
             <transition name="fade" appear>
-                <main id="main" class="flex flex-col flex-1 py-10 main inner lg:py-20">
+                <main id="main" class="flex flex-col flex-1 py-10 main lg:py-20">
                     <slot />
                 </main>
             </transition>

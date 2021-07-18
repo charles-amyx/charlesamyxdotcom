@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <section class="flex-1">
+        <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
             <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Photography</h1>
             <p class="mb-16 text-base text-gray-700 lg:mb-24 md:text-center">Light bends.</p>
             <masonry :cols="{default: 4, 768: 3, 640: 1}" :gutter="15">
