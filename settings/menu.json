@@ -1,19 +1,19 @@
 {
     "menu": [{
             "name": "Design",
-            "link": "design"
+            "link": "/design/"
         },
         {
             "name": "Paint",
-            "link": "paint"
+            "link": "/paint/"
         },
         {
             "name": "Photo",
-            "link": "photo"
+            "link": "/photo/"
         },
         {
             "name": "About",
-            "link": "about"
+            "link": "/about/"
         }
     ]
 }
