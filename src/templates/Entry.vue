@@ -1,7 +1,7 @@
 
 <template>
     <Layout>
-        <section class="flex-1 column">
+        <section class="flex-1 w-full max-w-6xl py-10 mx-auto lg:py-24">
             <div class="mb-12 post-header md:mb-20">
                 <h1
                     class="mb-8 text-3xl leading-none page-title md:text-center md:text-4xl lg:text-5xl"
