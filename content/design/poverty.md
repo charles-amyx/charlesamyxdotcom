@@ -16,7 +16,7 @@ June 2020 - December 2020
 Designer.
 
 ## Background
-My final design project at Michigan Creative. The client wanted a more modern platform for their data and research. 
+My final design project at Michigan Creative. The client wanted a more modern platform for their data and research. I have more detail of the process behind this work <a class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900" href="/design-process/">here</a>. 
 
 ![Home page of Poverty Solutions](./images/pov-home.jpg)
 
