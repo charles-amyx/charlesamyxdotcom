@@ -2,7 +2,7 @@
   <Layout>
     <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
       <h1
-        class="mb-16 text-3xl page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl"
+        class="mb-16 text-3xl  page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl"
       >
         About
       </h1>
@@ -122,16 +122,17 @@
               <p class="text-base">
                 Along with traditional print and digital design, I am a front
                 end developer with experience using VueJS, React, a number of
-                static site generators such as Hugo and 11ty, and Jamstack in
-                general. I also build out custom CMSes using a headless CMS
-                called Netlify CMS and make custom Wordpress themes with
-                custom React components for Gutenberg. I strive to write
-                accessible and semantic HTML and CSS. While I have extensive
-                experience with SASS, I find myself lately using vanilla css
-                with PostCSS and a utility-first CSS philosophy. My use of
-                javascript is mainly presentational but have been doing more
-                with Firebase lately which requires some heavy javascripting to
-                create and interact with objects.
+                static site generators such as Hugo and 11ty, and with Jamstack
+                in general. I also build out custom CMSes using a headless CMS
+                called Netlify CMS and make custom Wordpress themes with custom
+                React components for Gutenberg. I'm currently building a custom
+                Drupal theme that's more fun that I originally thought! I strive
+                to write accessible and semantic HTML and CSS. While I have
+                extensive experience with SASS, I find myself lately using
+                vanilla css with PostCSS and a utility-first CSS philosophy. My
+                use of javascript is mainly presentational but have been doing
+                more with Firebase lately which requires some heavy
+                javascripting to create and interact with objects.
               </p>
               <p class="text-base">
                 This site is built with a static site generator called
@@ -183,8 +184,10 @@
                 Chimero. And I very much like tinkering.
               </p>
 
-              <h3 class="font-sans text-base "><strong>Known issues:</strong></h3>
-              <ul class="pl-6 text-base list-disc ">
+              <h3 class="font-sans text-base">
+                <strong>Known issues:</strong>
+              </h3>
+              <ul class="pl-6 text-base list-disc">
                 <li class="pb-4">
                   <strike
                     >The photo page is powered by a masonry plugin for Vue. It's
