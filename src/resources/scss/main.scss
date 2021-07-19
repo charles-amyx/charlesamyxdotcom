@@ -112,3 +112,9 @@ body.menu-open {
         @apply mb-1 text-3xl;
     }
 }
+
+.more-work {
+    li a {
+        @apply hover:text-red-500;
+    }
+}

@@ -40,7 +40,7 @@
             </div>
             <h2 class="mb-4 text-4xl">Other projects</h2>
             <p class="mb-8 text-base text-gray-700">Some other projects of note.</p>
-            <ul class="px-8 list-disc">
+            <ul class="px-8 list-disc more-work">
               <li><a href="https://vets.umich.edu/">U-M Veteran and Military Services.</a> (2020; Drupal site; design only)</li>
               <li><a href="https://nursing.umich.edu/online-msn/">Online Master of Nursing.</a> (2019; Hugo static site; development only)</li>
               <li><a href="https://youthpolicylab.umich.edu/">Youth Policy Lab.</a> (2019-2021; Hugo static site, Netlify CMS; development only and site maintenance)</li>
