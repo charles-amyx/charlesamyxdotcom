@@ -173,23 +173,10 @@
                     border-b border-red-300
                     hover:border-blue-900
                   "
-                  href="https://fonts.google.com/specimen/Work+Sans"
-                  >Work Sans</a
+                  href="https://fonts.google.com/?query=lexend"
+                  >Lexend</a
                 >
-                and
-                <a
-                  class="
-                    pb-0.5
-                    text-red-500
-                    transition-all
-                    duration-200
-                    ease-in-out
-                    border-b border-red-300
-                    hover:border-blue-900
-                  "
-                  href="https://fonts.google.com/specimen/Eczar"
-                  >Eczar</a
-                >.
+                .
               </p>
               <p class="text-base">
                 It is also a redesign in progress, an approach inspired by Frank
