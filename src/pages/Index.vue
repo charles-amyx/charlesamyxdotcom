@@ -16,7 +16,7 @@
           
           <p class="text-4xl leading-snug md:text-7xl">
             <g-link
-              class="block text-gray-800 transition hover:text-indigo-700 alpha focus:text-indigo-700"
+              class="block tracking-tight text-gray-800 transition md:tracking-normal hover:text-indigo-700 alpha focus:text-indigo-700"
               to="/photo/"
               >Photographer </g-link
             >
