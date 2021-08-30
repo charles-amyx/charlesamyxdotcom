@@ -17,12 +17,11 @@ Designer.
 
 <div class="w-full leading-relaxed">
       <section class="flex-1 w-full max-w-6xl ">
-        <h2
-          class="mb-0 text-3xl font-normal leading-none md:text-4xl lg:text-6xl"
+        <h3 
+          class="mb-6 text-3xl font-normal leading-none md:text-4xl lg:text-6xl"
         >
           Process
-        </h2>
-        <hr class="mb-12" />
+        </h3 >
         <p>
           Poverty Solutions was one of my last design projects at
           Michigan Creative. The client wanted a more modern platform for their
@@ -31,9 +30,9 @@ Designer.
       </section>
       <section class="flex-1 w-full max-w-6xl mx-auto content lg:pt-10 lg:pb-24"
       >
-        <h2 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
+        <h3 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
           Project Background
-        </h2>
+        </h3 >
         <p>
           Poverty Solutions, entering its fifth year, is building on the
           successes of the past, adding additional programming and accompanying
@@ -50,7 +49,7 @@ Designer.
           drive awareness of Poverty Solutions and its mission.
         </p>
       </section>
-      <figure class="w-full mt-10">
+      <figure class="w-full mt-10 mb-10 md:mb-0">
 
 ![Home page of Poverty Solutions](./images/sitemap.jpg)
 
@@ -75,9 +74,9 @@ Designer.
       <section
        class="flex-1 w-full max-w-6xl mx-auto content lg:pt-10 lg:pb-24"
       >
-        <h2 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
+        <h3 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
           Beginning the design process
-        </h2>
+        </h3 >
         <p>
           Prior to this point in the process there have been content
           inventories, initial content strategy planning, and a new site map
@@ -89,7 +88,7 @@ Designer.
           advantage of best practices in usability, design, and accessibility.
         </p>
       </section>
-      <figure class="w-full mt-10">
+      <figure class="w-full mt-10 mb-10 md:mb-0">
 
 ![an image of a rough wireframe drawn in a notebook](./images/paper.jpg)
 
@@ -114,9 +113,9 @@ Designer.
       <section
        class="flex-1 w-full max-w-6xl mx-auto content lg:pt-10 lg:pb-24"
       >
-        <h2 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
+        <h3 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
           Paper
-        </h2>
+        </h3 >
         <p>
           I still start with paper. Notes, sketches, doodles, everthing goes in
           a notebook. It begins with notes from my questions in the discovery
@@ -125,7 +124,7 @@ Designer.
           more ideas.
         </p>
       </section>
-      <figure class="w-full mt-10">
+      <figure class="w-full mt-10 mb-10 md:mb-0">
 
 ![A polished wireframe created in a design application](./images/wires.jpg)
 
@@ -150,9 +149,9 @@ Designer.
       <section
        class="flex-1 w-full max-w-6xl mx-auto content lg:pt-10 lg:pb-24"
       >
-        <h2 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
+        <h3 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
           Wireframes
-        </h2>
+        </h3 >
         <p>
           Before I get too deep in the design process, there's the matter of
           what elements go where to best execute their goals. This process is
@@ -165,7 +164,7 @@ Designer.
           worked out.
         </p>
       </section>
-      <figure class="w-full mt-10">
+      <figure class="w-full mt-10 mb-10 md:mb-0">
 
 ![I usually present two versions of a design for a web page](./images/versions.jpg)
 
@@ -193,9 +192,9 @@ Designer.
       <section
        class="flex-1 w-full max-w-6xl mx-auto content lg:pt-10 lg:pb-24"
       >
-        <h2 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
+        <h3 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
           Initial designs
-        </h2>
+        </h3 >
         <p>
           During the wireframing process, I usually start to think that I have a
           pretty good idea what a version will look like. I start with type
@@ -227,7 +226,7 @@ Designer.
           components, and other visuals.
         </p>
       </section>
-      <figure class="w-full mt-10">
+      <figure class="w-full mt-10 mb-10 md:mb-0">
 
 ![Tada! Final product, new and shiny, just for you!](./images/final.jpg)
 
@@ -252,9 +251,9 @@ Designer.
       <section
        class="flex-1 w-full max-w-6xl mx-auto content lg:pt-10 lg:pb-24"
       >
-        <h2 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
+        <h3 class="text-2xl font-normal leading-none md:text-3xl lg:text-4xl">
           Refining, additions, and prototyping
-        </h2>
+        </h3 >
         <p>
           This phase, for me, is the most critical part. We're not only fleshing
           out the rest of the wires, we're thinking about interactions,
