@@ -85,11 +85,10 @@ module.exports = {
                     sizes: '1280x720',
                     type: 'image/png',
                 }, ],
-                // Apple MacOS Meta Tags
                 appleMaskIcon: "favicon.svg",
                 appleMaskIconColor: "#284052",
                 msTileColor: '#284052',
-                description: "The portfolio for Charles E. Amyx, III, a digital art director, designer, photographer, and painter in Ann Arbor, MI.", // Optional
+                description: "The portfolio for Charles E. Amyx, III, a digital art director, designer, photographer, and painter in Ann Arbor, MI.",
             },
         },
         {
