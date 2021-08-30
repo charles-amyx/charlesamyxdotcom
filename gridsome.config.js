@@ -50,6 +50,17 @@ module.exports = {
             },
         },
         {
+            use: 'gridsome-plugin-netlify-redirects',
+            options: {
+                typeName: 'NetlifyRedirects',
+                redirects: [{
+                    from: '/design-process/',
+                    to: '/design/poverty-solutions/',
+                    status: 302
+                }, ]
+            }
+        },
+        {
             use: "gridsome-plugin-pwa",
             options: {
                 // Service Worker Options
