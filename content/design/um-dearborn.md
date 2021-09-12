@@ -13,7 +13,7 @@ February 2019 - November 2019
 
 ## Role
 
-Designer and developer of the styleguide (HTML/CSS/JS prototypes of components). Styleguide was built with VuePress, my first time using VueJS.
+Designer and developer of the style guide (HTML/CSS/JS prototypes of components). The style guide was built with VuePress, my first time using VueJS.
 
 ## Background
 
