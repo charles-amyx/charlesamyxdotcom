@@ -2,7 +2,7 @@
   <Layout>
     <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
       <h1
-        class="mb-16 text-3xl  page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl"
+        class="mb-16 text-3xl page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl"
       >
         About
       </h1>
@@ -64,6 +64,7 @@
               >
               stuff, and read a lot.
             </p>
+            <p>I'm currently working on a comprehensive design system and a visual refresh for the School of Nursing. :excited face:</p>
             <h2
               class="text-2xl md:text-4xl load-hidden"
               v-scroll-reveal="{
