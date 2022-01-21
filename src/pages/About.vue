@@ -204,7 +204,7 @@
               </ul>
               <h3 class="font-sans text-base">
                 <strong>Privacy</strong>
-                <p>This website no longer uses any analytics or trackers. I value my privacy and extend that to my web properties.</p>
+                <p>This website no longer uses any analytics or trackers. I value my privacy and extend that value to you on my web properties.</p>
               </h3>
             </div>
           </div>
