@@ -92,23 +92,6 @@ module.exports = {
             },
         },
         {
-            use: "@gridsome/plugin-google-analytics",
-            options: {
-                id: "UA-8525758-2",
-                debug: {
-                    sendHitTask: process.env.NODE_ENV === "production",
-                },
-            },
-        },
-        {
-            use: 'gridsome-plugin-gtag',
-            options: {
-                config: {
-                    id: process.env.GOOGLE_ANALYTICS_ID,
-                },
-            },
-        },
-        {
             use: "gridsome-plugin-robots-txt",
             options: {
                 host: "https://charlesamyx.com",
