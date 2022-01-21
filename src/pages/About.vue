@@ -188,7 +188,7 @@
               <h3 class="font-sans text-base">
                 <strong>Known issues:</strong>
               </h3>
-              <ul class="pl-6 text-base list-disc">
+              <ul class="pl-6 mb-6 text-base list-disc">
                 <li class="pb-4">
                   <strike
                     >The photo page is powered by a masonry plugin for Vue. It's
