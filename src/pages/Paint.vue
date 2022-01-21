@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
+        <section class="flex-1 w-full px-6 ml-auto mr-auto">
             <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Paint</h1>
             <p class="mb-16 text-base text-gray-800 lg:mb-24 md:text-center">Some of my favorite fever dreams.</p>
             <div class="px-2">

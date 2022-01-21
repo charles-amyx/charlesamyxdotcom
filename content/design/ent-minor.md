@@ -1,7 +1,7 @@
 ---
 title: Entrepreneurship Minor
 category: Design
-excerpt: A 15-credit minor equips undergraduate students from any background or area of study.
+excerpt: Equiping undergraduate students from any background or area of study.
 created: 2021-01-15
 image: ./images/ent.png
 image_caption: Entrepreneurship Minor

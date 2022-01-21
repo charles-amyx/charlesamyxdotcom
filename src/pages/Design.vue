@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
+        <section class="flex-1 w-full px-6 ml-auto mr-auto">
             <h1 class="mb-4 text-3xl page-title md:text-center md:text-5xl lg:text-6xl">Design</h1>
             <p class="mb-16 text-base text-gray-800 lg:mb-24 md:text-center">Some recent projects.</p>
             <div class="px-2 pb-8">
@@ -26,7 +26,7 @@
                                     />
                                 </figure>
                             <div class="p-8">
-                                <h2 class="mb-6 text-2xl">
+                                <h2 class="mb-6 text-xl xl:text-3xl">
                                     {{ entry.node.title }}
                                 </h2>
                                 <div class="mb-4 text-sm text-gray-700 md:flex">

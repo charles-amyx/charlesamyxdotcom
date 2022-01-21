@@ -1,19 +1,19 @@
 <template>
   <Layout>
-    <section class="flex-1 w-full max-w-6xl px-6 ml-auto mr-auto">
+    <section class="flex-1 w-full px-6 ml-auto mr-auto">
       <h1
         class="mb-16 text-3xl page-title md:text-center md:text-5xl lg:mb-24 lg:text-6xl"
       >
         About
       </h1>
-      <div class="prose content">
+      <div class="content">
         <div class="w-full">
           <g-image
-            class="hidden pb-8 opacity-75 md:block"
+            class="hidden w-full pb-8 opacity-75 md:block"
             src="~/assets/about.jpg"
             alt="an abstract painting"
           />
-          <div class="w-full mx-auto leading-relaxed md:w-7/12">
+          <div class="w-full mx-auto leading-relaxed prose md:w-1/2">
             <p>
               A Senior Web Designer at the University of Michigan School of
               Nursing. Keen interest around inclusive, accessible, and
