@@ -1,15 +1,19 @@
+const tailwind = require('tailwindcss')
+const postcssPlugins = [
+    tailwind(),
+]
+
 module.exports = {
     siteName: "Charles E. Amyx, III",
     siteUrl: "https://charlesamyx.com",
-    plugins: [{
-            use: "gridsome-plugin-tailwindcss",
-            options: {
-                tailwindConfig: "./tailwind.config.js",
-                shouldImport: true,
-                shouldTimeTravel: true,
+    css: {
+        loaderOptions: {
+            postcss: {
+                plugins: postcssPlugins,
             },
         },
-        {
+    },
+    plugins: [{
             use: "gridsome-source-static-meta",
             options: {
                 path: "settings/*.json",
@@ -154,7 +158,7 @@ module.exports = {
             component: "./src/templates/Category.vue",
         }, ],
     },
-    chainWebpack: (config) => {
+    chainWebpack: config => {
         config.resolve.alias.set("@images", "@/assets/img");
     },
 };

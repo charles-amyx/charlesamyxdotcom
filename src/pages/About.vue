@@ -6,7 +6,7 @@
       >
         About
       </h1>
-      <div class="content">
+      <div class="prose content">
         <div class="w-full">
           <g-image
             class="hidden pb-8 opacity-75 md:block"
