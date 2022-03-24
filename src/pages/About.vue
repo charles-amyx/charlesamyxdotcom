@@ -15,8 +15,7 @@
           />
           <div class="w-full mx-auto leading-relaxed prose md:w-1/2">
             <p>
-              A Senior Web Designer at the University of Michigan School of
-              Nursing. Keen interest around inclusive, accessible, and
+              A Senior Web Designer for Digital Experience Brand Communications at Cornell University. Keen interest around inclusive, accessible, and
               compassionate web design.
               <br />
               <br />Proud Filipino American, eskrimador, and fly fisherman. I

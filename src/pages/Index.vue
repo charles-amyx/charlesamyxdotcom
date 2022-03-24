@@ -28,7 +28,7 @@
           <a
             class="text-gray-800 transition hover:text-red-700 focus:text-red-700"
             href="https://nursing.umich.edu"
-            >Currently at the University of Michigan School of Nursing.</a
+            >Currently at Cornell University.</a
           >
         </p>
       </div>
