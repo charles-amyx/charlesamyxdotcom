@@ -19,6 +19,7 @@
         "gridsome-plugin-pwa": "0.0.22",
         "gridsome-plugin-robots-txt": "^1.0.2",
         "gridsome-scroll-reveal": "^1.0.11",
+        "gridsome-source-static-meta": "^1.0.1",
         "postcss-import": "^14.1.0",
         "prism-themes": "^1.9.0",
         "vue-loader": "^17.0.0",

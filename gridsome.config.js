@@ -14,7 +14,7 @@ module.exports = {
         },
     },
     plugins: [{
-            use: "~/plugins/gridsome-source-static-meta",
+            use: "gridsome-source-static-meta",
             options: {
                 path: "settings/*.json",
             },
