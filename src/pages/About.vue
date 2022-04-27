@@ -63,7 +63,6 @@
               >
               stuff, and read a lot.
             </p>
-            <p>I'm currently working on a comprehensive design system and a visual refresh for the School of Nursing. :excited face:</p>
             <h2
               class="text-2xl md:text-4xl load-hidden"
               v-scroll-reveal="{
