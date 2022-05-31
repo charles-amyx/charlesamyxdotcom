@@ -10,5 +10,5 @@ description: Primary designer for all web projects.
   practicing kind and inclusive design, and
   communicating best practices for the web to all
   of our campus partners.
-position: 3
+position: 4
 ---
