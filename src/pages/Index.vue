@@ -28,7 +28,7 @@
           <a
             class="text-gray-800 transition hover:text-red-700 focus:text-red-700"
             href="https://nursing.umich.edu"
-            >Currently at Cornell University Brand Communication.</a
+            >Currently at AllCampus.</a
           >
         </p>
       </div>
