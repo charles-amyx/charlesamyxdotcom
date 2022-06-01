@@ -27,7 +27,7 @@
         <p class="text-lg tracking-wide">
           <a
             class="text-gray-800 transition hover:text-red-700 focus:text-red-700"
-            href="https://nursing.umich.edu"
+            href="https://allcampus.com"
             >Currently at AllCampus.</a
           >
         </p>
