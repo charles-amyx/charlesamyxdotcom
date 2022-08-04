@@ -6,20 +6,22 @@
           <g-link
             class="text-gray-800 transition hover:text-indigo-700 alpha focus:text-indigo-700"
             to="/design/"
-            >Designer </g-link
-          ></h1>
-          <p class="mb-6 text-4xl leading-snug md:text-7xl"><g-link
-            class="text-gray-800 transition hover:text-indigo-700 alpha focus:text-indigo-700"
-            to="/paint/"
-            >Painter </g-link
-          ></p>
-          
+            >Designer
+          </g-link>
+          <p class="mb-6 text-4xl leading-snug md:text-7xl">
+            <g-link
+              class="text-gray-800 transition hover:text-indigo-700 alpha focus:text-indigo-700"
+              to="/paint/"
+              >Painter
+            </g-link>
+          </p>
+
           <p class="text-4xl leading-snug md:text-7xl">
             <g-link
               class="block tracking-tight text-gray-800 transition md:tracking-normal hover:text-indigo-700 alpha focus:text-indigo-700"
               to="/photo/"
-              >Photographer </g-link
-            >
+              >Photographer
+            </g-link>
           </p>
         </h1>
       </div>
