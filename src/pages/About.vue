@@ -15,49 +15,25 @@
           />
           <div class="w-full mx-auto leading-relaxed prose md:w-1/2">
             <p>
-              A Senior Digital Designer for AllCampus. Keen interest around inclusive, accessible, and
-              compassionate web design.
+              A Senior Digital Designer for AllCampus. Keen interest around
+              inclusive, accessible, and compassionate web design.
               <br />
               <br />Proud Filipino American, eskrimador, and fly fisherman. I
               also play music, take
               <g-link
-                class="
-                  pb-0.5
-                  text-red-500
-                  transition-all
-                  duration-200
-                  ease-in-out
-                  border-b border-red-300
-                  hover:border-blue-900
-                "
+                class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900"
                 to="/photo/"
                 >photos</g-link
               >
               (digital and lots and lots film cameras),
               <g-link
-                class="
-                  pb-0.5
-                  text-red-500
-                  transition-all
-                  duration-200
-                  ease-in-out
-                  border-b border-red-300
-                  hover:border-blue-900
-                "
+                class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900"
                 to="/starp-trep/"
                 >draw</g-link
               >
               stuff,
               <g-link
-                class="
-                  pb-0.5
-                  text-red-500
-                  transition-all
-                  duration-200
-                  ease-in-out
-                  border-b border-red-600
-                  hover:border-blue-900
-                "
+                class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-600 hover:border-blue-900"
                 to="/paint/"
                 >paint</g-link
               >
@@ -136,43 +112,19 @@
               <p class="text-base">
                 This site is built with a static site generator called
                 <a
-                  class="
-                    pb-0.5
-                    text-red-500
-                    transition-all
-                    duration-200
-                    ease-in-out
-                    border-b border-red-300
-                    hover:border-blue-900
-                  "
+                  class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900"
                   href="https://gridsome.org/"
                   >Gridsome (VueJS)</a
                 >
                 and uses
                 <a
-                  class="
-                    pb-0.5
-                    text-red-500
-                    transition-all
-                    duration-200
-                    ease-in-out
-                    border-b border-red-300
-                    hover:border-blue-900
-                  "
+                  class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900"
                   href="https://tailwindcss.com/"
                   >TailwindCSS</a
                 >
                 for its styling. It's set in
                 <a
-                  class="
-                    pb-0.5
-                    text-red-500
-                    transition-all
-                    duration-200
-                    ease-in-out
-                    border-b border-red-300
-                    hover:border-blue-900
-                  "
+                  class="pb-0.5 text-red-500 transition-all duration-200 ease-in-out border-b border-red-300 hover:border-blue-900"
                   href="https://fonts.google.com/?query=lexend"
                   >Lexend</a
                 >
@@ -200,10 +152,6 @@
                   </strike>
                 </li>
               </ul>
-              <h3 class="font-sans text-base">
-                <strong>Privacy</strong>
-                <p>This website no longer uses any analytics or trackers. I value my privacy and extend that value to you on my web properties.</p>
-              </h3>
             </div>
           </div>
         </div>

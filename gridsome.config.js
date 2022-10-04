@@ -141,6 +141,14 @@ module.exports = {
                 height: 900,
             },
         },
+        {
+            use: 'gridsome-plugin-gtag',
+            options: {
+                config: {
+                    id: process.env.GOOGLE_ANALYTICS_ID,
+                },
+            },
+        },
     ],
     transformers: {
         remark: {
