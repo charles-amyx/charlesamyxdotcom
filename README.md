@@ -1,35 +1,40 @@
-# Charles Amyx's portfolio
+# Charles E. Amyx's Portfolio
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b6a96d41-68ff-4b83-8426-6ef832a8b38b/deploy-status)](https://app.netlify.com/sites/amyx/deploys)
+[11ty](https://www.11ty.dev/), powered by [Vite](https://vitejs.dev/)
+with [Tailwind CSS](https://tailwindcss.com) and
+[Alpine.js](https://github.com/alpinejs/alpine/).
 
-## Credits
+## Install Dependencies
 
-* This starter was initial created by [Joseph Dyer](https://github.com/josephdyer).
+First, make sure you have `npm` (packaged with
+[Node.js](https://nodejs.org)) installed, then run `npm run setup` to install
+the dependencies and validate that everything is running correctly.
 
-## Features
+## Available Scripts
 
-* Gridsome
-* Tailwindcss
-* SCSS
-* Markdown
-* Tags
-* Blog
+### Development
 
-## Plugins
+```bash
+# runs the app in the development mode.
+npm run dev
+```
 
-With Gridsome offering a plugin-rich ecosystem, there are a few key plugins that make this project possible. 
+Open http://localhost:3000/ to view it in your browser.
 
-- [Gridsome Source Filesystem](https://gridsome.org/plugins/@gridsome/source-filesystem) Transform files into content that can be fetched with GraphQL in your components.
+The page will reload if you make file changes.
 
-## Install
+### Production
 
-### 1. Install Gridsome CLI tool if you don't have
+```bash
+# builds a static copy of your site to the `dist/` folder.
+npm run build
+```
 
-`npm install --global @gridsome/cli`
+```bash
+# serve the content from the `dist/` folder.
+npm run preview
+```
 
-### 2. Create a Gridsome project
+Open http://localhost:5000/ to view it in your browser.
 
-1. `gridsome create my-blog https://github.com/noxify/gridsome-starter-skeleventy` to install gridsome with this starter
-2. `cd my-blog` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 
+Your code is now ready to be deployed!

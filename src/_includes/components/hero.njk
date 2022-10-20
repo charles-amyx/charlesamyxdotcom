@@ -1,0 +1,32 @@
+<section  id="main-content" class="w-full">
+  <div class="relative px-4 py-8 mx-auto max-w-screen-2xl sm:px-6 lg:px-8" x-data="{ shown: false }" x-intersect="shown = true">
+    <div class="w-full md:w-500" x-show="shown" x-transition.duration.500ms x-transition.opacity>
+      <h1 class="w-5/6 font-medium md:w-full text-7xl sm:text-8xl font-display">
+        {{ hero.title }}
+      </h1>
+      <p class="mt-4 text-lg tracking-widest uppercase">
+        {{ hero.strapline }}
+      </p>
+    </div>
+    <ul class="w-full gap-8 mt-16 lg:mt-40 lg:-mb-44 hero-links">
+      {% for link in hero.links %}
+        <li class="mb-12 last:mb-0">
+          <a href="{{ link.url }}" class="font-bold tracking-wider uppercase transition bg-no-repeat ease-in-expo text-dark-green hover:text-primary">{{ link.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="hidden lg:absolute mt-60 lg:block">
+      <svg width="8" height="320" viewBox="0 0 8 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 0.333333C2.52724 0.333333 1.33333 1.52724 1.33333 3C1.33333 4.47276 2.52724 5.66667 4 5.66667C5.47276 5.66667 6.66667 4.47276 6.66667 3C6.66667 1.52724 5.47276 0.333333 4 0.333333ZM3.64645 372.354C3.84171 372.549 4.15829 372.549 4.35355 372.354L7.53553 369.172C7.7308 368.976 7.7308 368.66 7.53553 368.464C7.34027 368.269 7.02369 368.269 6.82843 368.464L4 371.293L1.17157 368.464C0.976311 368.269 0.659728 368.269 0.464466 368.464C0.269204 368.66 0.269204 368.976 0.464466 369.172L3.64645 372.354ZM3.5 3L3.5 372H4.5L4.5 3H3.5Z" fill="#2E4D3C" fill-opacity="0.5"/>
+      </svg>
+    </div>
+
+  </div>
+  <div class="relative w-full">
+    <picture class="absolute right-0 w-full 2xl:max-w-6xl lg:w-8/12">
+      <source class="object-cover" media="(min-width: 1136px)" type="image/webp" width="100%" height="auto" srcset="{{ hero.image.webpPath }}">
+      <source class="object-cover" media="(min-width: 1136px)" type="image/jpeg" width="100%" height="auto" srcset="{{ hero.image.jpgPath }}">
+      <img class="object-cover w-full h-auto" width="1136" height="529" src="{{ hero.image.jpgPath }}" alt="{{ hero.image.alt }}">
+    </picture>
+  </div>
+</section>

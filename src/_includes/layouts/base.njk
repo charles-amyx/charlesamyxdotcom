@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="font-sans antialiased text-primary scroll-smooth" lang="en" >
+  <head>
+    {% include "partials/site-head.njk" %}
+  </head>
+  <body class="relative min-h-screen bg-white border-t-4 border-dark-green" data-env="{{ node.env }}" x-data="{ isMobileNavOpen: false }" :class="{ 'overflow-hidden': isMobileNavOpen }">
+    <div class="skipper">
+      <a class="skip-link" href="#main-content">Skip navigation</a>
+    </div>
+    {% include "partials/site-header.njk" %}
+
+    {% block content %}{% endblock %}
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
