@@ -3,13 +3,13 @@
   <head>
     {% include "partials/site-head.njk" %}
   </head>
-  <body class="bg-white border-t-4 border-dark-green" x-data="{ isMobileNavOpen: false }" data-env="{{ node.env }}" :class="{ 'overflow-hidden': isMobileNavOpen }">
+  <body class="bg-white border-t-4 border-primary" x-data="{ isMobileNavOpen: false }" data-env="{{ node.env }}" :class="{ 'overflow-hidden': isMobileNavOpen }">
     {% include "partials/site-header.njk" %}
     {% block content %}
       <main id="main-content" tabindex="-1" x-data="{ shown: false }" x-intersect="shown = true">
         <section class="py-8 sm:py-16 bg-light-green bg-opacity-25 bg-[url('/images/bg.svg')]">
           <div class="max-w-screen-xl px-4 mx-auto">
-            <h1 class="text-3xl font-bold text-dark-green sm:text-5xl font-display">
+            <h1 class="text-3xl font-bold text-primary sm:text-5xl font-display">
               {{ title | safe }}
             </h1>
             <div class="w-full mt-8 leading-8 lg:w-2/3">
