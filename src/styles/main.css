@@ -13,12 +13,14 @@
 }
 
 .box-corners::after {
-  @apply bottom-0 right-0 w-0 h-0 border border-t-0 border-l-0 border-primary;
+  @apply bottom-0 right-0 w-0 h-0 border-t-0 border-b border-l-0 border-r border-transparent;
 }
 
 .box-corners:hover::before,
-.box-corners:hover::after {
-  @apply w-full h-full;
+.box-corners:hover::after,
+.box-corners:focus::before,
+.box-corners:focus::after {
+  @apply w-full h-full border-primary;
 }
 
 @tailwind utilities;
