@@ -1,5 +1,5 @@
 ---
-layout: 'layouts/plain.njk'
+layout: 'layouts/portfolio.njk'
 title: 'Work'
 meta:
   desc:
