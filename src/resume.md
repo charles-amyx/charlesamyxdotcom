@@ -1,7 +1,7 @@
 ---
 layout: 'layouts/plain.njk'
-title: 'About'
+title: 'Résumé'
 meta:
   desc:
-    "About Charles Amyx."
+    "Charles Amyx's résumé."
 ---

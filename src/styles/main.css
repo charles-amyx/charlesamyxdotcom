@@ -23,4 +23,10 @@
   @apply w-full h-full border-primary;
 }
 
+.corners::after {
+  @apply box-border absolute bottom-0 right-0 w-4 h-4 border-primary border-t-0 border-b border-l-0 border-r z-50 transition-all duration-200 ease-in-out ;
+
+  content: '';
+}
+
 @tailwind utilities;

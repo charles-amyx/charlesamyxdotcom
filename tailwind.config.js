@@ -15,9 +15,6 @@ module.exports = {
         48: '48px',
       },
       spacing,
-      backgroundImage: {
-        'hero-pattern': "url('images/bg.svg')",
-      },
       transitionTimingFunction: {
         'in-expo': 'cubic-bezier(.5,0,.2,1)',
       },
