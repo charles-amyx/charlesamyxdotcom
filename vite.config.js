@@ -12,7 +12,7 @@ export default defineConfig({
         404: resolve(__dirname, '_site', '404', 'index.html'),
         main: resolve(__dirname, '_site', 'index.html'),
         work: resolve(__dirname, '_site', 'work', 'index.html'),
-        resume: resolve(__dirname, '_site', 'resume', 'index.html'),
+        experience: resolve(__dirname, '_site', 'experience', 'index.html'),
       },
     },
     emptyOutDir: true,

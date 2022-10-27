@@ -31,6 +31,6 @@ about:
     A designer and developer in Ann Arbor, MI. I've a keen interest around inclusive, accessible, and compassionate web design.
     Proud Filipino American, eskrimador, and fly fisherman. I also play music, take photos (digital and lots and lots film cameras), draw stuff, paint stuff, and read a lot.
   link:
-    label: 'Résumé'
-    url: /resume/
+    label: 'Experience'
+    url: /experience/
 ---

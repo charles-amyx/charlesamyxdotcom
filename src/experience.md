@@ -1,9 +1,9 @@
 ---
 layout: 'layouts/plain.njk'
-title: 'Résumé'
+title: 'Work Experience'
 meta:
   desc:
-    "Places I've worked"
+    "The online résumé of Charles E. Amyx, III, a designer and developer in Ann Arbor, MI."
 image:
   webpPath: "/images/work.webp"
   jpgPath: "/images/work.jpg"
