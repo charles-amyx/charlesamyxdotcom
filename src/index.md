@@ -24,7 +24,7 @@ featured:
     title: "Poverty Solutions"
     desc: "A university-wide presidential initiative at the University of Michigan. A design that streamlines and brands Poverty Solutions’ communication tools and resources."
     cta: "Check it out"
-    url: '/'
+    url: '/work/poverty-solutions/'
 about:
   title: 'About'
   desc: >

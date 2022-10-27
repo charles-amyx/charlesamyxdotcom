@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="font-sans antialiased text-primary scroll-smooth" lang="en" >
+    <head>
+        {% include "partials/site-head.njk" %}
+    </head>
+    <body class="relative min-h-screen bg-white border-t-4 border-primary" x-data="{ isMobileNavOpen: false }" data-env="{{ node.env }}" :class="{ 'overflow-hidden': isMobileNavOpen }">
+        {% include "partials/site-header.njk" %}
+        {% block content %}
+            <main id="main-content" tabindex="-1" x-data="{ shown: false }" x-intersect="shown = true">
+                <section class="py-8 sm:py-16 bg-light-grey">
+                    <div class="px-4 mx-auto max-w-screen-2xl">
+                        <h1 class="text-3xl font-bold text-primary sm:text-5xl font-display">
+                            {{ title | safe }}
+                        </h1>
+                    </div>
+                </section>
+                <article class="px-4 py-8 mx-auto prose bg-white sm:py-16 max-w-screen-2xl">
+                    <h2 class="mb-2 text-2xl tracking-wide uppercase md:tracking-widest">Expertise</h2>
+                    <p class="mb-0">{{ content | safe }}</p>
+                </article>
+            </main>
+        {% endblock %}
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
