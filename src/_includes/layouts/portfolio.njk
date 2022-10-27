@@ -33,10 +33,10 @@ meta:
 
                     {% if collections.portfolio %}
                         <div class="px-4 mx-auto max-w-screen-2xl">
-                            <ul>
+                            <ul class="grid-cols-2 gap-6 md:grid">
                                 {%- for tag in collections.portfolio | reverse -%}
-                                    <li>
-                                        <a href="{{ tag.url }}">{{ tag.data.title }}</a>
+                                    <li class="mb-2 last:mb-0">
+                                        <a class="transition-all duration-200 ease-in-out text-primary hover:text-secondary focus:text-secondary" href="{{ tag.url }}">{{ tag.data.title }}</a>
                                     </li>
                                 {%- endfor -%}
                             </ul>
