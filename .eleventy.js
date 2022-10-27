@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Image = require("@11ty/eleventy-img");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-
+const schema = require("@quasibit/eleventy-plugin-schema");
 
 
 module.exports = function (config) {
@@ -18,6 +18,11 @@ module.exports = function (config) {
 
   config.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+
+  // add structured data plugin
+  config.addPlugin(schema);
+
+
   return {
     dir: {
       input: 'src',
@@ -29,4 +34,6 @@ module.exports = function (config) {
     dataTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
   };
+
 };
+
