@@ -23,8 +23,8 @@ One of the most fulfilling projects I've worked on. A rare instance where a site
 
 This was the first time I've used Lottie, a library that renders After Effects animations for the web. It was a delight creating cute, yet respectful, animations.
 
-![Home page of my ms toolkit](/images/work/ms-home.jpg)
+![Home page of my ms toolkit](/images/ms-home.jpg)
 
-![An interior page of my ms toolkit](/images/work/ms-interior.jpg)
+![An interior page of my ms toolkit](/images/ms-interior.jpg)
 
 [Visit site](https://mymstoolkit.com/)

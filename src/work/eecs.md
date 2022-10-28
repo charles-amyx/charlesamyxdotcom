@@ -21,8 +21,8 @@ Designer and development of some of their custom Gutenberg blocks (using React) 
 
 A storied institution within the College of Engineering sorely neeeded a new presence. Additonally, they need a theme they could port to their numerous sub-sites.
 
-![Home page of EECS](/images/work/eecs-home.jpg)
+![Home page of EECS](/images/eecs-home.jpg)
 
-![EECS division page](/images/work/eecs-division.jpg)
+![EECS division page](/images/eecs-division.jpg)
 
 [Visit site](https://eecs.engin.umich.edu/)

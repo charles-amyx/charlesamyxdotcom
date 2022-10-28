@@ -21,8 +21,8 @@ Designer.
 
 Publishing supports the publishing aspirations of faculty, researchers, students, and staff across the U-M campus and beyond. They needed a site that better represented that and its impact.
 
-![Home page of UM Publishing](/images/work/publishing-home.jpg)
+![Home page of UM Publishing](/images/publishing-home.jpg)
 
-![Some components for Publishing](/images/work/publishing-article.jpg)
+![Some components for Publishing](/images/publishing-article.jpg)
 
 [Visit site](https://publishing.umich.edu/)

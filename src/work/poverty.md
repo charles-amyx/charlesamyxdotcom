@@ -54,7 +54,7 @@ Designer.
       </section>
       <figure class="w-full mt-10 mb-10 md:mb-0">
 
-![Home page of Poverty Solutions](/images/work/sitemap.jpg)
+![Home page of Poverty Solutions](/images/sitemap.jpg)
 
   <figcaption
           class="max-w-6xl mx-auto text-sm leading-none text-right text-gray-800 "
@@ -93,7 +93,7 @@ Designer.
       </section>
       <figure class="w-full mt-10 mb-10 md:mb-0">
 
-![an image of a rough wireframe drawn in a notebook](/images/work/paper.jpg)
+![an image of a rough wireframe drawn in a notebook](/images/paper.jpg)
 
 <figcaption
           class="max-w-6xl px-6 mx-auto mt-1 text-sm leading-none text-right text-gray-800 "
@@ -129,7 +129,7 @@ Designer.
       </section>
       <figure class="w-full mt-10 mb-10 md:mb-0">
 
-![A polished wireframe created in a design application](/images/work/wires.jpg)
+![A polished wireframe created in a design application](/images/wires.jpg)
 
 <figcaption
           class="max-w-6xl px-6 mx-auto mt-1 text-sm leading-none text-right text-gray-800 "
@@ -169,7 +169,7 @@ Designer.
       </section>
       <figure class="w-full mt-10 mb-10 md:mb-0">
 
-![I usually present two versions of a design for a web page](/images/work/versions.jpg)
+![I usually present two versions of a design for a web page](/images/versions.jpg)
 
 <figcaption
           class="max-w-6xl px-6 mx-auto mt-1 text-sm leading-none text-right text-gray-800 "
@@ -231,7 +231,7 @@ Designer.
       </section>
       <figure class="w-full mt-10 mb-10 md:mb-0">
 
-![Tada! Final product, new and shiny, just for you!](/images/work/final.jpg)
+![Tada! Final product, new and shiny, just for you!](/images/final.jpg)
 
 <figcaption
           class="max-w-6xl px-6 mx-auto mt-1 text-sm leading-none text-right text-gray-800 "
@@ -275,8 +275,8 @@ Designer.
         <p>Throughout the process, I'm advocating for the very best accessible and empathic user experience and design. Accessibility and empathy benefit all.</p>
       </section>
 
-![Home page of Poverty Solutions](/images/work/pov-home.jpg)
+![Home page of Poverty Solutions](/images/pov-home.jpg)
 
-![An example of a main landing page](/images/work/pov-landing.jpg)
+![An example of a main landing page](/images/pov-landing.jpg)
 
 [Visit site](https://poverty.umich.edu/)

@@ -22,8 +22,8 @@ Designer and front end for working prototype examples.
 
 A complete redesign of UM-Flint's site. Once again, there was so much work and effort before I picked it up. We worked with the client to finely tune every aspect of the design. Once satisfied with the design direction, I built a [working prototype](https://creative-um-flint.netlify.app/) of the site to help guide implementation in Wordpress for Flint's development team. With a design system in place, the client further tweaked their design during implementation.
 
-![Home page of Flint](/images/work/flint-home.jpg)
+![Home page of Flint](/images/flint-home.jpg)
 
-![An example of a main landing page](/images/work/flint-landing.jpg)
+![An example of a main landing page](/images/flint-landing.jpg)
 
 [Visit site](https://www.umflint.edu/)

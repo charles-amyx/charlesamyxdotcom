@@ -22,6 +22,6 @@ Designer and developer.
 
 Another site that needed an extremely quick turnaround. Many stakeholders and many revisions to get to the final product. The comp shown below is somewhat obscured as there may be old, out-of-date, and sensitive information yet remaining. Please see live site for the final version.
 
-![Home page of SEAS](/images/work/blueprint-home.jpg)
+![Home page of SEAS](/images/blueprint-home.jpg)
 
-[Visit site](https://campusblueprint.umich.edu/)
+[Visit site (web archive link as it no longer exists)](https://web.archive.org/web/20200702143101/https://campusblueprint.umich.edu/)

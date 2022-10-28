@@ -22,8 +22,8 @@ Designer.
 
 A complete redesign of U-M's financial aid site. Designed at the same time as admissions. They wanted to look like they were related to admissions but not a clone. I chose fonts from the typeface that helped convey that.
 
-![Home page of OFA](/images/work/ofa-home.jpg)
+![Home page of OFA](/images/ofa-home.jpg)
 
-![An example of a main landing page](/images/work/ofa-landing.jpg)
+![An example of a main landing page](/images/ofa-landing.jpg)
 
 [Visit site](https://finaid.umich.edu/)

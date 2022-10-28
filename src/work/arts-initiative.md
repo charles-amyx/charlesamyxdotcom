@@ -22,8 +22,8 @@ Designer and contributed to the fit & finish for the front end of the site.
 
 This project came together very quickly as it was to be shown at a conference in Florida. After meeting with the steering committee, I came up with a couple of concepts based on their repsonses to my questions. The honed in on this bolder theme.
 
-![Home page of the arts initiative](/images/work/arts-home.jpg)
+![Home page of the arts initiative](/images/arts-home.jpg)
 
-![Get involved page of the arts initiative](/images/work/arts-get-involved.jpg)
+![Get involved page of the arts initiative](/images/arts-get-involved.jpg)
 
 [Visit site](https://artsinitiative.umich.edu/)

@@ -22,8 +22,8 @@ Designer.
 
 A complete redesign of U-M's Undergraduate Admissions site. There was so much work and effort before I picked it up. The design process for this went so smoothly that it feels minuscule in comparison to everyone elses' work. Another site we're very proud of.
 
-![Home page of OUA](/images/work/oua-home.jpg)
+![Home page of OUA](/images/oua-home.jpg)
 
-![An example of a main landing page](/images/work/oua-landing.jpg)
+![An example of a main landing page](/images/oua-landing.jpg)
 
 [Visit site](https://admissions.umich.edu/)
