@@ -1,8 +1,23 @@
-*.log
-.cache
-.DS_Store
-src/.temp
+# dependecies installed by npm
 node_modules
+
+# build artefacts
+_site
 dist
+
+# secrets
 .env
-.env.*
+
+# logs
+*.log
+report.html
+
+# cache
+.eslintcache
+.stylelintcache
+
+# Local Netlify folder
+.netlify
+
+# os
+**/.DS_Store

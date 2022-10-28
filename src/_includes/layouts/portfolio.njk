@@ -1,0 +1,51 @@
+---
+meta:
+  site:
+    name: Charles E. Amyx, III
+    description: Site description
+    url: 'https://charlesamyx.com'
+  sameAs: 'https://www.linkedin.com/in/charbot/'
+  language: en-US
+  image:
+    src: 'https://charlesamyx.com/charles_amyx.jpg'
+  jobTitle: "Senior Web Designer and Developer"
+---
+<!DOCTYPE html>
+<html class="antialiased leading-tight text-slate-900" lang="en" >
+    <head>
+        {% include "partials/site-head.njk" %}
+    </head>
+    <body class="bg-white border-t-4 border-primary" x-data="{ isMobileNavOpen: false }" data-env="{{ node.env }}" :class="{ 'overflow-hidden': isMobileNavOpen }">
+        {% include "partials/site-header.njk" %}
+        {% block content %}
+            <main id="main-content" tabindex="-1" x-data="{ shown: false }" x-intersect="shown = true">
+                <section class="py-8 sm:py-16 bg-light-grey">
+                    <div class="px-4 mx-auto max-w-screen-2xl">
+                        <h1 class="text-3xl font-bold text-primary sm:text-5xl font-display">
+                            {{ title | safe }}
+                        </h1>
+                        <div class="w-full mt-8 leading-8 lg:w-2/3">
+                            <p class="mb-0 text-2xl">{{ desc | safe }}</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-8 sm:py-16">
+
+                    {% if collections.portfolio %}
+                        <div class="px-4 mx-auto max-w-screen-2xl">
+                            <ul class="grid-cols-2 gap-6 md:grid">
+                                {%- for tag in collections.portfolio | reverse -%}
+                                    <li class="mb-2 last:mb-0">
+                                        <a class="transition-all duration-200 ease-in-out text-primary hover:text-secondary focus:text-secondary" href="{{ tag.url }}">{{ tag.data.title }}</a>
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                </section>
+            </main>
+        {% endblock %}
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
