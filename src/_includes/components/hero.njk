@@ -1,5 +1,5 @@
-<article  id="main-content" class="w-full">
-  <div class="relative px-4 py-8 mx-auto max-w-screen-2xl sm:px-6 lg:px-8" x-data="{ shown: false }" x-intersect="shown = true">
+<article  id="main-content" class="flex flex-col w-full mb-16 md:mb-0 md:block">
+  <div class="relative z-50 order-last px-4 py-8 mx-auto -mt-24 bg-white max-w-screen-2xl sm:px-6 lg:px-8 md:mt-0 md:bg-transparent" x-data="{ shown: false }" x-intersect="shown = true">
     <div class="w-full" x-show="shown" x-transition.duration.500ms x-transition.opacity>
       <h1 class="text-5xl font-light md:w-full sm:text-8xl font-display">
         {{ hero.title }}
@@ -19,8 +19,8 @@
     {% endif %}
 
   </div>
-  <div class="relative w-full">
-    <picture class="absolute right-0 w-full 2xl:max-w-6xl lg:w-8/12">
+  <div class="relative z-0 order-first w-full">
+    <picture class="right-0 w-full md:absolute 2xl:max-w-6xl lg:w-8/12">
       <source class="object-cover" media="(min-width: 1136px)" type="image/webp" width="100%" height="auto" srcset="{{ hero.image.webpPath }}">
       <source class="object-cover" media="(min-width: 1136px)" type="image/jpeg" width="100%" height="auto" srcset="{{ hero.image.jpgPath }}">
       <img class="object-cover w-full h-auto" width="1136" height="529" src="{{ hero.image.jpgPath }}" alt="{{ hero.image.alt }}">
