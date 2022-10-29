@@ -1,14 +1,14 @@
-<article class="px-4 py-12 -mt-12 lg:mt-72 xl:mt-80 lg:py-16">
+<article class="px-4 py-8 -mt-12 lg:mt-72 xl:mt-80 lg:py-16">
     <h1 class="mx-auto text-4xl font-light max-w-screen-2xl sm:px-6 lg:px-8 md:w-full sm:text-6xl font-display">
         {{ featured.title }}
     </h1>
     <section class="relative flex justify-center w-full px-4 py-12 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
-        <picture class="left-0 z-20 block w-full lg:absolute lg:w-2/5 lg:-mr-500">
+        <picture class="left-0 z-20 hidden w-full md:block lg:absolute lg:w-2/5 lg:-mr-500">
             <source class="object-cover" media="(min-width: 600px)" type="image/webp" width="100%" height="auto" srcset="{{ featured.image.webpPath }}">
             <source class="object-cover" media="(min-width: 600px)" type="image/jpeg" width="100%" height="auto" srcset="{{ featured.image.jpgPath }}">
             <img class="object-cover w-full h-auto" width="1136" height="529" src="{{ featured.image.jpgPath }}" alt="{{ featured.image.alt }}">
         </picture>
-        <a href="{{ featured.project.url }}" class="relative z-30 block w-auto p-16 prose no-underline transition duration-200 ease-in-out bg-white lg:ml-32 lg:mt-48 corners group after:hover:w-6 after:hover:h-6">
+        <a href="{{ featured.project.url }}" class="relative z-30 block w-auto p-8 prose no-underline transition duration-200 ease-in-out bg-white md:p-16 lg:ml-32 lg:mt-48 corners group after:hover:w-6 after:hover:h-6">
             <h2 class="text-2xl font-medium transition duration-200 ease-in-out lg:text-4xl group-hover:text-secondary ">{{ featured.project.title }}</h2>
             <p>{{ featured.project.desc }}</p>
             <p class="transition duration-200 ease-in-out group-hover:text-secondary">
