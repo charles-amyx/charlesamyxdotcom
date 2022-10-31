@@ -39,7 +39,7 @@
           </nav>
 
         </div>
-        <div class="absolute inset-0 z-40" :class="{ 'block shadow-3xl bg-primary': isMobileNavOpen, 'hidden': !isMobileNavOpen }" @click.away="isMobileNavOpen = false" x-show="isMobileNavOpen" x-show.transition="true" x-cloak>
+        <div class="absolute inset-0 z-50" :class="{ 'block shadow-3xl bg-primary': isMobileNavOpen, 'hidden': !isMobileNavOpen }" @click.away="isMobileNavOpen = false" x-show="isMobileNavOpen" x-show.transition="true" x-cloak>
 
           <nav role="navigation" aria-label="main" aria-labelledby="mobile-navigation">
             <h2 class="sr-only" id="mobile-navigation">Mobile navigation</h2>
