@@ -141,8 +141,8 @@ export default defineConfig({
         scope: '/',
         start_url: '/',
         display: 'browser',
-        theme_color: '#00AAFF',
-        background_color: '#00AAFF',
+        theme_color: '#0E2330',
+        background_color: '#0E2330',
         icons: [
           {
             src: 'pwa-72x72.png',
