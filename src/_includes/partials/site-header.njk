@@ -1,3 +1,10 @@
+<div class="block w-full h-24 overflow-hidden md:hidden">
+  <picture class="w-full">
+    <source class="object-cover" media="(min-width: 1136px)" type="image/webp" width="100%" height="auto" srcset="{{ site.heroWebP }}">
+    <source class="object-cover" media="(min-width: 1136px)" type="image/jpeg" width="100%" height="auto" srcset="{{ site.heroJpg }}">
+    <img class="object-cover w-full h-auto" width="1136" height="529" src="{{ site.heroJpg }}" alt="{{ site.heroAlt }}">
+  </picture>
+</div>
 {% if title == "Home" %}
   <header class="bg-no-repeat bg-light-grey lg:h-770 xl:h-650">
   {% else %}
@@ -6,6 +13,11 @@
     <div class="px-4 py-8 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
       <div class="flex items-center justify-between">
         <div class="md:flex md:items-center">
+          <div class="block md:hidden">
+            <div class="text-3xl font-light font-display">
+              {{ site.name }}
+            </div>
+          </div>
           <a class="block" href="/">
             <span class="sr-only">Home</span>
           </a>
