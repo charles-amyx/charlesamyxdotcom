@@ -3,7 +3,7 @@
         <h1 class="mb-8 text-4xl font-light sm:text-6xl font-display">
             {{ about.title }}
         </h1>
-        <p class="w-full mb-24 lg:w-2/6">{{about.desc}}</p>
+        <p class="w-full mb-24 lg:w-2/6">{{about.desc | safe}}</p>
         <p>
             <a class="relative px-8 py-4 font-normal no-underline transition-colors duration-300 ease-in-out bg-transparent box-corners" href="{{about.link.url}}">{{about.link.label}}</a>
         </p>
