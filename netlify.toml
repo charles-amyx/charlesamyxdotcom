@@ -16,7 +16,7 @@ publish = "build"
 targetPort = 8080
 
 [build.processing]
-skip_processing = true
+  skip_processing = true
 
 # [[headers]]
 #   for = "/*"
