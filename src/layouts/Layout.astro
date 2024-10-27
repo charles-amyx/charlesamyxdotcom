@@ -24,26 +24,27 @@ import "../styles/card.css";
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Charles E. Amyx, III Portfolio",
-  "url": "https://charlesamyx.com",
-  "description": "Portfolio and work by Charles E. Amyx, III - Front End Developer and UI Designer",
+  name: "Charles E. Amyx, III Portfolio",
+  url: "https://charlesamyx.com",
+  description:
+    "Portfolio and work by Charles E. Amyx, III - Front End Developer and UI Designer",
 };
 
 // Person schema for yourself
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Charles E. Amyx, III",
-  "url": "https://charlesamyx.com",
-  "image": "https://charlesamyx.com/images/charles_amyx.jpg",
-  "sameAs": [
+  name: "Charles E. Amyx, III",
+  url: "https://charlesamyx.com",
+  image: "https://charlesamyx.com/images/charles_amyx.jpg",
+  sameAs: [
     "https://github.com/charles-amyx",
     "https://www.linkedin.com/in/charbot/",
     // Add other social profile URLs
   ],
-  "jobTitle": "Front End Developer",
-  "description": "Front End Developer and UI Designer",
-  "knowsAbout": [
+  jobTitle: "Front End Developer",
+  description: "Front End Developer and UI Designer",
+  knowsAbout: [
     "JavaScript",
     "React",
     "UI Design",
@@ -57,11 +58,11 @@ const personSchema = {
     "Svelte",
     "NextJS",
     // Add other skills
-  ]
+  ],
 };
 
 // Combine schemas - if a page-specific schema is provided, include it
-const schemas = schema 
+const schemas = schema
   ? [websiteSchema, personSchema, schema]
   : [websiteSchema, personSchema];
 ---
@@ -70,15 +71,17 @@ const schemas = schema
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E09NMKMEBG"
-    ></script>
-    <script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E09NMKMEBG"
+      is:inline></script>
+    <script is:inline>
+      // Define types for Google Analytics
       window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments);
+        window.dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-E09NMKMEBG");
     </script>
     <meta charset="UTF-8" />
@@ -189,8 +192,11 @@ const schemas = schema
     <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
 
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(schemas)}>
-    </script>
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(schemas)}
+    />
   </head>
   <body class="font-neue bg-neutral/25 h-full">
     <Header />

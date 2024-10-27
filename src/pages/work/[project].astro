@@ -46,9 +46,9 @@ const ogImageUrl = imageModule
   ? new URL(imageModule.src, Astro.url).toString()
   : undefined;
 
-const dominantColor = imageModule
+const dominantColor = ogImageUrl
   ? await getDominantColor(ogImageUrl)
-  : "#f3f4f6";
+  : undefined;
 
 const durationInMonths = project.data.duration
   ? calculateDurationInMonths(project.data.duration)
