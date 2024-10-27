@@ -1,0 +1,174 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { imageMap } from "../../lib/images";
+import type { CollectionEntry } from "astro:content";
+import { getDominantColor } from "../../lib/colorUtils";
+import { Image } from "astro:assets";
+import { calculateDurationInMonths, formatDate } from "../../utils/dateUtils";
+
+// Define and export the getStaticPaths function
+export async function getStaticPaths() {
+  // Fetch the projects collection
+  const projects = await getCollection("projects");
+
+  const sortedProjects = projects.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+
+  return sortedProjects.map((project, index) => ({
+    params: { project: project.slug },
+    props: {
+      project,
+      prev: index > 0 ? sortedProjects[index - 1] : null,
+      next:
+        index < sortedProjects.length - 1 ? sortedProjects[index + 1] : null,
+    },
+  }));
+}
+
+type Props = {
+  project: CollectionEntry<"projects">;
+  prev: CollectionEntry<"projects"> | null;
+  next: CollectionEntry<"projects"> | null;
+};
+
+// Fetch the current project based on the route parameter
+const { project, prev, next } = Astro.props;
+const { Content } = await project.render();
+
+const imageModule = project.data.image
+  ? imageMap[project.data.image]
+  : undefined;
+
+const dominantColor = imageModule
+  ? await getDominantColor(new URL(imageModule.src, Astro.url).toString())
+  : "#f3f4f6";
+
+const durationInMonths = project.data.duration
+  ? calculateDurationInMonths(project.data.duration)
+  : null;
+const formattedDate = project.data.date ? formatDate(project.data.date) : null;
+---
+
+<Layout title={project.data.client}>
+  <section
+    class="pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-10 lg:pb-12 gap-6 transition-all duration-300
+  ease-in-out container mx-auto px-0 lg:px-4 flex-grow transition-fade"
+  >
+    <article
+      class="mx-auto grid grid-cols-1 text-base bg-neutral/50 backdrop-blur-sm
+     lg:grid-cols-5"
+    >
+      <div class="col-span-1 lg:col-span-3 p-0 lg:py-4 lg:pl-4">
+        {
+          imageModule && (
+            <div
+              class="aspect-w-16 aspect-h-9"
+              style={`background-color: ${dominantColor};`}
+            >
+              <Image
+                src={imageModule}
+                alt={project.data.title}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          )
+        }
+      </div>
+      <div
+        class="col-span-1 font-normal w-full lg:col-span-2 px-4 py-8 lg:px-8 lg:py-10"
+      >
+        <div class="w-full mb-8 pb-2 border-b border-dark">
+          <div
+            class="text-primary text-xs xl:text-sm uppercase tracking-widest"
+          >
+            {project.data.title}
+          </div>
+          <div
+            class="text-primary/90 text-2xl xl:text-4xl font-bold tracking-normal font-neue"
+          >
+            {project.data.client}
+          </div>
+        </div>
+        <div class="grid grid-cols-2 w-full mb-4 border-b border-gray-200">
+          <div class="text-primary/60 uppercase">Role&nbsp;</div>
+          <div class="text-primary/90">
+            {project.data.type || "No type specified"}
+          </div>
+        </div>
+        {
+          formattedDate && (
+            <div class="grid grid-cols-2 w-full mb-4 border-b border-gray-200">
+              <div class="text-primary/60 uppercase">Date&nbsp;</div>
+              <div class="text-primary/90">{formattedDate}</div>
+            </div>
+          )
+        }
+        {
+          durationInMonths && (
+            <div class="grid grid-cols-2 w-full mb-4 border-b border-gray-200">
+              <div class="text-primary/60 uppercase">Duration&nbsp;</div>
+              <div class="text-primary/90">{durationInMonths} months</div>
+            </div>
+          )
+        }
+        <div class="grid grid-cols-2 w-full mb-4 border-b border-gray-200">
+          {
+            project.data.skills && (
+              <>
+                <div class="text-primary/60 uppercase">Skills</div>
+                <ul class="text-primary/90 list-disc list-inside pb-2">
+                  {project.data.skills.map((skill: string) => (
+                    <li>{skill}</li>
+                  ))}
+                </ul>
+              </>
+            )
+          }
+        </div>
+        <div class="pt-8 max-w-none lg:prose prose-sm">
+          <Content />
+        </div>
+        {
+          project.data.url && (
+            <div class="pt-8 max-w-none lg:prose prose-sm">
+              <a
+                href={project.data.url.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition-colors"
+              >
+                {project.data.url.label || "View Project"}
+              </a>
+            </div>
+          )
+        }
+      </div>
+    </article>
+
+    <nav class="mt-12 flex justify-between">
+      {
+        prev && (
+          <a
+            href={`/work/${prev.slug}`}
+            class="text-primary hover:text-accent transition-colors"
+          >
+            ← {prev.data.title}
+          </a>
+        )
+      }
+      {
+        next && (
+          <a
+            href={`/work/${next.slug}`}
+            class="text-primary hover:text-accent transition-colors ml-auto"
+          >
+            {next.data.title} →
+          </a>
+        )
+      }
+    </nav>
+  </section>
+</Layout>

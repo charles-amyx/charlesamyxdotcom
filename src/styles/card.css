@@ -1,0 +1,25 @@
+.card {
+  @apply font-medium text-sm md:text-xs border-b-4 pb-2 border-primary/20  hover:border-accent transition-all duration-300 ease-in-out;
+}
+.card-link {
+  @apply no-underline block;
+}
+
+.card-image-container {
+  @apply overflow-hidden transition-all duration-300 ease-in-out bg-neutral/50 backdrop-blur-sm  group-hover:bg-neutral/90 px-4 pt-8 rounded-t-sm;
+}
+
+.frame {
+  @apply relative w-full h-full aspect-[1.54/1];
+}
+
+.card-image {
+  @apply w-full h-auto object-cover;
+}
+.card-title {
+  @apply mt-8 text-base md:mt-12 lg:mt-20;
+}
+.card-type {
+  @apply text-quinary tracking-wide;
+}
+

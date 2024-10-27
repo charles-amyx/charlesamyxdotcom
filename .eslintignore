@@ -1,5 +1,0 @@
-dist
-_site
-
-# Override implicit ignore rules
-!.stylelintrc.json

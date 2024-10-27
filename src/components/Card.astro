@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import { getDominantColor } from "../lib/colorUtils";
+
+export interface Props {
+  href: string;
+  title: string;
+  image: ImageMetadata;
+  type: string;
+}
+
+const { href, title, image, type } = Astro.props;
+const imageUrl = new URL(image.src, Astro.url).toString();
+const dominantColor = await getDominantColor(imageUrl);
+---
+
+<div class="card group flex flex-col h-full w-full" transition:persist>
+  <a href={href} class="card-link flex flex-col h-full">
+    <div class="card-image-container flex-shrink-0">
+      <div
+        class="frame aspect-w-16 aspect-h-9"
+        style={`background-color: ${dominantColor};`}
+      >
+        <Image
+          src={image}
+          alt={title}
+          class="card-image object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <div class="flex-grow flex flex-col justify-end px-4 md:px-0">
+      <h2 class="card-title">{title}</h2>
+      <p class="card-type">{type}</p>
+    </div>
+  </a>
+</div>

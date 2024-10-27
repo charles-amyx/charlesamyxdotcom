@@ -1,0 +1,119 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import "../styles/card.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script>
+      import Swup from "swup";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const swup = new Swup();
+
+        function updateActiveNavItem() {
+          const currentPath = window.location.pathname;
+          const navLinks = document.querySelectorAll("nav a");
+
+          navLinks.forEach((link) => {
+            const href = link.getAttribute("href");
+            const isActive =
+              href === "/"
+                ? currentPath === "/" || currentPath.startsWith("/work/")
+                : currentPath.startsWith(href || "");
+
+            if (isActive) {
+              link.classList.add("text-secondary");
+              link.classList.remove("text-primary", "hover:text-primary");
+              link.closest("li")?.classList.add("border-secondary");
+              link
+                .closest("li")
+                ?.classList.remove(
+                  "border-transparent",
+                  "hover:border-primary"
+                );
+            } else {
+              link.classList.remove("text-secondary");
+              link.classList.add("text-primary", "hover:text-primary");
+              link.closest("li")?.classList.remove("border-secondary");
+              link
+                .closest("li")
+                ?.classList.add("border-transparent", "hover:border-primary");
+            }
+          });
+        }
+
+        // Run on initial page load
+        updateActiveNavItem();
+
+        // Run after Swup page view
+        swup.hooks.on("content:replace", updateActiveNavItem);
+      });
+    </script>
+    <script is:inline>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      // if (
+      //   localStorage.theme === "dark" ||
+      //   (!("theme" in localStorage) &&
+      //     window.matchMedia("(prefers-color-scheme: dark)").matches)
+      // ) {
+      //   document.documentElement.classList.add("dark");
+      // } else {
+      //   document.documentElement.classList.remove("dark");
+      // }
+    </script>
+    <style is:global>
+      @import "../styles/fonts.css";
+      /* Swup fade transition */
+      .transition-fade {
+        transition: 0.25s;
+        opacity: 1;
+      }
+      html.is-animating .transition-fade {
+        opacity: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+
+      footer {
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body class="font-neue bg-neutral/25 h-full">
+    <Header />
+    <main
+      id="swup"
+      class="flex-grow text-primary transition-fade bg-[url('/images/white-topo.svg')] bg-no-repeat bg-bottom bg-contain"
+    >
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
