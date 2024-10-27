@@ -8,9 +8,47 @@ const allProjects = await getCollection("projects");
 const featuredProjects = allProjects
   .filter((project) => project.data.featured)
   .slice(0, 3);
+
+const professionalSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Charles E. Amyx, III",
+    url: "https://charlesamyx.com",
+    image: "https://charlesamyx.com/images/charles_amyx.jpg",
+    sameAs: [
+      "https://github.com/charles-amyx",
+      "https://linkedin.com/in/charbot",
+    ],
+    jobTitle: "Front End Developer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Ad Hoc LLC", // if applicable
+    },
+    skills: [
+      "JavaScript",
+      "React",
+      "UI Design",
+      "Accessibility",
+      "Typescript",
+      "HTML",
+      "CSS",
+      "TailwindCSS",
+      "VueJS",
+      "Astro",
+      "Svelte",
+      "NextJS",
+      // Add other skills
+    ],
+  },
+};
 ---
 
-<Layout title="Charles E. Amyx, III - Home">
+<Layout
+  title="Charles E. Amyx, III - Front End Developer"
+  schema={professionalSchema}
+>
   <section class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
     <section
       class="mb-16 grid grid-cols-6 py-0 lg:py-24 transition-all duration-200 ease-in-out"

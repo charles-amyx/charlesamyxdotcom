@@ -41,17 +41,46 @@ const imageModule = project.data.image
   ? imageMap[project.data.image]
   : undefined;
 
+// Get the absolute URL for the OG image
+const ogImageUrl = imageModule
+  ? new URL(imageModule.src, Astro.url).toString()
+  : undefined;
+
 const dominantColor = imageModule
-  ? await getDominantColor(new URL(imageModule.src, Astro.url).toString())
+  ? await getDominantColor(ogImageUrl)
   : "#f3f4f6";
 
 const durationInMonths = project.data.duration
   ? calculateDurationInMonths(project.data.duration)
   : null;
 const formattedDate = project.data.date ? formatDate(project.data.date) : null;
+
+// Create schema for this specific project
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: project.data.title,
+  author: {
+    "@type": "Person",
+    name: "Charles E. Amyx, III",
+  },
+  description: project.data.description,
+  image: ogImageUrl,
+  datePublished: project.data.publishDate,
+  keywords: project.data.tags?.join(", "),
+  url: Astro.url.toString(),
+  genre: "Web Development",
+  technicalPlatform: project.data.technologies?.join(", "),
+};
 ---
 
-<Layout title={project.data.client}>
+<Layout
+  title={`${project.data.title} | Charles E. Amyx, III`}
+  description={project.data.description}
+  ogImage={ogImageUrl}
+  ogType="article"
+  schema={projectSchema}
+>
   <section
     class="pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-10 lg:pb-12 gap-6 transition-all duration-300
   ease-in-out container mx-auto px-0 lg:px-4 flex-grow transition-fade"

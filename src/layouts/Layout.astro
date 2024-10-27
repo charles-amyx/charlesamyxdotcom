@@ -1,20 +1,88 @@
 ---
 interface Props {
   title: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: string;
+  schema?: object; // Add this to allow passing custom schema per page
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Portfolio and work by Charles Amyx - Front End Developer and UI Designer",
+  ogImage = "/images/og-image.jpg",
+  ogType = "website",
+  schema,
+} = Astro.props;
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import "../styles/card.css";
+
+// Base website schema that's present on all pages
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Charles E. Amyx, III Portfolio",
+  "url": "https://charlesamyx.com",
+  "description": "Portfolio and work by Charles E. Amyx, III - Front End Developer and UI Designer",
+};
+
+// Person schema for yourself
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Charles E. Amyx, III",
+  "url": "https://charlesamyx.com",
+  "image": "https://charlesamyx.com/images/charles_amyx.jpg",
+  "sameAs": [
+    "https://github.com/charles-amyx",
+    "https://www.linkedin.com/in/charbot/",
+    // Add other social profile URLs
+  ],
+  "jobTitle": "Front End Developer",
+  "description": "Front End Developer and UI Designer",
+  "knowsAbout": [
+    "JavaScript",
+    "React",
+    "UI Design",
+    "Accessibility",
+    "Typescript",
+    "HTML",
+    "CSS",
+    "TailwindCSS",
+    "VueJS",
+    "Astro",
+    "Svelte",
+    "NextJS",
+    // Add other skills
+  ]
+};
+
+// Combine schemas - if a page-specific schema is provided, include it
+const schemas = schema 
+  ? [websiteSchema, personSchema, schema]
+  : [websiteSchema, personSchema];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E09NMKMEBG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-E09NMKMEBG");
+    </script>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -105,6 +173,24 @@ import "../styles/card.css";
         flex-shrink: 0;
       }
     </style>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemas)}>
+    </script>
   </head>
   <body class="font-neue bg-neutral/25 h-full">
     <Header />
