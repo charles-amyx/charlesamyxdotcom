@@ -1,2 +1,8 @@
 {
+    "frontMatter.content.pageFolders": [
+        {
+            "title": "src",
+            "path": "[[workspace]]/src"
+        }
+    ]
 }

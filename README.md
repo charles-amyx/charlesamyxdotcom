@@ -1,40 +1,54 @@
-# Charles E. Amyx's Portfolio
+# Astro Starter Kit: Basics
 
-[11ty](https://www.11ty.dev/), powered by [Vite](https://vitejs.dev/)
-with [Tailwind CSS](https://tailwindcss.com) and
-[Alpine.js](https://github.com/alpinejs/alpine/).
-
-## Install Dependencies
-
-First, make sure you have `npm` (packaged with
-[Node.js](https://nodejs.org)) installed, then run `npm run setup` to install
-the dependencies and validate that everything is running correctly.
-
-## Available Scripts
-
-### Development
-
-```bash
-# runs the app in the development mode.
-npm run dev
+```sh
+npm create astro@latest -- --template basics
 ```
 
-Open http://localhost:3000/ to view it in your browser.
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-The page will reload if you make file changes.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-### Production
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-```bash
-# builds a static copy of your site to the `dist/` folder.
-npm run build
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-```bash
-# serve the content from the `dist/` folder.
-npm run preview
-```
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Open http://localhost:5000/ to view it in your browser.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Your code is now ready to be deployed!
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

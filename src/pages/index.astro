@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
+import { imageMap } from "../lib/images";
+
+const allProjects = await getCollection("projects");
+const featuredProjects = allProjects
+  .filter((project) => project.data.featured)
+  .slice(0, 3);
+---
+
+<Layout title="Charles E. Amyx, III - Home">
+  <section class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
+    <section
+      class="mb-16 grid grid-cols-6 py-0 lg:py-24 transition-all duration-200 ease-in-out"
+    >
+      <h1
+        class="text-xl uppercase lg:text-right lg:text-5xl transition-all duration-200 ease-in-out col-span-3 text-gray-600"
+      >
+        <span class="block font-black">Frontend Developer</span>
+        <span class="block text-dark tracking-tight">and UI Designer</span>
+      </h1>
+    </section>
+
+    <section class="mb-16 lg:mb-48">
+      <div class="flex justify-between items-center mb-8">
+        <h2
+          class="text-2xl lg:ml-24 tracking-wide font-bold text-gray-600 uppercase"
+        >
+          Featured
+        </h2>
+        <a href="/work" class="text-accent hover:underline">
+          View all projects →
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12">
+        {
+          featuredProjects.map((project) => {
+            const imageModule = project.data.featuredImg
+              ? imageMap[project.data.featuredImg]
+              : undefined;
+            if (!imageModule) return null;
+            return (
+              <a
+                href={`/work/${project.slug}`}
+                class="group col-span-1 lg:col-span-10 col-start-auto lg:col-start-2 flex  justify-center hover:opacity-90 transition-opacity relative"
+              >
+                <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 lg:absolute lg:w-2/5">
+                  <img
+                    src={imageModule.src}
+                    alt={project.data.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 md:-ml-24 bg-neutral p-8 lg:py-12 lg:px-16">
+                  <h3 class="text-xl font-semibold mb-2">
+                    {project.data.title}
+                  </h3>
+                  <p class="text-gray-700">{project.data.featuredDesc}</p>
+                  <span class="text-accent mt-2 inline-block group-hover:underline">
+                    Check it out →
+                  </span>
+                </div>
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-12 py-12 lg:py-32">
+      <div class="col-span-1 md:col-span-4 col-start-auto md:col-start-8">
+        <h2
+          class="text-2xl tracking-wide font-bold text-gray-600 uppercase mb-2"
+        >
+          About Me
+        </h2>
+        <p class="text-lg text-gray-700">
+          I'm a Senior Frontend Developer and UX Designer with over 15 years of
+          experience in higher ed and corporate sectors. Based in Ann Arbor,
+          Michigan, I specialize in creating engaging and user-friendly web
+          experiences using modern technologies.
+        </p>
+      </div>
+    </section>
+  </section>
+</Layout>
