@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const technologies = [
+  {
+    category: "Core Framework",
+    items: [
+      {
+        name: "Astro",
+        description: "Static site generator with excellent performance",
+      },
+      { name: "TypeScript", description: "Type-safe JavaScript development" },
+      {
+        name: "Alpine.js",
+        description: "Lightweight JavaScript framework for interactivity",
+      },
+    ],
+  },
+  {
+    category: "Styling",
+    items: [
+      { name: "Tailwind CSS", description: "Utility-first CSS framework" },
+      {
+        name: "Satoshi",
+        description:
+          "Variable font family chosen for its modern, geometric design and excellent readability",
+      },
+    ],
+  },
+  {
+    category: "Build & Deployment",
+    items: [
+      { name: "View Transitions API", description: "Smooth page transitions" },
+      { name: "Node Vibrant", description: "Color extraction from images" },
+      { name: "CI/CD", description: "Automated deployment pipeline" },
+    ],
+  },
+];
+
+const philosophies = [
+  "I tried for a minimalist design that emphasizes content and typography. As well as a performance-first approach with minimal JavaScript. It's responsive and accessible.",
+];
+
+const sustainabilityFeatures = [
+  {
+    feature: "Minimal JavaScript",
+    impact: "Reduces CPU usage and battery drain on user devices",
+  },
+  {
+    feature: "Static Site Generation",
+    impact: "Minimizes server resources and reduces energy consumption",
+  },
+  {
+    feature: "Optimized Images",
+    impact: "Reduces bandwidth usage and storage requirements",
+  },
+  {
+    feature: "System Fonts",
+    impact: "Eliminates additional font file downloads where possible",
+  },
+  {
+    feature: "Efficient Caching",
+    impact: "Reduces server requests and bandwidth usage",
+  },
+];
+---
+
+<Layout title="Colophon | Charles E. Amyx, III">
+  <section class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
+    <div class="prose prose-sm">
+      <h1 class="text-3xl font-semibold mb-8">Colophon</h1>
+
+      <p class="text-base mb-4">
+        This site was crafted with attention to detail, performance, and user
+        experience. Here's a look behind the scenes at the tools and
+        technologies that make it possible.
+      </p>
+      {
+        philosophies.map((philosophy) => (
+          <p class="text-base mb-12">{philosophy}</p>
+        ))
+      }
+
+      {
+        technologies.map((tech) => (
+          <div class="mb-12">
+            <h2 class="text-xl font-semibold mb-4">{tech.category}</h2>
+            <ul class="list-none pl-0 grid gap-4">
+              {tech.items.map((item) => (
+                <li class="border-l-4 border-gray-200 pl-4 py-2">
+                  <h3 class="text-lg font-medium mb-1">{item.name}</h3>
+                  <p class="text-gray-600">{item.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+
+      <div class="mb-12">
+        <h2 class="text-xl font-semibold mb-4">Digital Sustainability</h2>
+        <p class="text-base mb-4">
+          This site is built with environmental impact in mind. According to the
+          Website Carbon Calculator, this page is cleaner than {
+            /* You can add actual percentage here */
+          }% of web pages tested.
+        </p>
+
+        <div class="grid gap-4">
+          {
+            sustainabilityFeatures.map((item) => (
+              <div class="border-l-4 border-gray-200 pl-4 py-2">
+                <h3 class="text-lg font-medium mb-1">{item.feature}</h3>
+                <p class="text-gray-600">{item.impact}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-6 p-4 bg-neutral/50 rounded-sm">
+          <p class="text-sm text-gray-600">
+            Want to check this site's carbon footprint? Visit
+            <a
+              href="https://www.websitecarbon.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-accent hover:underline"
+            >
+              Website Carbon Calculator
+            </a>
+          </p>
+          <p>
+            <div id="wcb" class="carbonbadge lg:w-1/2"></div>
+            <script
+              src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
+              defer></script>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
