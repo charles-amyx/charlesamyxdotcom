@@ -80,62 +80,63 @@ const sustainabilityFeatures = [
           <p class="text-base mb-12">{philosophy}</p>
         ))
       }
+    </div>
 
+    <div
+      class="grid grid-cols-1 transition-all duration-500 ease-in-out lg:grid-cols-3 gap-12 prose max-w-none"
+    >
       {
         technologies.map((tech) => (
-          <div class="mb-12">
+          <div class="">
             <h2 class="text-xl font-semibold mb-4">{tech.category}</h2>
-            <ul class="list-none pl-0 grid gap-4">
-              {tech.items.map((item) => (
-                <li class="border-l-4 border-gray-200 pl-4 py-2">
-                  <h3 class="text-lg font-medium mb-1">{item.name}</h3>
-                  <p class="text-gray-600">{item.description}</p>
-                </li>
-              ))}
-            </ul>
+            {tech.items.map((item) => (
+              <div class="mb-8 last:mb-0">
+                <h3 class="text-lg font-medium mb-1">{item.name}</h3>
+                <p class="text-gray-600">{item.description}</p>
+              </div>
+            ))}
           </div>
         ))
       }
-
+    </div>
+    <div class="my-12 prose prose-sm">
+      <h2 class="text-xl font-semibold mb-4">Digital Sustainability</h2>
+      <p class="text-base mb-4">
+        This site is built with environmental impact in mind. According to the
+        <a
+          href="https://www.websitecarbon.com/website/charlesamyx-com/"
+          target="_blank"
+          rel="noopener noreferrer">Website Carbon Calculator</a
+        >, this page is cleaner than {72}% of web pages tested.
+      </p>
       <div class="mb-12">
-        <h2 class="text-xl font-semibold mb-4">Digital Sustainability</h2>
-        <p class="text-base mb-4">
-          This site is built with environmental impact in mind. According to the
-          Website Carbon Calculator, this page is cleaner than {
-            /* You can add actual percentage here */
-          }% of web pages tested.
+        {
+          sustainabilityFeatures.map((item) => (
+            <div class="mb-8 last:mb-0">
+              <h3 class="text-lg font-medium mb-1">{item.feature}</h3>
+              <p class="text-gray-600">{item.impact}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="mt-6 p-4 bg-neutral/50 rounded-sm">
+        <p class="text-sm text-gray-600">
+          Want to check this site's carbon footprint? Visit
+          <a
+            href="https://www.websitecarbon.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent hover:underline"
+          >
+            Website Carbon Calculator
+          </a>
         </p>
-
-        <div class="grid gap-4">
-          {
-            sustainabilityFeatures.map((item) => (
-              <div class="border-l-4 border-gray-200 pl-4 py-2">
-                <h3 class="text-lg font-medium mb-1">{item.feature}</h3>
-                <p class="text-gray-600">{item.impact}</p>
-              </div>
-            ))
-          }
-        </div>
-
-        <div class="mt-6 p-4 bg-neutral/50 rounded-sm">
-          <p class="text-sm text-gray-600">
-            Want to check this site's carbon footprint? Visit
-            <a
-              href="https://www.websitecarbon.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-accent hover:underline"
-            >
-              Website Carbon Calculator
-            </a>
-          </p>
-          <p>
-            <div id="wcb" class="carbonbadge lg:w-1/2"></div>
-            <script
-              src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
-              defer></script>
-          </p>
-        </div>
+        <p>
+          <div id="wcb" class="carbonbadge lg:w-1/2"></div>
+          <script
+            src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
+            defer></script>
+        </p>
       </div>
     </div>
   </section>
