@@ -6,7 +6,7 @@
 }
 
 .card-image-container {
-  @apply overflow-hidden transition-all duration-300 ease-in-out bg-neutral/50 backdrop-blur-sm  group-hover:bg-neutral/90 px-4 pt-8 rounded-t-sm;
+  @apply overflow-hidden transition-all duration-300 ease-in-out bg-tertiary/75 backdrop-blur-sm  group-hover:bg-tertiary px-4 pt-8 rounded-t-sm;
 }
 
 .frame {
@@ -14,7 +14,7 @@
 }
 
 .card-image {
-  @apply w-full h-auto object-cover;
+  @apply w-full h-auto object-cover saturate-100 lg:saturate-[.45] group-hover:saturate-100 transition-all duration-300 ease-in-out;
 }
 .card-title {
   @apply mt-8 text-base md:mt-12 lg:mt-20;

@@ -108,9 +108,9 @@ const schemas = schema
                 : currentPath.startsWith(href || "");
 
             if (isActive) {
-              link.classList.add("text-secondary");
+              link.classList.add("text-accent");
               link.classList.remove("text-primary", "hover:text-primary");
-              link.closest("li")?.classList.add("border-secondary");
+              link.closest("li")?.classList.add("border-accent");
               link
                 .closest("li")
                 ?.classList.remove(
@@ -118,9 +118,9 @@ const schemas = schema
                   "hover:border-primary"
                 );
             } else {
-              link.classList.remove("text-secondary");
+              link.classList.remove("text-accent");
               link.classList.add("text-primary", "hover:text-primary");
-              link.closest("li")?.classList.remove("border-secondary");
+              link.closest("li")?.classList.remove("border-accent");
               link
                 .closest("li")
                 ?.classList.add("border-transparent", "hover:border-primary");
