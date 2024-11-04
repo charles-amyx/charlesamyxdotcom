@@ -179,18 +179,23 @@ const professionalSchema = {
   });
 
   function initTopography() {
-    const canvas = document.getElementById('topographyCanvas');
+    const canvas = document.getElementById('topographyCanvas') as HTMLCanvasElement;
     if (!canvas) return;
     
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
     let time = 0;
     
     function resize() {
+      if (!canvas) return;
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     }
     
     function animate() {
+      if (!canvas || !ctx) return;
+      
       ctx.fillStyle = '#ffffff';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
