@@ -50,13 +50,18 @@ const professionalSchema = {
 >
   <section class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
     <section
-      class="mb-16 grid grid-cols-6 py-12 lg:py-24 xl:h-screen transition-all duration-200 ease-in-out"
+      class="mb-16 grid grid-cols-6 py-12 lg:py-24 xl:h-[85dvh] transition-all duration-200 ease-in-out relative"
     >
+      <canvas 
+        id="topographyCanvas" 
+        class="absolute inset-0 w-full h-full opacity-[0.07] -z-10"
+      ></canvas>
+
       <h1
-        class="text-3xl uppercase lg:text-right lg:text-5xl xl:text-8xl transition-all duration-200 ease-in-out col-span-6 lg:col-span-5 text-gray-600 font-light"
+        class="text-4xl uppercase lg:text-right lg:text-6xl relative xl:text-8xl xl:leading-none transition-all duration-200 ease-in-out col-span-6 lg:col-span-5 text-gray-600 font-extralight"
       >
         <span class="block">Frontend Developer</span>
-        <span class="block text-dark tracking-tight">and UI Designer</span>
+        <span class="text-accent lg:font-extralight font-medium">and</span> <span class="lg:font-extralight font-medium">UI Designer</span>
       </h1>
     </section>
 
@@ -81,9 +86,9 @@ const professionalSchema = {
             return (
               <a
                 href={`/work/${project.slug}`}
-                class="group col-span-1 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center hover:opacity-90 transition-opacity relative"
+                class="group col-span-12 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center hover:opacity-90 transition-opacity relative"
               >
-                <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 lg:absolute lg:w-2/5">
+                <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 xl:absolute lg:w-2/5">
                   <img
                     src={imageModule.src}
                     alt={project.data.title}
@@ -94,7 +99,7 @@ const professionalSchema = {
                   x-data="{ shown: false }" 
                   x-intersect="shown = true"
                   :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'"
-                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 md:-ml-24 bg-neutral p-8 lg:py-12 lg:px-16 transition-all duration-700 ease-out"
+                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 bg-neutral p-8 lg:py-12 lg:px-16 transition-all duration-700 ease-out"
                 >
                   <h3 class="text-xl font-semibold mb-2">
                     {project.data.title}
@@ -172,4 +177,56 @@ const professionalSchema = {
     // Small delay to ensure DOM is ready
     setTimeout(initializeObserver, 0);
   });
+
+  function initTopography() {
+    const canvas = document.getElementById('topographyCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let time = 0;
+    
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    
+    function animate() {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw multiple sine waves
+      for (let i = 0; i < 5; i++) {
+        ctx.beginPath();
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 0.5;
+        
+        for (let x = 0; x < canvas.width; x++) {
+          const y = Math.sin(x * 0.01 + time + i) * 20 + 
+                   Math.sin(x * 0.02 + time * 0.8 + i) * 15 +
+                   (canvas.height / 2) + (i * 50);
+          
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        
+        ctx.stroke();
+      }
+      
+      time += 0.005;
+      requestAnimationFrame(animate);
+    }
+    
+    window.addEventListener('resize', resize);
+    resize();
+    animate();
+  }
+
+  // Initialize on page load
+  initTopography();
+  
+  // Reinitialize after navigation
+  document.addEventListener('astro:after-swap', initTopography);
 </script>
