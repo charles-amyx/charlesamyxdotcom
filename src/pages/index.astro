@@ -50,12 +50,12 @@ const professionalSchema = {
 >
   <section class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
     <section
-      class="mb-16 grid grid-cols-6 py-0 lg:py-24 transition-all duration-200 ease-in-out"
+      class="mb-16 grid grid-cols-6 py-12 lg:py-24 xl:h-screen transition-all duration-200 ease-in-out"
     >
       <h1
-        class="text-xl uppercase lg:text-right lg:text-5xl transition-all duration-200 ease-in-out col-span-3 text-gray-600"
+        class="text-3xl uppercase lg:text-right lg:text-5xl xl:text-8xl transition-all duration-200 ease-in-out col-span-6 lg:col-span-5 text-gray-600 font-light"
       >
-        <span class="block font-black">Frontend Developer</span>
+        <span class="block">Frontend Developer</span>
         <span class="block text-dark tracking-tight">and UI Designer</span>
       </h1>
     </section>
@@ -71,7 +71,7 @@ const professionalSchema = {
           View all projects →
         </a>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-12">
+      <div class="grid grid-cols-1 md:grid-cols-12" transition:persist>
         {
           featuredProjects.map((project) => {
             const imageModule = project.data.featuredImg
@@ -81,7 +81,7 @@ const professionalSchema = {
             return (
               <a
                 href={`/work/${project.slug}`}
-                class="group col-span-1 lg:col-span-10 col-start-auto lg:col-start-2 flex  justify-center hover:opacity-90 transition-opacity relative"
+                class="group col-span-1 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center hover:opacity-90 transition-opacity relative"
               >
                 <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 lg:absolute lg:w-2/5">
                   <img
@@ -90,7 +90,12 @@ const professionalSchema = {
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <div class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 md:-ml-24 bg-neutral p-8 lg:py-12 lg:px-16">
+                <div 
+                  x-data="{ shown: false }" 
+                  x-intersect="shown = true"
+                  :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'"
+                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 md:-ml-24 bg-neutral p-8 lg:py-12 lg:px-16 transition-all duration-700 ease-out"
+                >
                   <h3 class="text-xl font-semibold mb-2">
                     {project.data.title}
                   </h3>
@@ -107,7 +112,13 @@ const professionalSchema = {
     </section>
 
     <section class="grid grid-cols-1 md:grid-cols-12 py-12 lg:py-32">
-      <div class="col-span-1 md:col-span-4 col-start-auto md:col-start-8">
+      <div 
+        x-data="{ shown: false }" 
+        x-intersect="shown = true"
+        :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-2rem]'"
+        class="col-span-1 md:col-span-4 col-start-auto md:col-start-8 transition-all duration-700 ease-out"
+        transition:persist
+      >
         <h2
           class="text-2xl tracking-wide font-bold text-gray-600 uppercase mb-2"
         >
@@ -123,3 +134,42 @@ const professionalSchema = {
     </section>
   </section>
 </Layout>
+
+<script>
+  function initializeObserver() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "translate-x-8");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Function to start observing cards
+    function observeCards() {
+      document.querySelectorAll(".project-card").forEach((card) => {
+        // First disconnect any existing observation
+        observer.unobserve(card);
+        // Reset the animation state
+        card.classList.add("opacity-0", "translate-x-8");
+        // Start observing again
+        observer.observe(card);
+      });
+    }
+
+    // Initial observation
+    observeCards();
+  }
+
+  // Run on initial load
+  initializeObserver();
+
+  // Run after each navigation
+  document.addEventListener("astro:after-swap", () => {
+    // Small delay to ensure DOM is ready
+    setTimeout(initializeObserver, 0);
+  });
+</script>

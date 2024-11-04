@@ -15,7 +15,14 @@ import { z } from 'zod';
 export default defineConfig({
   logLevel: 'debug',
   site: 'https://charlesamyx.com',
-  integrations: [tailwind(), mdx(), sitemap(), alpinejs()],
+  integrations: [
+    tailwind(), 
+    mdx(), 
+    sitemap(), 
+    alpinejs({
+      plugins: ['@alpinejs/intersect']
+    })
+  ],
   content: {
     collections: {
       projects: {

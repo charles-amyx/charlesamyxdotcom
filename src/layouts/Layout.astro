@@ -19,6 +19,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import "../styles/card.css";
+import AlpineInit from "../components/AlpineInit.astro";
 
 // Base website schema that's present on all pages
 const websiteSchema = {
@@ -197,6 +198,7 @@ const schemas = schema
       is:inline
       set:html={JSON.stringify(schemas)}
     />
+    <AlpineInit />
   </head>
   <body class="font-neue bg-neutral/25 h-full">
     <Header />
