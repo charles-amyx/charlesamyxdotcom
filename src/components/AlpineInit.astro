@@ -9,7 +9,7 @@
   // Register the intersect plugin
   Alpine.plugin(intersect);
 
-  // Start Alpine (this is already being done, but included for completeness)
-  window.Alpine = Alpine;
+  // Start Alpine (with type assertion)
+  (window as any).Alpine = Alpine;
   Alpine.start();
 </script>
