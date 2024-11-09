@@ -58,7 +58,7 @@ const professionalSchema = {
       ></canvas>
 
       <h1
-        class="text-4xl uppercase lg:text-right lg:text-6xl relative xl:text-8xl xl:leading-none transition-all duration-200 ease-in-out col-span-6 lg:col-span-5 text-gray-600 font-extralight"
+        class="text-4xl lg:text-right lg:text-6xl relative xl:text-8xl xl:leading-none transition-all duration-200 ease-in-out col-span-6 lg:col-span-5 text-gray-600 font-extralight"
       >
         <span class="block">Frontend Developer</span>
         <span class="text-accent lg:font-extralight font-medium">and</span> <span class="lg:font-extralight font-medium">UI Designer</span>
@@ -134,12 +134,30 @@ const professionalSchema = {
         >
           About Me
         </h2>
-        <p class="text-lg text-gray-700">
+        <p class="text-lg text-gray-700 mb-6">
           I'm a Senior Frontend Developer and UX Designer with over 15 years of
           experience in higher ed and corporate sectors. Based in Ann Arbor,
           Michigan, I specialize in creating engaging and user-friendly web
           experiences using modern technologies.
         </p>
+        <div class="flex flex-col space-y-4">
+          <a
+            href="https://www.linkedin.com/in/charbot/"
+            class="hover:text-primary text-accent transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn →
+          </a>
+          <a
+            href="https://github.com/charles-amyx"
+            class="text-accent hover:text-primary transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub →
+          </a>
+        </div>
       </div>
     </section>
   </section>
@@ -207,12 +225,16 @@ const professionalSchema = {
       // Draw multiple sine waves
       for (let i = 0; i < 5; i++) {
         ctx.beginPath();
-        ctx.strokeStyle = '#000000';
-        ctx.lineWidth = 0.5;
+        // Increased opacity range (0.25 to 0.35)
+        const opacity = 0.25 + (i * 0.35);
+        ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`;
+        ctx.lineWidth = 0.5 + (i * 0.2);
+        
+        const speedMultiplier = 1 + (i * 0.4);
         
         for (let x = 0; x < canvas.width; x++) {
-          const y = Math.sin(x * 0.01 + time + i) * 20 + 
-                   Math.sin(x * 0.02 + time * 0.8 + i) * 15 +
+          const y = Math.sin(x * 0.01 + (time * speedMultiplier) + i) * 20 + 
+                   Math.sin(x * 0.02 + (time * 0.8 * speedMultiplier) + i) * 15 +
                    (canvas.height / 2) + (i * 50);
           
           if (x === 0) {

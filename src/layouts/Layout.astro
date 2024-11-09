@@ -175,6 +175,7 @@ const schemas = schema
 
       footer {
         flex-shrink: 0;
+        @apply hidden md:block;
       }
     </style>
 
@@ -204,7 +205,7 @@ const schemas = schema
     <Header />
     <main
       id="swup"
-      class="flex-grow text-primary transition-fade bg-[url('/images/white-topo.svg')] bg-no-repeat bg-bottom bg-contain"
+      class="flex-grow text-primary transition-fade bg-[url('/images/white-topo.svg')] bg-no-repeat bg-bottom bg-contain pb-12 md:pb-0"
     >
       <slot />
     </main>

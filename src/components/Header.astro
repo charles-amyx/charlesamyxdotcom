@@ -2,8 +2,10 @@
 import { ViewTransitions } from "astro:transitions";
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
   { href: "/resume", label: "Résumé" },
+  { href: "/about", label: "About" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -21,85 +23,40 @@ const isActive = (href: string) => {
 <!-- mobile header -->
 <header class="relative w-full" id="main-header">
   <div
-    class="w-full mx-auto px-4 md:hidden container gap-6 grid transition-all duration-300 ease-in-out grid-cols-3 pt-6 justify-between items-end relative after:content-[''] after:block after:absolute after:w-[calc(100%-2rem)] after:h-[2px] after:bg-tertiary after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:z-0"
+    class="w-full mx-auto px-4 md:hidden container grid transition-all duration-300 ease-in-out grid-cols-1 pt-6 justify-between items-end relative after:content-[''] after:block after:absolute after:w-[calc(100%-2rem)] after:h-[2px] after:bg-tertiary after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:z-0"
   >
     <a
       href="/"
-      class="text-xl w-full font-variable font-variable-sm transition-all duration-150 ease-in-out col-span-2 block font-bold text-dark border-b-2 pb-2 relative z-10 border-accent"
+      class="text-xl w-full font-variable font-variable-sm transition-all duration-150 ease-in-out block font-bold text-dark border-b-2 pb-2 relative z-10 border-accent"
     >
       Charles <span class="text-accent">Amyx</span>
     </a>
-    <button
-      id="mobile-menu-toggle"
-      class="flex items-center col-start-3 col-span-1 ml-auto pb-2"
-    >
-      <span class="mr-2 font-medium">Menu</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
   </div>
 
-  <!-- Mobile Menu -->
-  <div
-    id="mobile-menu"
-    class="fixed inset-0 bg-white z-50 md:hidden transition-transform duration-300 ease-in-out transform translate-x-full"
-  >
-    <div
-      class="flex flex-col h-full relative after:content-[''] after:block after:w-full after:h-[2px] after:bg-tertiary after:absolute after:bottom-0 after:left-0 after:z-[90]"
+  <!-- Mobile Pill Navigation -->
+  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:hidden z-50">
+    <nav
+      class="bg-white rounded-full shadow-lg px-6 py-3 border border-tertiary"
     >
-      <div class="flex justify-between relative items-center pt-6 px-4">
-        <a
-          href="/"
-          class="text-xl block font-variable font-variable-sm transition-all duration-150 ease-in-out text-dark border-b-2 pb-2 relative z-10 border-accent"
-        >
-          Charles <span class="text-accent">Amyx</span>
-        </a>
-        <button id="mobile-menu-close" class="text-primary ml-auto">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-      <nav class="flex-grow">
-        <ul class="flex flex-col p-4">
-          {
-            navLinks.map((link) => (
-              <li
-                class={`py-2 ${isActive(link.href) ? "active-class" : "inactive-class"}`}
+      <ul class="flex space-x-6">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class={`text-base font-medium transition-colors duration-300 ${
+                  isActive(link.href)
+                    ? "text-accent"
+                    : "text-primary hover:text-accent"
+                }`}
               >
-                <a
-                  href={link.href}
-                  class={`text-lg ${isActive(link.href) ? "text-accent" : "text-primary "}`}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-    </div>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
 
   <!-- Desktop Menu -->
@@ -112,8 +69,8 @@ const isActive = (href: string) => {
     >
       Charles<span class="text-accent">Amyx</span>
     </a>
-    <nav class="col-span-3 w-full col-start-10">
-      <ul class="grid grid-cols-2 gap-6 font-medium relative z-10">
+    <nav class="col-span-8 w-full col-start-10">
+      <ul class="grid grid-cols-4 gap-6 font-medium relative z-10">
         {
           navLinks.map((link) => (
             <li
@@ -135,44 +92,3 @@ const isActive = (href: string) => {
     </nav>
   </div>
 </header>
-
-<script>
-  function toggleMobileMenu() {
-    const mobileMenu = document.getElementById("mobile-menu");
-    if (mobileMenu) {
-      mobileMenu.classList.toggle("translate-x-full");
-    }
-  }
-
-  document.addEventListener("astro:page-load", () => {
-    const toggleButton = document.getElementById("mobile-menu-toggle");
-    const closeButton = document.getElementById("mobile-menu-close");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    if (toggleButton) {
-      toggleButton.addEventListener("click", toggleMobileMenu);
-    }
-
-    if (closeButton) {
-      closeButton.addEventListener("click", toggleMobileMenu);
-    }
-
-    if (mobileMenu) {
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          setTimeout(toggleMobileMenu, 150);
-        });
-      });
-    }
-  });
-</script>
-
-<style>
-  #mobile-menu {
-    transition: transform 0.3s ease-in-out;
-  }
-
-  #mobile-menu.translate-x-full {
-    transform: translateX(100%);
-  }
-</style>

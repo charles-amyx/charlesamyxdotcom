@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const skills = [
+  "JavaScript",
+  "React",
+  "UI Design",
+  "Accessibility",
+  "TypeScript",
+  "HTML",
+  "CSS",
+  "TailwindCSS",
+  "VueJS",
+  "Astro",
+  "Svelte",
+  "NextJS",
+];
+---
+
+<Layout title="About | Charles E. Amyx, III">
+  <section class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl font-semibold mb-8">About Me</h1>
+
+      <div class="prose prose-lg mb-12">
+        <p>
+          I'm a Senior Frontend Developer and UX Designer with over 15 years of
+          experience in higher education and corporate sectors. Based in Ann
+          Arbor, Michigan, I specialize in creating engaging and user-friendly
+          web experiences using modern technologies.
+        </p>
+
+        <p>
+          Throughout my career, I've focused on building accessible, performant,
+          and user-friendly web applications. I'm passionate about creating
+          inclusive digital experiences that work for everyone.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+        <div class="flex flex-wrap gap-2">
+          {
+            skills.map((skill) => (
+              <span class="bg-neutral px-3 py-1 rounded-full text-primary">
+                {skill}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="flex space-x-4">
+        <a
+          href="https://www.linkedin.com/in/charbot/"
+          class="text-primary hover:text-accent transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/charles-amyx"
+          class="text-primary hover:text-accent transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
