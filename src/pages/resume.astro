@@ -11,6 +11,20 @@ const sortedExperiences = await Promise.all(
       return { ...experience, Content };
     })
 );
+const skills = [
+  "JavaScript",
+  "React",
+  "UI Design",
+  "Accessibility",
+  "TypeScript",
+  "HTML",
+  "CSS",
+  "TailwindCSS",
+  "VueJS",
+  "Astro",
+  "Svelte",
+  "NextJS",
+];
 ---
 
 <Layout title="Résumé | Charles E. Amyx, III">
@@ -24,22 +38,39 @@ const sortedExperiences = await Promise.all(
         website redesigns, improving performance, and enhancing user
         experiences. Based in Ann Arbor, Michigan.
       </p>
-      <ul class="list-none pl-0">
-        {
-          sortedExperiences.map((experience) => (
-            <li class="border-l-4 border-gray-200 pl-4 py-2 my-0 last:pb-12">
-              <h2 class="text-xl font-semibold">{experience.data.company}</h2>
-              <h3 class="text-lg text-gray-600">{experience.data.position}</h3>
-              <p class="text-sm text-gray-500">
-                {experience.data.startDate} - {experience.data.endDate}
-              </p>
-              <div class="mt-2 prose prose-sm max-w-none">
-                <experience.Content />
-              </div>
-            </li>
-          ))
-        }
-      </ul>
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+        <div class="flex flex-wrap gap-2">
+          {
+            skills.map((skill) => (
+              <span class="bg-neutral px-3 py-1 rounded-full text-primary">
+                {skill}
+              </span>
+            ))
+          }
+        </div>
+      </section>
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Experience</h2>
+        <ul class="list-none pl-0">
+          {
+            sortedExperiences.map((experience) => (
+              <li class="border-l-4 border-gray-200 pl-4 py-2 my-0 last:pb-12">
+                <h2 class="text-xl font-semibold">{experience.data.company}</h2>
+                <h3 class="text-lg text-gray-600">
+                  {experience.data.position}
+                </h3>
+                <p class="text-sm text-gray-500">
+                  {experience.data.startDate} - {experience.data.endDate}
+                </p>
+                <div class="mt-2 prose prose-sm max-w-none">
+                  <experience.Content />
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
     </div>
   </section>
 </Layout>
