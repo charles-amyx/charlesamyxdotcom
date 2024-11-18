@@ -96,44 +96,6 @@ const schemas = schema
 
       document.addEventListener("DOMContentLoaded", () => {
         const swup = new Swup();
-
-        function updateActiveNavItem() {
-          const currentPath = window.location.pathname;
-          const navLinks = document.querySelectorAll("nav a");
-
-          navLinks.forEach((link) => {
-            const href = link.getAttribute("href");
-            const isActive =
-              href === "/"
-                ? currentPath === "/" || currentPath.startsWith("/work/")
-                : currentPath.startsWith(href || "");
-
-            if (isActive) {
-              link.classList.add("text-accent");
-              link.classList.remove("text-primary", "hover:text-primary");
-              link.closest("li")?.classList.add("border-accent");
-              link
-                .closest("li")
-                ?.classList.remove(
-                  "border-transparent",
-                  "hover:border-primary"
-                );
-            } else {
-              link.classList.remove("text-accent");
-              link.classList.add("text-primary", "hover:text-primary");
-              link.closest("li")?.classList.remove("border-accent");
-              link
-                .closest("li")
-                ?.classList.add("border-transparent", "hover:border-primary");
-            }
-          });
-        }
-
-        // Run on initial page load
-        updateActiveNavItem();
-
-        // Run after Swup page view
-        swup.hooks.on("content:replace", updateActiveNavItem);
       });
     </script>
     <script is:inline>

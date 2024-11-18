@@ -11,10 +11,27 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 
 const isActive = (href: string) => {
-  if (href === "/") {
-    return currentPath === "/";
+  // Normalize paths by removing trailing slashes
+  const normalizedCurrentPath = currentPath.endsWith("/")
+    ? currentPath.slice(0, -1)
+    : currentPath;
+  const normalizedHref = href.endsWith("/") ? href.slice(0, -1) : href;
+
+  // For home page, only match exact "/"
+  if (normalizedHref === "") {
+    return normalizedCurrentPath === "";
   }
-  return currentPath.startsWith(href);
+
+  // For work section and its subpages
+  if (normalizedHref === "/work") {
+    return (
+      normalizedCurrentPath === "/work" ||
+      normalizedCurrentPath.startsWith("/work/")
+    );
+  }
+
+  // For all other pages, match exact paths only
+  return normalizedCurrentPath === normalizedHref;
 };
 ---
 
