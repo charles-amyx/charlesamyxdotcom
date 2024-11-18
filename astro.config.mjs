@@ -47,5 +47,8 @@ export default defineConfig({
       }
     }
   },
-  viewTransitions: true 
+  viewTransitions: true,
+  devToolbar: {
+    enabled: false,
+  },
 });

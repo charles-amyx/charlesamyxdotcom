@@ -11,27 +11,23 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 
 const isActive = (href: string) => {
-  // Normalize paths by removing trailing slashes
-  const normalizedCurrentPath = currentPath.endsWith("/")
-    ? currentPath.slice(0, -1)
-    : currentPath;
-  const normalizedHref = href.endsWith("/") ? href.slice(0, -1) : href;
+  // Get the first segment of the current path
+  const pathSegments = currentPath.split("/").filter(Boolean);
+  const firstSegment = pathSegments[0] || "";
 
-  // For home page, only match exact "/"
-  if (normalizedHref === "") {
-    return normalizedCurrentPath === "";
+  // For home page
+  if (href === "/") {
+    return currentPath === "/";
   }
 
-  // For work section and its subpages
-  if (normalizedHref === "/work") {
-    return (
-      normalizedCurrentPath === "/work" ||
-      normalizedCurrentPath.startsWith("/work/")
-    );
+  // For work section
+  if (href === "/work") {
+    return firstSegment === "work";
   }
 
-  // For all other pages, match exact paths only
-  return normalizedCurrentPath === normalizedHref;
+  // For all other pages, match only the first segment
+  const hrefSegment = href.split("/").filter(Boolean)[0];
+  return hrefSegment === firstSegment;
 };
 ---
 
@@ -51,7 +47,10 @@ const isActive = (href: string) => {
   </div>
 
   <!-- Mobile Pill Navigation -->
-  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:hidden z-50">
+  <div
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 md:hidden z-50"
+    transition:persist="nav"
+  >
     <nav
       class="bg-white rounded-full shadow-lg px-6 py-3 border border-tertiary"
     >
@@ -109,3 +108,28 @@ const isActive = (href: string) => {
     </nav>
   </div>
 </header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      // Reset all active states
+      link.classList.remove("text-accent");
+      link.classList.add("text-primary", "hover:text-accent");
+
+      // Check for active state
+      if (href === "/" && currentPath === "/") {
+        link.classList.add("text-accent");
+        link.classList.remove("text-primary", "hover:text-accent");
+      } else if (href !== "/" && currentPath.startsWith(href)) {
+        link.classList.add("text-accent");
+        link.classList.remove("text-primary", "hover:text-accent");
+      }
+    });
+  });
+</script>

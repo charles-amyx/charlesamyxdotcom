@@ -91,13 +91,7 @@ const schemas = schema
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script>
-      import Swup from "swup";
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const swup = new Swup();
-      });
-    </script>
     <script is:inline>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       // if (
