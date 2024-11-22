@@ -110,6 +110,24 @@ const isActive = (href: string) => {
 </header>
 
 <script>
+  // At the top of your script
+  declare global {
+    interface Window {
+      gtag: (...args: any[]) => void;
+    }
+  }
+
+  // Then wrap gtag calls in a check
+  const trackEvent = (eventName: string, eventParams: object) => {
+    try {
+      if (typeof window.gtag !== "undefined") {
+        window.gtag("event", eventName, eventParams);
+      }
+    } catch (error) {
+      console.error("Error tracking event:", error);
+    }
+  };
+
   document.addEventListener("astro:page-load", () => {
     const currentPath = window.location.pathname;
     const links = document.querySelectorAll("a[href]");
@@ -131,5 +149,131 @@ const isActive = (href: string) => {
         link.classList.remove("text-primary", "hover:text-accent");
       }
     });
+
+    const navLinks = document.querySelectorAll("nav a");
+
+    // Move the cleanup return after all event listeners
+    const cleanupFunctions: (() => void)[] = [];
+
+    navLinks.forEach((link) => {
+      const handler = () => {
+        trackEvent("navigation_click", {
+          event_category: "Navigation",
+          event_label: link.textContent,
+          page_location: window.location.pathname,
+        });
+      };
+      link.addEventListener("click", handler);
+      cleanupFunctions.push(() => link.removeEventListener("click", handler));
+    });
+
+    // Track project card clicks
+    document.querySelectorAll(".project-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        trackEvent("project_view", {
+          event_category: "Projects",
+          event_label:
+            card.querySelector("h3")?.textContent ?? "Unknown Project",
+        });
+      });
+    });
+
+    // Track external project link clicks
+    document.querySelectorAll("a[target='_blank']").forEach((link) => {
+      link.addEventListener("click", () => {
+        trackEvent("project_link_click", {
+          event_category: "External Links",
+          event_label: (link as HTMLAnchorElement).href,
+          project_title: link.closest("article")?.querySelector("h1")
+            ?.textContent,
+        });
+      });
+    });
+
+    // Track skill tag clicks/hovers
+    document.querySelectorAll(".skill-tag").forEach((skill) => {
+      skill.addEventListener("click", () => {
+        trackEvent("skill_interaction", {
+          event_category: "Resume",
+          event_label: skill.textContent,
+        });
+      });
+    });
+
+    // Track time spent on resume section
+    if (window.location.pathname === "/resume") {
+      let startTime = Date.now();
+      let totalTime = 0;
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          totalTime += Date.now() - startTime;
+        } else {
+          startTime = Date.now();
+        }
+      });
+
+      window.addEventListener("beforeunload", () => {
+        const finalTime = Math.round(
+          (totalTime + (Date.now() - startTime)) / 1000
+        );
+        trackEvent("resume_time_spent", {
+          event_category: "Engagement",
+          event_label: "Resume View Duration",
+          value: finalTime,
+        });
+      });
+    }
+
+    document
+      .querySelectorAll<HTMLAnchorElement>(
+        "a[href*='linkedin'], a[href*='github']"
+      )
+      .forEach((link) => {
+        trackEvent("social_click", {
+          event_category: "Social Links",
+          event_label: link.href,
+          social_platform: link.href.includes("linkedin")
+            ? "LinkedIn"
+            : "GitHub",
+        });
+      });
+
+    let maxScroll = 0;
+
+    function debounce(func: Function, wait: number) {
+      let timeout: ReturnType<typeof setTimeout>;
+      return function executedFunction(...args: any[]) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    const debouncedScroll = debounce(() => {
+      const scrollPercent = Math.round(
+        ((window.scrollY + window.innerHeight) /
+          document.documentElement.scrollHeight) *
+          100
+      );
+      if (scrollPercent > maxScroll) {
+        maxScroll = scrollPercent;
+        if (scrollPercent % 25 === 0) {
+          trackEvent("scroll_depth", {
+            event_category: "Engagement",
+            event_label: `Scrolled ${scrollPercent}%`,
+            page_location: window.location.pathname,
+          });
+        }
+      }
+    }, 100);
+
+    window.addEventListener("scroll", debouncedScroll);
+
+    // Move return statement to the end
+    return () => cleanupFunctions.forEach((cleanup) => cleanup());
   });
 </script>
