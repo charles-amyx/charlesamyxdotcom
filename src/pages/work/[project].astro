@@ -1,17 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import { imageMap } from "../../lib/images";
-import type { CollectionEntry } from "astro:content";
-import { getDominantColor } from "../../lib/colorUtils";
 import { Image } from "astro:assets";
-import { calculateDurationInMonths, formatDate } from "../../utils/dateUtils";
+import { imageMap } from "../../lib/images";
+import { formatDate, calculateMonthsBetween } from "../../lib/dateUtils";
 
-// Define and export the getStaticPaths function
 export async function getStaticPaths() {
-  // Fetch the projects collection
   const projects = await getCollection("projects");
-
   const sortedProjects = projects.sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
@@ -20,82 +15,41 @@ export async function getStaticPaths() {
     params: { project: project.slug },
     props: {
       project,
-      prev: index > 0 ? sortedProjects[index - 1] : null,
-      next:
-        index < sortedProjects.length - 1 ? sortedProjects[index + 1] : null,
+      previous: sortedProjects[index + 1]?.slug,
+      next: sortedProjects[index - 1]?.slug,
     },
   }));
 }
 
-type Props = {
-  project: CollectionEntry<"projects">;
-  prev: CollectionEntry<"projects"> | null;
-  next: CollectionEntry<"projects"> | null;
-};
-
-// Fetch the current project based on the route parameter
-const { project, prev, next } = Astro.props;
+const { project, previous, next } = Astro.props;
 const { Content } = await project.render();
 
 const imageModule = project.data.image
   ? imageMap[project.data.image]
   : undefined;
-
-// Get the absolute URL for the OG image
-const ogImageUrl = imageModule
-  ? new URL(imageModule.src, Astro.url).toString()
-  : undefined;
-
-const dominantColor = ogImageUrl
-  ? await getDominantColor(ogImageUrl)
-  : undefined;
-
-const durationInMonths = project.data.duration
-  ? calculateDurationInMonths(project.data.duration)
-  : null;
 const formattedDate = project.data.date ? formatDate(project.data.date) : null;
 
-// Create schema for this specific project
-const projectSchema = {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  name: project.data.title,
-  author: {
-    "@type": "Person",
-    name: "Charles E. Amyx, III",
-  },
-  description: project.data.description,
-  image: ogImageUrl,
-  datePublished: project.data.publishDate,
-  keywords: project.data.tags?.join(", "),
-  url: Astro.url.toString(),
-  genre: "Web Development",
-  technicalPlatform: project.data.technologies?.join(", "),
-};
+const durationInMonths = project.data.duration
+  ? calculateMonthsBetween(
+      project.data.duration.split(" - ")[0],
+      project.data.duration.split(" - ")[1]
+    )
+  : null;
 ---
 
-<Layout
-  title={`${project.data.title} | Charles E. Amyx, III`}
-  description={project.data.description}
-  ogImage={ogImageUrl}
-  ogType="article"
-  schema={projectSchema}
->
-  <section
-    class="pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-10 lg:pb-12 gap-6 transition-all duration-300
-  ease-in-out container mx-auto px-0 lg:px-4 flex-grow transition-fade"
+<Layout title={`${project.data.title} | Charles E. Amyx, III`}>
+  <article
+    class="pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-10 lg:pb-12 gap-6 transition-all duration-300 ease-in-out container mx-auto px-0 lg:px-4 flex-grow"
   >
-    <article
-      class="mx-auto grid grid-cols-1 text-base bg-neutral/50 backdrop-blur-sm
-     lg:grid-cols-5"
+    <!-- Project Header Section -->
+    <div
+      class="mx-auto grid grid-cols-1 text-base bg-neutral/50 backdrop-blur-sm lg:grid-cols-5"
     >
+      <!-- Hero Image -->
       <div class="col-span-1 lg:col-span-3 p-0 lg:py-4 lg:pl-4">
         {
           imageModule && (
-            <div
-              class="aspect-w-16 aspect-h-9"
-              style={`background-color: ${dominantColor};`}
-            >
+            <div class="aspect-w-16 aspect-h-9">
               <Image
                 src={imageModule}
                 alt={project.data.title}
@@ -106,6 +60,8 @@ const projectSchema = {
           )
         }
       </div>
+
+      <!-- Project Metadata -->
       <div
         class="col-span-1 font-normal w-full lg:col-span-2 px-4 py-8 lg:px-8 lg:py-10"
       >
@@ -121,53 +77,62 @@ const projectSchema = {
             {project.data.client}
           </div>
         </div>
-        <div class="grid grid-cols-2 w-full mb-4 border-b border-gray-200">
-          <div class="text-primary/60 uppercase">Role&nbsp;</div>
-          <div class="text-primary/90">
-            {project.data.type || "No type specified"}
+
+        <!-- Project Details -->
+        <div class="space-y-4">
+          <div class="grid grid-cols-2 w-full border-b border-gray-200">
+            <div class="text-primary/60 uppercase">Role&nbsp;</div>
+            <div class="text-primary/90">
+              {project.data.type || "No type specified"}
+            </div>
           </div>
-        </div>
-        {
-          formattedDate && (
-            <div class="grid grid-cols-2 w-full mb-4 border-b border-gray-200">
-              <div class="text-primary/60 uppercase">Date&nbsp;</div>
-              <div class="text-primary/90">{formattedDate}</div>
-            </div>
-          )
-        }
-        {
-          durationInMonths && (
-            <div class="grid grid-cols-2 w-full mb-4 border-b border-gray-200">
-              <div class="text-primary/60 uppercase">Duration&nbsp;</div>
-              <div class="text-primary/90">{durationInMonths} months</div>
-            </div>
-          )
-        }
-        <div class="grid grid-cols-2 w-full mb-4 border-b border-gray-200">
+
+          {
+            formattedDate && (
+              <div class="grid grid-cols-2 w-full border-b border-gray-200">
+                <div class="text-primary/60 uppercase">Date&nbsp;</div>
+                <div class="text-primary/90">{formattedDate}</div>
+              </div>
+            )
+          }
+
+          {
+            durationInMonths && (
+              <div class="grid grid-cols-2 w-full border-b border-gray-200">
+                <div class="text-primary/60 uppercase">Duration&nbsp;</div>
+                <div class="text-primary/90">{durationInMonths} months</div>
+              </div>
+            )
+          }
+
           {
             project.data.skills && (
-              <>
+              <div class="grid grid-cols-2 w-full border-b border-gray-200">
                 <div class="text-primary/60 uppercase">Skills</div>
                 <ul class="text-primary/90 list-disc list-inside pb-2">
                   {project.data.skills.map((skill: string) => (
                     <li>{skill}</li>
                   ))}
                 </ul>
-              </>
+              </div>
             )
           }
         </div>
-        <div class="pt-8 max-w-none lg:prose prose-sm">
-          <Content />
+
+        <!-- Project Description -->
+        <div class="pt-8 prose prose-sm max-w-none">
+          {project.data.description}
         </div>
+
+        <!-- Project URL -->
         {
           project.data.url && (
-            <div class="pt-8 max-w-none lg:prose prose-sm">
+            <div class="pt-4">
               <a
                 href={project.data.url.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="transition-colors"
+                class="text-accent hover:text-primary transition-colors"
               >
                 {project.data.url.label || "View Project"}
               </a>
@@ -175,29 +140,50 @@ const projectSchema = {
           )
         }
       </div>
-    </article>
+    </div>
 
-    <nav class="mt-12 grid grid-cols-2 lg:flex justify-between px-4">
+    <!-- Extended Process Content -->
+    {
+      project.data.hasProcessContent && (
+        <div class="mx-auto max-w-4xl px-4 lg:px-8 mt-16">
+          <div class="prose prose-lg prose-headings:font-neue prose-headings:font-semibold prose-h2:text-3xl prose-h2:mt-12 prose-p:text-base prose-img:rounded-lg prose-img:shadow-md prose-img:my-12 prose-a:text-accent hover:prose-a:text-primary prose-a:transition-colors">
+            <Content />
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Project Navigation -->
+    <div class="mx-auto max-w-4xl px-4 lg:px-8 mt-16 flex justify-between">
       {
-        prev && (
+        previous && (
           <a
-            href={`/work/${prev.slug}`}
-            class="text-primary hover:text-accent transition-colors"
+            href={`/work/${previous}`}
+            class="text-accent hover:text-primary transition-colors"
           >
-            ← {prev.data.title}
+            ← Previous Project
           </a>
         )
       }
+      <a href="/work" class="text-accent hover:text-primary transition-colors">
+        All Projects
+      </a>
       {
         next && (
           <a
-            href={`/work/${next.slug}`}
-            class="text-primary hover:text-accent transition-colors ml-auto"
+            href={`/work/${next}`}
+            class="text-accent hover:text-primary transition-colors"
           >
-            {next.data.title} →
+            Next Project →
           </a>
         )
       }
-    </nav>
-  </section>
+    </div>
+  </article>
 </Layout>
+
+<style>
+  .prose img + em {
+    @apply block text-center text-sm text-gray-600 -mt-8 mb-12;
+  }
+</style>
