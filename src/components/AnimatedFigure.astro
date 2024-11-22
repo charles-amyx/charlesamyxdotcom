@@ -1,0 +1,69 @@
+---
+const { class: className, fullWidth } = Astro.props;
+---
+
+<figure
+  class:list={[
+    "my-8 not-prose fade-up",
+    className,
+    { "full-width": fullWidth },
+  ]}
+>
+  <slot />
+</figure>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let animationIndex = 0;
+    let observedImages = new Set();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = animationIndex * 250;
+            entry.target.style.animationDelay = `${delay}ms`;
+            entry.target.classList.add("visible");
+
+            // Track when images come into view
+            if (!observedImages.has(entry.target)) {
+              try {
+                if (typeof window.gtag !== "undefined") {
+                  const imgAlt =
+                    entry.target.querySelector("img")?.alt || "Unknown image";
+                  const isFullWidth =
+                    entry.target.classList.contains("full-width");
+
+                  window.gtag("event", "image_view", {
+                    event_category: "Content Engagement",
+                    event_label: imgAlt,
+                    image_type: isFullWidth ? "full-width" : "standard",
+                    page_location: window.location.pathname,
+                  });
+                }
+              } catch (error) {
+                console.error("Error tracking image view:", error);
+              }
+              observedImages.add(entry.target);
+            }
+
+            observer.unobserve(entry.target);
+            animationIndex++;
+
+            setTimeout(() => {
+              animationIndex = 0;
+            }, 1500);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "50px",
+      }
+    );
+
+    document.querySelectorAll(".fade-up").forEach((figure) => {
+      observer.observe(figure);
+    });
+  });
+</script>
