@@ -13,7 +13,7 @@ const { class: className, fullWidth } = Astro.props;
 </figure>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  function initAnimations() {
     let animationIndex = 0;
     let observedImages = new Set();
 
@@ -63,8 +63,16 @@ const { class: className, fullWidth } = Astro.props;
       }
     );
 
+    // Reset all figures before observing
     document.querySelectorAll(".fade-up").forEach((figure) => {
+      figure.classList.remove("visible");
       observer.observe(figure);
     });
-  });
+  }
+
+  // Initialize on initial page load
+  document.addEventListener("DOMContentLoaded", initAnimations);
+
+  // Initialize after navigation
+  document.addEventListener("astro:after-swap", initAnimations);
 </script>
