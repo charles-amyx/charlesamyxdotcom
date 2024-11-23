@@ -22,8 +22,9 @@ const { class: className, fullWidth } = Astro.props;
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const delay = animationIndex * 250;
-            entry.target.style.animationDelay = `${delay}ms`;
-            entry.target.classList.add("visible");
+            const target = entry.target as HTMLElement;
+            target.style.animationDelay = `${delay}ms`;
+            target.classList.add("visible");
 
             // Track when images come into view
             if (!observedImages.has(entry.target)) {
