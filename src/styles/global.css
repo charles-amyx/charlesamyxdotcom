@@ -59,6 +59,28 @@ body {
   will-change: opacity, transform;
 }
 
+.fade-up .image-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 .fade-up.visible {
   animation: fadeUp 0.8s ease-out forwards;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+figure {
+  margin: 2rem 0;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
 }

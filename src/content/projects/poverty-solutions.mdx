@@ -39,6 +39,9 @@ Working as part of Michigan Creative's team, I collaborated with content strateg
     src={imageMap['sitemap.jpg']} 
     alt="Home page of Poverty Solutions" 
     class="mb-4"
+    loading="eager"
+    decoding="sync"
+    fetchpriority="high"
   />
   <figcaption class="text-sm text-gray-600 text-center">
     A version of Poverty Solutions' new IA.
@@ -48,10 +51,15 @@ Working as part of Michigan Creative's team, I collaborated with content strateg
 I begin every project with paper sketches—notes from discovery meetings, rough layout ideas, and initial concepts. These early sketches help me think through the information architecture and user flow before moving to digital tools.
 
 <AnimatedFigure>
-  <Image 
-    src={imageMap['paper.jpg']} 
+  <img 
+    src={imageMap['paper.jpg'].src} 
     alt="an image of a rough wireframe drawn in a notebook" 
     class="mb-4"
+    width={imageMap['paper.jpg'].width}
+    height={imageMap['paper.jpg'].height}
+    loading="eager"
+    decoding="sync"
+    fetchpriority="high"
   />
   <figcaption class="text-sm text-gray-600 text-center">
     A tiniest and messy spark happening!
@@ -65,6 +73,11 @@ The wireframing phase utilized Invision's Freehand tool, which proved invaluable
     src={imageMap['wires.jpg']} 
     alt="A polished wireframe created in a design application" 
     class="mb-4"
+    width={imageMap['wires.jpg'].width}
+    height={imageMap['wires.jpg'].height}
+loading="eager"
+    decoding="sync"
+    fetchpriority="high"
   />
   <figcaption class="text-sm text-gray-600 text-center">
     A note from one of the stakeholders visible.
@@ -88,6 +101,11 @@ Throughout the process, accessibility remained a key priority, ensuring that the
     src={imageMap['versions.jpg']} 
     alt="I usually present two versions of a design for a web page" 
     class="mb-4"
+    width={imageMap['versions.jpg'].width}
+    height={imageMap['versions.jpg'].height}
+    loading="eager"
+    decoding="sync"
+    fetchpriority="high"
   />
   <figcaption class="text-sm text-gray-600 text-center mt-4">
     May I present two versions of the home page and an interior page.

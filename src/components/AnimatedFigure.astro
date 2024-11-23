@@ -2,73 +2,73 @@
 const { class: className, fullWidth } = Astro.props;
 ---
 
-<figure
-  class:list={[
-    "my-8 not-prose fade-up",
-    className,
-    { "full-width": fullWidth },
-  ]}
->
+<figure class:list={["my-8 not-prose", className, { "full-width": fullWidth }]}>
   <slot />
 </figure>
 
 <script>
+  function loadImages() {
+    document.querySelectorAll("figure img").forEach((img) => {
+      // Force immediate load
+      if (img instanceof HTMLImageElement) {
+        img.loading = "eager";
+        const src = img.getAttribute("src");
+        if (src) {
+          // Force reload the image
+          img.src = src;
+        }
+      }
+    });
+  }
+
   function initAnimations() {
-    // Add a small delay to ensure DOM is fully ready
-    setTimeout(() => {
-      let animationIndex = 0;
-      let observedImages = new Set();
+    // First load all images
+    loadImages();
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const delay = animationIndex * 250;
-              const target = entry.target as HTMLElement;
-              target.style.animationDelay = `${delay}ms`;
-              target.classList.add("visible");
-
-              // Force image loading
-              const img = target.querySelector("img");
-              if (img) {
-                img.style.opacity = "1";
-                img.style.visibility = "visible";
-              }
-
-              observer.unobserve(entry.target);
-              animationIndex++;
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-          rootMargin: "50px",
-        }
-      );
-
-      // Only remove 'visible' class from elements not yet in viewport
-      document.querySelectorAll(".fade-up").forEach((figure) => {
-        if (!isElementInViewport(figure)) {
-          figure.classList.remove("visible");
-        }
-        observer.observe(figure);
-      });
-    }, 100);
-  }
-
-  // Helper function to check if element is in viewport
-  function isElementInViewport(el: Element) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
     );
+
+    document.querySelectorAll("figure").forEach((figure) => {
+      observer.observe(figure);
+    });
   }
 
-  // Initialize on both DOMContentLoaded and after navigation
-  document.addEventListener("DOMContentLoaded", initAnimations);
+  // Run immediately
+  initAnimations();
+
+  // Also run after navigation
   document.addEventListener("astro:after-swap", initAnimations);
 </script>
+
+<style is:global>
+  figure {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  figure.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Ensure images are always visible */
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+</style>

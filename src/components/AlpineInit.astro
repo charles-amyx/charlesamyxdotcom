@@ -3,13 +3,14 @@
 ---
 
 <script>
-  import Alpine from "alpinejs";
-  import intersect from "@alpinejs/intersect";
-
-  // Register the intersect plugin
-  Alpine.plugin(intersect);
-
-  // Start Alpine (with type assertion)
-  (window as any).Alpine = Alpine;
-  Alpine.start();
+  if (!(window as any).Alpine) {
+    Promise.all([import("alpinejs"), import("@alpinejs/intersect")]).then(
+      ([alpine, intersect]) => {
+        const Alpine = alpine.default;
+        Alpine.plugin(intersect.default);
+        (window as any).Alpine = Alpine;
+        Alpine.start();
+      }
+    );
+  }
 </script>
