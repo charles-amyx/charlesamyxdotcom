@@ -8,27 +8,49 @@ const projects = await getCollection("projects");
 const sortedProjects = projects.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
+
+// Preload first 4 images
+const preloadImages = sortedProjects
+  .slice(0, 4)
+  .map((project) => (project.data.image ? imageMap[project.data.image] : null))
+  .filter(Boolean);
 ---
 
 <Layout title="Charles E. Amyx, III - Work">
+  {/* Preload critical images */}
+  {
+    preloadImages.map((image) => (
+      <link rel="preload" as="image" href={image.src} fetchpriority="high" />
+    ))
+  }
+
   <section
     class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-10 lg:pb-12"
   >
-    <h1 class="text-3xl font-semibold mb-8">My Work</h1>
-    <ul class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8">
+    <h1 class="text-3xl font-semibold mb-8 animate-in">My Work</h1>
+    <ul
+      class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8"
+      style="view-transition-name: work-grid"
+    >
       {
-        sortedProjects.map((project) => {
+        sortedProjects.map((project, index) => {
           const imageModule = project.data.image
             ? imageMap[project.data.image]
             : undefined;
           if (!imageModule) return null;
           return (
-            <li>
+            <li
+              style={{
+                animationDelay: `${index * 50}ms`,
+                viewTransitionName: `work-card-${index}`,
+              }}
+            >
               <Card
                 href={`/work/${project.slug}`}
                 title={project.data.title}
                 image={imageModule}
                 type={project.data.type || ""}
+                loading={index < 4 ? "eager" : "lazy"}
               />
             </li>
           );

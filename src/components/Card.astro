@@ -1,37 +1,33 @@
 ---
 import { Image } from "astro:assets";
-import { getDominantColor } from "../lib/colorUtils";
+import type { ImageMetadata } from "astro";
 
-export interface Props {
+interface Props {
   href: string;
   title: string;
   image: ImageMetadata;
   type: string;
+  loading?: "eager" | "lazy";
 }
 
-const { href, title, image, type } = Astro.props;
-const imageUrl = new URL(image.src, Astro.url).toString();
-const dominantColor = await getDominantColor(imageUrl);
+const { href, title, image, type, loading = "lazy" } = Astro.props;
 ---
 
-<div class="card group flex flex-col h-full w-full" transition:persist>
-  <a href={href} class="card-link flex flex-col h-full">
-    <div class="card-image-container flex-shrink-0">
-      <div
-        class="frame aspect-w-16 aspect-h-9"
-        style={`background-color: ${dominantColor};`}
-      >
+<div class="card group">
+  <a href={href} class="card-link">
+    <div class="card-image-container">
+      <div class="frame">
         <Image
           src={image}
           alt={title}
-          class="card-image object-cover"
-          loading="lazy"
+          class="card-image"
+          loading={loading}
+          decoding={loading === "eager" ? "sync" : "async"}
+          fetchpriority={loading === "eager" ? "high" : "auto"}
         />
       </div>
     </div>
-    <div class="flex-grow flex flex-col justify-end px-4 md:px-0">
-      <h2 class="card-title">{title}</h2>
-      <p class="card-type">{type}</p>
-    </div>
+    <h2 class="card-title">{title}</h2>
+    <p class="card-type">{type}</p>
   </a>
 </div>

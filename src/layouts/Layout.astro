@@ -133,6 +133,193 @@ const schemas = schema
         flex-shrink: 0;
         @apply hidden md:block;
       }
+
+      /* Add to existing styles */
+      .loading {
+        cursor: wait;
+      }
+
+      /* Optimize paint performance */
+      .card-image {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        will-change: transform;
+      }
+
+      /* Optimize transitions */
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
+      }
+
+      /* Smooth transition styles */
+      .fade-in {
+        view-transition-name: fade;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slide-from-right {
+        from {
+          transform: translateX(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      /* View transition styles */
+      ::view-transition-old(fade) {
+        animation: fade-out 0.2s ease-out both;
+      }
+
+      ::view-transition-new(fade) {
+        animation: fade-in 0.3s ease-out 0.1s both;
+      }
+
+      /* Optional: Add a subtle loading indicator */
+      .loading-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #a3260a,
+          transparent
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      .loading .loading-indicator {
+        animation: loading 1s ease-in-out infinite;
+      }
+
+      @keyframes loading {
+        0% {
+          transform: scaleX(0);
+          opacity: 1;
+        }
+        50% {
+          transform: scaleX(1);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scaleX(0);
+          opacity: 1;
+        }
+      }
+
+      /* Prevent content overlap during transitions */
+      ::view-transition-group(*) {
+        animation: none !important;
+      }
+
+      ::view-transition-old(*) {
+        animation: fade-out 0.2s ease-out both !important;
+      }
+
+      ::view-transition-new(*) {
+        animation: fade-in 0.2s ease-out both !important;
+      }
+
+      @keyframes fade-out {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Ensure old content is removed quickly */
+      ::view-transition-old(root) {
+        animation-duration: 0.15s !important;
+      }
+
+      /* Ensure new content only appears after old content is gone */
+      ::view-transition-new(root) {
+        animation-delay: 0.1s !important;
+      }
+
+      /* Optional: Add a subtle loading indicator */
+      .loading-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #a3260a;
+        transform: scaleX(0);
+        transform-origin: left;
+        z-index: 100;
+      }
+
+      html.loading .loading-indicator {
+        animation: progress 0.4s ease-in-out forwards;
+      }
+
+      @keyframes progress {
+        0% {
+          transform: scaleX(0);
+        }
+        100% {
+          transform: scaleX(1);
+        }
+      }
+
+      /* Replace the fade animations with slide animations */
+      ::view-transition-old(root) {
+        animation: slide-out 0.15s ease-out both !important;
+      }
+
+      ::view-transition-new(root) {
+        animation: slide-in 0.2s ease-out 0.1s both !important;
+      }
+
+      @keyframes slide-out {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
 
     <!-- Open Graph / Facebook -->
@@ -159,13 +346,27 @@ const schemas = schema
     <AlpineInit />
   </head>
   <body class="font-neue bg-neutral/25 h-full">
-    <Header />
-    <main
-      id="swup"
-      class="flex-grow text-primary transition-fade bg-[url('/images/white-topo.svg')] bg-no-repeat bg-bottom bg-contain pb-20 md:pb-0"
-    >
-      <slot />
-    </main>
-    <Footer />
+    <div class="loading-indicator"></div>
+    <div class="fade-in">
+      <Header />
+      <main
+        id="swup"
+        class="flex-grow text-primary transition-fade bg-[url('/images/white-topo.svg')] bg-no-repeat bg-bottom bg-contain pb-20 md:pb-0"
+      >
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
+
+<script>
+  // Handle transition states
+  document.addEventListener("astro:before-swap", () => {
+    document.documentElement.classList.add("loading");
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    document.documentElement.classList.remove("loading");
+  });
+</script>

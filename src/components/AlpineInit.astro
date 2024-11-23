@@ -3,14 +3,25 @@
 ---
 
 <script>
-  if (!(window as any).Alpine) {
-    Promise.all([import("alpinejs"), import("@alpinejs/intersect")]).then(
-      ([alpine, intersect]) => {
-        const Alpine = alpine.default;
-        Alpine.plugin(intersect.default);
-        (window as any).Alpine = Alpine;
-        Alpine.start();
-      }
-    );
+  let Alpine: any;
+
+  async function initAlpine() {
+    if (!window.Alpine) {
+      const [alpine, intersect] = await Promise.all([
+        import("alpinejs").then((module) => module.default),
+        import("@alpinejs/intersect").then((module) => module.default),
+      ]);
+
+      Alpine = alpine;
+      Alpine.plugin(intersect);
+      window.Alpine = Alpine;
+      Alpine.start();
+    }
   }
+
+  // Initialize on first load
+  initAlpine();
+
+  // Reinitialize after navigation
+  document.addEventListener("astro:after-swap", initAlpine);
 </script>
