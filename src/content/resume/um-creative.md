@@ -1,5 +1,5 @@
 ---
-tags: job
+tags: ["job"]
 title: Senior Web Designer
 position: Senior Web Designer
 company: University of Michigan | Michigan Creative
@@ -13,7 +13,7 @@ description: Primary designer for all web projects.
   communicating best practices for the web to all
   of our campus partners.
 order: 5
-date: 2018-04-01
+date: "2018-04-01"
 ---
 - Primary designer for all web projects
 - Mentored and led junior designers

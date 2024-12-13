@@ -23,23 +23,6 @@ export default defineConfig({
       plugins: ['@alpinejs/intersect']
     })
   ],
-  content: {
-    collections: {
-      projects: {
-        // Define the path to your markdown files
-        path: 'src/content/projects',
-      },
-      resume: {
-        schema: z.object({
-          company: z.string(),
-          position: z.string(),
-          startDate: z.string(),
-          endDate: z.string(),
-          order: z.number(),
-        }),
-      },
-    },
-  },
   vite: {
     resolve: {
       alias: {
