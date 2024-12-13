@@ -1,9 +1,39 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { imageMap } from "../lib/images";
+
+// Define the side projects data structure
+const sideProjects = [
+  {
+    title: "Sparkling Dog",
+    href: "https://sparkling-dog.com",
+    image: "sparkling-dog.png",
+    type: "Memorial for my dog, Archer",
+  },
+  {
+    title: "Hipsters Drinking Coffee",
+    href: "https://hipstersdrinkingcoffee.com",
+    image: "hipsters-coffee.png",
+    type: "Parody",
+  },
+  {
+    title: "Vanishing Dew",
+    href: "https://vanishingdew.com",
+    image: "vanishing-dew.png",
+    type: "Photo Blog",
+  },
+  {
+    title: "Pizza Near Me",
+    href: "https://pizza-near.me/",
+    image: "pizza-near-me.png",
+    type: "Web App",
+  },
+];
 ---
 
 <Layout title="About | Charles E. Amyx, III">
-  <section class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
+  <section class="mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
     <div class="max-w-3xl mx-auto">
       <h1 class="text-3xl font-semibold mb-8">About Me</h1>
 
@@ -53,67 +83,33 @@ import Layout from "../layouts/Layout.astro";
           GitHub →
         </a>
       </div>
+    </div>
+
+    <div class="mx-auto max-w-3xl">
       <div class="flex flex-col space-y-4 mb-12 prose prose-lg">
         <h2 class="text-2xl font-semibold mb-4">Side Projects</h2>
         <p>
           Here are a couple of active projects that I like to tinker with in my
           spare time:
         </p>
-        <ul class="list-disc list-inside space-y-2">
-          <li>
-            <a
-              href="https://sparkling-dog.com"
-              class="text-accent hover:text-primary transition-colors"
-              target="_blank"
-              rel="noopener noreferrer">Sparkling Dog</a
-            > - A memorial site for my first dog, Archer. (Warning: it is a looping
-            live photo from my phone with some sparkle animations that might trigger
-            visual/brain stuff.) Static HTML and GSAP for the animations.
-          </li>
-          <li>
-            <a
-              href="https://hipstersdrinkingcoffee.com"
-              class="text-accent hover:text-primary transition-colors"
-              target="_blank"
-              rel="noopener noreferrer">Hipsters Drinking Coffee</a
-            > - A parody site inspired by a bullet point from (warning: cuss words)
-            <a
-              href="https://motherfuckingwebsite.com/"
-              class="text-accent hover:text-primary transition-colors"
-              target="_blank"
-              rel="noopener noreferrer">this site</a
-            >. Built with Astro and using Pexels' API.
-          </li>
-          <li>
-            <a
-              href="https://vanishingdew.com"
-              class="text-accent hover:text-primary transition-colors"
-              target="_blank"
-              rel="noopener noreferrer">Vanishing Dew</a
-            > - A personal photo blog exploring the topography of my daily life.
-            I use a variety of film and digital cameras. Built with Astro.
-          </li>
-          <li>
-            <a
-              href="https://pizza-near.me/"
-              class="text-accent hover:text-primary transition-colors"
-              target="_blank"
-              rel="noopener noreferrer">Pizza Near Me</a
-            > - A simple web app that allows you to find pizza near you. Built with
-            React, Vite, and Google Maps API. This is a learning project for me as
-            I don't normally work with React or Maps APIs. I'm also experienting
-            with Wrangler for the first time.
-          </li>
-          <li>
-            Okay, so when my kid was 4 years old, he demanded that I <em>
-              "buy <a
-                href="https://tootbutts.com"
-                class="text-accent hover:text-primary transition-colors"
-                target="_blank"
-                rel="noopener noreferrer">tootbutts.com</a
-              > and put lightning on it"
-            </em>. So I did of course.
-          </li>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none pl-0">
+          {
+            sideProjects.map((project, index) => {
+              const imageModule = imageMap[project.image];
+              if (!imageModule) return null;
+              return (
+                <li>
+                  <Card
+                    href={project.href}
+                    title={project.title}
+                    image={imageModule}
+                    type={project.type}
+                    loading={index < 4 ? "eager" : "lazy"}
+                  />
+                </li>
+              );
+            })
+          }
         </ul>
       </div>
     </div>
