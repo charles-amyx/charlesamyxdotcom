@@ -8,26 +8,27 @@ interface Props {
   image: ImageMetadata;
   type: string;
   loading?: "eager" | "lazy";
+  isSideProject?: boolean;
 }
 
-const { href, title, image, type, loading = "lazy" } = Astro.props;
+const {
+  href,
+  title,
+  image,
+  type,
+  loading = "lazy",
+  isSideProject = false,
+} = Astro.props;
 ---
 
-<div class="card group">
+<div class="card">
   <a href={href} class="card-link">
     <div class="card-image-container">
-      <div class="frame">
-        <Image
-          src={image}
-          alt={title}
-          class="card-image"
-          loading={loading}
-          decoding={loading === "eager" ? "sync" : "async"}
-          fetchpriority={loading === "eager" ? "high" : "auto"}
-        />
+      <div class={`frame ${isSideProject ? "frame--side-project" : ""}`}>
+        <Image src={image} alt={title} class="card-image" loading={loading} />
       </div>
     </div>
-    <h2 class="card-title">{title}</h2>
+    <h3 class="card-title">{title}</h3>
     <p class="card-type">{type}</p>
   </a>
 </div>

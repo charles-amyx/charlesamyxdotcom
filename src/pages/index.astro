@@ -88,7 +88,7 @@ const professionalSchema = {
                 href={`/work/${project.slug}`}
                 class="group col-span-12 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center hover:opacity-90 transition-opacity relative"
               >
-                <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 xl:absolute lg:w-2/5">
+                <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 xl:absolute rounded-xl lg:w-2/5 overflow-hidden">
                   <img
                     src={imageModule.src}
                     alt={project.data.title}
@@ -99,7 +99,7 @@ const professionalSchema = {
                   x-data="{ shown: false }" 
                   x-intersect="shown = true"
                   :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'"
-                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 bg-neutral p-8 lg:py-12 lg:px-16 transition-all duration-700 ease-out"
+                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 bg-neutral rounded-[2.5rem] p-8 lg:py-10 lg:px-12 transition-all duration-700 ease-out"
                 >
                   <h3 class="text-xl font-semibold mb-4 lg:mb-2">
                     {project.data.title}
@@ -108,7 +108,7 @@ const professionalSchema = {
                     <img
                       src={imageModule.src}
                       alt={project.data.title}
-                      class="w-full h-[200px] object-cover"
+                      class="w-full h-[200px] object-cover rounded-lg"
                     />
                   </div>
                   <p class="text-gray-700 mt-4 lg:mt-0">{project.data.featuredDesc}</p>
