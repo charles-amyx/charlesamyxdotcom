@@ -41,8 +41,24 @@ const resumeCollection = defineCollection({
   })
 });
 
+const sideProjectsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string(),
+    type: z.string(),
+    href: z.string().url(),
+    date: z.string().optional(),
+    technologies: z.array(z.string()).optional(),
+    featured: z.boolean().optional(),
+    draft: z.boolean().optional().default(false),
+  })
+});
+
 // Export the collections
 export const collections = {
   'projects': projectsCollection,
   'resume': resumeCollection,
+  'side-projects': sideProjectsCollection,
 }; 

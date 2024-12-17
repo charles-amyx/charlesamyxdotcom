@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { imageMap } from "../../lib/images";
+
+export async function getStaticPaths() {
+  const sideProjects = await getCollection("side-projects", ({ data }) => {
+    return !data.draft;
+  });
+
+  return sideProjects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const imageModule = imageMap[project.data.image];
+---
+
+<Layout title={`${project.data.title} | Side Projects`}>
+  <article class="mx-auto px-4 pt-12 md:pt-16 lg:pt-24 max-w-3xl pb-8">
+    <header class="mb-8">
+      <h1 class="text-3xl font-semibold mb-4">{project.data.title}</h1>
+      <p class="text-lg text-gray-600 mb-4">{project.data.description}</p>
+      {
+        project.data.technologies && (
+          <div class="flex flex-wrap gap-2 mb-4">
+            {project.data.technologies.map((tech) => (
+              <span class="px-3 py-1 bg-tertiary rounded-full text-sm">
+                {tech}
+              </span>
+            ))}
+          </div>
+        )
+      }
+      <a
+        href={project.data.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent hover:text-primary transition-colors"
+      >
+        Visit Site →
+      </a>
+    </header>
+
+    {
+      imageModule && (
+        <div class="mb-8">
+          <Image
+            src={imageModule}
+            alt={project.data.title}
+            class="rounded-lg w-full"
+          />
+        </div>
+      )
+    }
+
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+  </article>
+</Layout>

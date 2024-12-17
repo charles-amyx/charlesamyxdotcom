@@ -2,7 +2,7 @@
   @apply font-medium text-sm md:text-xs pb-2 rounded-2xl overflow-hidden transition-all duration-300 ease-in-out bg-tertiary/85;
 }
 .card-link {
-  @apply no-underline block p-8;
+  @apply no-underline block pt-8 pb-4 px-8;
 }
 
 .card-image-container {

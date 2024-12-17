@@ -9,6 +9,7 @@ interface Props {
   type: string;
   loading?: "eager" | "lazy";
   isSideProject?: boolean;
+  slug?: string;
 }
 
 const {
@@ -18,11 +19,19 @@ const {
   type,
   loading = "lazy",
   isSideProject = false,
+  slug,
 } = Astro.props;
+
+const linkUrl = slug ? `/side-projects/${slug}` : href;
+const isExternal = !slug;
 ---
 
 <div class="card">
-  <a href={href} class="card-link">
+  <a
+    href={linkUrl}
+    class="card-link"
+    {...isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {}}
+  >
     <div class="card-image-container">
       <div class={`frame ${isSideProject ? "frame--side-project" : ""}`}>
         <Image src={image} alt={title} class="card-image" loading={loading} />
