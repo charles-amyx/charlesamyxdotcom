@@ -10,7 +10,7 @@
 }
 
 .frame {
-  @apply relative w-full h-full aspect-[16/9] rounded-xl overflow-hidden;
+  @apply relative w-full h-full aspect-[16/9] rounded-xl transition-all duration-300 ease-in-out group-hover:rounded-3xl overflow-hidden;
 }
 
 .card-image {
