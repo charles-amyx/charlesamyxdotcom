@@ -22,16 +22,11 @@ const {
   slug,
 } = Astro.props;
 
-const linkUrl = slug ? `/side-projects/${slug}` : href;
-const isExternal = !slug;
+const linkUrl = isSideProject ? `/side-projects/${slug}` : href;
 ---
 
 <div class="card">
-  <a
-    href={linkUrl}
-    class="card-link group"
-    {...isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {}}
-  >
+  <a href={linkUrl} class="card-link group">
     <div class="card-image-container">
       <div class={`frame ${isSideProject ? "frame--side-project" : ""}`}>
         <Image src={image} alt={title} class="card-image" loading={loading} />
