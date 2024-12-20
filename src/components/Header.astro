@@ -15,9 +15,9 @@ const isActive = (href: string) => {
   const pathSegments = currentPath.split("/").filter(Boolean);
   const firstSegment = pathSegments[0] || "";
 
-  // For home page
+  // For home page - remove this special case
   if (href === "/") {
-    return currentPath === "/";
+    return false; // Never mark home link as active
   }
 
   // For work section
@@ -140,11 +140,9 @@ const isActive = (href: string) => {
       link.classList.remove("text-accent");
       link.classList.add("text-primary", "hover:text-accent");
 
-      // Check for active state
-      if (href === "/" && currentPath === "/") {
-        link.classList.add("text-accent");
-        link.classList.remove("text-primary", "hover:text-accent");
-      } else if (href !== "/" && currentPath.startsWith(href)) {
+      // Check for active state - modify this condition
+      if (href !== "/" && currentPath.startsWith(href)) {
+        // Remove home page check
         link.classList.add("text-accent");
         link.classList.remove("text-primary", "hover:text-accent");
       }
