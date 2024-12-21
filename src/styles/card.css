@@ -1,16 +1,17 @@
 .card {
-  @apply font-medium text-sm md:text-xs pb-2 rounded-2xl overflow-hidden transition-all duration-300 ease-in-out bg-tertiary/85;
+  @apply text-text bg-muted border border-text/5 rounded-2xl shadow-none hover:shadow-2xl hover:shadow-accent/25 transition-all duration-300 ease-in-out;
 }
+
 .card-link {
   @apply no-underline block pt-8 pb-4 px-8;
 }
 
 .card-image-container {
-  @apply overflow-hidden transition-all duration-300 ease-in-out backdrop-blur-sm  group-hover:bg-tertiary;
+  @apply bg-muted;
 }
 
 .frame {
-  @apply relative w-full h-full aspect-[16/9] rounded-xl transition-all duration-300 ease-in-out group-hover:rounded-3xl overflow-hidden;
+  @apply relative w-full h-full aspect-[16/9] rounded-xl transition-all duration-300 ease-in-out overflow-hidden;
 }
 
 .card-image {
@@ -20,7 +21,7 @@
   @apply mt-8 text-base lg:text-lg md:mt-12;
 }
 .card-type {
-  @apply text-quinary tracking-wide;
+  @apply text-text/60;
 }
 
 .frame--side-project {

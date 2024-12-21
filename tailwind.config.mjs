@@ -9,17 +9,12 @@ export default {
 				neueItalic: ["Satoshi-VariableItalic", "sans-serif"],
 			},
 			colors: {
-				primary: "#0E2330",
-				secondary: "#F15D5D",
-				tertiary: "#F5F8FA",
-				quaternary: "#F5F5F5",
-				quinary: "#798E9C",
-				senary: "#FEFEFE",
-				neutral: "#F0F4F9",
-				accent: "#A3260A",
-				dark: "#393646",
-				medium: "#146C94",
-				light: "#AFD3E2",
+				// Base colors
+				text: '#eef4f6',
+				background: '#27304d',
+				primary: '#00afff',
+				accent: '#4b72fa',
+				muted: 'rgba(0,0,0,0.08)',
 			},
 			fontWeight: {
 				thin: '100',

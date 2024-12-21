@@ -54,11 +54,11 @@ const professionalSchema = {
     >
       <canvas 
         id="topographyCanvas" 
-        class="absolute inset-0 w-full h-full opacity-[0.07] -z-10"
+        class="absolute inset-0 w-full h-full opacity-[0.25] bg-blend-overlay -z-10"
       ></canvas>
 
       <h1
-        class="text-4xl lg:text-right lg:text-6xl relative xl:text-8xl xl:leading-none transition-all duration-200 ease-in-out col-span-6 lg:col-span-5 text-gray-600 font-extralight"
+        class="text-4xl lg:text-right lg:text-6xl relative xl:text-8xl xl:leading-none transition-all duration-200 ease-in-out col-span-6 lg:col-span-5 text-text/90 font-extralight"
       >
         <span class="block">Frontend Developer</span>
         <span class="text-accent lg:font-extralight font-medium">and</span> <span class="lg:font-extralight font-medium">Designer</span>
@@ -68,7 +68,7 @@ const professionalSchema = {
     <section class="mb-16 lg:mb-48 ">
       <div class="flex justify-between items-center mb-8">
         <h2
-          class="text-2xl lg:ml-24 tracking-wide font-medium text-gray-600 after:content-[''] after:block after:w-14 after:h-[2px] after:bg-accent after:mt-2 after:ml-auto"
+          class="text-2xl lg:ml-24 tracking-wide font-medium text-text/90 after:content-[''] after:block after:w-14 after:h-[2px] after:bg-accent after:mt-2 after:ml-auto"
         >
           Featured
         </h2>
@@ -86,22 +86,22 @@ const professionalSchema = {
             return (
               <a
                 href={`/work/${project.slug}`}
-                class="group col-span-12 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center hover:opacity-90 transition-opacity relative"
+                class="group col-span-12 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center transition-all duration-300 ease-in-out relative w-auto"
               >
                 <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 xl:absolute rounded-xl lg:w-2/5 overflow-hidden">
                   <img
                     src={imageModule.src}
                     alt={project.data.title}
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-cover scale-105"
                   />
                 </div>
                 <div 
                   x-data="{ shown: false }" 
                   x-intersect="shown = true"
                   :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'"
-                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 rounded-[1rem] bg-neutral lg:rounded-[2.5rem] p-8 lg:py-10 lg:px-12 transition-all duration-700 ease-out"
+                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 rounded-[1rem] bg-text bg-blend-overlay lg:rounded-[2.5rem] p-8 lg:py-10 lg:px-12 transition-all duration-250 ease-out shadow-none group-hover:shadow-lg group-hover:shadow-accent/50 w-fit"
                 >
-                  <h3 class="text-xl font-semibold mb-4 lg:mb-2">
+                  <h3 class="text-xl text-background/90 font-semibold mb-4 lg:mb-2">
                     {project.data.title}
                   </h3>
                   <div class="block lg:hidden">
@@ -111,7 +111,7 @@ const professionalSchema = {
                       class="w-full h-[200px] object-cover rounded-xl"
                     />
                   </div>
-                  <p class="text-gray-700 mt-4 lg:mt-0">{project.data.featuredDesc}</p>
+                  <p class="text-background/90 mt-4 lg:mt-0">{project.data.featuredDesc}</p>
                   <span class="text-accent mt-2 inline-block group-hover:underline">
                     Check it out →
                   </span>
@@ -132,11 +132,11 @@ const professionalSchema = {
         transition:persist
       >
         <h2
-          class="text-2xl tracking-wide w-fit font-medium text-gray-600 mb-2 after:content-[''] after:block after:w-14 after:h-[2px] after:bg-accent after:mt-2 after:ml-auto mb-4"
+          class="text-2xl tracking-wide w-fit font-medium text-text/90 after:content-[''] after:block after:w-14 after:h-[2px] after:bg-accent after:mt-2 after:ml-auto mb-4"
         >
           About Me
         </h2>
-        <p class="text-lg text-gray-700 mb-6">
+        <p class="text-lg text-text/90 mb-6">
           I'm a Senior Frontend Developer and UX Designer with over 15 years of
           experience in higher ed and corporate sectors. Based in Ann Arbor,
           Michigan, I specialize in creating engaging and user-friendly web
@@ -221,15 +221,14 @@ const professionalSchema = {
     function animate() {
       if (!canvas || !ctx) return;
       
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw multiple sine waves
       for (let i = 0; i < 5; i++) {
         ctx.beginPath();
         // Increased opacity range (0.25 to 0.35)
         const opacity = 0.25 + (i * 0.35);
-        ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`;
+        ctx.strokeStyle = `rgba(238, 244, 246, ${opacity})`;
         ctx.lineWidth = 0.5 + (i * 0.2);
         
         const speedMultiplier = 1 + (i * 0.4);

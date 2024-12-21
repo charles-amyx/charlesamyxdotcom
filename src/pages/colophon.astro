@@ -67,7 +67,9 @@ const sustainabilityFeatures = [
 
 <Layout title="Colophon | Charles E. Amyx, III">
   <section class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
-    <div class="prose prose-lg max-w-3xl mx-auto">
+    <div
+      class="prose prose-p:text-text/90 prose-headings:text-text prose-lg prose-ul:text-text/80 prose-li:text-text/80 max-w-3xl mx-auto"
+    >
       <h1 class="text-3xl font-semibold mb-8">Colophon</h1>
 
       <p class="text-lg mb-4">
@@ -83,7 +85,7 @@ const sustainabilityFeatures = [
     </div>
 
     <div
-      class="grid grid-cols-1 transition-all duration-500 ease-in-out lg:grid-cols-3 gap-12 prose max-w-none"
+      class="grid grid-cols-1 transition-all duration-500 ease-in-out lg:grid-cols-3 gap-12 prose prose-p:text-text/90 prose-headings:text-text prose-ul:text-text/80 prose-li:text-text/80 max-w-none"
     >
       {
         technologies.map((tech) => (
@@ -92,14 +94,16 @@ const sustainabilityFeatures = [
             {tech.items.map((item) => (
               <div class="mb-8 last:mb-0">
                 <h3 class="text-lg font-medium mb-1">{item.name}</h3>
-                <p class="text-gray-600">{item.description}</p>
+                <p class="text-text/80">{item.description}</p>
               </div>
             ))}
           </div>
         ))
       }
     </div>
-    <div class="my-12 prose prose-sm">
+    <div
+      class="my-12 prose prose-p:text-text/90 prose-headings:text-text prose-sm prose-li:text-text/80"
+    >
       <h2 class="text-xl font-semibold mb-4">Digital Sustainability</h2>
       <p class="text-lg mb-4">
         This site is built with environmental impact in mind. According to the
@@ -114,13 +118,13 @@ const sustainabilityFeatures = [
           sustainabilityFeatures.map((item) => (
             <div class="mb-8 last:mb-0">
               <h3 class="text-lg font-medium mb-1">{item.feature}</h3>
-              <p class="text-gray-600">{item.impact}</p>
+              <p class="text-text/80">{item.impact}</p>
             </div>
           ))
         }
       </div>
       <div class="mt-6 p-4 bg-neutral/50 rounded-sm">
-        <p class="text-sm text-gray-600">
+        <p class="text-sm text-text/80">
           Want to check this site's carbon footprint? Visit
           <a
             href="https://www.websitecarbon.com/website/charlesamyx-com/"
@@ -132,7 +136,7 @@ const sustainabilityFeatures = [
           </a>
         </p>
         <div id="wcb" class="carbonbadge">
-          <div id="wcb_loading" class="text-sm text-gray-500">
+          <div id="wcb_loading" class="text-sm text-text/80">
             Loading carbon footprint data...
           </div>
           <div id="wcb_error" class="text-sm text-red-500 hidden">

@@ -36,13 +36,13 @@ const isActive = (href: string) => {
 <!-- mobile header -->
 <header class="relative w-full" id="main-header">
   <div
-    class="w-full mx-auto px-4 md:hidden container grid transition-all duration-300 ease-in-out grid-cols-1 pt-6 justify-between items-end relative after:content-[''] after:block after:absolute after:w-[calc(100%-2rem)] after:h-[2px] after:bg-tertiary after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:z-0"
+    class="w-full mx-auto px-4 md:hidden container grid transition-all duration-300 ease-in-out grid-cols-1 pt-6 justify-between items-end relative after:content-[''] after:block after:absolute after:w-[calc(100%-2rem)] after:h-[2px] after:bg-primary after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:z-0"
   >
     <a
       href="/"
-      class="text-xl w-full font-variable font-variable-sm transition-all duration-150 ease-in-out block font-bold text-dark border-b-2 pb-2 relative z-10 border-accent"
+      class="text-xl w-full font-variable font-variable-sm transition-all duration-150 ease-in-out block font-bold text-text border-b-2 pb-2 relative z-10 border-primary"
     >
-      Charles <span class="text-accent">Amyx</span>
+      Charles <span class="text-text">Amyx</span>
     </a>
   </div>
 
@@ -62,8 +62,8 @@ const isActive = (href: string) => {
                 href={link.href}
                 class={`text-base font-medium transition-colors duration-300 ${
                   isActive(link.href)
-                    ? "text-accent"
-                    : "text-primary hover:text-accent"
+                    ? "text-primary"
+                    : "text-text hover:text-primary"
                 }`}
               >
                 {link.label}
@@ -81,9 +81,9 @@ const isActive = (href: string) => {
   >
     <a
       href="/"
-      class="text-xl lg:text-[2rem] block transition-all font-variable font-variable-sm lg:font-variable-lg duration-150 ease-in-out col-span-3 text-primary border-b-2 pb-2 relative z-10 border-accent"
+      class="text-xl block transition-all font-variable font-variable-sm duration-150 ease-in-out col-span-3 text-text border-b-2 pb-1 relative z-10 border-primary hover:text-primary"
     >
-      Charles<span class="text-accent">Amyx</span>
+      Charles <span class="text-primary">Amyx</span>
     </a>
     <nav class="col-span-8 w-full col-start-10">
       <ul class="grid grid-cols-4 gap-6 font-medium relative z-10">
@@ -137,14 +137,14 @@ const isActive = (href: string) => {
       if (!href) return;
 
       // Reset all active states
-      link.classList.remove("text-accent");
-      link.classList.add("text-primary", "hover:text-accent");
+      link.classList.remove("text-primary");
+      link.classList.add("text-text", "hover:text-accent");
 
       // Check for active state - modify this condition
       if (href !== "/" && currentPath.startsWith(href)) {
         // Remove home page check
-        link.classList.add("text-accent");
-        link.classList.remove("text-primary", "hover:text-accent");
+        link.classList.add("text-primary");
+        link.classList.remove("text-text", "hover:text-accent");
       }
     });
 

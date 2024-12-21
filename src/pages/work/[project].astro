@@ -52,13 +52,13 @@ const durationInMonths = project.data.duration
   >
     <!-- Project Header Section -->
     <div
-      class="mx-auto grid grid-cols-1 text-base rounded-2xl bg-neutral/50 lg:grid-cols-5"
+      class="mx-auto grid grid-cols-1 text-base rounded-2xl bg-muted lg:grid-cols-5"
     >
       <!-- Hero Image -->
       <div class="col-span-1 lg:col-span-3 p-4 lg:py-8 lg:pl-8">
         {
           imageModule && (
-            <div class="aspect-w-16 aspect-h-9  overflow-hidden rounded-xl">
+            <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-xl">
               <Image
                 src={imageModule}
                 alt={project.data.title}
@@ -75,13 +75,11 @@ const durationInMonths = project.data.duration
         class="col-span-1 font-normal w-full lg:col-span-2 px-4 py-8 lg:px-8 lg:py-10"
       >
         <div class="w-full mb-8 pb-2 border-b border-dark">
-          <div
-            class="text-primary text-xs xl:text-sm uppercase tracking-widest"
-          >
+          <div class="text-text text-xs xl:text-sm uppercase tracking-widest">
             {project.data.title}
           </div>
           <div
-            class="text-primary/90 text-2xl xl:text-4xl font-bold tracking-normal font-neue"
+            class="text-text/90 text-2xl xl:text-4xl font-bold tracking-normal font-neue"
           >
             {project.data.client}
           </div>
@@ -90,8 +88,8 @@ const durationInMonths = project.data.duration
         <!-- Project Details -->
         <div class="space-y-4">
           <div class="grid grid-cols-2 w-full border-b border-gray-200">
-            <div class="text-primary/60 uppercase">Role&nbsp;</div>
-            <div class="text-primary/90">
+            <div class="text-text/60 uppercase">Role&nbsp;</div>
+            <div class="text-text/90">
               {project.data.type || "No type specified"}
             </div>
           </div>
@@ -99,8 +97,8 @@ const durationInMonths = project.data.duration
           {
             formattedDate && (
               <div class="grid grid-cols-2 w-full border-b border-gray-200">
-                <div class="text-primary/60 uppercase">Date&nbsp;</div>
-                <div class="text-primary/90">{formattedDate}</div>
+                <div class="text-text/60 uppercase">Date&nbsp;</div>
+                <div class="text-text/90">{formattedDate}</div>
               </div>
             )
           }
@@ -108,8 +106,8 @@ const durationInMonths = project.data.duration
           {
             durationInMonths && (
               <div class="grid grid-cols-2 w-full border-b border-gray-200">
-                <div class="text-primary/60 uppercase">Duration&nbsp;</div>
-                <div class="text-primary/90">{durationInMonths} months</div>
+                <div class="text-text/60 uppercase">Duration&nbsp;</div>
+                <div class="text-text/90">{durationInMonths} months</div>
               </div>
             )
           }
@@ -117,8 +115,8 @@ const durationInMonths = project.data.duration
           {
             project.data.skills && (
               <div class="grid grid-cols-2 w-full border-b border-gray-200">
-                <div class="text-primary/60 uppercase">Skills</div>
-                <ul class="text-primary/90 list-disc list-inside pb-2">
+                <div class="text-text/60 uppercase">Skills</div>
+                <ul class="text-text/90 list-disc list-inside pb-2">
                   {project.data.skills.map((skill: string) => (
                     <li>{skill}</li>
                   ))}
@@ -129,7 +127,7 @@ const durationInMonths = project.data.duration
         </div>
 
         <!-- Project Description -->
-        <div class="pt-8 prose prose-lg max-w-none">
+        <div class="pt-8 prose prose-lg max-w-none text-text/90">
           {project.data.description}
         </div>
 
@@ -155,7 +153,7 @@ const durationInMonths = project.data.duration
     {
       project.data.hasProcessContent && (
         <div class="mx-auto max-w-4xl px-4 lg:px-8 mt-16">
-          <div class="prose prose-lg prose-headings:font-neue prose-headings:font-semibold prose-h2:text-3xl prose-h2:mt-12 prose-p:text-lg prose-img:rounded-lg prose-img:shadow-md prose-img:my-12 prose-a:text-accent hover:prose-a:text-primary prose-a:transition-colors">
+          <div class="prose text-text/85 prose-lg prose-headings:font-neue prose-headings:font-semibold prose-headings:text-text prose-h2:text-3xl prose-h2:mt-12 prose-p:text-lg prose-img:rounded-lg prose-img:shadow-md prose-img:my-12 prose-a:text-accent hover:prose-a:text-primary prose-a:transition-colors">
             <Content />
           </div>
         </div>
@@ -193,6 +191,6 @@ const durationInMonths = project.data.duration
 
 <style>
   .prose img + em {
-    @apply block text-center text-sm text-gray-600 -mt-8 mb-12;
+    @apply block text-center text-sm text-text -mt-8 mb-12;
   }
 </style>
