@@ -15,6 +15,7 @@ export default {
 				primary: '#00afff',
 				accent: '#4b72fa',
 				muted: 'rgba(0,0,0,0.08)',
+				solidMuted: 'rgb(44,41,69)',
 			},
 			fontWeight: {
 				thin: '100',

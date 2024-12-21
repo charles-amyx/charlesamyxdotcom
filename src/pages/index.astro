@@ -99,9 +99,9 @@ const professionalSchema = {
                   x-data="{ shown: false }" 
                   x-intersect="shown = true"
                   :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'"
-                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 rounded-[1rem] bg-text bg-blend-overlay lg:rounded-[2.5rem] p-8 lg:py-10 lg:px-12 transition-all duration-250 ease-out shadow-none group-hover:shadow-lg group-hover:shadow-accent/50 w-fit"
+                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 rounded-[1rem] bg-muted lg:bg-text bg-blend-overlay lg:rounded-[2.5rem] p-8 lg:py-10 lg:px-12 transition-all duration-250 ease-out shadow-none group-hover:shadow-lg group-hover:shadow-accent/50 w-fit"
                 >
-                  <h3 class="text-xl text-background/90 font-semibold mb-4 lg:mb-2">
+                  <h3 class="text-xl text-text/90 lg:text-background/90 font-semibold mb-4 lg:mb-2">
                     {project.data.title}
                   </h3>
                   <div class="block lg:hidden">
@@ -111,7 +111,7 @@ const professionalSchema = {
                       class="w-full h-[200px] object-cover rounded-xl"
                     />
                   </div>
-                  <p class="text-background/90 mt-4 lg:mt-0">{project.data.featuredDesc}</p>
+                  <p class="text-text/90 lg:text-background/90 mt-4 lg:mt-0">{project.data.featuredDesc}</p>
                   <span class="text-accent mt-2 inline-block group-hover:underline">
                     Check it out →
                   </span>
