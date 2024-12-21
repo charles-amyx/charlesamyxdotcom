@@ -54,7 +54,7 @@ const professionalSchema = {
     >
       <canvas 
         id="topographyCanvas" 
-        class="absolute inset-0 w-full h-full opacity-[0.25] bg-blend-overlay -z-10"
+        class="absolute inset-0 w-full h-full opacity-[0.07] -z-10 transform-gpu md:scale-75 lg:scale-100"
       ></canvas>
 
       <h1
@@ -262,4 +262,39 @@ const professionalSchema = {
   
   // Reinitialize after navigation
   document.addEventListener('astro:after-swap', initTopography);
+
+  document.addEventListener("astro:page-load", () => {
+    const canvas = document.getElementById("topographyCanvas") as HTMLCanvasElement;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // Set base canvas size
+    const setCanvasSize = () => {
+      // Get device pixel ratio for sharp rendering
+      const dpr = window.devicePixelRatio || 1;
+      
+      // Set canvas dimensions based on container
+      const width = canvas.offsetWidth;
+      const height = canvas.offsetHeight;
+      
+      // Set display size
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+      
+      // Set actual size in memory (scaled for retina)
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      
+      // Scale context to match device pixel ratio
+      ctx.scale(dpr, dpr);
+    };
+
+    // Call on load and resize
+    setCanvasSize();
+    window.addEventListener("resize", setCanvasSize);
+
+    // ... rest of your animation code ...
+  });
 </script>
