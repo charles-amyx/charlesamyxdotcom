@@ -54,7 +54,7 @@ const professionalSchema = {
     >
       <canvas 
         id="topographyCanvas" 
-        class="absolute inset-0 w-full h-full opacity-[0.07] -z-10 transform-gpu md:scale-75 lg:scale-100"
+        class="absolute left-[50%] -translate-x-1/2 w-screen h-full opacity-[0.07] -z-10 transform-gpu md:scale-75 lg:scale-100"
       ></canvas>
 
       <h1
@@ -112,7 +112,7 @@ const professionalSchema = {
                         class="w-full h-[200px] object-cover rounded-xl"
                       />
                     </div>
-                    <p class="text-text/90 lg:text-background/90 mt-4 lg:mt-0">{project.data.featuredDesc}</p>
+                    <p class="text-text/90 lg:text-background/90 mt-4 lg:mt-0 mb-6">{project.data.featuredDesc}</p>
                     <span class="text-accent mt-auto inline-flex items-center gap-1 group-hover:text-primary transition-colors duration-200 ease-in-out">
                       Check it out <span class="transform transition-transform group-hover:translate-x-1">→</span>
                     </span>
@@ -213,11 +213,19 @@ const professionalSchema = {
     if (!ctx) return;
     
     let time = 0;
+    let animationFrameId: number;
     
     function resize() {
       if (!canvas) return;
-      canvas.width = canvas.offsetWidth;
+      // Cancel any existing animation
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      // Update canvas dimensions
+      canvas.width = window.innerWidth;
       canvas.height = canvas.offsetHeight;
+      // Restart animation
+      animate();
     }
     
     function animate() {
@@ -228,7 +236,6 @@ const professionalSchema = {
       // Draw multiple sine waves
       for (let i = 0; i < 5; i++) {
         ctx.beginPath();
-        // Increased opacity range (0.25 to 0.35)
         const opacity = 0.25 + (i * 0.35);
         ctx.strokeStyle = `rgba(238, 244, 246, ${opacity})`;
         ctx.lineWidth = 0.5 + (i * 0.2);
@@ -251,12 +258,17 @@ const professionalSchema = {
       }
       
       time += 0.005;
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     }
     
-    window.addEventListener('resize', resize);
-    resize();
-    animate();
+    // Add debounced resize listener
+    let resizeTimeout: number;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resize, 100) as unknown as number;
+    });
+    
+    resize(); // Initial setup
   }
 
   // Initialize on page load
