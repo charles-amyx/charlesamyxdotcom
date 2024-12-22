@@ -38,16 +38,20 @@ const preloadImages = sortedProjects
     <ul class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-6">
       {
         sortedProjects.map((project, index) => {
+          const cardImageModule = project.data.cardImage
+            ? imageMap[project.data.cardImage]
+            : undefined;
           const imageModule = project.data.image
             ? imageMap[project.data.image]
             : undefined;
-          if (!imageModule) return null;
+          const finalImage = cardImageModule || imageModule;
+          if (!finalImage) return null;
           return (
             <li>
               <Card
                 href={`/work/${project.slug}`}
                 title={project.data.title}
-                image={imageModule}
+                image={finalImage}
                 type={project.data.type || ""}
                 loading={index < 4 ? "eager" : "lazy"}
               />

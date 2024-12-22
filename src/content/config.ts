@@ -10,6 +10,7 @@ const projectsCollection = defineCollection({
     description: z.string().optional(),
     slug: z.string().optional(),
     image: z.string().optional(),
+    cardImage: z.string().optional(),
     type: z.string().optional(),
     duration: z.string().optional(),
     skills: z.array(z.string()).optional(),
