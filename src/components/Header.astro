@@ -134,15 +134,14 @@ const isActive = (href: string) => {
 
     links.forEach((link) => {
       const href = link.getAttribute("href");
-      if (!href) return;
+      if (!href || link.classList.contains("custom-link")) return;
 
       // Reset all active states
       link.classList.remove("text-primary");
       link.classList.add("text-text", "hover:text-accent");
 
-      // Check for active state - modify this condition
+      // Check for active state
       if (href !== "/" && currentPath.startsWith(href)) {
-        // Remove home page check
         link.classList.add("text-primary");
         link.classList.remove("text-text", "hover:text-accent");
       }
