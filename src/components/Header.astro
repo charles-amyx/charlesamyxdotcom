@@ -90,12 +90,18 @@ const isActive = (href: string) => {
         {
           navLinks.map((link) => (
             <li
-              class="pb-2 border-b-2 transition-all duration-300 ease-in-out relative"
+              class={`pb-2 border-b-2 transition-all duration-300 ease-in-out relative ${
+                isActive(link.href) ? "border-primary" : "border-text"
+              }`}
               data-nav-item
             >
               <a
                 href={link.href}
-                class="transition-all duration-300 ease-in-out block nav-link"
+                class={`transition-all duration-300 ease-in-out block nav-link ${
+                  isActive(link.href)
+                    ? "text-primary"
+                    : "text-text hover:text-primary"
+                }`}
                 data-nav-link
                 data-active={isActive(link.href)}
               >
