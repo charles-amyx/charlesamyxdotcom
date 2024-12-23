@@ -99,7 +99,7 @@ const professionalSchema = {
                   x-data="{ shown: false }" 
                   x-intersect="shown = true"
                   :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'"
-                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 rounded-[1rem] bg-muted lg:bg-text/90 bg-blend-overlay lg:rounded-[2.5rem] p-8 lg:py-10 lg:px-12 transition-all duration-300 ease-out shadow-none group-hover:shadow-lg group-hover:shadow-accent/45 group-hover:bg-text w-fit"
+                  class="order-1 lg:max-w-[500px] md:order-2 lg:mt-12 relative z-20 lg:-ml-24 rounded-[1rem] bg-muted lg:bg-text/90 bg-blend-overlay lg:rounded-[2.5rem] p-8 lg:py-10 lg:px-12 transition-all duration-300 ease-out shadow-none group-hover:shadow-lg group-hover:shadow-accent/45 lg:group-hover:bg-text w-fit"
                 >
                   <div class="flex flex-col h-full">
                     <h3 class="text-xl text-text/90 lg:text-background/90 font-semibold mb-4 lg:mb-2">
@@ -113,7 +113,7 @@ const professionalSchema = {
                       />
                     </div>
                     <p class="text-text/90 lg:text-background/90 mt-4 lg:mt-0 mb-6">{project.data.featuredDesc}</p>
-                    <span class="text-accent mt-auto inline-flex items-center gap-1 group-hover:text-background transition-colors duration-200 ease-in-out">
+                    <span class="text-accent mt-auto inline-flex items-center gap-1 lg:group-hover:text-background transition-colors duration-200 ease-in-out">
                       Check it out <span class="transform transition-transform group-hover:text-primary group-hover:translate-x-1">→</span>
                     </span>
                   </div>
