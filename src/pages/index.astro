@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { imageMap } from "../lib/images";
+import { initTopography } from '../lib/topographyAnimation';
 
 const allProjects = await getCollection("projects");
 const featuredProjects = allProjects
@@ -196,13 +197,19 @@ const professionalSchema = {
     observeCards();
   }
 
-  // Run on initial load
-  initializeObserver();
-
-  // Run after each navigation
-  document.addEventListener("astro:after-swap", () => {
+  // Initialize on page load with a slight delay
+  document.addEventListener('astro:page-load', () => {
     // Small delay to ensure DOM is ready
-    setTimeout(initializeObserver, 0);
+    requestAnimationFrame(() => {
+      initTopography();
+    });
+  });
+
+  // Reinitialize after navigation
+  document.addEventListener('astro:after-swap', () => {
+    requestAnimationFrame(() => {
+      initTopography();
+    });
   });
 
   function initTopography() {
