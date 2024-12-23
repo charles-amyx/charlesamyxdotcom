@@ -15,7 +15,7 @@
 }
 
 .card-image {
-  @apply w-full h-full object-cover saturate-100 lg:saturate-[.45] group-hover:saturate-100 transition-all duration-300 ease-in-out;
+  @apply w-full h-full object-cover saturate-100 lg:group-hover:saturate-[.75] transition-all duration-300 ease-in-out;
 }
 .card-title {
   @apply mt-8 text-base lg:text-lg md:mt-12;
