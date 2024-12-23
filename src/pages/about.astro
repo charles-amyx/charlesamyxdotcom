@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { imageMap } from "../lib/images";
 import { getCollection } from "astro:content";
+import { ViewTransitions } from "astro:transitions";
 
 const sideProjects = await getCollection("side-projects", ({ data }) => {
   return !data.draft;
@@ -10,7 +11,11 @@ const sideProjects = await getCollection("side-projects", ({ data }) => {
 ---
 
 <Layout title="About | Charles E. Amyx, III">
-  <section class="mx-auto px-4 pt-12 md:pt-16 lg:pt-24">
+  <ViewTransitions />
+  <section
+    class="mx-auto px-4 pt-12 md:pt-16 lg:pt-24"
+    transition:animate="slide"
+  >
     <div class="max-w-3xl mx-auto">
       <h1 class="text-3xl font-semibold mb-8">About Me</h1>
 
@@ -27,11 +32,14 @@ const sideProjects = await getCollection("side-projects", ({ data }) => {
           painting, <a
             href="https://soundcloud.com/user-585057580"
             target="_blank"
+            class="custom-link text-primary hover:text-text transition-colors"
             rel="noopener noreferrer">playing music</a
           >, and <a
             href="https://vanishingdew.com/"
             target="_blank"
-            rel="noopener noreferrer">photography</a
+            rel="noopener noreferrer"
+            class="custom-link text-primary hover:text-text transition-colors"
+            >photography</a
           >. I also enjoy fly fishing, hiking, camping, hunting, and just being
           outdoors.
         </p>

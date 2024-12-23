@@ -20,6 +20,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import "../styles/card.css";
 import AlpineInit from "../components/AlpineInit.astro";
+import { ViewTransitions } from "astro:transitions";
 
 // Base website schema that's present on all pages
 const websiteSchema = {
@@ -339,6 +340,7 @@ const schemas = schema
     />
     <meta name="format-detection" content="telephone=no" />
     <AlpineInit />
+    <ViewTransitions />
   </head>
   <body class="font-neue bg-background h-full text-text antialiased">
     <div class="loading-indicator"></div>
