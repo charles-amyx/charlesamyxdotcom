@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { imageMap } from "../lib/images";
-import { initTopography } from '../lib/topographyAnimation';
+// import { initTopography } from '../lib/topographyAnimation';
 
 const allProjects = await getCollection("projects");
 const featuredProjects = allProjects
@@ -169,44 +169,8 @@ const professionalSchema = {
 </Layout>
 
 <script>
-  function initializeObserver() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove("opacity-0", "translate-x-8");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    // Function to start observing cards
-    function observeCards() {
-      document.querySelectorAll(".project-card").forEach((card) => {
-        // First disconnect any existing observation
-        observer.unobserve(card);
-        // Reset the animation state
-        card.classList.add("opacity-0", "translate-x-8");
-        // Start observing again
-        observer.observe(card);
-      });
-    }
-
-    // Initial observation
-    observeCards();
-  }
-
   // Initialize on page load with a slight delay
   document.addEventListener('astro:page-load', () => {
-    // Small delay to ensure DOM is ready
-    requestAnimationFrame(() => {
-      initTopography();
-    });
-  });
-
-  // Reinitialize after navigation
-  document.addEventListener('astro:after-swap', () => {
     requestAnimationFrame(() => {
       initTopography();
     });

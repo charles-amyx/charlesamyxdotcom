@@ -29,12 +29,11 @@ export function initTopography() {
     canvas.height = Math.floor(rect.height * dpr);
     
     // Reset the context scale
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    // Scale all drawing operations by the dpr
-    ctx.scale(dpr, dpr);
-    
-    // Clear any existing content
-    ctx.clearRect(0, 0, rect.width, rect.height);
+    if (ctx) {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0, 0, rect.width, rect.height);
+    }
   }
   
   function animate() {

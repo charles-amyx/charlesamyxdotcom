@@ -6,7 +6,6 @@ interface Props {
   href: string;
   title: string;
   image: ImageMetadata;
-  cardImage?: ImageMetadata;
   type: string;
   loading?: "eager" | "lazy";
   isSideProject?: boolean;
@@ -17,7 +16,6 @@ const {
   href,
   title,
   image,
-  cardImage,
   type,
   loading = "lazy",
   isSideProject = false,
