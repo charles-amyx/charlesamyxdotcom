@@ -67,11 +67,38 @@ const personSchema = {
 const schemas = schema
   ? [websiteSchema, personSchema, schema]
   : [websiteSchema, personSchema];
+
+// Add navLinks definition
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/resume", label: "Résumé" },
+  { href: "/about", label: "About" },
+];
+
+const currentPath = Astro.url.pathname;
+
+const isActive = (href: string) => {
+  const pathSegments = currentPath.split("/").filter(Boolean);
+  const firstSegment = pathSegments[0] || "";
+
+  if (href === "/") {
+    return false;
+  }
+
+  if (href === "/work") {
+    return firstSegment === "work";
+  }
+
+  const hrefSegment = href.split("/").filter(Boolean)[0];
+  return hrefSegment === firstSegment;
+};
 ---
 
 <!doctype html>
 <html lang="en" transition:animate="fade">
   <head>
+    <ViewTransitions fallback="animate" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -88,7 +115,10 @@ const schemas = schema
     </script>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -107,14 +137,6 @@ const schemas = schema
     </script>
     <style is:global>
       @import "../styles/fonts.css";
-      /* Swup fade transition */
-      .transition-fade {
-        transition: 0.25s;
-        opacity: 1;
-      }
-      html.is-animating .transition-fade {
-        opacity: 0;
-      }
 
       html,
       body {
@@ -316,6 +338,39 @@ const schemas = schema
           transform: translateY(0);
         }
       }
+
+      /* Add these new styles */
+      .fade-in {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        backface-visibility: hidden;
+      }
+
+      /* Ensure mobile nav stays on top */
+      .fixed {
+        isolation: isolate;
+        transform-style: preserve-3d;
+      }
+
+      ::view-transition-group(nav) {
+        z-index: 999999 !important;
+      }
+
+      ::view-transition-old(*),
+      ::view-transition-new(*) {
+        z-index: auto !important;
+      }
+
+      /* Add this new style */
+      .fade-in {
+        position: relative;
+        z-index: 1;
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+      }
     </style>
 
     <!-- Open Graph / Facebook -->
@@ -340,19 +395,44 @@ const schemas = schema
     />
     <meta name="format-detection" content="telephone=no" />
     <AlpineInit />
-    <ViewTransitions />
   </head>
   <body class="font-neue bg-background h-full text-text antialiased">
     <div class="loading-indicator"></div>
-    <div class="fade-in">
-      <Header />
-      <main
-        id="swup"
-        class="flex-grow text-text transition-fade bg-[url('/images/dark-topo.svg')] bg-no-repeat bg-bottom bg-contain pb-20 md:pb-0"
+    <Header />
+    <main
+      class="flex-grow text-text transition-fade bg-[url('/images/dark-topo.svg')] bg-no-repeat bg-bottom bg-contain pb-20 md:pb-0"
+    >
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Mobile Navigation (moved from Header) -->
+    <div
+      class="fixed md:hidden"
+      style="position: fixed !important; bottom: max(env(safe-area-inset-bottom, 24px), 24px); left: 50%; transform: translate(-50%, 0); z-index: 999999;"
+    >
+      <nav
+        class="bg-solidMuted rounded-full px-6 py-3 border border-text/15 shadow-xl shadow-accent/10"
       >
-        <slot />
-      </main>
-      <Footer />
+        <ul class="flex space-x-6">
+          {
+            navLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class={`text-base font-medium transition-colors duration-300 ${
+                    isActive(link.href)
+                      ? "text-primary"
+                      : "text-text hover:text-primary"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
     </div>
   </body>
 </html>

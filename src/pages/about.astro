@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { imageMap } from "../lib/images";
 import { getCollection } from "astro:content";
-import { ViewTransitions } from "astro:transitions";
 
 const sideProjects = await getCollection("side-projects", ({ data }) => {
   return !data.draft;
@@ -11,10 +10,9 @@ const sideProjects = await getCollection("side-projects", ({ data }) => {
 ---
 
 <Layout title="About | Charles E. Amyx, III">
-  <ViewTransitions />
   <section
-    class="mx-auto px-4 pt-12 md:pt-16 lg:pt-24 -z-10 relative"
-    transition:animate="slide"
+    class="container mx-auto px-4 pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-10 lg:pb-12"
+    transition:animate="fade"
   >
     <div class="max-w-3xl mx-auto">
       <h1 class="text-3xl font-semibold mb-8">About Me</h1>
@@ -55,7 +53,9 @@ const sideProjects = await getCollection("side-projects", ({ data }) => {
           Here are a couple of active projects that I like to tinker with in my
           spare time:
         </p>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none pl-0">
+        <ul
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none pl-0 relative"
+        >
           {
             sideProjects.map((project, index) => {
               const imageModule = imageMap[project.data.image];
