@@ -34,7 +34,6 @@ Built using a multi-platform architecture:
 - Progressive Web App capabilities
 - Google Maps JavaScript API integration
 
-
 ### Backend Services
 
 - Cloudflare Workers for serverless API endpoints
@@ -55,4 +54,4 @@ Built using a multi-platform architecture:
 
 ## Development Journey
 
-The project began as an iOS application built with React Native, aiming to provide a native experience for pizza discovery. While the iOS version was completed, the decision to focus on the web version was made to reduce ongoing maintenance overhead and provide broader accessibility across all devices.
+The project began as an iOS application built with React Native, aiming to provide a native experience for pizza discovery. While the iOS version was completed, the decision to focus on the web version was made to reduce ongoing maintenance overhead and provide broader accessibility across all devices. I learned a lot about the complexities of iOS development and learned that I have a vast amount to learn about the complexities of iOS development and React in general. Pouring through documentation and stackoverflow was a huge help.
