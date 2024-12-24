@@ -3,7 +3,7 @@
 }
 
 .card-link {
-  @apply no-underline block pt-8 pb-4 px-8;
+  @apply no-underline block p-6 lg:p-8;
 }
 
 .card-image-container {
