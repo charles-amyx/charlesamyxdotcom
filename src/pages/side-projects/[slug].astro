@@ -42,9 +42,12 @@ const imageModule = imageMap[project.data.image];
         href={project.data.href}
         target="_blank"
         rel="noopener noreferrer"
-        class="text-accent hover:text-primary transition-colors"
+        class="text-primary custom-link no-underline hover:text-text inline-flex items-center gap-1 group transition-colors duration-200 ease-in-out"
       >
-        Visit Site →
+        Visit Site <span
+          class="transform transition-transform group-hover:text-primary group-hover:translate-x-1"
+          >→</span
+        >
       </a>
     </header>
 

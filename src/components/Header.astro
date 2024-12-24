@@ -13,7 +13,7 @@ const isActive = (href: string) => {
   const pathSegments = currentPath.split("/").filter(Boolean);
   const firstSegment = pathSegments[0] || "";
 
-  // For home page - remove this special case
+  // For home page
   if (href === "/") {
     return false; // Never mark home link as active
   }
@@ -21,6 +21,11 @@ const isActive = (href: string) => {
   // For work section
   if (href === "/work") {
     return firstSegment === "work";
+  }
+
+  // For about section - include side-projects
+  if (href === "/about") {
+    return firstSegment === "about" || firstSegment === "side-projects";
   }
 
   // For all other pages, match only the first segment
@@ -88,7 +93,7 @@ const isActive = (href: string) => {
           navLinks.map((link) => (
             <li
               class={`pb-2 border-b-2 transition-all duration-300 ease-in-out relative ${
-                isActive(link.href) ? "border-primary" : "border-text"
+                isActive(link.href) ? "border-primary" : "border-text/20"
               }`}
               data-nav-item
             >

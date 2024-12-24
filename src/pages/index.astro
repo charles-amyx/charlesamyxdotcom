@@ -73,9 +73,10 @@ const professionalSchema = {
         >
           Featured
         </h2>
-        <a href="/work" class="text-accent hover:underline">
-          View all projects →
+        <a href="/work" class="text-primary custom-link hover:text-text inline-flex items-center gap-1 group transition-colors duration-200 ease-in-out">
+          View all projects <span class="transform transition-transform group-hover:text-primary group-hover:translate-x-1">→</span>
         </a>
+
       </div>
       <div class="grid grid-cols-1 md:grid-cols-12" transition:persist>
         {
@@ -131,7 +132,7 @@ const professionalSchema = {
         x-data="{ shown: false }" 
         x-intersect="shown = true"
         :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-2rem]'"
-        class="col-span-1 md:col-span-4 col-start-auto md:col-start-8 transition-all duration-700 ease-out -z-10"
+        class="col-span-1 md:col-span-4 col-start-auto md:col-start-8 transition-all duration-700 ease-out"
         transition:persist
       >
         <h2

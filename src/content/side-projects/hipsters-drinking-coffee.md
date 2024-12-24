@@ -12,7 +12,7 @@ draft: false
 
 ## About This Project
 
-A photographic series documenting coffee culture and its intersection with modern urban life. It was inspired by a line from [NSFW web address](https://motherfuckingwebsite.com/):
+A photographic series documenting coffee culture and its intersection with modern urban life. It was inspired by a line from [NSFW web address](https://motherfuckingwebsite.com/ "m*****f******website"):
 
 > Sh**'s legible and gets your f****g point across (if you had one instead of just 5mb pics of hipsters drinking coffee)
 

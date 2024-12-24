@@ -90,6 +90,10 @@ const isActive = (href: string) => {
     return firstSegment === "work";
   }
 
+  if (href === "/about") {
+    return firstSegment === "about" || firstSegment === "side-projects";
+  }
+
   const hrefSegment = href.split("/").filter(Boolean)[0];
   return hrefSegment === firstSegment;
 };

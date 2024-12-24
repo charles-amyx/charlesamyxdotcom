@@ -63,7 +63,7 @@ const sideProjects = await getCollection("side-projects", ({ data }) => {
               return (
                 <li>
                   <Card
-                    href={project.data.href}
+                    href={`/about/side-projects/${project.slug}`}
                     title={project.data.title}
                     image={imageModule}
                     type={project.data.type}
