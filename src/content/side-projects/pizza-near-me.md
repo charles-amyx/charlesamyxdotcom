@@ -16,22 +16,37 @@ Originally developed as a React Native iOS application with a companion React we
 
 ## Technical Details
 
-Built using a dual-platform approach:
+Built using a multi-platform architecture:
 
-- React Native for iOS native application
-- React for the progressive web application
-- Browser and native Geolocation APIs
-- Google Places API for restaurant data
-- Mobile-first responsive design
-- Cross-platform state management
-- Native iOS UI components
+### Mobile Application
+
+- React Native (v0.76.2) for native iOS and Android development
+- Native navigation using @react-navigation/native-stack
+- Location services with react-native-geolocation-service
+- Interactive maps via react-native-maps
+- Custom UI components with react-native-vector-icons
+- Platform-specific permission handling
+
+### Web Application
+
+- React 18 with TypeScript
+- Vite for build tooling and development
+- Progressive Web App capabilities
+- Google Maps JavaScript API integration
+
+
+### Backend Services
+
+- Cloudflare Workers for serverless API endpoints
+- Google Places API integration for restaurant data
+- CORS-enabled REST API
 
 ## Features
 
 - Location-based search using device geolocation
-- Real-time distance calculations
+- Real-time distance calculations (iOS only)
 - Mobile-optimized interface
-- Restaurant details including:
+- Restaurant details including (iOS only):
   - Operating hours
   - Distance from current location
   - Contact information
