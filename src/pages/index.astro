@@ -87,7 +87,7 @@ const professionalSchema = {
             return (
               <a
                 href={`/work/${project.slug}`}
-                class="group col-span-12 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center transition-all duration-300 ease-in-out relative w-auto"
+                class="group col-span-12 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center transition-all duration-300 ease-in-out relative -z-10 w-auto"
               >
                 <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 xl:absolute rounded-xl lg:w-2/5 overflow-hidden">
                   <img
@@ -131,7 +131,7 @@ const professionalSchema = {
         x-data="{ shown: false }" 
         x-intersect="shown = true"
         :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-2rem]'"
-        class="col-span-1 md:col-span-4 col-start-auto md:col-start-8 transition-all duration-700 ease-out"
+        class="col-span-1 md:col-span-4 col-start-auto md:col-start-8 transition-all duration-700 ease-out -z-10"
         transition:persist
       >
         <h2
