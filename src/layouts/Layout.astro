@@ -100,7 +100,7 @@ const isActive = (href: string) => {
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="fade">
+<html lang="en">
   <head>
     <ViewTransitions fallback="animate" />
     <!-- Google tag (gtag.js) -->
@@ -127,18 +127,6 @@ const isActive = (href: string) => {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <script is:inline>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      // if (
-      //   localStorage.theme === "dark" ||
-      //   (!("theme" in localStorage) &&
-      //     window.matchMedia("(prefers-color-scheme: dark)").matches)
-      // ) {
-      //   document.documentElement.classList.add("dark");
-      // } else {
-      //   document.documentElement.classList.remove("dark");
-      // }
-    </script>
     <style is:global>
       @import "../styles/fonts.css";
 
@@ -173,13 +161,6 @@ const isActive = (href: string) => {
         will-change: transform;
       }
 
-      /* Optimize transitions */
-      ::view-transition-old(root),
-      ::view-transition-new(root) {
-        animation: none;
-        mix-blend-mode: normal;
-      }
-
       /* Smooth transition styles */
       .fade-in {
         view-transition-name: fade;
@@ -203,15 +184,6 @@ const isActive = (href: string) => {
           transform: translateX(0);
           opacity: 1;
         }
-      }
-
-      /* View transition styles */
-      ::view-transition-old(fade) {
-        animation: fade-out 0.2s ease-out both;
-      }
-
-      ::view-transition-new(fade) {
-        animation: fade-in 0.3s ease-out 0.1s both;
       }
 
       /* Optional: Add a subtle loading indicator */
@@ -245,17 +217,35 @@ const isActive = (href: string) => {
         }
       }
 
-      /* Prevent content overlap during transitions */
+      /* Base view transition rules */
       ::view-transition-group(*) {
         animation: none !important;
       }
 
-      ::view-transition-old(*) {
-        animation: fade-out 0.2s ease-out both !important;
+      /* Only animate main content */
+      ::view-transition-old(main-content) {
+        animation: fade-out 0.15s ease-out both !important;
       }
 
-      ::view-transition-new(*) {
-        animation: fade-in 0.2s ease-out both !important;
+      ::view-transition-new(main-content) {
+        animation: fade-in 0.15s ease-out both !important;
+      }
+
+      /* Explicitly prevent header and nav animations */
+      header,
+      nav,
+      .view-transition-none {
+        view-transition-name: none !important;
+      }
+
+      /* Define fade animations */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       @keyframes fade-out {
@@ -267,113 +257,8 @@ const isActive = (href: string) => {
         }
       }
 
-      @keyframes fade-in {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      /* Ensure old content is removed quickly */
-      ::view-transition-old(root) {
-        animation-duration: 0.15s !important;
-      }
-
-      /* Ensure new content only appears after old content is gone */
-      ::view-transition-new(root) {
-        animation-delay: 0.1s !important;
-      }
-
-      /* Optional: Add a subtle loading indicator */
-      .loading-indicator {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: var(--accent-color, #0000ff);
-        transform: scaleX(0);
-        transform-origin: left;
-        z-index: 100;
-      }
-
-      html.loading .loading-indicator {
-        animation: progress 0.4s ease-in-out forwards;
-      }
-
-      @keyframes progress {
-        0% {
-          transform: scaleX(0);
-        }
-        100% {
-          transform: scaleX(1);
-        }
-      }
-
-      /* Replace the fade animations with slide animations */
-      ::view-transition-old(root) {
-        animation: slide-out 0.15s ease-out both !important;
-      }
-
-      ::view-transition-new(root) {
-        animation: slide-in 0.2s ease-out 0.1s both !important;
-      }
-
-      @keyframes slide-out {
-        from {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        to {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-      }
-
-      @keyframes slide-in {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Add these new styles */
-      .fade-in {
-        transform-style: preserve-3d;
-        perspective: 1000px;
-        backface-visibility: hidden;
-      }
-
-      /* Ensure mobile nav stays on top */
-      .fixed {
-        isolation: isolate;
-        transform-style: preserve-3d;
-      }
-
-      ::view-transition-group(nav) {
-        z-index: 999999 !important;
-      }
-
-      ::view-transition-old(*),
-      ::view-transition-new(*) {
-        z-index: auto !important;
-      }
-
-      /* Add this new style */
-      .fade-in {
-        position: relative;
-        z-index: 1;
-      }
-
-      main {
-        position: relative;
-        z-index: 1;
+      :root {
+        --animation-duration: 0.15s;
       }
     </style>
 
@@ -402,17 +287,19 @@ const isActive = (href: string) => {
   </head>
   <body class="font-neue bg-background h-full text-text antialiased">
     <div class="loading-indicator"></div>
-    <Header />
+    <Header class="view-transition-none" />
     <main
+      transition:animate="fade"
+      style="view-transition-name: main-content;"
       class="flex-grow text-text transition-fade bg-[url('/images/dark-topo.svg')] bg-no-repeat bg-bottom bg-contain pb-20 md:pb-0"
     >
       <slot />
     </main>
-    <Footer />
+    <Footer class="view-transition-none" />
 
     <!-- Mobile Navigation (moved from Header) -->
     <div
-      class="fixed md:hidden"
+      class="fixed md:hidden view-transition-none"
       style="position: fixed !important; bottom: max(env(safe-area-inset-bottom, 24px), 24px); left: 50%; transform: translate(-50%, 0); z-index: 999999;"
     >
       <nav

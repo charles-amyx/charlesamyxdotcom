@@ -47,36 +47,6 @@ const isActive = (href: string) => {
     </a>
   </div>
 
-  <!-- Mobile Pill Navigation -->
-  <div
-    class="fixed md:hidden"
-    style="position: fixed !important; bottom: max(env(safe-area-inset-bottom, 24px), 24px); left: 50%; transform: translate(-50%, 0); isolation: isolate;"
-  >
-    <nav
-      class="bg-solidMuted rounded-full px-6 py-3 border border-text/15 shadow-xl shadow-accent/10"
-      style="position: relative; z-index: 999999;"
-    >
-      <ul class="flex space-x-6">
-        {
-          navLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class={`text-base font-medium transition-colors duration-300 ${
-                  isActive(link.href)
-                    ? "text-primary"
-                    : "text-text hover:text-primary"
-                }`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </div>
-
   <!-- Desktop Menu -->
   <div
     class="hidden w-full mx-auto px-4 gap-6 md:grid transition-all duration-300 ease-in-out md:grid-cols-12 pt-6 justify-between items-end container relative after:content-[''] after:block after:absolute after:w-[calc(100%-2rem)] after:h-[2px] after:bg-tertiary after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:z-0"
