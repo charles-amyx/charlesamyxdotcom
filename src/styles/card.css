@@ -7,7 +7,7 @@
 }
 
 .card-image-container {
-  @apply bg-muted relative -z-10;
+  @apply bg-muted relative;
 }
 
 .frame {
