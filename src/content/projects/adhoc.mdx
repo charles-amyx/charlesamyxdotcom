@@ -17,8 +17,67 @@ skills:
 url:
   label: "See it!"
   link: "https://adhoc.team/"
+hasProcessContent: true
 ---
 
-Migrated a legacy Jekyll site to Hugo and added Tailwind CSS styling. I built a custom filtering system for the blog posts categories using vanilla JavaScript and Hugo's templating language.
+import { Image } from 'astro:assets';
+import { imageMap } from '../../lib/images';
+import AnimatedFigure from '../../components/AnimatedFigure.astro';
 
-It's also a progressive web app that can be installed on your phone.
+# Ad Hoc Website Redesign
+
+As Senior Designer in the Communications team at Ad Hoc, I led a comprehensive overhaul of the company's website infrastructure, focusing on both technical performance and user experience improvements.
+
+## The Challenge
+
+The existing Jekyll-based website faced several critical issues:
+- Extremely slow build times (27 minutes) hampering rapid iterations
+- Legacy codebase that was difficult to maintain
+- Limited flexibility for content creators
+- Performance bottlenecks affecting user experience
+
+## The Solution
+
+We undertook a complete platform migration, moving from Jekyll to Hugo, while implementing modern development practices and performance optimizations.
+
+## Technical Implementation
+
+The new architecture was built with several key improvements:
+
+- **Framework Migration**: Transitioned from Jekyll to Hugo for improved build performance
+- **Modern Styling**: Implemented Tailwind CSS for maintainable, utility-first styling
+- **Interactive Elements**: Added Alpine.js for lightweight client-side interactions
+- **Build Optimization**: Engineered new build processes reducing deploy time by 96%
+- **Content Management**: Created an improved content workflow for the communications team
+
+## Development Process
+
+The migration was executed in phases to ensure continuous site availability:
+
+1. **Initial Assessment**: Analyzed existing codebase and identified optimization opportunities
+2. **Architecture Planning**: Designed new Hugo-based architecture with improved build processes
+3. **Content Migration**: Systematically transferred and validated existing content
+4. **Performance Optimization**: Implemented lazy loading, image optimization, and caching strategies
+5. **Testing and Validation**: Conducted thorough testing across devices and browsers
+
+## Custom Features
+
+Several custom features were developed to enhance the site's functionality:
+
+- **Blog Category System**: Built a custom filtering system for blog posts using vanilla JavaScript
+- **Progressive Web App**: Implemented PWA capabilities for mobile installation
+- **Performance Monitoring**: Added automated performance tracking and reporting
+- **Build Pipeline**: Aided in creating efficient CI/CD workflows for automated deployments
+
+## Results
+
+The project achieved significant improvements:
+
+- **Build Time**: Reduced from 27 minutes to under 1 minute
+- **Developer Experience**: Improved code maintainability and deployment processes
+- **User Experience**: Enhanced site performance and mobile accessibility
+- **Content Management**: Streamlined content creation and publishing workflow
+
+The new website serves as a modern, performant platform that better represents Ad Hoc's commitment to technical excellence in civic technology.
+
+[Visit the live site](https://adhoc.team/)

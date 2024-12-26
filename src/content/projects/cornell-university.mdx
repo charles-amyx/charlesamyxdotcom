@@ -18,5 +18,61 @@ skills:
 url:
   label: "Visit"
   link: "https://climate.cornell.edu/"
+hasProcessContent: true
 ---
+
+import { Image } from 'astro:assets';
+import { imageMap } from '../../lib/images';
+import AnimatedFigure from '../../components/AnimatedFigure.astro';
+
+# The 2030 Project
+
+As a Senior Web Designer at Cornell University, I led the development of The 2030 Project website - a critical initiative focused on climate change solutions. The project required a platform that could effectively communicate complex climate research and engage diverse audiences, from researchers to policy makers and the general public.
+
+## The Challenge
+
+The 2030 Project needed a digital platform that could:
+- Present complex climate research in an accessible way
+- Facilitate collaboration between researchers across disciplines
+- Engage multiple audience types with varying levels of scientific knowledge
+- Maintain high performance while delivering rich content
+- Meet strict accessibility requirements
+
+## The Process
+
+The development process focused on creating a fast, accessible, and maintainable website. We chose a modern tech stack including 11ty for static site generation, Alpine.js for lightweight interactivity, and Tailwind CSS for styling. This combination allowed us to create a performant site that could be easily maintained by Cornell's team.
+
+## Technical Implementation
+
+The technical architecture was built with several key considerations:
+
+- **Static Site Generation**: Used 11ty to generate static pages for optimal performance and security
+- **Progressive Enhancement**: Implemented with Alpine.js for interactive features while maintaining core functionality without JavaScript
+- **Responsive Design**: Built with Tailwind CSS using a mobile-first approach
+- **Accessibility**: Ensured WCAG 2.1 AA compliance through semantic HTML and proper ARIA attributes
+- **Content Management**: Integrated with Drupal for content editing while maintaining the static architecture
+- **Deployment**: Implemented CI/CD pipeline for automated testing and deployment
+
+## Development Approach
+
+The development process was iterative and collaborative:
+
+1. **Architecture Planning**: Carefully planned the site architecture to ensure scalability
+2. **Component Development**: Created reusable components for consistent design and easier maintenance
+3. **Performance Optimization**: Implemented lazy loading, image optimization, and efficient caching strategies
+4. **Testing and QA**: Conducted thorough testing across devices and browsers
+5. **Documentation**: Created comprehensive documentation for the Cornell team
+
+## Project Outcomes
+
+The final website successfully met Cornell's goals by:
+- Providing a fast, accessible platform for climate research communication
+- Creating an intuitive interface for content discovery
+- Implementing a sustainable development approach that the university team could maintain
+- Meeting all accessibility requirements
+- Achieving excellent performance metrics
+
+The site serves as a crucial tool in Cornell's mission to address climate change, facilitating knowledge sharing and collaboration across the university and beyond.
+
+[Visit the live site](https://climate.cornell.edu/)
 
