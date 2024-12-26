@@ -74,12 +74,12 @@ const durationInMonths = project.data.duration
       <div
         class="col-span-1 font-normal w-full lg:col-span-2 px-4 py-8 lg:px-8 lg:py-10"
       >
-        <div class="w-full mb-8 pb-2 border-b border-dark">
+        <div class="w-full mb-8 pb-2 border-b-2 border-dark relative">
           <div class="text-text text-xs xl:text-sm uppercase tracking-widest">
             {project.data.title}
           </div>
           <div
-            class="text-text/90 text-2xl xl:text-4xl font-bold tracking-normal font-neue"
+            class="text-text/90 text-2xl h-full xl:text-4xl w-fit font-bold relative tracking-normal font-neue before:content-[''] before:bg-primary/80 before:absolute before:left-0 before:bottom-[-10px] before:w-full before:h-[2px] z-10"
           >
             {project.data.client}
           </div>
@@ -163,12 +163,12 @@ const durationInMonths = project.data.duration
     <!-- Project Navigation -->
     <div class="mx-auto max-w-4xl px-4 lg:px-8 mt-16 flex justify-between">
       {
-        previous && (
+        next && (
           <a
-            href={`/work/${previous}`}
+            href={`/work/${next}`}
             class="text-accent hover:text-primary transition-colors"
           >
-            ← Previous Project
+            ← Next Project
           </a>
         )
       }
@@ -176,12 +176,12 @@ const durationInMonths = project.data.duration
         All Projects
       </a>
       {
-        next && (
+        previous && (
           <a
-            href={`/work/${next}`}
+            href={`/work/${previous}`}
             class="text-accent hover:text-primary transition-colors"
           >
-            Next Project →
+            Previous Project →
           </a>
         )
       }
