@@ -10,11 +10,54 @@ duration: "05/2016 - 08/2017"
 skills:
  - Hugo
  - Alpine.js
- - Tailwind CSS
+ - Tachyons CSS
  - Python
  - CI/CD
+url:
+  label: "Visit site"
+  link: "https://painguide.com/"
+hasProcessContent: true
 ---
 
-A respectful and compassionate place for patients and those who care for us when we're in pain.
+import { Image } from 'astro:assets';
+import { imageMap } from '../../lib/images';
 
-[Visit site](https://painguide.com/)
+# Pain Guide
+
+Working with the University of Michigan to create PainGuide presented a unique challenge: developing a comprehensive resource for chronic pain management that needed to be both medically accurate and deeply empathetic to its users' needs.
+
+## The Challenge
+
+Creating a digital platform for pain education and self-management required careful consideration of our users' circumstances. Many would be accessing the site while experiencing pain or discomfort, making accessibility and ease of use paramount concerns.
+
+## Technical Approach
+
+The project demanded a robust technical foundation that would ensure reliable performance and easy content management. I chose Hugo for static site generation, complemented by Alpine.js for lightweight interactivity where needed. This stack provided:
+
+- Excellent performance through static generation
+- Minimal JavaScript footprint using Alpine.js
+- Responsive design with Tachyons CSS
+- Automated deployment through CI/CD pipelines
+
+## Design Philosophy
+
+The design needed to reflect both medical authority and emotional support. Key design decisions included:
+
+- Clear, readable typography for extended reading sessions
+- Generous white space to prevent visual overwhelm
+- Intuitive navigation between different pain resources
+- Careful color choices to maintain accessibility
+
+## Key Features
+
+- Comprehensive educational content about pain mechanisms
+- Detailed information about various pain conditions
+- Self-management resources and tools
+- Symptom and activity monitoring system
+- Secure user accounts for tracking progress
+
+## Impact
+
+PainGuide serves as a bridge between clinical care and daily pain management, providing patients with reliable information and practical tools for understanding and managing their conditions. The platform continues to be an important resource in the University of Michigan's patient-centric approach to pain care.
+
+[Visit the live site](https://painguide.com/)

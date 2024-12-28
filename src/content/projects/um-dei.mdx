@@ -16,8 +16,66 @@ skills:
 url:
   label: "Visit"
   link: "https://report.dei.umich.edu/"
+hasProcessContent: true
 ---
 
-This year we've moved the report in its entirety online. An open and airy design presents the year four's achivements in an easy understand format. The tech stack behind the site is [WordPress](https://wordpress.org/), Sage, Advanced Custom Fields, Sage ACF directives, Roots, AlpineJS, and TailwindCSS. This was the first time using Roots/Sage and a new method of deploying the site to ITS servers. I learned that I have so much more to learn. I would use this tech stack again, if I had to use Wordpress again.
+import { Image } from 'astro:assets';
+import { imageMap } from '../../lib/images';
 
-[Archive](https://web.archive.org/web/20210506191527/https://report.dei.umich.edu/)
+# DEI Year Four Progress Report
+
+The University of Michigan's Year Four Progress Report represented a significant shift in how the institution shared its Diversity, Equity, and Inclusion achievements. For the first time, we moved from a traditional PDF format to a fully digital experience, making the comprehensive report more accessible and engaging for all stakeholders.
+
+## The Challenge
+
+Converting a detailed institutional report into an engaging digital format presented several challenges:
+- Maintaining the academic rigor while improving readability
+- Creating an information architecture that made complex data easily navigable
+- Ensuring the platform could handle extensive content without sacrificing performance
+- Meeting strict accessibility requirements for a diverse university audience
+
+## Technical Implementation
+
+The project pushed me to explore modern WordPress development practices. The tech stack included:
+
+- WordPress with Sage theme framework for robust content management
+- Advanced Custom Fields for flexible content structuring
+- Roots stack for modern development workflow
+- AlpineJS for lightweight interactivity
+- TailwindCSS for maintainable styling
+- Custom CI/CD pipeline for deployment to ITS servers
+
+## Design Approach
+
+The design focused on creating an open, airy presentation that would make dense institutional content more approachable:
+
+- Strategic use of whitespace to improve readability
+- Clear typography hierarchy for better content scanning
+- Responsive layouts that work across all device sizes
+- Interactive elements to engage users with the data
+- Accessible color schemes and contrast ratios
+
+## Key Features
+
+- Interactive data visualizations
+- Responsive navigation system
+- Print-friendly formatting
+- Accessible to screen readers and keyboard navigation
+- Fast-loading pages despite content complexity
+
+## Learning Outcomes
+
+This project provided valuable insights into modern WordPress development:
+- First hands-on experience with the Roots/Sage ecosystem
+- Implementation of new deployment methods for university servers
+- Balancing modern development practices with institutional requirements
+
+## Impact
+
+The digital transformation of the DEI report significantly improved its reach and usability:
+- Increased accessibility for all university stakeholders
+- Improved ability to share and reference specific sections
+- Better engagement with report content through interactive elements
+- Reduced environmental impact by eliminating printed reports
+
+[Visit the archived site](https://web.archive.org/web/20210506191527/https://report.dei.umich.edu/)
