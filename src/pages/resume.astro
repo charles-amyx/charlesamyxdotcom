@@ -55,6 +55,11 @@ const skills = [
           href="/downloads/Charles_Amyx-Resume-2024.pdf"
           class="inline-flex items-center no-underline text-sm uppercase gap-2 px-4 py-2 tracking-wide bg-muted hover:bg-muted/80 text-text hover:text-primary rounded-full transition-colors"
           download
+          onclick="window.gtag && window.gtag('event', 'resume_download', {
+            event_category: 'Downloads',
+            event_label: 'Resume PDF',
+            value: 1
+          })"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
