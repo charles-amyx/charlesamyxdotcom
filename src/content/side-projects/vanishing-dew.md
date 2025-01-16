@@ -3,7 +3,7 @@ title: "Vanishing Dew"
 description: "A personal photography project"
 image: "vanishing-dew.png"
 type: "Photography"
-href: "https://www.flickr.com/photos/vanishing-dew/"
+href: "https://vanishingdew.com/"
 date: "2023-01-01"
 technologies: ["Photography", "Digital Editing", "Astro.js", "Tailwind CSS", "TypeScript", "Cloudinary"]
 featured: true
