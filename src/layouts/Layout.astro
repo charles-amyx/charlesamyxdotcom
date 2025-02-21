@@ -299,13 +299,13 @@ const isActive = (href: string) => {
 
     <!-- Mobile Navigation (moved from Header) -->
     <div
-      class="fixed md:hidden view-transition-none"
+      class="fixed w-full px-8 md:hidden view-transition-none"
       style="position: fixed !important; bottom: max(env(safe-area-inset-bottom, 24px), 24px); left: 50%; transform: translate(-50%, 0); z-index: 999999;"
     >
       <nav
-        class="bg-solidMuted rounded-full px-6 py-3 border border-text/15 shadow-xl shadow-accent/10"
+        class="bg-solidMuted w-full rounded-full px-8 py-3 border border-text/15 shadow-xl shadow-accent/10"
       >
-        <ul class="flex space-x-6">
+        <ul class="flex justify-between space-x-6">
           {
             navLinks.map((link) => (
               <li>
