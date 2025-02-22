@@ -47,3 +47,8 @@ debug/
 
 # Local Netlify folder
 .netlify
+
+# Files files
+.cursorrules
+.cursor/
+.cursor-cache/
