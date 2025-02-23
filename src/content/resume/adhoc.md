@@ -4,7 +4,7 @@ title: Senior Designer
 position: Senior Designer, Communications
 company: Ad Hoc
 startDate: 12/2022
-endDate: Present
+endDate: 02/2025
 description: ""
 order: 1
 date: "2022-12-01"
