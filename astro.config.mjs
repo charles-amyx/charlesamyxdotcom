@@ -30,7 +30,6 @@ export default defineConfig({
       }
     }
   },
-  viewTransitions: true,
   devToolbar: {
     enabled: false,
   },

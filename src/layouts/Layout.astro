@@ -20,7 +20,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import "../styles/card.css";
 import AlpineInit from "../components/AlpineInit.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 // Base website schema that's present on all pages
 const websiteSchema = {
@@ -103,6 +103,7 @@ const isActive = (href: string) => {
 <html lang="en">
   <head>
     <ViewTransitions fallback="animate" />
+    <ClientRouter fallback="animate" />
     <!-- Google tag (gtag.js) -->
     <script
       async
