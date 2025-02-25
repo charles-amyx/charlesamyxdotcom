@@ -2,7 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="404: Page Not Found">
+<Layout
+  title="404: Page Not Found"
+  description="Page not found - The requested page could not be found."
+  ogImage="/images/og-image.jpg"
+  ogType="website"
+>
   <main
     class="flex flex-col items-center justify-center min-h-[70vh] text-center px-4"
   >
@@ -17,4 +22,3 @@ import Layout from "../layouts/Layout.astro";
     </a>
   </main>
 </Layout>
-
