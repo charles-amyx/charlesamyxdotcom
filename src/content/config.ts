@@ -8,7 +8,6 @@ const projectsCollection = defineCollection({
     client: z.string().optional(),
     date: z.string().optional(),
     description: z.string().optional(),
-    slug: z.string().optional(),
     image: z.string().optional(),
     cardImage: z.string().optional(),
     type: z.string().optional(),
