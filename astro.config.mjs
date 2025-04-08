@@ -13,14 +13,13 @@ import { z } from 'zod';
 
 // https://astro.build/config
 export default defineConfig({
-  logLevel: 'debug',
   site: 'https://charlesamyx.com',
   integrations: [
     tailwind(), 
     mdx(), 
     sitemap(), 
     alpinejs({
-      plugins: ['@alpinejs/intersect']
+      entrypoint: 'src/entrypoint'
     })
   ],
   vite: {
@@ -32,5 +31,5 @@ export default defineConfig({
   },
   devToolbar: {
     enabled: false,
-  },
+  }
 });

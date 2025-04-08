@@ -2,6 +2,7 @@
 
 interface Window {
   Alpine: any;
+  _alpineInitialized: boolean;
 }
 
 declare module '@alpinejs/intersect' {

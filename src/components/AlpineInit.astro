@@ -1,41 +1,12 @@
 ---
-
+// This component only handles Alpine reinit during view transitions
 ---
 
 <script>
-  let Alpine: any;
-
-  async function initAlpine() {
-    if (!window.Alpine) {
-      try {
-        // Import Alpine and plugins
-        const [alpine, intersect] = await Promise.all([
-          import("alpinejs"),
-          import("@alpinejs/intersect"),
-        ]);
-
-        Alpine = alpine.default;
-
-        // Register plugins before starting Alpine
-        Alpine.plugin(intersect.default);
-
-        // Store Alpine globally
-        window.Alpine = Alpine;
-
-        // Start Alpine
-        Alpine.start();
-      } catch (error) {
-        console.error("Error initializing Alpine:", error);
-      }
+  document.addEventListener("astro:page-load", () => {
+    // Only reinitialize components after view transitions
+    if (window.Alpine) {
+      window.Alpine.initTree(document.body);
     }
-  }
-
-  // Initialize on first load
-  initAlpine();
-
-  // Reinitialize after navigation
-  document.addEventListener("astro:after-swap", () => {
-    // Small delay to ensure DOM is ready
-    setTimeout(initAlpine, 0);
   });
 </script>
