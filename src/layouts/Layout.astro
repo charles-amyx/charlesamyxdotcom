@@ -103,6 +103,11 @@ const isActive = (href: string) => {
 <html lang="en">
   <head>
     <ViewTransitions fallback="animate" />
+    <!-- Content Security Policy -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; connect-src 'self' https://static.cloudflareinsights.com https://www.google-analytics.com;"
+    />
     <!-- Google tag (gtag.js) -->
     <script
       async

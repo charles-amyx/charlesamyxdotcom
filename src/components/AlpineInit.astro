@@ -7,15 +7,26 @@
 
   async function initAlpine() {
     if (!window.Alpine) {
-      const [alpine, intersect] = await Promise.all([
-        import("alpinejs").then((module) => module.default),
-        import("@alpinejs/intersect").then((module) => module.default),
-      ]);
+      try {
+        // Import Alpine and plugins
+        const [alpine, intersect] = await Promise.all([
+          import("alpinejs"),
+          import("@alpinejs/intersect"),
+        ]);
 
-      Alpine = alpine;
-      Alpine.plugin(intersect);
-      window.Alpine = Alpine;
-      Alpine.start();
+        Alpine = alpine.default;
+
+        // Register plugins before starting Alpine
+        Alpine.plugin(intersect.default);
+
+        // Store Alpine globally
+        window.Alpine = Alpine;
+
+        // Start Alpine
+        Alpine.start();
+      } catch (error) {
+        console.error("Error initializing Alpine:", error);
+      }
     }
   }
 
@@ -23,5 +34,8 @@
   initAlpine();
 
   // Reinitialize after navigation
-  document.addEventListener("astro:after-swap", initAlpine);
+  document.addEventListener("astro:after-swap", () => {
+    // Small delay to ensure DOM is ready
+    setTimeout(initAlpine, 0);
+  });
 </script>
