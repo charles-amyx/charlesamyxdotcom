@@ -103,6 +103,18 @@ const isActive = (href: string) => {
 <html lang="en">
   <head>
     <ViewTransitions fallback="animate" />
+    <script>
+      // Add crossorigin to all preloaded scripts
+      document.addEventListener("astro:before-preparation", () => {
+        document
+          .querySelectorAll('link[rel="preload"][as="script"]')
+          .forEach((link) => {
+            if (!link.hasAttribute("crossorigin")) {
+              link.setAttribute("crossorigin", "anonymous");
+            }
+          });
+      });
+    </script>
     <!-- Google tag (gtag.js) -->
     <script
       async
