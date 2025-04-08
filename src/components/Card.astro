@@ -29,7 +29,16 @@ const linkUrl = isSideProject ? `/side-projects/${slug}` : href;
   <a href={linkUrl} class="card-link group">
     <div class="card-image-container">
       <div class={`frame ${isSideProject ? "frame--side-project" : ""}`}>
-        <Image src={image} alt={title} class="card-image" loading={loading} />
+        <Image
+          src={image}
+          alt={title}
+          class="card-image"
+          loading={loading}
+          width={800}
+          height={400}
+          format="webp"
+          quality={80}
+        />
       </div>
     </div>
     <h3 class="card-title">{title}</h3>
