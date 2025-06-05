@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content';
 // Define schemas for your collections
 const projectsCollection = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     client: z.string().optional(),
     date: z.string().optional(),
@@ -18,7 +18,7 @@ const projectsCollection = defineCollection({
       link: z.string().url()
     }).optional(),
     featured: z.boolean().optional(),
-    featuredImg: z.string().optional(),
+    featuredImg: image().optional(),
     featuredDesc: z.string().optional(),
     hasProcessContent: z.boolean().optional()
   })

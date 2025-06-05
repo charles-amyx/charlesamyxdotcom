@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { imageMap } from "../lib/images";
+import { Image } from 'astro:assets';
 // import { initTopography } from '../lib/topographyAnimation';
 
 const allProjects = await getCollection("projects");
@@ -82,7 +83,7 @@ const professionalSchema = {
         {
           featuredProjects.map((project) => {
             const imageModule = project.data.featuredImg
-              ? imageMap[project.data.featuredImg]
+              ? project.data.featuredImg
               : undefined;
             if (!imageModule) return null;
             return (
@@ -91,10 +92,15 @@ const professionalSchema = {
                 class="group col-span-12 lg:col-span-10 col-start-auto lg:col-start-2 flex justify-center transition-all duration-300 ease-in-out relative w-auto"
               >
                 <div class="w-full mb-4 h-auto order-2 md:order-1 hidden lg:block z-10 left-0 xl:absolute rounded-xl lg:w-2/5 overflow-hidden">
-                  <img
-                    src={imageModule.src}
+                  <Image
+                    src={imageModule}
                     alt={project.data.title}
+                    width={imageModule.width}
+                    height={imageModule.height}
                     class="w-full h-full object-cover scale-105"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
                   />
                 </div>
                 <div 
@@ -108,10 +114,15 @@ const professionalSchema = {
                       {project.data.title}
                     </h3>
                     <div class="block lg:hidden">
-                      <img
-                        src={imageModule.src}
+                      <Image
+                        src={imageModule}
                         alt={project.data.title}
+                        width={imageModule.width}
+                        height={imageModule.height}
                         class="w-full h-[200px] object-cover rounded-xl"
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
                       />
                     </div>
                     <p class="text-text/90 lg:text-background/90 mt-4 lg:mt-0 mb-6">{project.data.featuredDesc}</p>
