@@ -103,16 +103,44 @@ const skills = [
                     : "border-accent/20",
                 ]}
               >
-                <h2 class="text-xl mb-0 font-extrabold">
+                <h2
+                  class:list={[
+                    "text-text text-xs xl:text-sm mb-0 font-normal tracking-wider",
+                    experience.data.endDate === "Present"
+                      ? "text-text"
+                      : "text-text/70",
+                  ]}
+                >
                   {experience.data.company}
                 </h2>
-                <h3 class="text-lg text-text/80 font-semibold">
+                <h3
+                  class:list={[
+                    "text-2xl  font-semibold",
+                    experience.data.endDate === "Present"
+                      ? "text-text"
+                      : "text-text/70",
+                  ]}
+                >
                   {experience.data.position}
                 </h3>
-                <p class="text-sm text-text/80">
+                <p
+                  class:list={[
+                    "text-sm ",
+                    experience.data.endDate === "Present"
+                      ? "text-text"
+                      : "text-text/70",
+                  ]}
+                >
                   {experience.data.startDate} - {experience.data.endDate}
                 </p>
-                <div class="mt-2 prose prose-sm max-w-none">
+                <div
+                  class:list={[
+                    "mt-2 prose max-w-none",
+                    experience.data.endDate === "Present"
+                      ? "text-text"
+                      : "text-text/70",
+                  ]}
+                >
                   <experience.Content />
                 </div>
               </li>
