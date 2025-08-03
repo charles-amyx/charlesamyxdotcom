@@ -16,16 +16,34 @@ const professionalSchema = {
   mainEntity: {
     "@type": "Person",
     name: "Charles E. Amyx, III",
+    alternateName: ["Charles Amyx", "Charles E. Amyx"],
     url: "https://charlesamyx.com",
     image: "https://charlesamyx.com/images/charles_amyx.jpg",
     sameAs: [
       "https://github.com/charles-amyx",
       "https://linkedin.com/in/charbot",
     ],
-    jobTitle: "Designer and frontend developer",
+    jobTitle: "Senior Frontend Developer and UX Designer",
+    description: "Senior Frontend Developer and UX Designer with 15+ years experience in higher education web development at the University of Michigan",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ann Arbor",
+      addressRegion: "Michigan",
+      addressCountry: "US"
+    },
     worksFor: {
       "@type": "Organization",
-      name: "Ad Hoc LLC", // if applicable
+      name: "Michigan Creative",
+      url: "https://creative.umich.edu",
+      parentOrganization: {
+        "@type": "Organization",
+        name: "University of Michigan",
+        url: "https://umich.edu"
+      }
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "University of Michigan"
     },
     skills: [
       "JavaScript",
@@ -40,14 +58,21 @@ const professionalSchema = {
       "Astro",
       "Svelte",
       "NextJS",
-      // Add other skills
+      "Frontend Development",
+      "UX Design",
+      "Higher Education",
+      "University of Michigan",
+      "Michigan Creative",
+      "Ann Arbor",
+      "Michigan"
     ],
   },
 };
 ---
 
 <Layout
-  title="Charles E. Amyx, III - Designer and frontend developer"
+  title="Charles E. Amyx, III - Senior Frontend Developer and UX Designer at Michigan Creative, University of Michigan"
+  description="Charles E. Amyx, III is a Senior Frontend Developer and UX Designer at Michigan Creative, University of Michigan with 15+ years experience in higher education web development. Specializing in JavaScript, React, TypeScript, and modern web technologies."
   schema={professionalSchema}
 >
   <section class="container transition-all duration-150 ease-in-out mx-auto px-4 pt-12 md:pt-16 lg:pt-24">

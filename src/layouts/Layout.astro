@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title,
-  description = "Portfolio and work by Charles Amyx - Designer and frontend developer",
+  description = "Charles E. Amyx, III - Senior Frontend Developer and UX Designer at Michigan Creative, University of Michigan. 15+ years experience in higher education web development.",
   ogImage = "/images/og-image.jpg",
   ogType = "website",
   schema,
@@ -22,30 +22,60 @@ import "../styles/card.css";
 import AlpineInit from "../components/AlpineInit.astro";
 import { ViewTransitions } from "astro:transitions";
 
-// Base website schema that's present on all pages
+// Enhanced website schema with more specific location and professional context
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Charles E. Amyx, III Portfolio",
+  name: "Charles E. Amyx, III - Frontend Developer Portfolio",
   url: "https://charlesamyx.com",
   description:
-    "Portfolio and work by Charles E. Amyx, III - Designer and frontend developer",
+    "Portfolio of Charles E. Amyx, III - Senior Frontend Developer and UX Designer at Michigan Creative, University of Michigan with 15+ years experience in higher education web development.",
+  author: {
+    "@type": "Person",
+    name: "Charles E. Amyx, III",
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Charles E. Amyx, III",
+  },
 };
 
-// Person schema for yourself
+// Enhanced person schema with more specific professional context
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Charles E. Amyx, III",
+  alternateName: ["Charles Amyx", "Charles E. Amyx"],
   url: "https://charlesamyx.com",
   image: "https://charlesamyx.com/images/charles_amyx.jpg",
   sameAs: [
     "https://github.com/charles-amyx",
     "https://www.linkedin.com/in/charbot/",
-    // Add other social profile URLs
+    "https://charlesamyx.com",
   ],
-  jobTitle: "Designer and frontend developer",
-  description: "Designer and frontend developer",
+  jobTitle: "Senior Frontend Developer and UX Designer",
+  description:
+    "Senior Frontend Developer and UX Designer with 15+ years experience specializing in higher education web development at the University of Michigan",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ann Arbor",
+    addressRegion: "Michigan",
+    addressCountry: "US",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "Michigan Creative",
+    url: "https://creative.umich.edu",
+    parentOrganization: {
+      "@type": "Organization",
+      name: "University of Michigan",
+      url: "https://umich.edu",
+    },
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "University of Michigan",
+  },
   knowsAbout: [
     "JavaScript",
     "React",
@@ -59,8 +89,20 @@ const personSchema = {
     "Astro",
     "Svelte",
     "NextJS",
-    // Add other skills
+    "Frontend Development",
+    "UX Design",
+    "Higher Education",
+    "University of Michigan",
+    "Michigan Creative",
+    "Ann Arbor",
+    "Michigan",
   ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Frontend Developer",
+    description:
+      "Senior Frontend Developer specializing in modern web technologies and user experience design",
+  },
 };
 
 // Combine schemas - if a page-specific schema is provided, include it
@@ -129,12 +171,82 @@ const isActive = (href: string) => {
       gtag("js", new Date());
       gtag("config", "G-E09NMKMEBG");
     </script>
+
+    <!-- Core Web Vitals Monitoring -->
+    <script is:inline>
+      // Core Web Vitals monitoring
+      if ("PerformanceObserver" in window) {
+        // Largest Contentful Paint (LCP)
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            if (entry.identifier === "first-input") {
+              gtag("event", "web_vitals", {
+                event_category: "Web Vitals",
+                event_label: "FID",
+                value: Math.round(entry.processingStart - entry.startTime),
+              });
+            }
+          }
+        }).observe({ entryTypes: ["largest-contentful-paint", "first-input"] });
+
+        // Cumulative Layout Shift (CLS)
+        let clsValue = 0;
+        let clsEntries = [];
+
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            if (!entry.hadRecentInput) {
+              clsValue += entry.value;
+              clsEntries.push(entry);
+            }
+          }
+
+          // Report CLS when page is hidden
+          if (document.visibilityState === "hidden") {
+            gtag("event", "web_vitals", {
+              event_category: "Web Vitals",
+              event_label: "CLS",
+              value: Math.round(clsValue * 1000) / 1000,
+            });
+          }
+        }).observe({ entryTypes: ["layout-shift"] });
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
+
+    <!-- Enhanced SEO Meta Tags -->
+    <link rel="canonical" href={Astro.url} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Charles E. Amyx, III" />
+    <meta
+      name="keywords"
+      content="Charles Amyx, Frontend Developer, UX Designer, Ann Arbor, Michigan, JavaScript, React, TypeScript, Astro, Web Development"
+    />
+    <meta name="geo.region" content="US-MI" />
+    <meta name="geo.placename" content="Ann Arbor" />
+    <meta name="geo.position" content="42.2808;-83.7430" />
+    <meta name="ICBM" content="42.2808, -83.7430" />
+
+    <!-- Language and locale -->
+    <meta name="language" content="English" />
+    <meta name="geo.country" content="US" />
+
+    <!-- Professional context -->
+    <meta
+      name="profession"
+      content="Senior Frontend Developer and UX Designer"
+    />
+    <meta name="experience" content="15+ years" />
+    <meta
+      name="specialization"
+      content="Higher Education, Corporate Web Development"
+    />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
