@@ -30,7 +30,7 @@ import AnimatedFigure from '../../components/AnimatedFigure.astro';
 # Roybal Center
 
 
-The Roybal Center at the University of Michigan is an NIA-supported center for behavioral and social science research on aging. I led development of the center’s public website and the backend that powers its AI chat assistant.
+The Roybal Center at the University of Michigan is an NIA-supported center for behavioral and social science research on aging. I developed the center's public website and the backend that powers its AI chat assistant.
 
 ## The challenge
 
@@ -38,7 +38,7 @@ The center needed a content-rich site that could showcase people, projects, even
 
 ## The solution
 
-We built a headless setup: Sanity CMS for content and an Eleventy-generated static site for the front end. A separate Node service acts as a secure proxy between the site and the University’s Maizey AI API, so the chat works from the browser without leaking credentials.
+I built a headless setup: Sanity CMS for content and an Eleventy-generated static site for the front end. A separate Node service acts as a secure proxy between the site and the University’s Maizey AI API, so the chat works from the browser without leaking credentials.
 
 **Website**  
 The site is a dual-repo: Eleventy 3 with WebC components in one codebase, Sanity Studio in another. Content types include hierarchical pages, people (with roles and categories), projects (U-M Roybal, other U-M, external), events, and news. Editors use a custom desk structure and singleton documents for settings, homepage, and main menu. Data is fetched at build time via GROQ with caching and optional preview; images are handled through a shared helper with Sanity URLs and local SVG fallback. The front end uses Tailwind (including the fluid plugin for typography and spacing), Alpine.js for lightweight interactivity, and Jampack for build-time optimizations. The site deploys to Cloudflare Pages and the studio to Sanity’s hosting, with dataset switching for production, development, and preview.

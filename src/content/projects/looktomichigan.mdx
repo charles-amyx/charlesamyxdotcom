@@ -1,0 +1,60 @@
+---
+title: Look to Michigan
+client: University of Michigan
+date: '2026-03-16'
+description: >-
+  Look to Michigan is a University of Michigan storytelling and content site.
+image: looktomichigan.png
+cardImage: ltm-card.jpg
+type: Development
+duration: 02/2026 - 03/2026
+skills:
+  - CI/CD
+  - Cloudflare Pages
+  - Nunjucks
+  - Alpine.js
+  - Tailwind CSS
+  - Sanity CMS
+  - Eleventy
+  - Pagefind
+  - Jampack
+url:
+  label: See it!
+  link: 'https://looktomichigan.umich.edu/'
+hasProcessContent: true
+---
+
+import { Image } from 'astro:assets';
+import { imageMap } from '../../lib/images';
+import AnimatedFigure from '../../components/AnimatedFigure.astro';
+
+
+# Look to Michigan
+
+Look to Michigan is a University of Michigan storytelling and content site built as a static site with a headless CMS. I owned development of the front end and Sanity Studio so the team could manage articles, authors, impact areas, and commitments without touching code.
+
+## The challenge
+
+The university needed a content-rich site that could showcase stories, news, and strategic themes (impact areas and commitments) while staying fast, accessible, and simple for non-technical staff to update. Content had to support flexible page building and optional migration from an existing WordPress source.
+
+## The solution
+
+I built a monorepo with Eleventy for the site and Sanity for the CMS. A one-off scraper handled WordPress-to-Sanity migration; the live stack is fully static plus Sanity.
+
+**Website**
+
+The site is Eleventy v3 with Nunjucks: sections (one per Sanity block type), macros for shared UI, and partials for layout. Content types include articles (with authors, impact areas, and commitments), pages, home page singleton, and tags. Data is loaded at build time via GROQ from `_data/`; images use Sanity URLs without expanding assets in queries. The front end uses Tailwind v4 (new `@import "tailwindcss"` setup), Alpine.js for the mobile menu and search, and custom filters for dates and meta. Pagefind indexes the built site for static search; Jampack runs after the build for image optimization. The site deploys to Cloudflare Pages with nightly rebuilds so Sanity content updates go live automatically.
+
+**Studio** 
+
+Sanity Studio v5 lives in the same repo with its own deploy to Sanity hosting. Schemas use `defineType` / `defineField` with clear descriptions and icons; `structure.js` defines the desk layout. Editors manage articles, authors, impact areas, commitments, pages, and the home page in one place.
+
+## Results
+
+- A fast, static site with section-based page building, fluid typography, and accessibility-minded markup.
+- A single content model for articles, authors, impact areas, commitments, and pages with clear workflows in Sanity.
+- Automated deployment: site on Cloudflare Pages and studio on Sanity, with CI for both and nightly rebuilds to pick up content changes.
+
+Look to Michigan gives the university a maintainable storytelling platform that stays fast and easy for editors to run day to day.
+
+[Visit the live site](https://looktomichigan.umich.edu)

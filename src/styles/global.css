@@ -84,3 +84,7 @@ figure img {
   width: 100%;
   height: auto;
 }
+
+.prose-lg code {
+  @apply bg-muted text-text rounded-md px-1 py-0.5 text-sm;
+}
