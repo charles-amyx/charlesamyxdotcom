@@ -1,0 +1,61 @@
+---
+title: Pancreatitis Pain Guide
+client: University of Michigan
+date: '2025-12-16'
+description: >-
+  A place that empowers people with chronic pancreatitis through education, self-care tips, and patient-focused support.
+image: ppg.png
+cardImage: ppg-card.png
+type: Development
+duration: 07/2025 - 12/2025
+skills:
+  - Eleventy
+  - Vue.js
+  - Vuex
+  - Vue Router
+  - Firebase (Auth, Firestore)
+  - Tailwind CSS
+  - Chart.js
+  - Nunjucks
+  - GSAP
+  - Firebase Hosting
+url:
+  label: See it!
+  link: 'https://pancreatitispainguide.com/'
+hasProcessContent: true
+---
+
+import { Image } from 'astro:assets';
+import { imageMap } from '../../lib/images';
+import AnimatedFigure from '../../components/AnimatedFigure.astro';
+
+
+
+# Pancreatitis Pain Guide
+
+Pancreatitis Pain Guide is a patient-facing resource for people living with chronic pancreatitis. I led development of the public content site and the integrated patient app for pain tracking, symptom and behavior logging, and worksheets.
+
+## The challenge
+
+The project needed to serve two distinct needs: (1) a content-rich, accessible site that patients and families could use to learn about chronic pancreatitis, self-care, professional care, and practical support (e.g. employment, transportation, get-help resources), and (2) a private, logged-in experience where patients could track pain and symptoms over time, log behaviors, and use structured worksheets—with data stored securely per user.
+
+## The solution
+
+We built a single codebase that produces both a fast static site and a client-side app: Eleventy for the content site and a Vue.js SPA embedded at `/app/`, with Firebase handling auth and Firestore for user-specific data.
+
+**Content site**
+The main site is Eleventy 3 with Nunjucks: markdown pages, custom collections (self-care, symptoms, professional care) sorted by frontmatter, and reusable sections and layouts. Content covers the condition (what it is, causes of pain, other symptoms, associated conditions), self-care (nutrition, sleep, walking, managing emotions, communication, ergonomics, spirituality), professional care (medications, doctor visits, healthcare team), and practical support (get help, get involved, patient stories). We use Tailwind for styling, `@11ty/eleventy-img` for responsive images, and shortcodes for accordions, audio, and optimized images. GSAP ScrollSmoother is used for smooth scrolling and can be turned off per page. The build outputs to a `public/` directory that also receives the compiled Vue app.
+
+**Patient app**
+The app is a Vue 2 SPA (Vuex, Vue Router) at `/app/` with Firebase Auth (FirebaseUI) and Firestore. Routes include dashboard, auth, symptom and behavior tracking by module, worksheets, and multi-step flows. Pain entries and analytics are stored per user; Chart.js and date-fns support visualization and time-based views. The app is built into `public/app/` so one deploy serves both site and app. Firebase Hosting provides the SPA fallback for `/app/**` and long-lived cache headers for static assets.
+
+## Results
+
+- A single deployment (Firebase Hosting) serving both the static content site and the authenticated patient app, with clear separation between public content and private, per-user data.
+- Fast, static content pages with accessibility-minded markup (WCAG-oriented patterns for images, forms, headings, and keyboard navigation) and responsive images.
+- A patient app that supports pain and symptom logging, behavior tracking, worksheets, and analytics without exposing backend logic—auth and data stay in Firebase.
+
+Together, the site and app give patients and families a single place to learn about chronic pancreatitis and to track their own progress over time.
+
+[Visit the live site](https://pancreatitispainguide.com/)
+
