@@ -1,0 +1,57 @@
+---
+title: Roybal Center
+client: University of Michigan
+date: '2025-12-01'
+description: >-
+  The Roybal Center at the University of Michigan is an NIA-supported center for behavioral and social science research on aging.
+image: roybal.png
+cardImage: roybal-card.png
+type: Development
+duration: 10/2025 - 12/2025
+skills:
+  - Eleventy
+  - Sanity CMS
+  - Tailwind CSS
+  - Alpine.js
+  - WebC
+  - Express.js
+  - Google Cloud Run
+  - CI/CD
+url:
+  label: See it!
+  link: 'https://roybal.umich.edu/'
+hasProcessContent: true
+---
+
+import { Image } from 'astro:assets';
+import { imageMap } from '../../lib/images';
+import AnimatedFigure from '../../components/AnimatedFigure.astro';
+
+# Roybal Center
+
+
+The Roybal Center at the University of Michigan is an NIA-supported center for behavioral and social science research on aging. I led development of the center’s public website and the backend that powers its AI chat assistant.
+
+## The challenge
+
+The center needed a content-rich site that could showcase people, projects, events, and news while staying fast and easy for non-technical staff to update. They also wanted a chat experience on the site so visitors could ask questions in natural language, without exposing internal APIs or keys to the browser.
+
+## The solution
+
+We built a headless setup: Sanity CMS for content and an Eleventy-generated static site for the front end. A separate Node service acts as a secure proxy between the site and the University’s Maizey AI API, so the chat works from the browser without leaking credentials.
+
+**Website**  
+The site is a dual-repo: Eleventy 3 with WebC components in one codebase, Sanity Studio in another. Content types include hierarchical pages, people (with roles and categories), projects (U-M Roybal, other U-M, external), events, and news. Editors use a custom desk structure and singleton documents for settings, homepage, and main menu. Data is fetched at build time via GROQ with caching and optional preview; images are handled through a shared helper with Sanity URLs and local SVG fallback. The front end uses Tailwind (including the fluid plugin for typography and spacing), Alpine.js for lightweight interactivity, and Jampack for build-time optimizations. The site deploys to Cloudflare Pages and the studio to Sanity’s hosting, with dataset switching for production, development, and preview.
+
+**Chat backend**  
+The chat API is an Express app that sits between the Roybal site and the Maizey AI service. It validates and sanitizes prompts, enforces CORS and configurable rate limits (per IP and optional API keys), and adds security headers via Helmet. Conversation IDs support tracking without storing PII. The service is containerized and runs on Google Cloud Run so it scales with traffic and can scale to zero when idle. Front-end integration is documented for the existing stack: WebC, Alpine.js, and a vanilla JS option, with the site calling the proxy and the proxy calling Maizey so API keys stay on the server.
+
+## Results
+
+- A single, maintainable content model for pages, people, projects, events, and news with clear workflows in Sanity.  
+- Fast, static pages with fluid typography, accessibility-minded markup, and automated a11y checks.  
+- A production-ready chat backend that keeps Maizey credentials server-side and gives the client control over rate limits, CORS, and logging across environments.
+
+The Roybal site and chat together give the center a modern web presence and a safe, scalable way to offer an AI helper to visitors.
+
+[Visit the live site](https://roybal.umich.edu/)
